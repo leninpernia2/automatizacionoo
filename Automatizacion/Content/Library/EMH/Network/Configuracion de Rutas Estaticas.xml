@@ -38,10 +38,9 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <staticBinding id="edc582e5-4b11-4a90-aeac-804530c66518">
+    <userInputBinding id="2f684ae3-eba7-40d6-83bd-4c7fd360367b">
       <annotation></annotation>
       <toContextKey></toContextKey>
-      <fromContextKey>userOS</fromContextKey>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
@@ -50,13 +49,14 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>username</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>administrator</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="0e3c8b56-d7a3-440f-9239-4e3d77cb6847">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="9c3b3cb7-ca8a-4a6f-972f-1ea868f4d85f">
       <annotation></annotation>
       <toContextKey></toContextKey>
-      <fromContextKey>passwordOS</fromContextKey>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>ENCRYPTED</inputType>
@@ -65,9 +65,11 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>password</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>{OBFUSCATED}OmqMzjJmqc5SY94OL2DXJg==</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
     <userInputBinding id="c05011b3-18df-48ca-a970-803d81014dbe">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
