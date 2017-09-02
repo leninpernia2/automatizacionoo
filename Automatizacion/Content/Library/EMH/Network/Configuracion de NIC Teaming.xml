@@ -4,7 +4,9 @@
 991fba11-9acf-4f06-b689-edbed39ec9d1.3fe11782-7516-4934-b8e7-220dfb532e05.description=<pre>\nThis operation executes PowerShell scripts on a given host.\n\nInputs\:\n    host - The hostname or IP address of the PowerShell host. If you specify this input then you should not specify URI and shellURI.\nDefault value\: localhost\n    URI - Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint for the interactive session. \nValue format\: <Transport>\://<ComputerName>\:<Port>/<ApplicationName>\nExample\: http\://exch2010CAS1/Powershell?serializationLevel\=Full\n    shellURI - Gets the Uniform Resource Identifier (URI) of the shell that is launched when the connection is made.\nExample\: http\://schemas.microsoft.com/powershell/Microsoft.Exchange\n    username - The username to use when connecting to the server.\nValue format\: username@domain or domain\\username.\n    password - The password to use when connecting to the server.\n    configurationName - Specifies the session configuration that is used for the new PSSession. If you specify only the configuration name, the following schema URI is prepended\: http\://schemas.microsoft.com/powershell. Use Microsoft.PowerShell32 to force x32 PowerShell version on x64 machines.\n    authType - Specifies the mechanism that is used to authenticate the user's credentials. \nValid values\: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest and Kerberos. (case-insensitive)\nDefault value\: Default\n    connectionTimeout - Determines how long the client computer waits for the remote session connection to be established. When the interval expires, the command to establish the connection fails. Enter a positive value in milliseconds.\nDefault value\: 180000 (3 minutes).\n    scriptTimeout - Determines how long the client computer waits for the PowerShell script to be executed. When the interval expires, the operation fails. Enter a positive value in milliseconds. An empty value means no time-out; the script execution continues indefinitely.\n    useSSL - If true, the operation uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer. By default, SSL is not used. WS-Management encrypts all Windows PowerShell content transmitted over the network. UseSSL is an additional protection that sends the data across an HTTPS connection instead of an HTTP connection. Default port for SSL is 5986.\nDefault value\: false\n    skipCACheck - Indicates whether, when connecting over HTTPS, the client does not validate that the server certificate is signed by a trusted certificate authority (CA).\nDefault value\: true\n    skipCNCheck - Indicates whether the certificate common name (CN) of the server and the hostname of the server are not checked for being the same.\nDefault value\: true\n    port - Specifies the network port on the remote computer that is used for this connection. To connect to a remote computer, the remote computer must be listening on the port that the connection uses. The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).\n    keepSessionAlive - If true, the operation will not close the PowerShell runspace (i.e. the PSSession in case of remote connections ) created during the execution and returns the runspaceID as the result of the operation. Actually the PowerShell runspace is saved in the OO session and can be used in other operations using the runspaceID result of previous operation.\nDefault value\: false\n    enablePiping - If true the operation enables piping the way PowerShell does. This input should be used only when keepSessionAlive input is true. First time the piped objects are null and the scope is to save the objects resulted from the PowerShell script execution. Next time the piped objects can be refered in the script as "$_" objects.\nDefault value\: false\nExample\: First, run "Get-Service" script with enablePiping\=true and keepSessionAlive\=true, then run the script  "Select-Object -property name,displayname,status|where-object {$_.Name -lt "C"}" with enablePiping\=true keepSessionAlive\=true. Observe the use of "$_".\n    runspaceID - If not empty, the operation will search the OO session for keys which equal the runspaceID. If the operation finds the runspace specified by the runspaceID it tries to use it and does not create another PowerShell runspace with provided inputs. If the runspace exists but is broken or unavailable the operation uses its authentication parameters and tries to reconnect and recreate the PowerShell runspace. Please note that the operation will use the connection parameters of the runspace identified by runspaceID, not the values provided as user inputs. The operation will take into consideration the connection inputs (i.e. host, username, password, authType, useSSL, etc.) provided by user only if the runspaceID does not exist in the OO session.\n    modules - A list of PowerShell modules to load after the PowerShell connection is established. Each value from the list specifies the name of the module to import. Enter the name of the module or the name of a file in the module, such as a .psd1, .psm1, .dll, or ps1 file. File paths are optional. Wildcards are not permitted. Specify only the module name whenever possible. When you specify a file name, only the members that are implemented in that file are imported. If the module contains other files, they are not imported, and you might be missing important members of the module. The list of modules should be separated by comma "," delimiter.\nExample\: FailoverClusters\n    snapins - A list of PowerShell snapins to load after the PowerShell connection is established. Each value from the list specifies the name of a registered snapin (i.e. the Name, not the AssemblyName or ModuleName).\nExample\: Microsoft.Exchange.Management.PowerShell.E2010\n    script - The script to execute on the PowerShell host. If you want to execute a script from file just provide the file path. Check the notes section for security implications of using this input.\nExample\:c\:\\PowerShellScripts\\GetHost.ps1\n    cmdlet - The name of the PowerShell cmdlet to invoke. If the cmdlet has additional parameters, please provide them as inputs to the operation. If the parameter has the same name as one of the operation's inputs just prefix it with "_". This input is intended to be used together with the PowerShell wizard so please use the script input whenever it's possible.\n    returnTable - If true, the operation will return a table containing a row for each PSObject that the script emits. The table's columns represent the properties of these PSObjects, in the propertyName<delimiter>propertyValue format. If false the operation returns a string representation of the result similar to the output from the PowerShell console.\nDefault value\: false\n    delimiter - The delimiter used to separate each property name from the property value in the output table.\nDefault value\: "\:".\n    colDelimiter - The delimiter used to separate columns in the output table.\nDefault value\: ",".\n    rowDelimiter - The delimiter used to separate rows in the output table.\nDefault value\: newline.\n    hideResults - If this input is added and set to true, the "script", "stdout" and "warnings" results will be hidden. In case of operation failure the "returnResult" will no longer contain the Powershell exception stack-trace details, but the generic message\: "Could not execute powershell command". To use this input you need to manually add it from Studio Inputs tab of the operation, by clicking on the \u201CAdd Input\u201D button.\nValid values\: true, false\nDefault value\: false\n    localPSRemoting - If this input is added and set to \u2018true\u2019 the operation will use remote impersonation on the local IP address (localhost/loopback) and PowerShell remoting on the same address to execute the script. In this case the credentials under which the script will run must be provided through the \u201Cusername\u201D and \u201Cpassword\u201D inputs. The \u201Chostname\u201D input should be the local ip address or the localhost/loopback address. In case the \u201Chostname\u201D it is left empty the \u2018localhost\u2019 address will be used by default. To use this input you need to manually add it from Studio Inputs tab of the operation, by clicking on the \u201CAdd Input\u201D button.\nValid values\: true, false\nDefault value\: false\n\nResults\:\n    returnResult - The result of the script execution formatted as table or string depending on the returnTable input value as described above. In case of operation failure and "hideResults" is set to true, then this output will no longer contain the powershell exception stacktrace details.\n    script - The actual PowerShell script that was run. This result might be useful when piping is enabled or you want to know exactly the script that was sent to be run on the PowerShell host. Please note that the operation adds "Out-String" command to the end of your script if returnTable input is set to false. This output will be hidden if "hideResults" input is set to true.\n    objectsCount - The number of the PowerShell objects resulted from script execution (e.g. Get-Service will return the number of services found on the target host). This input is relevant only when returnTable is set to true. Otherwise, the value of this result will always be one, because the script returns a string message.\n    warnings - A list of warnings that the cmdlets emit. If the cmdlets were executed without warnings, then this result will be an empty string. This output will be hidden if "hideResults" input is set to true.\n    runspaceID - The runspace ID of the PowerShell runspace created during the execution of the operation.\n    stdout - The result of the commands that succeeded in case the operation fails. In case of operation failure this output will be hidden if "hideResults" input is set to true.\n\nResponses\:\n    success - The Powershell script or cmdlet was executed successfully.\n    failure - The command could not be executed.\n\nNotes\:\n1. In order to enable PowerShell scripts execution, run the following command\: Set-ExecutionPolicy RemoteSigned\n2. When interacting with a Microsoft Exchange server, please use the generic Powershell operation available in the Business Application content pack, under /Library/Operations/Exchange/<version specific> folder, instead of loading the Exchange snap-in to this Powershell Script operation. This is a Microsoft Exchange design (http\://www.get-exchange.info/2012/12/30/powershell-scripting-for-exchange-server-some-tips/)\n3. If the "hideResults" is set to false the "script" output will be added to the operation's output in which case the exact script that was executed will be displayed. Displaying the script could be a security risk when encrypted variables (which could be the sensitive data) are passed and referenced in the script, as they will be displayed unobfuscated. Also in case of operation failure the "stdout", "warnings" and "returnResults" outputs could contain the script with unobfuscated sensitive variables in it.\n4. The \u201ClocalPSRemoting\u201D input provides a workaround/alternative to PowerShell impersonation on localhost. It enables the operation to run the script under different users on the local machine.\n5. Use the 'script' input with caution as it can expose the target system to security risks. By exposing the script input as a prompt to the user, it will enable the user to execute any powershell script on the target system taking into account the permissions of the credentials given as inputs.\n</pre>
 991fba11-9acf-4f06-b689-edbed39ec9d1.43e3be15-b53d-4b53-b65f-e341756797a4.prompt=User name\:
 991fba11-9acf-4f06-b689-edbed39ec9d1.4f825471-f03a-47de-abdb-e635c2408b41.prompt=User name\:
+991fba11-9acf-4f06-b689-edbed39ec9d1.6434818a-9259-476d-8a8d-8e5d84948329.description=<pre>\nThis operation waits for the number of seconds specified in the "seconds" input.\n\nInputs\:\n    seconds - The number of seconds to wait.\n\nResults\:\n    resultString \u2013 This is the primary output. It contains the "completed sleep" message if the operation completed successfully and an error message otherwise. \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
 991fba11-9acf-4f06-b689-edbed39ec9d1.92ed2d3f-e1db-4fef-946f-20ca9a0e2f91.prompt=Password\:
+991fba11-9acf-4f06-b689-edbed39ec9d1.976ed712-4e99-46b0-9a3e-ce82f6240992.description=<pre>\nThis operation waits for the number of seconds specified in the "seconds" input.\n\nInputs\:\n    seconds - The number of seconds to wait.\n\nResults\:\n    resultString \u2013 This is the primary output. It contains the "completed sleep" message if the operation completed successfully and an error message otherwise. \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
 991fba11-9acf-4f06-b689-edbed39ec9d1.9a8ff076-7849-4ee4-8f49-ed24f8cb5249.description=<pre>\nThis operation executes PowerShell scripts on a given host.\n\nInputs\:\n    host - The hostname or IP address of the PowerShell host. If you specify this input then you should not specify URI and shellURI.\nDefault value\: localhost\n    URI - Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint for the interactive session. \nValue format\: <Transport>\://<ComputerName>\:<Port>/<ApplicationName>\nExample\: http\://exch2010CAS1/Powershell?serializationLevel\=Full\n    shellURI - Gets the Uniform Resource Identifier (URI) of the shell that is launched when the connection is made.\nExample\: http\://schemas.microsoft.com/powershell/Microsoft.Exchange\n    username - The username to use when connecting to the server.\nValue format\: username@domain or domain\\username.\n    password - The password to use when connecting to the server.\n    configurationName - Specifies the session configuration that is used for the new PSSession. If you specify only the configuration name, the following schema URI is prepended\: http\://schemas.microsoft.com/powershell. Use Microsoft.PowerShell32 to force x32 PowerShell version on x64 machines.\n    authType - Specifies the mechanism that is used to authenticate the user's credentials. \nValid values\: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest and Kerberos. (case-insensitive)\nDefault value\: Default\n    connectionTimeout - Determines how long the client computer waits for the remote session connection to be established. When the interval expires, the command to establish the connection fails. Enter a positive value in milliseconds.\nDefault value\: 180000 (3 minutes).\n    scriptTimeout - Determines how long the client computer waits for the PowerShell script to be executed. When the interval expires, the operation fails. Enter a positive value in milliseconds. An empty value means no time-out; the script execution continues indefinitely.\n    useSSL - If true, the operation uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer. By default, SSL is not used. WS-Management encrypts all Windows PowerShell content transmitted over the network. UseSSL is an additional protection that sends the data across an HTTPS connection instead of an HTTP connection. Default port for SSL is 5986.\nDefault value\: false\n    skipCACheck - Indicates whether, when connecting over HTTPS, the client does not validate that the server certificate is signed by a trusted certificate authority (CA).\nDefault value\: true\n    skipCNCheck - Indicates whether the certificate common name (CN) of the server and the hostname of the server are not checked for being the same.\nDefault value\: true\n    port - Specifies the network port on the remote computer that is used for this connection. To connect to a remote computer, the remote computer must be listening on the port that the connection uses. The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).\n    keepSessionAlive - If true, the operation will not close the PowerShell runspace (i.e. the PSSession in case of remote connections ) created during the execution and returns the runspaceID as the result of the operation. Actually the PowerShell runspace is saved in the OO session and can be used in other operations using the runspaceID result of previous operation.\nDefault value\: false\n    enablePiping - If true the operation enables piping the way PowerShell does. This input should be used only when keepSessionAlive input is true. First time the piped objects are null and the scope is to save the objects resulted from the PowerShell script execution. Next time the piped objects can be refered in the script as "$_" objects.\nDefault value\: false\nExample\: First, run "Get-Service" script with enablePiping\=true and keepSessionAlive\=true, then run the script  "Select-Object -property name,displayname,status|where-object {$_.Name -lt "C"}" with enablePiping\=true keepSessionAlive\=true. Observe the use of "$_".\n    runspaceID - If not empty, the operation will search the OO session for keys which equal the runspaceID. If the operation finds the runspace specified by the runspaceID it tries to use it and does not create another PowerShell runspace with provided inputs. If the runspace exists but is broken or unavailable the operation uses its authentication parameters and tries to reconnect and recreate the PowerShell runspace. Please note that the operation will use the connection parameters of the runspace identified by runspaceID, not the values provided as user inputs. The operation will take into consideration the connection inputs (i.e. host, username, password, authType, useSSL, etc.) provided by user only if the runspaceID does not exist in the OO session.\n    modules - A list of PowerShell modules to load after the PowerShell connection is established. Each value from the list specifies the name of the module to import. Enter the name of the module or the name of a file in the module, such as a .psd1, .psm1, .dll, or ps1 file. File paths are optional. Wildcards are not permitted. Specify only the module name whenever possible. When you specify a file name, only the members that are implemented in that file are imported. If the module contains other files, they are not imported, and you might be missing important members of the module. The list of modules should be separated by comma "," delimiter.\nExample\: FailoverClusters\n    snapins - A list of PowerShell snapins to load after the PowerShell connection is established. Each value from the list specifies the name of a registered snapin (i.e. the Name, not the AssemblyName or ModuleName).\nExample\: Microsoft.Exchange.Management.PowerShell.E2010\n    script - The script to execute on the PowerShell host. If you want to execute a script from file just provide the file path. Check the notes section for security implications of using this input.\nExample\:c\:\\PowerShellScripts\\GetHost.ps1\n    cmdlet - The name of the PowerShell cmdlet to invoke. If the cmdlet has additional parameters, please provide them as inputs to the operation. If the parameter has the same name as one of the operation's inputs just prefix it with "_". This input is intended to be used together with the PowerShell wizard so please use the script input whenever it's possible.\n    returnTable - If true, the operation will return a table containing a row for each PSObject that the script emits. The table's columns represent the properties of these PSObjects, in the propertyName<delimiter>propertyValue format. If false the operation returns a string representation of the result similar to the output from the PowerShell console.\nDefault value\: false\n    delimiter - The delimiter used to separate each property name from the property value in the output table.\nDefault value\: "\:".\n    colDelimiter - The delimiter used to separate columns in the output table.\nDefault value\: ",".\n    rowDelimiter - The delimiter used to separate rows in the output table.\nDefault value\: newline.\n    hideResults - If this input is added and set to true, the "script", "stdout" and "warnings" results will be hidden. In case of operation failure the "returnResult" will no longer contain the Powershell exception stack-trace details, but the generic message\: "Could not execute powershell command". To use this input you need to manually add it from Studio Inputs tab of the operation, by clicking on the \u201CAdd Input\u201D button.\nValid values\: true, false\nDefault value\: false\n    localPSRemoting - If this input is added and set to \u2018true\u2019 the operation will use remote impersonation on the local IP address (localhost/loopback) and PowerShell remoting on the same address to execute the script. In this case the credentials under which the script will run must be provided through the \u201Cusername\u201D and \u201Cpassword\u201D inputs. The \u201Chostname\u201D input should be the local ip address or the localhost/loopback address. In case the \u201Chostname\u201D it is left empty the \u2018localhost\u2019 address will be used by default. To use this input you need to manually add it from Studio Inputs tab of the operation, by clicking on the \u201CAdd Input\u201D button.\nValid values\: true, false\nDefault value\: false\n\nResults\:\n    returnResult - The result of the script execution formatted as table or string depending on the returnTable input value as described above. In case of operation failure and "hideResults" is set to true, then this output will no longer contain the powershell exception stacktrace details.\n    script - The actual PowerShell script that was run. This result might be useful when piping is enabled or you want to know exactly the script that was sent to be run on the PowerShell host. Please note that the operation adds "Out-String" command to the end of your script if returnTable input is set to false. This output will be hidden if "hideResults" input is set to true.\n    objectsCount - The number of the PowerShell objects resulted from script execution (e.g. Get-Service will return the number of services found on the target host). This input is relevant only when returnTable is set to true. Otherwise, the value of this result will always be one, because the script returns a string message.\n    warnings - A list of warnings that the cmdlets emit. If the cmdlets were executed without warnings, then this result will be an empty string. This output will be hidden if "hideResults" input is set to true.\n    runspaceID - The runspace ID of the PowerShell runspace created during the execution of the operation.\n    stdout - The result of the commands that succeeded in case the operation fails. In case of operation failure this output will be hidden if "hideResults" input is set to true.\n\nResponses\:\n    success - The Powershell script or cmdlet was executed successfully.\n    failure - The command could not be executed.\n\nNotes\:\n1. In order to enable PowerShell scripts execution, run the following command\: Set-ExecutionPolicy RemoteSigned\n2. When interacting with a Microsoft Exchange server, please use the generic Powershell operation available in the Business Application content pack, under /Library/Operations/Exchange/<version specific> folder, instead of loading the Exchange snap-in to this Powershell Script operation. This is a Microsoft Exchange design (http\://www.get-exchange.info/2012/12/30/powershell-scripting-for-exchange-server-some-tips/)\n3. If the "hideResults" is set to false the "script" output will be added to the operation's output in which case the exact script that was executed will be displayed. Displaying the script could be a security risk when encrypted variables (which could be the sensitive data) are passed and referenced in the script, as they will be displayed unobfuscated. Also in case of operation failure the "stdout", "warnings" and "returnResults" outputs could contain the script with unobfuscated sensitive variables in it.\n4. The \u201ClocalPSRemoting\u201D input provides a workaround/alternative to PowerShell impersonation on localhost. It enables the operation to run the script under different users on the local machine.\n5. Use the 'script' input with caution as it can expose the target system to security risks. By exposing the script input as a prompt to the user, it will enable the user to execute any powershell script on the target system taking into account the permissions of the credentials given as inputs.\n</pre>
 991fba11-9acf-4f06-b689-edbed39ec9d1.b9ac13f5-c45a-4a25-bf50-df14cf86eeb3.description=<pre>\nThis operation executes PowerShell scripts on a given host.\n\nInputs\:\n    host - The hostname or IP address of the PowerShell host. If you specify this input then you should not specify URI and shellURI.\nDefault value\: localhost\n    URI - Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint for the interactive session. \nValue format\: <Transport>\://<ComputerName>\:<Port>/<ApplicationName>\nExample\: http\://exch2010CAS1/Powershell?serializationLevel\=Full\n    shellURI - Gets the Uniform Resource Identifier (URI) of the shell that is launched when the connection is made.\nExample\: http\://schemas.microsoft.com/powershell/Microsoft.Exchange\n    username - The username to use when connecting to the server.\nValue format\: username@domain or domain\\username.\n    password - The password to use when connecting to the server.\n    configurationName - Specifies the session configuration that is used for the new PSSession. If you specify only the configuration name, the following schema URI is prepended\: http\://schemas.microsoft.com/powershell. Use Microsoft.PowerShell32 to force x32 PowerShell version on x64 machines.\n    authType - Specifies the mechanism that is used to authenticate the user's credentials. \nValid values\: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest and Kerberos. (case-insensitive)\nDefault value\: Default\n    connectionTimeout - Determines how long the client computer waits for the remote session connection to be established. When the interval expires, the command to establish the connection fails. Enter a positive value in milliseconds.\nDefault value\: 180000 (3 minutes).\n    scriptTimeout - Determines how long the client computer waits for the PowerShell script to be executed. When the interval expires, the operation fails. Enter a positive value in milliseconds. An empty value means no time-out; the script execution continues indefinitely.\n    useSSL - If true, the operation uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer. By default, SSL is not used. WS-Management encrypts all Windows PowerShell content transmitted over the network. UseSSL is an additional protection that sends the data across an HTTPS connection instead of an HTTP connection. Default port for SSL is 5986.\nDefault value\: false\n    skipCACheck - Indicates whether, when connecting over HTTPS, the client does not validate that the server certificate is signed by a trusted certificate authority (CA).\nDefault value\: true\n    skipCNCheck - Indicates whether the certificate common name (CN) of the server and the hostname of the server are not checked for being the same.\nDefault value\: true\n    port - Specifies the network port on the remote computer that is used for this connection. To connect to a remote computer, the remote computer must be listening on the port that the connection uses. The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).\n    keepSessionAlive - If true, the operation will not close the PowerShell runspace (i.e. the PSSession in case of remote connections ) created during the execution and returns the runspaceID as the result of the operation. Actually the PowerShell runspace is saved in the OO session and can be used in other operations using the runspaceID result of previous operation.\nDefault value\: false\n    enablePiping - If true the operation enables piping the way PowerShell does. This input should be used only when keepSessionAlive input is true. First time the piped objects are null and the scope is to save the objects resulted from the PowerShell script execution. Next time the piped objects can be refered in the script as "$_" objects.\nDefault value\: false\nExample\: First, run "Get-Service" script with enablePiping\=true and keepSessionAlive\=true, then run the script  "Select-Object -property name,displayname,status|where-object {$_.Name -lt "C"}" with enablePiping\=true keepSessionAlive\=true. Observe the use of "$_".\n    runspaceID - If not empty, the operation will search the OO session for keys which equal the runspaceID. If the operation finds the runspace specified by the runspaceID it tries to use it and does not create another PowerShell runspace with provided inputs. If the runspace exists but is broken or unavailable the operation uses its authentication parameters and tries to reconnect and recreate the PowerShell runspace. Please note that the operation will use the connection parameters of the runspace identified by runspaceID, not the values provided as user inputs. The operation will take into consideration the connection inputs (i.e. host, username, password, authType, useSSL, etc.) provided by user only if the runspaceID does not exist in the OO session.\n    modules - A list of PowerShell modules to load after the PowerShell connection is established. Each value from the list specifies the name of the module to import. Enter the name of the module or the name of a file in the module, such as a .psd1, .psm1, .dll, or ps1 file. File paths are optional. Wildcards are not permitted. Specify only the module name whenever possible. When you specify a file name, only the members that are implemented in that file are imported. If the module contains other files, they are not imported, and you might be missing important members of the module. The list of modules should be separated by comma "," delimiter.\nExample\: FailoverClusters\n    snapins - A list of PowerShell snapins to load after the PowerShell connection is established. Each value from the list specifies the name of a registered snapin (i.e. the Name, not the AssemblyName or ModuleName).\nExample\: Microsoft.Exchange.Management.PowerShell.E2010\n    script - The script to execute on the PowerShell host. If you want to execute a script from file just provide the file path. Check the notes section for security implications of using this input.\nExample\:c\:\\PowerShellScripts\\GetHost.ps1\n    cmdlet - The name of the PowerShell cmdlet to invoke. If the cmdlet has additional parameters, please provide them as inputs to the operation. If the parameter has the same name as one of the operation's inputs just prefix it with "_". This input is intended to be used together with the PowerShell wizard so please use the script input whenever it's possible.\n    returnTable - If true, the operation will return a table containing a row for each PSObject that the script emits. The table's columns represent the properties of these PSObjects, in the propertyName<delimiter>propertyValue format. If false the operation returns a string representation of the result similar to the output from the PowerShell console.\nDefault value\: false\n    delimiter - The delimiter used to separate each property name from the property value in the output table.\nDefault value\: "\:".\n    colDelimiter - The delimiter used to separate columns in the output table.\nDefault value\: ",".\n    rowDelimiter - The delimiter used to separate rows in the output table.\nDefault value\: newline.\n    hideResults - If this input is added and set to true, the "script", "stdout" and "warnings" results will be hidden. In case of operation failure the "returnResult" will no longer contain the Powershell exception stack-trace details, but the generic message\: "Could not execute powershell command". To use this input you need to manually add it from Studio Inputs tab of the operation, by clicking on the \u201CAdd Input\u201D button.\nValid values\: true, false\nDefault value\: false\n    localPSRemoting - If this input is added and set to \u2018true\u2019 the operation will use remote impersonation on the local IP address (localhost/loopback) and PowerShell remoting on the same address to execute the script. In this case the credentials under which the script will run must be provided through the \u201Cusername\u201D and \u201Cpassword\u201D inputs. The \u201Chostname\u201D input should be the local ip address or the localhost/loopback address. In case the \u201Chostname\u201D it is left empty the \u2018localhost\u2019 address will be used by default. To use this input you need to manually add it from Studio Inputs tab of the operation, by clicking on the \u201CAdd Input\u201D button.\nValid values\: true, false\nDefault value\: false\n\nResults\:\n    returnResult - The result of the script execution formatted as table or string depending on the returnTable input value as described above. In case of operation failure and "hideResults" is set to true, then this output will no longer contain the powershell exception stacktrace details.\n    script - The actual PowerShell script that was run. This result might be useful when piping is enabled or you want to know exactly the script that was sent to be run on the PowerShell host. Please note that the operation adds "Out-String" command to the end of your script if returnTable input is set to false. This output will be hidden if "hideResults" input is set to true.\n    objectsCount - The number of the PowerShell objects resulted from script execution (e.g. Get-Service will return the number of services found on the target host). This input is relevant only when returnTable is set to true. Otherwise, the value of this result will always be one, because the script returns a string message.\n    warnings - A list of warnings that the cmdlets emit. If the cmdlets were executed without warnings, then this result will be an empty string. This output will be hidden if "hideResults" input is set to true.\n    runspaceID - The runspace ID of the PowerShell runspace created during the execution of the operation.\n    stdout - The result of the commands that succeeded in case the operation fails. In case of operation failure this output will be hidden if "hideResults" input is set to true.\n\nResponses\:\n    success - The Powershell script or cmdlet was executed successfully.\n    failure - The command could not be executed.\n\nNotes\:\n1. In order to enable PowerShell scripts execution, run the following command\: Set-ExecutionPolicy RemoteSigned\n2. When interacting with a Microsoft Exchange server, please use the generic Powershell operation available in the Business Application content pack, under /Library/Operations/Exchange/<version specific> folder, instead of loading the Exchange snap-in to this Powershell Script operation. This is a Microsoft Exchange design (http\://www.get-exchange.info/2012/12/30/powershell-scripting-for-exchange-server-some-tips/)\n3. If the "hideResults" is set to false the "script" output will be added to the operation's output in which case the exact script that was executed will be displayed. Displaying the script could be a security risk when encrypted variables (which could be the sensitive data) are passed and referenced in the script, as they will be displayed unobfuscated. Also in case of operation failure the "stdout", "warnings" and "returnResults" outputs could contain the script with unobfuscated sensitive variables in it.\n4. The \u201ClocalPSRemoting\u201D input provides a workaround/alternative to PowerShell impersonation on localhost. It enables the operation to run the script under different users on the local machine.\n5. Use the 'script' input with caution as it can expose the target system to security risks. By exposing the script input as a prompt to the user, it will enable the user to execute any powershell script on the target system taking into account the permissions of the credentials given as inputs.\n</pre>
 991fba11-9acf-4f06-b689-edbed39ec9d1.b9d9a634-d4f6-40bd-8593-7d548590f1e9.prompt=Password\:
@@ -546,7 +548,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="24318ba8-9f36-4531-b975-53d1f6a64bb5">
+        <transition id="3783e337-a7e0-4023-a31c-801a3633e203">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -555,19 +557,19 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>b9ac13f5-c45a-4a25-bf50-df14cf86eeb3</refId>
+            <refId>6434818a-9259-476d-8a8d-8e5d84948329</refId>
           </destination>
           <source>
             <refId>9a8ff076-7849-4ee4-8f49-ed24f8cb5249</refId>
           </source>
           <positions>
             <point>
-              <x>240.0</x>
-              <y>181.0</y>
+              <x>110.0</x>
+              <y>394.0</y>
             </point>
             <point>
-              <x>450.0</x>
-              <y>181.0</y>
+              <x>222.0</x>
+              <y>581.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -898,7 +900,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="35c02381-af39-47b2-8adf-fc08e769c5e3">
+        <transition id="d4463758-f676-419a-860b-a9e7cc9a1dd6">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -907,19 +909,19 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>feb2b298-5163-4af7-b37f-752d9fe60eb4</refId>
+            <refId>976ed712-4e99-46b0-9a3e-ce82f6240992</refId>
           </destination>
           <source>
             <refId>b9ac13f5-c45a-4a25-bf50-df14cf86eeb3</refId>
           </source>
           <positions>
             <point>
-              <x>450.0</x>
-              <y>181.0</y>
+              <x>320.0</x>
+              <y>394.0</y>
             </point>
             <point>
-              <x>660.0</x>
-              <y>181.0</y>
+              <x>441.0</x>
+              <y>576.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -979,6 +981,154 @@
       <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
+    <step id="6434818a-9259-476d-8a8d-8e5d84948329">
+      <annotation>991fba11-9acf-4f06-b689-edbed39ec9d1.6434818a-9259-476d-8a8d-8e5d84948329.description</annotation>
+      <name>Sleep</name>
+      <bounds>
+        <x>172.0</x>
+        <y>547.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>true</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="55de8f6a-84b8-408c-873d-1348f9ad4c9a">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>seconds</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>30</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="681f2803-c85f-494f-a6e0-81fea6d415d7">
+          <annotation></annotation>
+          <name>done</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>done</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>b9ac13f5-c45a-4a25-bf50-df14cf86eeb3</refId>
+          </destination>
+          <source>
+            <refId>6434818a-9259-476d-8a8d-8e5d84948329</refId>
+          </source>
+          <positions>
+            <point>
+              <x>222.0</x>
+              <y>581.0</y>
+            </point>
+            <point>
+              <x>320.0</x>
+              <y>394.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>d1bbf441-824a-450e-afae-2ddec0e0f35e</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="976ed712-4e99-46b0-9a3e-ce82f6240992">
+      <annotation>991fba11-9acf-4f06-b689-edbed39ec9d1.976ed712-4e99-46b0-9a3e-ce82f6240992.description</annotation>
+      <name>Sleep</name>
+      <bounds>
+        <x>391.0</x>
+        <y>542.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>true</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="09003d2b-6ed5-41d7-a206-fadb80d442ee">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>seconds</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>30</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="fbaae993-0523-4130-8791-45541dd83c01">
+          <annotation></annotation>
+          <name>done</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>done</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>feb2b298-5163-4af7-b37f-752d9fe60eb4</refId>
+          </destination>
+          <source>
+            <refId>976ed712-4e99-46b0-9a3e-ce82f6240992</refId>
+          </source>
+          <positions>
+            <point>
+              <x>441.0</x>
+              <y>576.0</y>
+            </point>
+            <point>
+              <x>530.0</x>
+              <y>394.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>d1bbf441-824a-450e-afae-2ddec0e0f35e</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
   </steps>
   <startSteps>c128c793-7228-42d9-985a-c15d837271f1</startSteps>
 </flow>
