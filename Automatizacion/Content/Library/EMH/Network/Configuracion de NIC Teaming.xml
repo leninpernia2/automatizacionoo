@@ -29,10 +29,10 @@
       <value>QRO</value>
       <record>false</record>
     </staticBinding>
-    <userInputBinding id="0fe22a83-3508-4e86-b151-8a7d1bbbe2cd">
+    <userInputBinding id="0502d4f3-4282-4d16-9827-fb1075cac6c0">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
-      <assignToContext>false</assignToContext>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
       <required>true</required>
@@ -89,10 +89,10 @@
       <value></value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="f2f021f9-8ad5-46ec-82df-f1df2e64249d">
+    <staticBinding id="ee4985e1-d0cf-4bfc-a9dc-6df65e9a96f2">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
-      <assignToContext>false</assignToContext>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
       <required>false</required>
@@ -102,10 +102,10 @@
       <value></value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="a2ac237d-5e0c-41b4-bb83-62daa2815c0c">
+    <staticBinding id="b74d0826-bcc7-4f75-833f-fd5e1c739525">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
-      <assignToContext>false</assignToContext>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
       <required>false</required>
@@ -115,10 +115,10 @@
       <value></value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="045241c9-8086-4e69-92e4-9f6e991c7234">
+    <staticBinding id="977275ea-5e09-4e5c-84a0-24484c7751c1">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
-      <assignToContext>false</assignToContext>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
       <required>false</required>
@@ -128,10 +128,10 @@
       <value></value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="9ea6f6e6-f416-4792-8b13-48e231785b8b">
+    <staticBinding id="9d169a6f-1609-497d-a94a-7a68ae02a5f0">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
-      <assignToContext>false</assignToContext>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
       <required>false</required>
