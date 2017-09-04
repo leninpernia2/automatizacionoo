@@ -115,7 +115,7 @@
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>true</required>
+      <required>false</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>alias</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -130,7 +130,7 @@
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>true</required>
+      <required>false</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>dns1</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -145,7 +145,7 @@
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>true</required>
+      <required>false</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>dns2</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -201,6 +201,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="549671b0-b4f5-482d-a938-f620a1da81d1">
+        <baseIcon>compare.png</baseIcon>
+        <basePath>Utilities</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -346,6 +352,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="9531b707-8771-4d44-9540-537166ee7ec7">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -434,6 +446,19 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="831056ea-a693-4f32-b43c-82ff63fc227c">
+        <baseIcon>change.png</baseIcon>
+        <basePath>/Integrations/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="4f9c2461-2362-4cd1-b5d4-5c80c1997137">
+            <baseIcon>hourglass.png</baseIcon>
+            <basePath>/Utilities/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -586,6 +611,19 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="87272d14-dc8e-47d9-8cdd-a29d8dae8bd7">
+        <baseIcon>event_log.png</baseIcon>
+        <basePath>/Operating System/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="07de9272-d3cc-4e27-8870-c30e1688ec9f">
+            <baseIcon>start.png</baseIcon>
+            <basePath>/Annotations/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
