@@ -375,6 +375,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="528076db-24e5-4dab-855b-49ebe1b26f50">
+        <baseIcon>calculator.png</baseIcon>
+        <basePath>Others</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -488,11 +494,17 @@
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>480.0</x>
-        <y>30.0</y>
+        <x>267.0</x>
+        <y>32.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="6aeb758a-5fec-4d5d-b4dd-10913ced0c0c">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -537,12 +549,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="beb04d4b-f5a9-4152-9d2f-1398d7e46c0f">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -751,6 +757,19 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="768d448e-3768-4a9b-b510-01ea9d8772ce">
+        <baseIcon>event_log.png</baseIcon>
+        <basePath>/Operating System/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="07de9272-d3cc-4e27-8870-c30e1688ec9f">
+            <baseIcon>start.png</baseIcon>
+            <basePath>/Annotations/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -998,6 +1017,19 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="038be95a-d315-4d23-9cd5-b748b111ca76">
+        <baseIcon>change.png</baseIcon>
+        <basePath>/Integrations/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="4f9c2461-2362-4cd1-b5d4-5c80c1997137">
+            <baseIcon>hourglass.png</baseIcon>
+            <basePath>/Utilities/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1150,6 +1182,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="14c72106-9646-4213-9430-f12dc9a55177">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1330,6 +1368,19 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="6f871403-e7e6-45c8-a8ad-407af442144d">
+        <baseIcon>event_log.png</baseIcon>
+        <basePath>/Operating System/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="07de9272-d3cc-4e27-8870-c30e1688ec9f">
+            <baseIcon>start.png</baseIcon>
+            <basePath>/Annotations/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1577,6 +1628,19 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="34c35fe4-c0f2-4cd8-97b0-5087d79dd07c">
+        <baseIcon>change.png</baseIcon>
+        <basePath>/Integrations/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="4f9c2461-2362-4cd1-b5d4-5c80c1997137">
+            <baseIcon>hourglass.png</baseIcon>
+            <basePath>/Utilities/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1729,6 +1793,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="1a6cdb8b-30d1-4161-bb86-e91bcd719acc">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1909,6 +1979,19 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="ba0b52ed-17ca-419f-b860-1c9ea04242ec">
+        <baseIcon>event_log.png</baseIcon>
+        <basePath>/Operating System/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="07de9272-d3cc-4e27-8870-c30e1688ec9f">
+            <baseIcon>start.png</baseIcon>
+            <basePath>/Annotations/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -2151,11 +2234,17 @@
       <annotation></annotation>
       <name>Run Communication Test</name>
       <bounds>
-        <x>720.0</x>
-        <y>30.0</y>
+        <x>746.0</x>
+        <y>29.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="6d10b660-f660-4808-a0c9-3e53b16854ee">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -2261,35 +2350,6 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="8f5cd93d-a3d7-41c0-886c-919b184f12b7">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>a91bca5b-e99f-4d4c-808a-fbaffc746341</refId>
-          </destination>
-          <source>
-            <refId>befdc4b5-e70e-44fa-9696-786786a03d8c</refId>
-          </source>
-          <positions>
-            <point>
-              <x>770.0</x>
-              <y>64.0</y>
-            </point>
-            <point>
-              <x>530.0</x>
-              <y>64.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
         <transition id="d00a1683-4f2a-4f69-8bd8-bc794cc946a3">
           <annotation></annotation>
           <name>failure</name>
@@ -2319,6 +2379,35 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
+        <transition id="2001a228-5b4c-45da-8c0c-ea18a10fdbe2">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>6500a535-6eca-4933-96ac-565f5cc137cc</refId>
+          </destination>
+          <source>
+            <refId>befdc4b5-e70e-44fa-9696-786786a03d8c</refId>
+          </source>
+          <positions>
+            <point>
+              <x>796.0</x>
+              <y>63.0</y>
+            </point>
+            <point>
+              <x>529.0</x>
+              <y>62.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
       </transitions>
       <properties/>
       <opRef>
@@ -2331,11 +2420,24 @@
       <annotation>991fba11-9acf-4f06-b689-edbed39ec9d1.ed543c88-783c-4d98-8397-13a3ecefd368.description</annotation>
       <name>Wait for Job</name>
       <bounds>
-        <x>720.0</x>
-        <y>180.0</y>
+        <x>740.0</x>
+        <y>175.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="b65f1e6b-1d6f-4b7d-8a21-88ab427ebc9f">
+        <baseIcon>change.png</baseIcon>
+        <basePath>/Integrations/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="4f9c2461-2362-4cd1-b5d4-5c80c1997137">
+            <baseIcon>hourglass.png</baseIcon>
+            <basePath>/Utilities/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -2483,8 +2585,8 @@
       <annotation>991fba11-9acf-4f06-b689-edbed39ec9d1.9f005f5f-1d50-4f04-9bd6-bf6757411447.description</annotation>
       <name>Sleep</name>
       <bounds>
-        <x>930.0</x>
-        <y>30.0</y>
+        <x>927.0</x>
+        <y>34.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -2532,20 +2634,20 @@
           </source>
           <positions>
             <point>
-              <x>963.0</x>
-              <y>67.16346153846153</y>
+              <x>960.0</x>
+              <y>70.67597765363129</y>
             </point>
             <point>
-              <x>900.0</x>
-              <y>90.0</y>
+              <x>903.0</x>
+              <y>93.0</y>
             </point>
             <point>
-              <x>840.0</x>
-              <y>90.0</y>
+              <x>858.0</x>
+              <y>89.0</y>
             </point>
             <point>
-              <x>770.0</x>
-              <y>80.0</y>
+              <x>796.0</x>
+              <y>79.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -2565,8 +2667,8 @@
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>930.0</x>
-        <y>180.0</y>
+        <x>934.0</x>
+        <y>173.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -2605,6 +2707,158 @@
       <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
+    <step id="6500a535-6eca-4933-96ac-565f5cc137cc">
+      <annotation></annotation>
+      <name>Configuracion de PXE Estatica</name>
+      <bounds>
+        <x>479.0</x>
+        <y>28.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="92037363-b55c-44d0-ba7a-860f60d6e9af">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>coreHost</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="327a5d68-dede-4557-81e7-ae4aab909ed8">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>coreUsername</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="120578be-e937-4aae-ad66-eb7275fe4711">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>ENCRYPTED</inputType>
+          <recordKey></recordKey>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>false</isPersisted>
+          <inputSymbol>corePassword</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="b5519ecb-6c57-49d1-a117-3fc114751d41">
+          <annotation></annotation>
+          <fromContextKey>serverIds</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>serverID</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="d6cc647e-6eca-4603-a2a1-1dbd3fb8099f">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>a91bca5b-e99f-4d4c-808a-fbaffc746341</refId>
+          </destination>
+          <source>
+            <refId>6500a535-6eca-4933-96ac-565f5cc137cc</refId>
+          </source>
+          <positions>
+            <point>
+              <x>529.0</x>
+              <y>62.0</y>
+            </point>
+            <point>
+              <x>317.0</x>
+              <y>66.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="a2d34aae-323e-406b-b443-44ef8c675b75">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>0435cae4-ab2d-415c-8fca-5e4fe767bbfe</refId>
+          </destination>
+          <source>
+            <refId>6500a535-6eca-4933-96ac-565f5cc137cc</refId>
+          </source>
+          <positions>
+            <point>
+              <x>529.0</x>
+              <y>62.0</y>
+            </point>
+            <point>
+              <x>320.0</x>
+              <y>214.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>c7b71b52-0523-4a5b-ba1c-bb5740fc3408</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
   </steps>
   <startSteps>7cbaf0e3-b838-4161-a103-9d98b04b1153</startSteps>
 </flow>
