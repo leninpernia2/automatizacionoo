@@ -74,38 +74,6 @@ f2026584-253a-4514-bb20-519ab8096937.aec9eeed-a621-44a2-8d68-3ba0988305cb.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="427f1b16-9082-4f5d-bedd-63d87e7a9915">
-      <annotation></annotation>
-      <toContextKey></toContextKey>
-      <fromContextKey></fromContextKey>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>true</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>unprovisionedServer</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="ba7b0822-cbb3-49dd-af69-a033110c6ae5">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>true</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>unprovisionedServerID</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
     <userInputBinding id="8cc38ba1-7d3e-40d0-a7bc-cc27d86d9883">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
@@ -402,62 +370,6 @@ f2026584-253a-4514-bb20-519ab8096937.aec9eeed-a621-44a2-8d68-3ba0988305cb.descri
         <refId>6e11a3d4-bc47-47ca-be15-f881bf50c546</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="11d92b5b-9a6a-42eb-ad38-5f07f3737394">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
-          <contextKey>ipAddress</contextKey>
-          <expression id="9dbb26dc-0770-4963-941d-ecbbc8a6d79d">
-            <annotation></annotation>
-            <name>Result: ipAddress</name>
-            <fieldName>ipAddress</fieldName>
-            <sourceType>AVAILABLE_RESULT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
-        <flowVariableAssignment id="574a48c6-a320-45c0-9899-4cd9c796a0a8">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
-          <contextKey>memory</contextKey>
-          <expression id="d211e84d-519e-497e-8162-e56a56bad433">
-            <annotation></annotation>
-            <name>Result: memory</name>
-            <fieldName>memory</fieldName>
-            <sourceType>AVAILABLE_RESULT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
-        <flowVariableAssignment id="e42977df-7719-4c2c-b900-4753e6c0b8bf">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
-          <contextKey>disk</contextKey>
-          <expression id="5b23725e-d050-4d65-bdf2-355836e8e4d7">
-            <annotation></annotation>
-            <name>Result: disk</name>
-            <fieldName>disk</fieldName>
-            <sourceType>AVAILABLE_RESULT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
-        <flowVariableAssignment id="eefbf35e-5f1b-4d4c-8ff0-82d3f7f258f5">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
-          <contextKey>cores</contextKey>
-          <expression id="b2dda0f3-1ab6-45ce-96a0-36825c2c66f0">
-            <annotation></annotation>
-            <name>Result: cores</name>
-            <fieldName>cores</fieldName>
-            <sourceType>AVAILABLE_RESULT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
         <flowVariableAssignment id="4131136d-4909-4993-a10a-eddaa77f2ca1">
           <annotation></annotation>
           <name>assignment</name>
@@ -479,20 +391,6 @@ f2026584-253a-4514-bb20-519ab8096937.aec9eeed-a621-44a2-8d68-3ba0988305cb.descri
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>serverId</contextKey>
           <expression id="04c97fe7-52b3-4e7e-aba0-1046f0917a2b">
-            <annotation></annotation>
-            <name>Result: serverId</name>
-            <fieldName>serverId</fieldName>
-            <sourceType>AVAILABLE_RESULT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
-        <flowVariableAssignment id="a36a6540-61fb-4b77-8a2f-0b2bb241c3a3">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
-          <contextKey>serverID</contextKey>
-          <expression id="1f93063a-6946-42ac-94eb-0fd65473dad8">
             <annotation></annotation>
             <name>Result: serverId</name>
             <fieldName>serverId</fieldName>
@@ -709,10 +607,10 @@ f2026584-253a-4514-bb20-519ab8096937.aec9eeed-a621-44a2-8d68-3ba0988305cb.descri
           <value>/Axtel/Linux/Axtel - ProLiant HW - Smart Array Set RAID 1</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="31d20c0d-2348-4c62-95ca-dbdf1b874e2d">
+        <staticBinding id="2e33d5e3-bcb3-40d9-8fa7-01ce807fba5c">
           <annotation></annotation>
           <toContextKey></toContextKey>
-          <fromContextKey></fromContextKey>
+          <fromContextKey>serverName</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
@@ -724,8 +622,9 @@ f2026584-253a-4514-bb20-519ab8096937.aec9eeed-a621-44a2-8d68-3ba0988305cb.descri
           <value>localhost-HP-PROLIANT DL360 GEN9</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="db56d34d-ce82-4fba-aadb-76198281782c">
+        <staticBinding id="7f5d4448-1958-4868-a88f-cda2592f9173">
           <annotation></annotation>
+          <fromContextKey>serverId</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
