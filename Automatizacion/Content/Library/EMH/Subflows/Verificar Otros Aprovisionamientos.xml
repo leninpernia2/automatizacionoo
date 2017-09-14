@@ -8,7 +8,21 @@ d7c472f4-50c1-48e4-9a06-5e66bd0f89b7.c75ae186-ee9f-4346-b3fd-2911608a8931.descri
   <annotation></annotation>
   <name>Verificar Otros Aprovisionamientos</name>
   <categories/>
-  <inputs/>
+  <inputs>
+    <staticBinding id="eb66d853-a678-43fb-bc70-b070c143f95f">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>overrideJRAS</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>CDA</value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
   <possibleResponses>
     <opResponse id="314b1353-81c9-4092-9b58-b142fa6f2e78">
       <annotation></annotation>

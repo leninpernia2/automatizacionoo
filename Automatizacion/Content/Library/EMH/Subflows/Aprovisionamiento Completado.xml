@@ -5,7 +5,21 @@
   <annotation></annotation>
   <name>Aprovisionamiento Completado</name>
   <categories/>
-  <inputs/>
+  <inputs>
+    <staticBinding id="7312b421-3168-4f78-be41-4e42e0107e9d">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>overrideJRAS</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>CDA</value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
   <possibleResponses>
     <opResponse id="d3dfb26c-5a7b-4d17-82aa-f14ad863b9fb">
       <annotation></annotation>
