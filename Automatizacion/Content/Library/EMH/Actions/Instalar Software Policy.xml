@@ -840,10 +840,10 @@
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>jobId</contextKey>
-          <expression id="5c65989e-19ca-4ba6-827d-653383baa8ec">
+          <expression id="1bd05569-3105-4b3d-b47a-4a232235e3e3">
             <annotation></annotation>
-            <name>Result Field: Result</name>
-            <fieldName>Result</fieldName>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
             <sourceType>RAWRESULT</sourceType>
             <filters/>
           </expression>
