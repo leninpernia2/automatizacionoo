@@ -2606,22 +2606,6 @@ b79ba618-fa6e-4144-bab3-14d169580ab6.f0eca6fb-fb42-4288-8b3b-daecb5fb3acf.descri
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="f4180c05-10ea-4977-9f3a-31c82d1bd1f1">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>port</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <validationFormat>
-            <refId>2db71fb3-22b7-46cd-ad45-6be6d0453906</refId>
-            <refName>ip port number</refName>
-          </validationFormat>
-        </staticBinding>
       </bindings>
       <transitions>
         <transition id="463d5e11-6375-44f3-bfeb-4cfdfda61653">
