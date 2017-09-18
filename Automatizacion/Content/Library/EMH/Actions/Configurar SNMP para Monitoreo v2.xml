@@ -140,6 +140,19 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="2ef0485b-4599-4f75-9986-bc97d25803db">
+        <baseIcon>event_log.png</baseIcon>
+        <basePath>/Operating System/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="07de9272-d3cc-4e27-8870-c30e1688ec9f">
+            <baseIcon>start.png</baseIcon>
+            <basePath>/Annotations/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -327,10 +340,10 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="9521daf3-e01c-435d-9800-b7b218015552">
+        <staticBinding id="47d4116a-93b3-4299-aed0-94f6cf94ae72">
           <annotation></annotation>
           <toContextKey></toContextKey>
-          <fromContextKey></fromContextKey>
+          <fromContextKey>targetHostIds</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
@@ -492,6 +505,12 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="98cf9c40-afb7-4085-8753-a038f024cd90">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -536,6 +555,19 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="c9b953ec-b097-45bc-9cf5-c59519c5ead3">
+        <baseIcon>change.png</baseIcon>
+        <basePath>/Integrations/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="4f9c2461-2362-4cd1-b5d4-5c80c1997137">
+            <baseIcon>hourglass.png</baseIcon>
+            <basePath>/Utilities/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
