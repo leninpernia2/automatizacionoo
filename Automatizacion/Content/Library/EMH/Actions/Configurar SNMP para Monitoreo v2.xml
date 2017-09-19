@@ -93,6 +93,21 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
+    <userInputBinding id="86422133-e38e-4f19-a3e2-0cbebbb994fa">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>hostname</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="4d0280a3-e955-4e87-ab42-eae99bb8e208">
@@ -323,10 +338,10 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
           <value>PS1</value>
           <record>false</record>
         </staticBinding>
-        <userInputBinding id="7a65706a-e192-460e-9728-e69a276956f5">
+        <userInputBinding id="75e7e6e7-6c79-47ff-85a1-9a0d884b108e">
           <annotation></annotation>
           <toContextKey></toContextKey>
-          <fromContextKey></fromContextKey>
+          <fromContextKey>hostname</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
