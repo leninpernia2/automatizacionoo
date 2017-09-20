@@ -2,6 +2,8 @@
 <flow id="ae5330fd-547c-4cf7-ac1a-c33a693b03c0">
   <descriptionCdata><![CDATA[ae5330fd-547c-4cf7-ac1a-c33a693b03c0.5cad861d-17b7-475b-b4ee-9898dbb2258c.description=Waits for the job to reach a specific state. If no state is specified, then this will wait for the job to reach an end state.\n\nInputs\:\ncoreHost - The DNS name or IP Address of your SAS core.\ncorePort - The port to Connect to your SAS core on.\ncoreProtocol - The protocol to connect to your SAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for host.\ncorePassword - The password for host.\ncoreVersion - The version of SAS to use.\njobID - The id of the job.\nstatus - The status to wait for the job to reach. If none is specified this will wait until the job is no longer running.\ntimeout - The maximum number of milliseconds to wait for the job. If not specified, 1 hour is used.\nfrequency - The frequency, in milliseconds, with which the operation will check if the job has reached the specified state (or an end state). The default value is 5000 ms.\n\nResponses\:\nfailure - Something went wrong.\nsuccess - The operation completed successfully.
 ae5330fd-547c-4cf7-ac1a-c33a693b03c0.b4bb4676-f68a-47f6-a4aa-b16acd352596.description=Starts the invocation of an unsaved script, being given its code, type, arguments and the details of the managed servers on which is should be run.\n\nInputs\:\ncoreHost - The DNS name or IP Address of your SAS core.\ncorePort - The port to connect to your SAS core on.\ncoreProtocol - The protocol to connect to your SAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for host.\ncorePassword - The password for host.\ncoreVersion - The version of SAS to use.\nsourceCode - The source code of the script to invoke.\nsourceCodeType - The type of the source code. It can have one of the following values\: SH (for unix scripts), BAT (for windows BAT scripts), VBS (for Windows Visual Basic scripts), PS1 (for Windows PowerShell scripts), PY2 (for Python scripts).\nscriptArguments - The arguments to be passed to the script.\nserverNames - The list of names of the managed server on which the script should be executed. The elements from the list should be separated by 'separator'.\nserverIds - The list of ids of the managed server on which the script should be executed. If this input is provided, then 'serverNames' is ignored. The ids should be used for unique server identification. The elements from the list should be separated by 'separator'.\nloginDomain - The Windows domain name for the managed server (if it is the case).\nusername - The username that should be used when executing the script on the associated servers.\npassword - The password that should be used when executing the script on the associated servers.\nscriptTimeout - The maximum number of milliseconds for the script to execute. If not specified, the value will be set by SA.\nseparator - The separator used for separating the inputs. The default value for the separator is a comma (,).\nnotificationFailureOwner - The email address of the owner of the job when the job failed.\nnotificationSuccessOwner - The email address of the owner of the job when the job succeeded.\nnotificationCancelOwner - The email address of the owner of the job when the job was canceled.\nnotificationFailureRecipients - The email addresses to notify when the job failed.\nnotificationSuccessRecipients - The email addresses to notify when the job succeeded.\nnotificationCancelRecipients - The email addresses to notify when the job was canceled.\nscheduleDateYear - The year to be used for setting the date when the job is scheduled to start. This input must be provided for setting a job schedule.\nscheduleDateMonth - The month to be used for setting the date when the job is scheduled to start. It should have the value between 1 and 12. This input must be provided for setting a job schedule.\nscheduleDateDayOfMonth - The day to be used for setting the date when the job is scheduled to start. It should have the value between 1 and 31. This input must be provided for setting a job schedule.\nscheduleDateHour - The hour to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 23. If not set, if will have the default value 0.\nscheduleDateMinute - The minute to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 59. If not set, if will have the default value 0.\nscheduleDateSecond - The second to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 59. If not set, if will have the default value 0.\nscheduleDateTimezone - The timezone used to express the job schedule date. If not set, it will have the default value GMT.\nticketId - The ticket Id to associate with this job.\n\nOutputs\:\njobId - The id of the job that was created.\n\nResponses\:\nsuccess - The operation has completed successfully.\nfailure - The operation has failed.
+ae5330fd-547c-4cf7-ac1a-c33a693b03c0.b67ffe1e-51a2-4e28-b58c-1856f53cf5f1.description=<pre>This operation checks whether a string matches another string, using a specific matching rule. The "toMatch" input is the string that is checked for matching the "matchTo" expression. \n\nInputs\:\n    matchType - The type of match to perform.\nValid values\: Exact Match, Contains, Contains Once, Does Not Contain, Match All Words, Match No Words, Regex (The values are not case sensitive)\nDefault value\: Exact Match\n    toMatch - The string that is checked for matching.\n    matchTo - The string to match against.\nExample\: If "matchType" is \u201CRegEx\u201D, the "matchTo" input is a regular expression such as\: ^-?\\d+(([\\.,]\\d+)?)+$. \n    ignoreCase - Specifies whether to ignore case when matching or not.\nValid values\: False, True\nDefault value\: False\n\nResults\:\n    returnResult - This is the primary output. It contains the string "Matches" if the "toMatch" string matches the "matchTo" string. Otherwise, it contains the string "Does Not Match".  \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
+ae5330fd-547c-4cf7-ac1a-c33a693b03c0.dc85d2ce-4e59-4da8-a750-1ff394660ebc.prompt=To Match\:
 ]]></descriptionCdata>
   <annotation></annotation>
   <name>Configurar Licencia Windows</name>
@@ -108,6 +110,21 @@ ae5330fd-547c-4cf7-ac1a-c33a693b03c0.b4bb4676-f68a-47f6-a4aa-b16acd352596.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
+    <userInputBinding id="4fec10bd-6e3e-4bd8-8924-62bf603182ef">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>isLicencia</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="107ccb04-3bee-4304-8134-9ba50c1a502c">
@@ -146,11 +163,156 @@ ae5330fd-547c-4cf7-ac1a-c33a693b03c0.b4bb4676-f68a-47f6-a4aa-b16acd352596.descri
   <compatibleRuntimeContext>false</compatibleRuntimeContext>
   <historyCheckPointFlow>true</historyCheckPointFlow>
   <steps>
+    <step id="b67ffe1e-51a2-4e28-b58c-1856f53cf5f1">
+      <annotation>ae5330fd-547c-4cf7-ac1a-c33a693b03c0.b67ffe1e-51a2-4e28-b58c-1856f53cf5f1.description</annotation>
+      <name>String Comparator</name>
+      <bounds>
+        <x>30.0</x>
+        <y>30.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="25b1cf85-5a18-45ad-8747-88de9f87c48b">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>matchType</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>Exact Match</value>
+          <record>false</record>
+        </staticBinding>
+        <userInputBinding id="dc85d2ce-4e59-4da8-a750-1ff394660ebc">
+          <annotation></annotation>
+          <fromContextKey>isLicencia</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>toMatch</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt>ae5330fd-547c-4cf7-ac1a-c33a693b03c0.dc85d2ce-4e59-4da8-a750-1ff394660ebc.prompt</prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <staticBinding id="1051b092-f4ee-4a55-8535-37299a32aaf3">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>matchTo</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>true</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="592d9306-800c-4b0c-b2df-451549f17657">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>ignoreCase</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>true</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="6de38c05-d829-401b-83da-47897a2a3cf7">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>b4bb4676-f68a-47f6-a4aa-b16acd352596</refId>
+          </destination>
+          <source>
+            <refId>b67ffe1e-51a2-4e28-b58c-1856f53cf5f1</refId>
+          </source>
+          <positions>
+            <point>
+              <x>103.0</x>
+              <y>57.0</y>
+            </point>
+            <point>
+              <x>317.0</x>
+              <y>57.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="c1c77438-97ef-4848-a3ae-b51c1b603d20">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>24b822fa-89d6-4142-9d58-aa3958267f4a</refId>
+          </destination>
+          <source>
+            <refId>b67ffe1e-51a2-4e28-b58c-1856f53cf5f1</refId>
+          </source>
+          <positions>
+            <point>
+              <x>103.0</x>
+              <y>57.0</y>
+            </point>
+            <point>
+              <x>102.0</x>
+              <y>290.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>f1dafb35-6463-4a1b-8f87-8aa748497bed</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
     <step id="b4bb4676-f68a-47f6-a4aa-b16acd352596">
       <annotation>ae5330fd-547c-4cf7-ac1a-c33a693b03c0.b4bb4676-f68a-47f6-a4aa-b16acd352596.description</annotation>
       <name>Configurar SNMP</name>
       <bounds>
-        <x>30.0</x>
+        <x>240.0</x>
         <y>30.0</y>
       </bounds>
       <layer>-1</layer>
@@ -426,8 +588,8 @@ ae5330fd-547c-4cf7-ac1a-c33a693b03c0.b4bb4676-f68a-47f6-a4aa-b16acd352596.descri
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>30.0</x>
-        <y>270.0</y>
+        <x>480.0</x>
+        <y>30.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -470,8 +632,8 @@ ae5330fd-547c-4cf7-ac1a-c33a693b03c0.b4bb4676-f68a-47f6-a4aa-b16acd352596.descri
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>270.0</x>
-        <y>270.0</y>
+        <x>30.0</x>
+        <y>240.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -520,8 +682,8 @@ ae5330fd-547c-4cf7-ac1a-c33a693b03c0.b4bb4676-f68a-47f6-a4aa-b16acd352596.descri
       <annotation>ae5330fd-547c-4cf7-ac1a-c33a693b03c0.5cad861d-17b7-475b-b4ee-9898dbb2258c.description</annotation>
       <name>Wait for Job</name>
       <bounds>
-        <x>270.0</x>
-        <y>30.0</y>
+        <x>240.0</x>
+        <y>240.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -682,5 +844,5 @@ ae5330fd-547c-4cf7-ac1a-c33a693b03c0.b4bb4676-f68a-47f6-a4aa-b16acd352596.descri
       <throttleSize>0</throttleSize>
     </step>
   </steps>
-  <startSteps>b4bb4676-f68a-47f6-a4aa-b16acd352596</startSteps>
+  <startSteps>b67ffe1e-51a2-4e28-b58c-1856f53cf5f1</startSteps>
 </flow>
