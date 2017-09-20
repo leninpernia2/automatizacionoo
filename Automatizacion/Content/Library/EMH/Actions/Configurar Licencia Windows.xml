@@ -101,7 +101,7 @@ ae5330fd-547c-4cf7-ac1a-c33a693b03c0.dc85d2ce-4e59-4da8-a750-1ff394660ebc.prompt
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>true</required>
+      <required>false</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>ProductKey</inputSymbol>
       <listDelimiter>,</listDelimiter>
