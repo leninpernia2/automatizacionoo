@@ -78,21 +78,6 @@ ae5330fd-547c-4cf7-ac1a-c33a693b03c0.b4bb4676-f68a-47f6-a4aa-b16acd352596.descri
       <value>250001</value>
       <record>false</record>
     </staticBinding>
-    <userInputBinding id="28dd9f96-1e83-4db7-81d6-898fd807a8a2">
-      <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
-      <assignToContext>true</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>CommunityString</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
     <userInputBinding id="71634063-81cd-44a0-81f6-a9b45a4df151">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
