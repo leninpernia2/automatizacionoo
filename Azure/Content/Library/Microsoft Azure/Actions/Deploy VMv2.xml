@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow id="2ee85d5b-00be-4a14-a01f-8dc02926f2c6">
-  <descriptionCdata><![CDATA[2ee85d5b-00be-4a14-a01f-8dc02926f2c6.6372cdad-9c31-4a49-8201-6298504504b1.description=This flow is used to create a public IP address.\n\nInputs\:\n    subscriptionId - Specifies the unique identifier of Azure subscription.\n    azureProtocol - Specifies a connection protocol.\nValid values\: https, http\nDefault value\: https\n    azureHost - Specifies the Portal to which requests will be sent\nExample\: management.azure.com\n    apiVersion - Specifies the version of the API that must be used.\nDefault value\: 2017-06-01\n    authToken - Specifies the authentication token that is used for the request.\n    location - Specifies the Azure location where the resource exists.\nExample\: eastasia, westus, westeurope, japanwest\n    resourceGroupName - Specifies the name of the resource group that contains the resource.\n    proxyHost - The proxy server used to access Azure Portal.\n    proxyPort - The port to connect to the proxy server. Enter both proxyHost and proxyPort only if you use proxy server.\nDefault\: 8080\n    proxyPassword - The password associated with the \u201CproxyUsername\u201D input value to use when connecting to the proxy.\n    proxyUsername - The username of the proxy server.\n    x509HostnameVerifier - Specifies the way the server hostname must match a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate. The hostname verification system prevents communication with other hosts other than the ones you intended. This is done by checking that the hostname is in the subject alternative name extension of the certificate. This system is designed to ensure that, if an attacker(Man In The Middle) redirects traffic to his machine, the client will not accept the connection. If you set this input to "allow_all", this verification is ignored and you become vulnerable to security attacks. For the value "browser_compatible" the hostname verifier works the same way as Curl and Firefox. The hostname must match either the first CN, or any of the subject-alts. A wildcard can occur in the CN, and in any of the subject-alts. The only difference between "browser_compatible" and "strict" is that a wildcard (such as "*.foo.com") with "browser_compatible" matches all subdomains, including "a.b.foo.com". From the security perspective, to provide protection against possible Man-In-The-Middle attacks, we strongly recommend to use "strict" option.\nDefault value\: strict\nValid values\: strict, browser_compatible, allow_all\n    trustKeystore - The pathname of the Java TrustStore file. This contains certificates from other parties that you expect to communicate with, or from Certificate Authorities that you trust to identify other parties.  If the protocol (specified by the 'url') is not 'https' or if trustAllRoots is 'true' this input is ignored.\nDefault value\: <OO_Home>/java/lib/security/cacerts\nFormat\: Java KeyStore (JKS)\n    trustPassword - The password associated with the TrustStore file. If trustAllRoots is false and trustKeystore is empty, trustPassword default will be supplied.\nDefault value\: changeit\n    keystore - The pathname of the Java KeyStore file. You only need this if the server requires client authentication. If the protocol (specified by the 'url') is not 'https' or if trustAllRoots is 'true' this input is ignored.\nDefault value\: <OO_Home>/java/lib/security/cacerts\nFormat\: Java KeyStore (JKS)\n    keystorePassword - The password associated with the KeyStore file. If trustAllRoots is false and keystore is empty, keystorePassword default will be supplied.\nDefault value\: changeit\n    connectTimeout - The time to wait for a connection to be established, in seconds. A timeout value of '0' represents an infinite timeout.\nDefault value\: 0\nFormat\: an integer representing seconds\nExamples\: 10, 20\n    socketTimeout - The timeout for waiting for data (a maximum period inactivity between two consecutive data packets), in seconds. A socketTimeout value of '0' represents an infinite timeout.\nDefault value\: 0\nFormat\: an integer representing seconds\n    useCookies - Specifies whether to enable cookie tracking or not. Cookies are stored between consecutive calls in a serializable session object therefore they will be available on a branch level (same subflow, same lane). If you specify a non-boolean value, the default value is used.\nDefault value\: true\nValid values\: true, false\n    keepAlive - Specifies whether to create a shared connection that will be used in subsequent calls. If keepAlive is false, the already open connection will be used and after execution it will close it. The operation will use a connection pool stored in a GlobalSessionObject that will be available throughout the execution (the flow and subflows, between parallel split lanes).\n\t\t\nOutputs\:\n    returnResult - This is the primary output. This output contains the headers from the "headers" input updated with the Authorization header, in case the operation completed successfully or an error message otherwise\n    statusCode - The HTTP response code. \nExample\: 200 OK\n    responseHeaders - A list containing all the headers of the response message.\n    document - The complete document returned by the HTTP Client Put operation.\n    exception - A message containing information that can help determine the cause of error, if an error occurred.\n\nResponses\:\n    success - The operation completed successfully.\n    failure - Something went wrong.\n
-2ee85d5b-00be-4a14-a01f-8dc02926f2c6.63c1575c-dd16-4e71-b090-d5f713685ce4.description=<pre>\nService to perform HTTP POST using the Java HTTP Client. This  operation is used to execute an HTTP POST request while sending HTTP POST data in raw form instead of including it in the request itself.\n\nInputs\:\n    url - The URL where to send the HTTP POST request.\n    username - The user name used for URL authentication. For NTLM authentication, the required format is 'domain\\user'.\n    password - The password used for URL authentication.\n    authType - The type of authentication used by this operation when trying to execute the request on the target server.\nValid values\: basic, form, springForm, digest, ntlm, kerberos, anonymous (no authentication).\nDefault value\: anonymous - authentication not used when executing the request.\n    kerberosConfFile - The  path to the Kerberos configuration file. If this input is empty, the "kdc" (Key Distribution Center) and "realm" get their values from the full domain name obtained from the web server URL.\n    timeout - The time to wait for a connection to be established, in  milliseconds. \nValid values\: This input needs a value greater than or equal to zero. A "timeout" value of '0' represents an infinite timeout.\nDefault value\: 0\n    socketTimeout - The time to wait for data to be retrieved, in milliseconds. \nValid values\: This input needs a value greater than or equal to zero. A "socketTimeout" value of '0' represents an infinite timeout.\nDefault value\: 0\n    useCookies - Specifies whether to enable cookie tracking or not. Cookies are stored between consecutive calls. If you specify a non-Boolean value, the default value is used.\nValid values\: true, false\nDefault value\: true\n    proxy - The proxy server used to access the web site.\n    proxyPort - The proxy server port.\nDefault value\: 8080\n    proxyUsername - The user name used when connecting to the proxy server.\n    proxyPassword - The proxy server password associated with the "proxyUsername" input value.\n    encodeURL - Specifies whether to encode the URL. If you specify a non-Boolean value, the default value is used.\nValid values\: true, false\nDefault value\: false\n    file - The file to be posted by this operation using the HTTP POST method. This should be a path to a file/document on the disk.\n    string - The message body to be posted by this operation using the HTTP POST method.\n    contentType - The content type that should be set in the request header, representing the MIME-type of the data in the message body.\nExamples\: "text/html", "text/html; charset\=UTF-8", "application/x-www-form-urlencoded".\n    characterSet - The character encoding to be used for the HTTP POST request and response.\nDefault value\: UTF-8\n    trustAllRoots - Specifies whether to enable weak security over SSL. A SSL certificate is trusted even if no trusted certification authority issued it.\nValid values\: true, false\nDefault value\: true\n    x509HostnameVerifier - Specifies the way the server hostname must match a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate. The hostname verification system prevents communication with other hosts other than the ones you intended. This is done by checking that the hostname is in the subject alternative name extension of the certificate. This system is designed to ensure that, if an attacker(Man In The Middle) redirects traffic to his machine, the client will not accept the connection. If you set this input to "allow_all", this verification is ignored and you become vulnerable to security attacks. For the value "browser_compatible" the hostname verifier works the same way as Curl and Firefox. The hostname must match either the first CN, or any of the subject-alts. A wildcard can occur in the CN, and in any of the subject-alts. The only difference between "browser_compatible" and "strict" is that a wildcard (such as "*.foo.com") with "browser_compatible" matches all subdomains, including "a.b.foo.com". From the security perspective, to provide protection against possible Man-In-The-Middle attacks, we strongly recommend to use "strict" option.\nDefault value\: allow_all\nValid values\: strict, browser_compatible, allow_all\n    keystore - The location of the KeyStore file - a URL or the local path to it. This input is empty if no HTTPS client authentication is used. The default value will be provided if "trustAllRoots" is "false".\nDefault value\: <OO_Home>/java/lib/security/cacerts\n    keystorePassword - The password associated with the KeyStore file. If "trustAllRoots" is "false" and "keystore" is empty, "keystorePassword" default will be supplied.\nDefault value\: changeit\n    trustKeystore - The location of the TrustStore file - a URL or the local path to it. This input is empty if no HTTPS server authentication is used. The default value will be provided if "trustAllRoots" is "false".\nDefault value\: <OO_Home>/java/lib/security/cacerts\n    trustPassword - The password associated with the TrustStore file. If "trustAllRoots" is "false" and "trustKeystore" is empty, "trustPassword" default will be supplied.\nDefault value\: changeit\n    headerNamesList - The list containing the header names to use for the request.\nExample\: Accept,Content-Type\n    headerValuesList - The list containing the header values to use for the request. \nExample\: text/plain,application/x-www-form-urlencoded\n    queryNamesList - The list containing the names of the query parameters to use for the request. \nExample\: parameterName1,parameterName2 \n    queryValuesList - The list containing the values of the query parameters to use for the request. \nExample\: parameterValue1,parameterValue2\n    delimiter - The delimiter used to separates list elements.\nDefault value\: ','\n\nResults\: \n    returnCode - This is the primary output. A code used to determine the operation response, specifying whether the operation is successful or not.\n    resultText - The raw result of the operation.\n    document - The complete document returned by the Http Client Post Raw operation.\n    URL - The URL used for the HTTP request.\n    pageLoadTimeInMS - The number of milliseconds taken for the page to load.\n    responseTimeInMS - The number of milliseconds taken before the server responded.\n    errorMessage - An informational message that can help determine the cause of error, if an error occurred.\n    httpResult - The description of the HTTP response returned by the web server for the request sent by this operation. This result contains the HTTP response status or GENERAL_ERROR if the HTTP request could not be executed.\nExample\: SUCCESS, PAGE_NOT_FOUND, UNAUTHORIZED, FORBIDDEN and so on.\n    responseHeaders - The list containing the headers of the response message, separated by "delimiter".\n    status - The HTTP response code.\nExample\: HTTP/1.1 200 OK\n\nResponses\:\n    success - The operation completed as stated in the description.\n    PAGE_NOT_FOUND - The URL specified to POST from was not found.\n    INFORMATIONAL - The POST was not fully processed, the server responded with an informational response.\n    REDIRECTION - The specified URL has moved.\n    failure - The operation completed unsuccessfully.\n\nNotes\:\n1. You can use KeyTool to import a SSL certificate in a KeyStore. For example, to import a certificate in the Java cacerts KeyStore, run\: keytool -import -file c\:/../<your_cert>.cer -alias <your_alias> -keystore <OO_Home>/java/lib/security/cacerts -keystorepass changeit. If the KeyStore does not exist, the command tries to create a new one containing only your certificate.\n2. You can use KeyTool to create a certificate chain through the following command\: \n   keytool -genkey -dname "cn\=Mark Jones, ou\=JavaSoft, o\=Sun, c\=US" \n      -alias business -keypass kpi135 -keystore C\:\\working\\mykeystore \n      -storepass ab987c -validity 180\nIt creates a certificate chain in a new keystore containing only one certificate.\n3. If the value assigned to the "trustAllRoots" input is "false" and "trustKeystore" is empty, the operation tries to use the default trust store, using the password "changeit". \n4. If the authentication type is Kerberos, you might need to add an SPN (Service Principal Name) for the web server's computer account.  In order to do this, you can use ADUC (Active Directory Users and Computers) with enabled 'Advanced Features'. Go to the web server's computer account (example\: CN\=<web_server_name>,CN\=Computers,DC\=domain,DC\=com), open the 'Properties' window and press the 'Attribute Editor' tab. Observe the values of the 'servicePrincipalName' attribute and add your SPN if not present. For example, HTTP/<web_server_FQDN>\:port.\n5. If you need to specify query parameters when making the request, use the "queryNamesList" and "queryValuesList" inputs. The operation also accepts including query parameters in the URL. For example, http\://hostname\:80/page.asp?parameterName1\=parameterValue1&parameterName2\=parameterValue2. If you specify the same query parameter both through the "queryNamesList" and the "url" inputs, the used value is the one from the "queryValuesList", not the one included in the "url".\n6. Apache Tomcat is currently the only supported application server when using form-based authentication.\n7. This operation uses chunked transfer encoding, which may cause failures when using HTTP servers and proxies that do not support HTTP/1.1 protocol.\n</pre>
-2ee85d5b-00be-4a14-a01f-8dc02926f2c6.96fd5568-9932-4c4f-ad86-76dec2160a39.description=This flow creates a new network interface card resource with a dynamic private IP.\n\nInputs\:\n    subscriptionId - Specifies the unique identifier of Azure subscription.\n    azureProtocol - Specifies a connection protocol.\nValid values\: https, http\nDefault value\: https\n    azureHost - Specifies the Portal to which requests will be sent.\nExample\: management.azure.com\n    apiVersion - Specifies the version of the API that must be used.\nDefault value\: 2017-06-01\n    authToken - Specifies the authentication token that is used for the request.\n    location - Specifies the Azure location where the resource exists.\nExample\: eastasia, westus, westeurope, japanwest\n    resourceGroupName - Specifies the name of the resource group that contains the resource.\n    virtualNetworkName - Virtual Network Name to be associated with the VM.\n    subnetName - This is the name for an Azure sub-network which   may represent all the machines at one geographic location.\n    nicName - Name of the NIC to be created. \nExample\: i-78248215\n    dnsJson - List of DNS Servers IP provided by Virtual Network seperated by coma, enclosed in quotes.\nExample\: "10.0.04","10.0.0.5"\n    publicIpAddressName - Public IP Address name to be assigned to the VM.\n    proxyHost - The proxy server used to access Azure Portal.\n    proxyPort - The port to connect to the proxy server. Enter both proxyHost and proxyPort only if you use proxy server.\nDefault\: 8080\n    proxyUsername - The username of the proxy server.\n    proxyPassword - The password associated with the \u201CproxyUsername\u201D input value to use when connecting to the proxy.\n    x509HostnameVerifier - Specifies the way the server hostname must match a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate. The hostname verification system prevents communication with other hosts other than the ones you intended. This is done by checking that the hostname is in the subject alternative name extension of the certificate. This system is designed to ensure that, if an attacker(Man In The Middle) redirects traffic to his machine, the client will not accept the connection. If you set this input to "allow_all", this verification is ignored and you become vulnerable to security attacks. For the value "browser_compatible" the hostname verifier works the same way as Curl and Firefox. The hostname must match either the first CN, or any of the subject-alts. A wildcard can occur in the CN, and in any of the subject-alts. The only difference between "browser_compatible" and "strict" is that a wildcard (such as "*.foo.com") with "browser_compatible" matches all subdomains, including "a.b.foo.com". From the security perspective, to provide protection against possible Man-In-The-Middle attacks, we strongly recommend to use "strict" option.\nDefault value\: strict\nValid values\: strict, browser_compatible, allow_all\n    trustKeystore - The pathname of the Java TrustStore file. This contains certificates from other parties that you expect to communicate with, or from Certificate Authorities that you trust to identify other parties.  If the protocol (specified by the 'url') is not 'https' or if trustAllRoots is 'true' this input is ignored.\nDefault value\: <OO_Home>/java/lib/security/cacerts\nFormat\: Java KeyStore (JKS)\n    trustPassword - The password associated with the TrustStore file. If trustAllRoots is false and trustKeystore is empty, trustPassword default will be supplied.\nDefault value\: changeit\n    keystore - The pathname of the Java KeyStore file. You only need this if the server requires client authentication. If the protocol (specified by the 'url') is not 'https' or if trustAllRoots is 'true' this input is ignored.\nDefault value\: <OO_Home>/java/lib/security/cacerts\nFormat\: Java KeyStore (JKS)\n    keystorePassword - The password associated with the KeyStore file. If trustAllRoots is false and keystore is empty, keystorePassword default will be supplied.\nDefault value\: changeit\n    connectTimeout - The time to wait for a connection to be established, in seconds. A timeout value of '0' represents an infinite timeout.\nDefault value\: 0\nFormat\: an integer representing seconds\nExamples\: 10, 20\n    socketTimeout - The timeout for waiting for data (a maximum period inactivity between two consecutive data packets), in seconds. A socketTimeout value of '0' represents an infinite timeout.\nDefault value\: 0\nFormat\: an integer representing seconds\n    useCookies - Specifies whether to enable cookie tracking or not. Cookies are stored between consecutive calls in a serializable session object therefore they will be available on a branch level (same subflow, same lane). If you specify a non-boolean value, the default value is used.\nDefault value\: true\nValid values\: true, false\n    keepAlive - Specifies whether to create a shared connection that will be used in subsequent calls. If keepAlive is false, the already open connection will be used and after execution it will close it. The operation will use a connection pool stored in a GlobalSessionObject that will be available throughout the execution (the flow and subflows, between parallel split lanes).\n\t\t\nOutputs\:\n    returnResult - This is the primary output. This output contains the headers from the "headers" input updated with the Authorization header, in case the operation completed successfully or an error message otherwise\n    statusCode - The HTTP response code. \nExample\: 200 OK\n    responseHeaders - A list containing all the headers of the response message.\n    document - The complete document returned by the HTTP Client Put operation.\n    exception - A message containing information that can help determine the cause of error, if an error occurred.    \n\nResponses\:\n    success - The operation completed successfully.\n    failure - Something went wrong.\n
-2ee85d5b-00be-4a14-a01f-8dc02926f2c6.aacc7131-9cb1-4508-89d6-a16e1bfa59b0.description=<pre>This operation checks whether a string matches another string, using a specific matching rule. The "toMatch" input is the string that is checked for matching the "matchTo" expression. \n\nInputs\:\n    matchType - The type of match to perform.\nValid values\: Exact Match, Contains, Contains Once, Does Not Contain, Match All Words, Match No Words, Regex (The values are not case sensitive)\nDefault value\: Exact Match\n    toMatch - The string that is checked for matching.\n    matchTo - The string to match against.\nExample\: If "matchType" is \u201CRegEx\u201D, the "matchTo" input is a regular expression such as\: ^-?\\d+(([\\.,]\\d+)?)+$. \n    ignoreCase - Specifies whether to ignore case when matching or not.\nValid values\: False, True\nDefault value\: False\n\nResults\:\n    returnResult - This is the primary output. It contains the string "Matches" if the "toMatch" string matches the "matchTo" string. Otherwise, it contains the string "Does Not Match".  \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
-2ee85d5b-00be-4a14-a01f-8dc02926f2c6.b3bd33e0-bed7-46c2-8efc-21e42753db10.description=973cd591-72ff-49bb-858e-b94268e34827.1b9dbf56-baa1-4f21-b480-c14c8bf1bd57.description
-2ee85d5b-00be-4a14-a01f-8dc02926f2c6.caa9b187-3ba7-4251-8062-ac1bb07eec7f.description=323b5010-bfc3-4d84-8fc0-c77c237d5537.9f364087-3329-48c2-b555-1f4c29bf0850.description
-2ee85d5b-00be-4a14-a01f-8dc02926f2c6.d9537561-570f-4d00-a7bd-e16d99fa4279.description=<pre>\nThis operation does not do anything. It can be used to filter flow variables by defining them as inputs and filtering them in the Results tab.\n\nInputs\:\n    field1 \u2013 An optional input that can be used for filtering flow variables.\n    field2 \u2013 An optional input that can be used for filtering flow variables.\n    field3 \u2013 An optional input that can be used for filtering flow variables.\n    field4 \u2013 An optional input that can be used for filtering flow variables.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of  "field1" as it was specified at input or when filtered. \n\nResponses\:\n    success - The operation completed as stated in the description.\n</pre>
+<flow id="8af8f450-29e4-41c1-a5de-b4536b426af8">
+  <descriptionCdata><![CDATA[8af8f450-29e4-41c1-a5de-b4536b426af8.2a290cf4-6429-420b-b1ef-5565877deda1.description=<pre>This operation checks whether a string matches another string, using a specific matching rule. The "toMatch" input is the string that is checked for matching the "matchTo" expression. \n\nInputs\:\n    matchType - The type of match to perform.\nValid values\: Exact Match, Contains, Contains Once, Does Not Contain, Match All Words, Match No Words, Regex (The values are not case sensitive)\nDefault value\: Exact Match\n    toMatch - The string that is checked for matching.\n    matchTo - The string to match against.\nExample\: If "matchType" is \u201CRegEx\u201D, the "matchTo" input is a regular expression such as\: ^-?\\d+(([\\.,]\\d+)?)+$. \n    ignoreCase - Specifies whether to ignore case when matching or not.\nValid values\: False, True\nDefault value\: False\n\nResults\:\n    returnResult - This is the primary output. It contains the string "Matches" if the "toMatch" string matches the "matchTo" string. Otherwise, it contains the string "Does Not Match".  \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
+8af8f450-29e4-41c1-a5de-b4536b426af8.41d8aeeb-f22a-4b2b-9111-ba8add6d262b.description=973cd591-72ff-49bb-858e-b94268e34827.1b9dbf56-baa1-4f21-b480-c14c8bf1bd57.description
+8af8f450-29e4-41c1-a5de-b4536b426af8.95a21015-0610-43d6-821c-d3e9dd143d3a.description=This flow is used to create a public IP address.\n\nInputs\:\n    subscriptionId - Specifies the unique identifier of Azure subscription.\n    azureProtocol - Specifies a connection protocol.\nValid values\: https, http\nDefault value\: https\n    azureHost - Specifies the Portal to which requests will be sent\nExample\: management.azure.com\n    apiVersion - Specifies the version of the API that must be used.\nDefault value\: 2017-06-01\n    authToken - Specifies the authentication token that is used for the request.\n    location - Specifies the Azure location where the resource exists.\nExample\: eastasia, westus, westeurope, japanwest\n    resourceGroupName - Specifies the name of the resource group that contains the resource.\n    proxyHost - The proxy server used to access Azure Portal.\n    proxyPort - The port to connect to the proxy server. Enter both proxyHost and proxyPort only if you use proxy server.\nDefault\: 8080\n    proxyPassword - The password associated with the \u201CproxyUsername\u201D input value to use when connecting to the proxy.\n    proxyUsername - The username of the proxy server.\n    x509HostnameVerifier - Specifies the way the server hostname must match a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate. The hostname verification system prevents communication with other hosts other than the ones you intended. This is done by checking that the hostname is in the subject alternative name extension of the certificate. This system is designed to ensure that, if an attacker(Man In The Middle) redirects traffic to his machine, the client will not accept the connection. If you set this input to "allow_all", this verification is ignored and you become vulnerable to security attacks. For the value "browser_compatible" the hostname verifier works the same way as Curl and Firefox. The hostname must match either the first CN, or any of the subject-alts. A wildcard can occur in the CN, and in any of the subject-alts. The only difference between "browser_compatible" and "strict" is that a wildcard (such as "*.foo.com") with "browser_compatible" matches all subdomains, including "a.b.foo.com". From the security perspective, to provide protection against possible Man-In-The-Middle attacks, we strongly recommend to use "strict" option.\nDefault value\: strict\nValid values\: strict, browser_compatible, allow_all\n    trustKeystore - The pathname of the Java TrustStore file. This contains certificates from other parties that you expect to communicate with, or from Certificate Authorities that you trust to identify other parties.  If the protocol (specified by the 'url') is not 'https' or if trustAllRoots is 'true' this input is ignored.\nDefault value\: <OO_Home>/java/lib/security/cacerts\nFormat\: Java KeyStore (JKS)\n    trustPassword - The password associated with the TrustStore file. If trustAllRoots is false and trustKeystore is empty, trustPassword default will be supplied.\nDefault value\: changeit\n    keystore - The pathname of the Java KeyStore file. You only need this if the server requires client authentication. If the protocol (specified by the 'url') is not 'https' or if trustAllRoots is 'true' this input is ignored.\nDefault value\: <OO_Home>/java/lib/security/cacerts\nFormat\: Java KeyStore (JKS)\n    keystorePassword - The password associated with the KeyStore file. If trustAllRoots is false and keystore is empty, keystorePassword default will be supplied.\nDefault value\: changeit\n    connectTimeout - The time to wait for a connection to be established, in seconds. A timeout value of '0' represents an infinite timeout.\nDefault value\: 0\nFormat\: an integer representing seconds\nExamples\: 10, 20\n    socketTimeout - The timeout for waiting for data (a maximum period inactivity between two consecutive data packets), in seconds. A socketTimeout value of '0' represents an infinite timeout.\nDefault value\: 0\nFormat\: an integer representing seconds\n    useCookies - Specifies whether to enable cookie tracking or not. Cookies are stored between consecutive calls in a serializable session object therefore they will be available on a branch level (same subflow, same lane). If you specify a non-boolean value, the default value is used.\nDefault value\: true\nValid values\: true, false\n    keepAlive - Specifies whether to create a shared connection that will be used in subsequent calls. If keepAlive is false, the already open connection will be used and after execution it will close it. The operation will use a connection pool stored in a GlobalSessionObject that will be available throughout the execution (the flow and subflows, between parallel split lanes).\n\t\t\nOutputs\:\n    returnResult - This is the primary output. This output contains the headers from the "headers" input updated with the Authorization header, in case the operation completed successfully or an error message otherwise\n    statusCode - The HTTP response code. \nExample\: 200 OK\n    responseHeaders - A list containing all the headers of the response message.\n    document - The complete document returned by the HTTP Client Put operation.\n    exception - A message containing information that can help determine the cause of error, if an error occurred.\n\nResponses\:\n    success - The operation completed successfully.\n    failure - Something went wrong.\n
+8af8f450-29e4-41c1-a5de-b4536b426af8.ada79225-e245-4c14-aca5-70624b0695af.description=<pre>\nService to perform HTTP POST using the Java HTTP Client. This  operation is used to execute an HTTP POST request while sending HTTP POST data in raw form instead of including it in the request itself.\n\nInputs\:\n    url - The URL where to send the HTTP POST request.\n    username - The user name used for URL authentication. For NTLM authentication, the required format is 'domain\\user'.\n    password - The password used for URL authentication.\n    authType - The type of authentication used by this operation when trying to execute the request on the target server.\nValid values\: basic, form, springForm, digest, ntlm, kerberos, anonymous (no authentication).\nDefault value\: anonymous - authentication not used when executing the request.\n    kerberosConfFile - The  path to the Kerberos configuration file. If this input is empty, the "kdc" (Key Distribution Center) and "realm" get their values from the full domain name obtained from the web server URL.\n    timeout - The time to wait for a connection to be established, in  milliseconds. \nValid values\: This input needs a value greater than or equal to zero. A "timeout" value of '0' represents an infinite timeout.\nDefault value\: 0\n    socketTimeout - The time to wait for data to be retrieved, in milliseconds. \nValid values\: This input needs a value greater than or equal to zero. A "socketTimeout" value of '0' represents an infinite timeout.\nDefault value\: 0\n    useCookies - Specifies whether to enable cookie tracking or not. Cookies are stored between consecutive calls. If you specify a non-Boolean value, the default value is used.\nValid values\: true, false\nDefault value\: true\n    proxy - The proxy server used to access the web site.\n    proxyPort - The proxy server port.\nDefault value\: 8080\n    proxyUsername - The user name used when connecting to the proxy server.\n    proxyPassword - The proxy server password associated with the "proxyUsername" input value.\n    encodeURL - Specifies whether to encode the URL. If you specify a non-Boolean value, the default value is used.\nValid values\: true, false\nDefault value\: false\n    file - The file to be posted by this operation using the HTTP POST method. This should be a path to a file/document on the disk.\n    string - The message body to be posted by this operation using the HTTP POST method.\n    contentType - The content type that should be set in the request header, representing the MIME-type of the data in the message body.\nExamples\: "text/html", "text/html; charset\=UTF-8", "application/x-www-form-urlencoded".\n    characterSet - The character encoding to be used for the HTTP POST request and response.\nDefault value\: UTF-8\n    trustAllRoots - Specifies whether to enable weak security over SSL. A SSL certificate is trusted even if no trusted certification authority issued it.\nValid values\: true, false\nDefault value\: true\n    x509HostnameVerifier - Specifies the way the server hostname must match a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate. The hostname verification system prevents communication with other hosts other than the ones you intended. This is done by checking that the hostname is in the subject alternative name extension of the certificate. This system is designed to ensure that, if an attacker(Man In The Middle) redirects traffic to his machine, the client will not accept the connection. If you set this input to "allow_all", this verification is ignored and you become vulnerable to security attacks. For the value "browser_compatible" the hostname verifier works the same way as Curl and Firefox. The hostname must match either the first CN, or any of the subject-alts. A wildcard can occur in the CN, and in any of the subject-alts. The only difference between "browser_compatible" and "strict" is that a wildcard (such as "*.foo.com") with "browser_compatible" matches all subdomains, including "a.b.foo.com". From the security perspective, to provide protection against possible Man-In-The-Middle attacks, we strongly recommend to use "strict" option.\nDefault value\: allow_all\nValid values\: strict, browser_compatible, allow_all\n    keystore - The location of the KeyStore file - a URL or the local path to it. This input is empty if no HTTPS client authentication is used. The default value will be provided if "trustAllRoots" is "false".\nDefault value\: <OO_Home>/java/lib/security/cacerts\n    keystorePassword - The password associated with the KeyStore file. If "trustAllRoots" is "false" and "keystore" is empty, "keystorePassword" default will be supplied.\nDefault value\: changeit\n    trustKeystore - The location of the TrustStore file - a URL or the local path to it. This input is empty if no HTTPS server authentication is used. The default value will be provided if "trustAllRoots" is "false".\nDefault value\: <OO_Home>/java/lib/security/cacerts\n    trustPassword - The password associated with the TrustStore file. If "trustAllRoots" is "false" and "trustKeystore" is empty, "trustPassword" default will be supplied.\nDefault value\: changeit\n    headerNamesList - The list containing the header names to use for the request.\nExample\: Accept,Content-Type\n    headerValuesList - The list containing the header values to use for the request. \nExample\: text/plain,application/x-www-form-urlencoded\n    queryNamesList - The list containing the names of the query parameters to use for the request. \nExample\: parameterName1,parameterName2 \n    queryValuesList - The list containing the values of the query parameters to use for the request. \nExample\: parameterValue1,parameterValue2\n    delimiter - The delimiter used to separates list elements.\nDefault value\: ','\n\nResults\: \n    returnCode - This is the primary output. A code used to determine the operation response, specifying whether the operation is successful or not.\n    resultText - The raw result of the operation.\n    document - The complete document returned by the Http Client Post Raw operation.\n    URL - The URL used for the HTTP request.\n    pageLoadTimeInMS - The number of milliseconds taken for the page to load.\n    responseTimeInMS - The number of milliseconds taken before the server responded.\n    errorMessage - An informational message that can help determine the cause of error, if an error occurred.\n    httpResult - The description of the HTTP response returned by the web server for the request sent by this operation. This result contains the HTTP response status or GENERAL_ERROR if the HTTP request could not be executed.\nExample\: SUCCESS, PAGE_NOT_FOUND, UNAUTHORIZED, FORBIDDEN and so on.\n    responseHeaders - The list containing the headers of the response message, separated by "delimiter".\n    status - The HTTP response code.\nExample\: HTTP/1.1 200 OK\n\nResponses\:\n    success - The operation completed as stated in the description.\n    PAGE_NOT_FOUND - The URL specified to POST from was not found.\n    INFORMATIONAL - The POST was not fully processed, the server responded with an informational response.\n    REDIRECTION - The specified URL has moved.\n    failure - The operation completed unsuccessfully.\n\nNotes\:\n1. You can use KeyTool to import a SSL certificate in a KeyStore. For example, to import a certificate in the Java cacerts KeyStore, run\: keytool -import -file c\:/../<your_cert>.cer -alias <your_alias> -keystore <OO_Home>/java/lib/security/cacerts -keystorepass changeit. If the KeyStore does not exist, the command tries to create a new one containing only your certificate.\n2. You can use KeyTool to create a certificate chain through the following command\: \n   keytool -genkey -dname "cn\=Mark Jones, ou\=JavaSoft, o\=Sun, c\=US" \n      -alias business -keypass kpi135 -keystore C\:\\working\\mykeystore \n      -storepass ab987c -validity 180\nIt creates a certificate chain in a new keystore containing only one certificate.\n3. If the value assigned to the "trustAllRoots" input is "false" and "trustKeystore" is empty, the operation tries to use the default trust store, using the password "changeit". \n4. If the authentication type is Kerberos, you might need to add an SPN (Service Principal Name) for the web server's computer account.  In order to do this, you can use ADUC (Active Directory Users and Computers) with enabled 'Advanced Features'. Go to the web server's computer account (example\: CN\=<web_server_name>,CN\=Computers,DC\=domain,DC\=com), open the 'Properties' window and press the 'Attribute Editor' tab. Observe the values of the 'servicePrincipalName' attribute and add your SPN if not present. For example, HTTP/<web_server_FQDN>\:port.\n5. If you need to specify query parameters when making the request, use the "queryNamesList" and "queryValuesList" inputs. The operation also accepts including query parameters in the URL. For example, http\://hostname\:80/page.asp?parameterName1\=parameterValue1&parameterName2\=parameterValue2. If you specify the same query parameter both through the "queryNamesList" and the "url" inputs, the used value is the one from the "queryValuesList", not the one included in the "url".\n6. Apache Tomcat is currently the only supported application server when using form-based authentication.\n7. This operation uses chunked transfer encoding, which may cause failures when using HTTP servers and proxies that do not support HTTP/1.1 protocol.\n</pre>
+8af8f450-29e4-41c1-a5de-b4536b426af8.dc068180-3421-43d7-8e7c-55cabe9002ea.description=This flow creates a new network interface card resource with a dynamic private IP.\n\nInputs\:\n    subscriptionId - Specifies the unique identifier of Azure subscription.\n    azureProtocol - Specifies a connection protocol.\nValid values\: https, http\nDefault value\: https\n    azureHost - Specifies the Portal to which requests will be sent.\nExample\: management.azure.com\n    apiVersion - Specifies the version of the API that must be used.\nDefault value\: 2017-06-01\n    authToken - Specifies the authentication token that is used for the request.\n    location - Specifies the Azure location where the resource exists.\nExample\: eastasia, westus, westeurope, japanwest\n    resourceGroupName - Specifies the name of the resource group that contains the resource.\n    virtualNetworkName - Virtual Network Name to be associated with the VM.\n    subnetName - This is the name for an Azure sub-network which   may represent all the machines at one geographic location.\n    nicName - Name of the NIC to be created. \nExample\: i-78248215\n    dnsJson - List of DNS Servers IP provided by Virtual Network seperated by coma, enclosed in quotes.\nExample\: "10.0.04","10.0.0.5"\n    publicIpAddressName - Public IP Address name to be assigned to the VM.\n    proxyHost - The proxy server used to access Azure Portal.\n    proxyPort - The port to connect to the proxy server. Enter both proxyHost and proxyPort only if you use proxy server.\nDefault\: 8080\n    proxyUsername - The username of the proxy server.\n    proxyPassword - The password associated with the \u201CproxyUsername\u201D input value to use when connecting to the proxy.\n    x509HostnameVerifier - Specifies the way the server hostname must match a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate. The hostname verification system prevents communication with other hosts other than the ones you intended. This is done by checking that the hostname is in the subject alternative name extension of the certificate. This system is designed to ensure that, if an attacker(Man In The Middle) redirects traffic to his machine, the client will not accept the connection. If you set this input to "allow_all", this verification is ignored and you become vulnerable to security attacks. For the value "browser_compatible" the hostname verifier works the same way as Curl and Firefox. The hostname must match either the first CN, or any of the subject-alts. A wildcard can occur in the CN, and in any of the subject-alts. The only difference between "browser_compatible" and "strict" is that a wildcard (such as "*.foo.com") with "browser_compatible" matches all subdomains, including "a.b.foo.com". From the security perspective, to provide protection against possible Man-In-The-Middle attacks, we strongly recommend to use "strict" option.\nDefault value\: strict\nValid values\: strict, browser_compatible, allow_all\n    trustKeystore - The pathname of the Java TrustStore file. This contains certificates from other parties that you expect to communicate with, or from Certificate Authorities that you trust to identify other parties.  If the protocol (specified by the 'url') is not 'https' or if trustAllRoots is 'true' this input is ignored.\nDefault value\: <OO_Home>/java/lib/security/cacerts\nFormat\: Java KeyStore (JKS)\n    trustPassword - The password associated with the TrustStore file. If trustAllRoots is false and trustKeystore is empty, trustPassword default will be supplied.\nDefault value\: changeit\n    keystore - The pathname of the Java KeyStore file. You only need this if the server requires client authentication. If the protocol (specified by the 'url') is not 'https' or if trustAllRoots is 'true' this input is ignored.\nDefault value\: <OO_Home>/java/lib/security/cacerts\nFormat\: Java KeyStore (JKS)\n    keystorePassword - The password associated with the KeyStore file. If trustAllRoots is false and keystore is empty, keystorePassword default will be supplied.\nDefault value\: changeit\n    connectTimeout - The time to wait for a connection to be established, in seconds. A timeout value of '0' represents an infinite timeout.\nDefault value\: 0\nFormat\: an integer representing seconds\nExamples\: 10, 20\n    socketTimeout - The timeout for waiting for data (a maximum period inactivity between two consecutive data packets), in seconds. A socketTimeout value of '0' represents an infinite timeout.\nDefault value\: 0\nFormat\: an integer representing seconds\n    useCookies - Specifies whether to enable cookie tracking or not. Cookies are stored between consecutive calls in a serializable session object therefore they will be available on a branch level (same subflow, same lane). If you specify a non-boolean value, the default value is used.\nDefault value\: true\nValid values\: true, false\n    keepAlive - Specifies whether to create a shared connection that will be used in subsequent calls. If keepAlive is false, the already open connection will be used and after execution it will close it. The operation will use a connection pool stored in a GlobalSessionObject that will be available throughout the execution (the flow and subflows, between parallel split lanes).\n\t\t\nOutputs\:\n    returnResult - This is the primary output. This output contains the headers from the "headers" input updated with the Authorization header, in case the operation completed successfully or an error message otherwise\n    statusCode - The HTTP response code. \nExample\: 200 OK\n    responseHeaders - A list containing all the headers of the response message.\n    document - The complete document returned by the HTTP Client Put operation.\n    exception - A message containing information that can help determine the cause of error, if an error occurred.    \n\nResponses\:\n    success - The operation completed successfully.\n    failure - Something went wrong.\n
+8af8f450-29e4-41c1-a5de-b4536b426af8.ea23be4b-071e-4e53-b3a1-6902944151c2.description=323b5010-bfc3-4d84-8fc0-c77c237d5537.9f364087-3329-48c2-b555-1f4c29bf0850.description
+8af8f450-29e4-41c1-a5de-b4536b426af8.f03e550d-aeef-416c-a71c-0661c24145d0.description=<pre>\nThis operation does not do anything. It can be used to filter flow variables by defining them as inputs and filtering them in the Results tab.\n\nInputs\:\n    field1 \u2013 An optional input that can be used for filtering flow variables.\n    field2 \u2013 An optional input that can be used for filtering flow variables.\n    field3 \u2013 An optional input that can be used for filtering flow variables.\n    field4 \u2013 An optional input that can be used for filtering flow variables.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of  "field1" as it was specified at input or when filtered. \n\nResponses\:\n    success - The operation completed as stated in the description.\n</pre>
 ]]></descriptionCdata>
   <annotation></annotation>
-  <name>Deploy VM</name>
+  <name>Deploy VMv2</name>
   <categories/>
   <inputs>
-    <userInputBinding id="3f05a4c1-702e-4796-a568-b9bc813144a4">
+    <userInputBinding id="96b366bd-9b00-499c-bfb0-020067dfc066">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -27,7 +27,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="b5b45f81-19b2-40bd-92a2-fdec1e2f32b3">
+    <userInputBinding id="51b039bf-407c-4b17-b32c-7abebc0d4aea">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -42,7 +42,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="a1bf8344-1b18-4047-86e8-227586615f1c">
+    <userInputBinding id="35500c7b-5273-448a-a8cc-6e363598d9a9">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -57,7 +57,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="98394f3e-41df-452c-96d0-36f389534024">
+    <userInputBinding id="5c969800-915b-4e09-8cdf-73c1b48fb215">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -72,7 +72,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="1b36c50c-08be-4c6c-aae4-556345325499">
+    <userInputBinding id="53a0000c-476b-4563-881b-3f616afae51b">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -87,7 +87,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="d1dbd23d-21f9-4d85-9385-82e3a447270f">
+    <userInputBinding id="75428281-f63a-46ad-a247-313b49e3224f">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -102,7 +102,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="c3a55ff8-7ad2-42d9-ad4a-36e6c434d692">
+    <userInputBinding id="88442e92-0e5f-472f-bc5d-e3caae7996e5">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -117,7 +117,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="e82f9bb9-cbf1-4f6d-a86a-e34a2ad4a571">
+    <userInputBinding id="f66dfc8d-65c7-4d72-9257-8d86f764d5be">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -132,7 +132,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="bd849fe4-1e82-4188-908e-ae9eb90bc869">
+    <userInputBinding id="59bb7af9-feaa-46de-949c-ee9ad7936f39">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -147,7 +147,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="9c48d76f-4270-499f-b4a4-9773d09d1997">
+    <userInputBinding id="07a07257-736e-41fc-a5d6-a61781b93292">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -162,7 +162,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="2735f891-66b5-4232-a12c-f3fc1dc67392">
+    <userInputBinding id="c7302424-2c5f-4128-98af-97f9435d81ce">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -177,7 +177,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="412adaac-7a87-4f48-b3f0-45e64aae889e">
+    <userInputBinding id="f200ef68-36ae-4be6-8d47-aa3c72031bbc">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -192,7 +192,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="105e22e5-601c-4ea4-8ba0-86a69390d198">
+    <userInputBinding id="e5e86749-e0c7-4093-8ea2-1858bce64266">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -207,7 +207,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="3bbed887-97a8-4e19-9ccb-a01e67e2b342">
+    <userInputBinding id="42dd19c8-f8f2-44ff-8983-7177021c4f62">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -222,7 +222,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="b5f5ef7b-01b2-4da2-9a15-c11f3a7d3144">
+    <userInputBinding id="1c1aa8ac-b6d8-4964-a2b3-25bfb6059fa6">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -237,7 +237,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="299d14fb-d8c7-4dcc-8dc9-0cc6e9d35645">
+    <userInputBinding id="dd55c52d-b09e-4537-8381-7a8a862d731c">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -252,7 +252,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="07b218d4-45a7-4040-8523-f6cc4cf4da75">
+    <userInputBinding id="0666cd27-a831-4cda-8909-43feb7b5c27b">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -267,7 +267,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="80821c6d-a3a7-40a0-8e20-dfb488218738">
+    <userInputBinding id="7c937ce4-43d3-4841-b725-083bf165bc3d">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -282,7 +282,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="5808cb4f-a261-442a-ae80-4a561a3ae1ea">
+    <userInputBinding id="2661448d-c9af-42d1-9023-56f48da12fbd">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -297,7 +297,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="22bd5b58-a5fc-4ca9-b893-dd1de8ee37cf">
+    <userInputBinding id="993bd23e-fbc2-4237-ba33-6f75b34912ee">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -312,7 +312,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="3a6c9191-c875-4bfb-87d8-5123fcb94a65">
+    <userInputBinding id="d638de1a-f5c7-42a2-8a3e-26f699ef3634">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -327,7 +327,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="f2a873b9-0711-4d23-a66b-ce4dd9aaa9a7">
+    <userInputBinding id="3313b45b-49d7-4237-b5f3-58383ba7ca92">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -344,7 +344,7 @@
     </userInputBinding>
   </inputs>
   <possibleResponses>
-    <opResponse id="7be3fa3f-d3c4-4c14-9a22-288d2a8cd638">
+    <opResponse id="412fb296-f530-49df-b99b-dec3c8ec7d51">
       <annotation></annotation>
       <name>failure</name>
       <isDefault>false</isDefault>
@@ -352,7 +352,7 @@
       <type>ERROR</type>
       <matchRules/>
     </opResponse>
-    <opResponse id="1a7c2c8b-f5b8-4480-93a5-bd26f2deb3bc">
+    <opResponse id="1270c497-d16c-4090-8d15-6d3520a88399">
       <annotation></annotation>
       <name>success</name>
       <isDefault>true</isDefault>
@@ -362,7 +362,7 @@
     </opResponse>
   </possibleResponses>
   <availableResultExpressions>
-    <expression id="be33be9e-69f0-4f91-ae8b-32fb7a16371a">
+    <expression id="7ee60660-f18d-4a61-8c13-11524742ef70">
       <annotation></annotation>
       <name>publicIPAddress</name>
       <fieldName>publicIPAddress</fieldName>
@@ -370,14 +370,14 @@
       <filters/>
     </expression>
   </availableResultExpressions>
-  <resultExpression id="21d27a17-75fd-47ab-a94c-9abdb7488ac3">
+  <resultExpression id="e0ee2b82-42e7-4fb4-b3ca-18e3a36d1419">
     <annotation></annotation>
     <name>FailureMessage</name>
     <fieldName>FailureMessage</fieldName>
     <sourceType>RAWRESULT</sourceType>
     <filters/>
   </resultExpression>
-  <iconSpec id="718d15e6-8846-4dd6-9214-03e1f9a17727">
+  <iconSpec id="dd7f7ffd-1e31-48e0-a8c8-e3896298b313">
     <baseIcon>flow.png</baseIcon>
     <basePath>System</basePath>
     <readOnly>false</readOnly>
@@ -388,8 +388,8 @@
   <compatibleRuntimeContext>false</compatibleRuntimeContext>
   <historyCheckPointFlow>true</historyCheckPointFlow>
   <steps>
-    <step id="63c1575c-dd16-4e71-b090-d5f713685ce4">
-      <annotation>2ee85d5b-00be-4a14-a01f-8dc02926f2c6.63c1575c-dd16-4e71-b090-d5f713685ce4.description</annotation>
+    <step id="ada79225-e245-4c14-aca5-70624b0695af">
+      <annotation>8af8f450-29e4-41c1-a5de-b4536b426af8.ada79225-e245-4c14-aca5-70624b0695af.description</annotation>
       <name>Get Toket</name>
       <bounds>
         <x>30.0</x>
@@ -397,12 +397,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="a0398c82-3b79-4940-9ccb-296eda197edd">
+      <iconSpec id="fe7e70e2-1ae4-434c-b01e-67ad29f5bff1">
         <baseIcon>earth.png</baseIcon>
         <basePath>/Networking/</basePath>
         <readOnly>false</readOnly>
         <layers>
-          <iconSpec id="c9505e36-c0e6-4004-9b0d-3072bc75015c">
+          <iconSpec id="f27f4bcd-ca94-4f46-817f-e1f4ddf005b9">
             <baseIcon>send.png</baseIcon>
             <basePath>/Annotations/</basePath>
             <readOnly>false</readOnly>
@@ -423,7 +423,7 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="cff58d3a-34ef-44b8-96b3-626b5e83672b">
+        <staticBinding id="f35b586d-ab8f-4795-959b-bcecf7e2e92d">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -438,7 +438,7 @@
           <value>https://login.microsoftonline.com/${directoryId}/oauth2/token</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="f7bbb656-6a30-423f-bb6f-4db2cc7d2c9d">
+        <staticBinding id="113a3d34-597e-49c1-ac8d-c55c00b1f174">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -453,7 +453,7 @@
           <value>false</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="4d08361e-a1e3-4033-8e7e-127171e266fd">
+        <staticBinding id="51d46b30-90c4-4b8b-9cf7-3d3916c36ff9">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -468,7 +468,7 @@
           <value>grant_type=client_credentials&amp;resource=https%3A%2F%2Fmanagement.core.windows.net%2F&amp;client_id=${clientId}&amp;client_secret=${clientSecret}</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="3926d278-7658-4251-a9c1-e80e0d585487">
+        <staticBinding id="5180288d-e9e7-421e-9a8e-9cb505d5f0e6">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -483,7 +483,7 @@
           <value>application/x-www-form-urlencoded</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="a9bd686c-a842-4fbb-aa49-73f083842859">
+        <staticBinding id="accb7087-96cd-4711-8890-5d68830a8137">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -496,7 +496,7 @@
           <value>utf-8</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="3627b0cc-0e77-48a0-a52f-a4cfb14ea5f6">
+        <staticBinding id="1955ac86-c898-424f-b174-33338391122f">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -511,7 +511,7 @@
           <value>false</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="25a65967-4bdd-4ea0-9cc4-cf25c92a1f0f">
+        <staticBinding id="3028196e-4b05-4e2d-91a4-14be4c0e009d">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -524,7 +524,7 @@
           <value>flight-uxoptin,stsservicecookie,x-ms-gateway-slice,stsservicecookie</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="8841a9df-2c21-4439-856b-98ae39d6dbc9">
+        <staticBinding id="18557a27-5cfa-4fa4-ae2e-b5754de062f4">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -537,7 +537,7 @@
           <value>true,ests,productionb,ests</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="0fb479f8-579b-4446-966d-19aba35a0366">
+        <staticBinding id="4078a48f-0fb7-4192-bbd7-b27e0fc12573">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -550,7 +550,7 @@
           <value>,</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="67acba6f-0c50-409e-80ab-eca0679ec99e">
+        <staticBinding id="380deb98-545b-40f1-a635-ce602dc64269">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -567,7 +567,7 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="6db4d2d3-42a5-4c83-bc29-8f763e0305b3">
+        <transition id="7fc20fac-d419-42ca-ae13-e4e4e7562274">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -576,10 +576,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>70bf82dd-41ef-4a2f-ae09-de74a30423d9</refId>
+            <refId>fee0e7ef-565e-4c1b-8c18-f6fa259728ca</refId>
           </destination>
           <source>
-            <refId>63c1575c-dd16-4e71-b090-d5f713685ce4</refId>
+            <refId>ada79225-e245-4c14-aca5-70624b0695af</refId>
           </source>
           <positions>
             <point>
@@ -596,7 +596,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="5e59550a-7528-45d1-8508-689d2752f0ca">
+        <transition id="588e3c2f-d88b-44cd-b533-fb6256fd266c">
           <annotation></annotation>
           <name>REDIRECTION</name>
           <command>NEXT</command>
@@ -605,10 +605,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>70bf82dd-41ef-4a2f-ae09-de74a30423d9</refId>
+            <refId>fee0e7ef-565e-4c1b-8c18-f6fa259728ca</refId>
           </destination>
           <source>
-            <refId>63c1575c-dd16-4e71-b090-d5f713685ce4</refId>
+            <refId>ada79225-e245-4c14-aca5-70624b0695af</refId>
           </source>
           <positions>
             <point>
@@ -633,7 +633,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="387aebc4-525b-4075-aab5-711f7755320b">
+        <transition id="c9523542-8891-48d9-b3ad-676260a55bba">
           <annotation></annotation>
           <name>PAGE_NOT_FOUND</name>
           <command>NEXT</command>
@@ -642,10 +642,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>70bf82dd-41ef-4a2f-ae09-de74a30423d9</refId>
+            <refId>fee0e7ef-565e-4c1b-8c18-f6fa259728ca</refId>
           </destination>
           <source>
-            <refId>63c1575c-dd16-4e71-b090-d5f713685ce4</refId>
+            <refId>ada79225-e245-4c14-aca5-70624b0695af</refId>
           </source>
           <positions>
             <point>
@@ -670,7 +670,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="0f7d3c5c-f421-4a58-ac2e-9ec0279b747c">
+        <transition id="ebeab6de-9619-4dd6-b939-7a234f109ab3">
           <annotation></annotation>
           <name>INFORMATIONAL</name>
           <command>NEXT</command>
@@ -679,10 +679,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>70bf82dd-41ef-4a2f-ae09-de74a30423d9</refId>
+            <refId>fee0e7ef-565e-4c1b-8c18-f6fa259728ca</refId>
           </destination>
           <source>
-            <refId>63c1575c-dd16-4e71-b090-d5f713685ce4</refId>
+            <refId>ada79225-e245-4c14-aca5-70624b0695af</refId>
           </source>
           <positions>
             <point>
@@ -707,7 +707,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="411869e8-510b-441a-851b-304a4854037b">
+        <transition id="9d689f54-4923-4d9e-b39d-b709444a7ebe">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -716,10 +716,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>6372cdad-9c31-4a49-8201-6298504504b1</refId>
+            <refId>95a21015-0610-43d6-821c-d3e9dd143d3a</refId>
           </destination>
           <source>
-            <refId>63c1575c-dd16-4e71-b090-d5f713685ce4</refId>
+            <refId>ada79225-e245-4c14-aca5-70624b0695af</refId>
           </source>
           <positions>
             <point>
@@ -742,35 +742,35 @@
         <refId>0a7e26dc-bdbd-4b5b-b45a-27067dda369f</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="63c38fc8-c416-4e7d-b646-e6732096fe78">
+        <flowVariableAssignment id="3fcb61c7-8b9a-4b50-a04e-879cd2639bfe">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>authToken</contextKey>
-          <expression id="ec46c452-d157-4be7-955b-6a9ef5488bc0">
+          <expression id="d8ee8f8e-efa5-4fd6-bd81-6528165c413c">
             <annotation></annotation>
             <name>Result Field: document</name>
             <fieldName>document</fieldName>
             <sourceType>RAWRESULT</sourceType>
             <filters>
-              <stripTrailingFilter id="c375904d-514d-4655-9af5-1eb6406d07cc">
+              <stripTrailingFilter id="7b2203e7-b2b4-4377-be4c-94b0e655d00c">
                 <annotation></annotation>
                 <name>Strip</name>
                 <strip>&quot;access_token&quot;:&quot;</strip>
                 <type>ALL_CHARACTERS_UP_TO_AND_INCLUDING</type>
               </stripTrailingFilter>
-              <replaceAllFilter id="71491b2c-c33f-4e6c-9da4-2f08bdf10d10">
+              <replaceAllFilter id="5a955a5a-0337-4696-9c38-5abc57c958c5">
                 <annotation></annotation>
                 <name>Replace</name>
                 <ignoreCase>false</ignoreCase>
                 <searchString>&quot;}</searchString>
                 <replaceType>ALL</replaceType>
               </replaceAllFilter>
-              <scriptletFilter id="15fe663c-9837-412b-927d-3411b991ec89">
+              <scriptletFilter id="7d3c77f8-4c80-42dd-828f-2c4c269dc891">
                 <annotation></annotation>
                 <name>Scriptlet</name>
-                <scriptlet id="ac0e6b36-0792-4876-99af-f1d2aa7b3586">
+                <scriptlet id="f347dae8-9265-4a97-879a-5011165c6933">
                   <annotation></annotation>
                   <name>default</name>
                   <script>if (scriptletInput !== null) {
@@ -785,7 +785,7 @@
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <returnStep id="70bf82dd-41ef-4a2f-ae09-de74a30423d9">
+    <returnStep id="fee0e7ef-565e-4c1b-8c18-f6fa259728ca">
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
@@ -794,7 +794,7 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="425d39cb-0ede-4ae8-9b1e-c3936ae56d8c">
+      <iconSpec id="b8879f27-d9c5-47d4-b749-7d1c6be7386f">
         <baseIcon>return_failure.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -814,7 +814,7 @@
       <userPrompt></userPrompt>
       <bindings/>
       <transitions>
-        <transition id="df472c3d-666e-4a9c-ba3c-ce15aba52b7e">
+        <transition id="10f280e3-2ee9-43ac-9c60-01bb68a586a1">
           <annotation></annotation>
           <name>return</name>
           <command>NEXT</command>
@@ -823,10 +823,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>70bf82dd-41ef-4a2f-ae09-de74a30423d9</refId>
+            <refId>fee0e7ef-565e-4c1b-8c18-f6fa259728ca</refId>
           </destination>
           <source>
-            <refId>70bf82dd-41ef-4a2f-ae09-de74a30423d9</refId>
+            <refId>fee0e7ef-565e-4c1b-8c18-f6fa259728ca</refId>
           </source>
           <positions/>
         </transition>
@@ -835,8 +835,8 @@
       <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
-    <step id="96fd5568-9932-4c4f-ad86-76dec2160a39">
-      <annotation>2ee85d5b-00be-4a14-a01f-8dc02926f2c6.96fd5568-9932-4c4f-ad86-76dec2160a39.description</annotation>
+    <step id="dc068180-3421-43d7-8e7c-55cabe9002ea">
+      <annotation>8af8f450-29e4-41c1-a5de-b4536b426af8.dc068180-3421-43d7-8e7c-55cabe9002ea.description</annotation>
       <name>Create Network Interface Card DHCP</name>
       <bounds>
         <x>630.0</x>
@@ -844,7 +844,7 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="bba3d444-86eb-43c3-ad74-f5f4f9cfb679">
+      <iconSpec id="5d3ab7eb-e346-4e6c-a41e-c6268ae86fac">
         <baseIcon>network_port.png</baseIcon>
         <basePath>/Networking/</basePath>
         <readOnly>false</readOnly>
@@ -863,7 +863,7 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="3092edda-f1ca-4cbb-9a9e-c909617eef7f">
+        <userInputBinding id="f0b1e053-7857-4bc3-9518-5d4f9f315932">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -878,7 +878,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="73942fae-e2f3-40fe-bd4e-5481d550c3fd">
+        <staticBinding id="e382e521-da92-4e11-ae08-e3da9f9a912c">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -891,7 +891,7 @@
           <value>management.azure.com</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="29177922-e765-444b-949e-451227c87d12">
+        <staticBinding id="d098f735-f925-4a56-aaa7-a0af30f86d50">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -904,7 +904,7 @@
           <value>https</value>
           <record>false</record>
         </staticBinding>
-        <userInputBinding id="873e88c0-1950-49f3-a954-eac7de276bcc">
+        <userInputBinding id="9f0a434e-f6d9-4a14-b435-e9d8aec4ca55">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -919,7 +919,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="c1070b35-23de-4ca3-8152-ece848756cba">
+        <staticBinding id="a1b6e947-81ab-4d19-b6fd-d94f5f4c7934">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -932,7 +932,7 @@
           <value>2017-06-01</value>
           <record>false</record>
         </staticBinding>
-        <userInputBinding id="a2db94e7-a238-4669-bb85-2afead46cbee">
+        <userInputBinding id="edf6c1c9-9231-46da-ad3c-add663050e14">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -947,7 +947,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="e518ad16-2650-4c83-9c44-fc06236c2707">
+        <userInputBinding id="055dfa84-a403-4240-9a02-1704bbda2d7d">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -962,7 +962,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="95a4333c-c722-4352-9e4d-1eb83d701e64">
+        <userInputBinding id="a20814f9-383a-4d7c-9988-b43eea1e3b35">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -977,7 +977,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="b48191ee-6db5-4c1c-9a59-9764004958b5">
+        <userInputBinding id="98ee91ee-2490-406c-8c9f-b9e6ee2ce7bf">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -992,7 +992,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="fd49bd78-4efe-4be1-a768-cfb48dd3ba07">
+        <staticBinding id="323b8bce-8b71-46b8-9908-c48a538529d8">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1005,7 +1005,7 @@
           <value>${nicName}-nic</value>
           <record>false</record>
         </staticBinding>
-        <userInputBinding id="f7b53a97-6ba8-4747-9cbb-b69a21e73f90">
+        <userInputBinding id="baa8345b-fa90-43b5-9c90-49e35a99e2cc">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1020,7 +1020,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="4b0bccc5-5bd7-4e14-9dba-9257474d7883">
+        <staticBinding id="cf575971-1318-4304-8e99-26b0e3d9b593">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1035,7 +1035,7 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="52e56c68-4864-4164-b070-d459690ebfcb">
+        <transition id="b4bd0a86-7a4c-4039-abbf-9d6c8592f14e">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -1044,10 +1044,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>70bf82dd-41ef-4a2f-ae09-de74a30423d9</refId>
+            <refId>fee0e7ef-565e-4c1b-8c18-f6fa259728ca</refId>
           </destination>
           <source>
-            <refId>96fd5568-9932-4c4f-ad86-76dec2160a39</refId>
+            <refId>dc068180-3421-43d7-8e7c-55cabe9002ea</refId>
           </source>
           <positions>
             <point>
@@ -1064,7 +1064,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="eca847e9-3e57-4ae7-a1f2-8060e732f355">
+        <transition id="bba5360c-ea0f-4c0d-8728-5e37798e3db8">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -1073,10 +1073,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>aacc7131-9cb1-4508-89d6-a16e1bfa59b0</refId>
+            <refId>2a290cf4-6429-420b-b1ef-5565877deda1</refId>
           </destination>
           <source>
-            <refId>96fd5568-9932-4c4f-ad86-76dec2160a39</refId>
+            <refId>dc068180-3421-43d7-8e7c-55cabe9002ea</refId>
           </source>
           <positions>
             <point>
@@ -1101,8 +1101,8 @@
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="6372cdad-9c31-4a49-8201-6298504504b1">
-      <annotation>2ee85d5b-00be-4a14-a01f-8dc02926f2c6.6372cdad-9c31-4a49-8201-6298504504b1.description</annotation>
+    <step id="95a21015-0610-43d6-821c-d3e9dd143d3a">
+      <annotation>8af8f450-29e4-41c1-a5de-b4536b426af8.95a21015-0610-43d6-821c-d3e9dd143d3a.description</annotation>
       <name>Create Public IP Address</name>
       <bounds>
         <x>450.0</x>
@@ -1110,7 +1110,7 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="1ec50228-31c0-4607-b1df-6732145c2b4f">
+      <iconSpec id="af6ce892-88dc-4424-b63b-96ce14b5af8f">
         <baseIcon>flow.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>false</readOnly>
@@ -1129,7 +1129,7 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="c259b2ad-fc73-4cf4-b9f5-d2705fd28e11">
+        <userInputBinding id="f2dd0f9d-3e03-4db1-9e3c-bce5bc6ba923">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1144,7 +1144,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="af9d43d3-db11-4937-97ff-48fbceef13ec">
+        <staticBinding id="2c47e3a7-a91a-444a-a7b8-81e444c134c2">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1157,7 +1157,7 @@
           <value>https</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="e0edc786-7f8c-4ba0-bbfb-fbe77b2c09cf">
+        <staticBinding id="121a0693-b5c9-4ab6-99c9-a6a82c5e1cf0">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1170,7 +1170,7 @@
           <value>management.azure.com</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="99b01928-7c7c-47a1-b5de-d4fba0e3d8c1">
+        <staticBinding id="291aad02-9323-478e-bd54-6f7b29f2ff12">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1183,7 +1183,7 @@
           <value>2017-06-01</value>
           <record>false</record>
         </staticBinding>
-        <userInputBinding id="49d6d527-cf9e-4d41-a741-e93bc5b82612">
+        <userInputBinding id="2e382c9d-15b4-4d6b-87c0-b79d847ccd53">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1198,7 +1198,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="5f3931a0-6583-40dd-ab35-543c141ab562">
+        <userInputBinding id="e6788a29-5b00-4adc-8c74-e797b1d5cff5">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1213,7 +1213,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="5099b692-f423-4914-ae12-169b1fb6b562">
+        <userInputBinding id="b54ad0d3-eeaa-4ee9-9902-6147177f40db">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1228,7 +1228,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="a6418c1c-471f-4785-9da7-21234d5a8a1a">
+        <staticBinding id="6871195c-09cf-438f-86cd-4335194fd469">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>true</assignToContext>
@@ -1243,7 +1243,7 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="c8b52c32-5c81-4f01-93f2-91f8c60db92a">
+        <transition id="3b0fe810-2077-4826-8b2d-b9361e07cf40">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -1252,10 +1252,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>70bf82dd-41ef-4a2f-ae09-de74a30423d9</refId>
+            <refId>fee0e7ef-565e-4c1b-8c18-f6fa259728ca</refId>
           </destination>
           <source>
-            <refId>6372cdad-9c31-4a49-8201-6298504504b1</refId>
+            <refId>95a21015-0610-43d6-821c-d3e9dd143d3a</refId>
           </source>
           <positions>
             <point>
@@ -1272,7 +1272,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="066b3864-8ac6-4b3f-8ed9-065ad375700f">
+        <transition id="0af560fe-6848-421b-9d68-17acbcb0cea7">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -1281,10 +1281,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>96fd5568-9932-4c4f-ad86-76dec2160a39</refId>
+            <refId>dc068180-3421-43d7-8e7c-55cabe9002ea</refId>
           </destination>
           <source>
-            <refId>6372cdad-9c31-4a49-8201-6298504504b1</refId>
+            <refId>95a21015-0610-43d6-821c-d3e9dd143d3a</refId>
           </source>
           <positions>
             <point>
@@ -1309,7 +1309,7 @@
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="ee34a04b-2a4a-47ff-b27b-870e79bec909">
+    <step id="033b9ca3-9a48-4805-b832-8d7ecdfbb2a1">
       <annotation></annotation>
       <name>Get StatusCode Message</name>
       <bounds>
@@ -1318,7 +1318,7 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="eb894618-bdb9-4db7-926d-251f51b46a10">
+      <iconSpec id="3f2e5360-b623-4909-8fdd-59111622c138">
         <baseIcon>flow.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>false</readOnly>
@@ -1337,7 +1337,7 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="07295bf8-e8de-4741-b8e0-f57321ba4b20">
+        <staticBinding id="45e662d4-f0be-4f23-b2e3-f5d386fe9423">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>true</assignToContext>
@@ -1349,7 +1349,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="74d2bd71-fb20-4442-b944-ddee6b4dce7d">
+        <staticBinding id="320996a3-afaf-4e5e-ae18-9e6c84689be7">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>true</assignToContext>
@@ -1363,7 +1363,7 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="c5fca8f4-ed4d-430a-8abe-53e5cc6d5dc0">
+        <transition id="bdf77a48-0cad-4659-b99f-13efc19920e2">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -1372,10 +1372,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>d9537561-570f-4d00-a7bd-e16d99fa4279</refId>
+            <refId>f03e550d-aeef-416c-a71c-0661c24145d0</refId>
           </destination>
           <source>
-            <refId>ee34a04b-2a4a-47ff-b27b-870e79bec909</refId>
+            <refId>033b9ca3-9a48-4805-b832-8d7ecdfbb2a1</refId>
           </source>
           <positions>
             <point>
@@ -1392,7 +1392,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="244efdda-d0ea-4709-8b18-02c9aa5ddc58">
+        <transition id="ddb6578c-c84e-4af4-98ea-96b2333e916e">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -1401,10 +1401,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>1c0125b7-b73c-48cb-bcf5-e54951e5080a</refId>
+            <refId>6f6540b8-7974-4a5e-9fc9-e10239302b83</refId>
           </destination>
           <source>
-            <refId>ee34a04b-2a4a-47ff-b27b-870e79bec909</refId>
+            <refId>033b9ca3-9a48-4805-b832-8d7ecdfbb2a1</refId>
           </source>
           <positions>
             <point>
@@ -1427,13 +1427,13 @@
         <refId>6c2fefea-efc9-4595-9c36-3d18488dbedf</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="3b13a849-0b03-4c74-ae4e-ee25fa322771">
+        <flowVariableAssignment id="07f7fe7b-3a79-4622-a87b-a31144fb6086">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>statusCode</contextKey>
-          <expression id="f8ae5ab5-3343-4280-ac0d-671a58dbc446">
+          <expression id="795dd292-1bef-4577-a10e-76b17f1df701">
             <annotation></annotation>
             <name>Result: statusCode</name>
             <fieldName>statusCode</fieldName>
@@ -1441,13 +1441,13 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="2e95d8b2-5b10-42bc-89bc-5ab60184c2e1">
+        <flowVariableAssignment id="fd65197a-9613-4d36-be19-1202e1634dcb">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>returnResult</contextKey>
-          <expression id="cc519018-f455-447c-8e7b-2bc6010c3db8">
+          <expression id="824ba8a3-b2bd-482a-b499-910c1ee3f0a7">
             <annotation></annotation>
             <name>Result: returnResult</name>
             <fieldName>returnResult</fieldName>
@@ -1458,8 +1458,8 @@
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="caa9b187-3ba7-4251-8062-ac1bb07eec7f">
-      <annotation>2ee85d5b-00be-4a14-a01f-8dc02926f2c6.caa9b187-3ba7-4251-8062-ac1bb07eec7f.description</annotation>
+    <step id="ea23be4b-071e-4e53-b3a1-6902944151c2">
+      <annotation>8af8f450-29e4-41c1-a5de-b4536b426af8.ea23be4b-071e-4e53-b3a1-6902944151c2.description</annotation>
       <name>Create Windows VM</name>
       <bounds>
         <x>691.0</x>
@@ -1467,7 +1467,7 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="4f98e563-feba-4232-9f3f-75a98d99222a">
+      <iconSpec id="745e84d5-df1b-4b1c-8d05-f6dd6ece9869">
         <baseIcon>earth.png</baseIcon>
         <basePath>/Networking/</basePath>
         <readOnly>false</readOnly>
@@ -1486,7 +1486,7 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="609806b6-b66b-4a36-9a5f-8ce64e5280a8">
+        <staticBinding id="897bb7a9-61c9-4f7d-a6f9-80bccff19d03">
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
@@ -1498,7 +1498,7 @@
           <value>https://management.azure.com/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/Microsoft.Compute/virtualMachines/${vmName}?validating=false&amp;api-version=2017-03-30</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="fa0f18f7-8a21-4fa7-9421-62f10e557f70">
+        <staticBinding id="4f1b2dec-ea0c-4054-b2ef-24995aa41f91">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1542,7 +1542,7 @@
 }</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="4e4986e4-b8ae-43af-9a99-99efe6574c92">
+        <staticBinding id="1fcfc024-f22e-4e26-9582-a08dd17c27b7">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1555,7 +1555,7 @@
           <value>Authorization:${authToken}</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="9046a036-c3e0-4952-9995-3f102359ed96">
+        <staticBinding id="5aace6e3-735a-4377-b129-2357ee54e501">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1568,7 +1568,7 @@
           <value>anonymous</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="b9aa4e17-be32-4222-badf-9b9f97737d4a">
+        <staticBinding id="630077e3-2404-4227-97a4-4b12e1ffce65">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1580,7 +1580,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="2bb28151-0efa-4a9d-b28e-0480e9eca8d9">
+        <staticBinding id="ee310c50-ce41-40f8-b241-5d75b9bccd16">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1592,7 +1592,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="9a683b9e-9808-4c49-b818-e14fb6273da0">
+        <staticBinding id="f01d7b0e-440c-4e5e-8717-1d7894f16718">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1605,7 +1605,7 @@
           <value>true</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="6ae5a9b7-4d34-44a8-9364-75add55afb14">
+        <staticBinding id="5e4781ff-f986-4421-95b7-6e25da2f804e">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1617,7 +1617,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="6830291a-a56d-493f-9ffe-76d3fd0c2e62">
+        <staticBinding id="83ab9b73-c213-4720-ba38-e36a711148cc">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1630,7 +1630,7 @@
           <value>8080</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="cafc261a-a274-4964-8a9d-12a17a53a52e">
+        <staticBinding id="191388e7-ab36-447e-9cf1-ed30b917dee0">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1642,7 +1642,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="0a9faa5d-e467-4541-bbf6-123223367dfd">
+        <staticBinding id="218215a9-d02f-4c4f-8afc-30ec06c6a365">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1654,7 +1654,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="217cc3c7-d088-4b71-9e81-4c77df8fefb3">
+        <staticBinding id="9e4c4a56-6218-4301-a530-c4e67422a293">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1667,7 +1667,7 @@
           <value>false</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="adb0b9c1-63c2-4183-8b3e-ba25d89e7b08">
+        <staticBinding id="ff9d3eb5-b144-49e6-b25b-9f3b7c34a7c4">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1680,7 +1680,7 @@
           <value>strict</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="8f8f9a6e-54d1-4663-b58d-7489640b39be">
+        <staticBinding id="5bf637d4-2d41-437d-a5fd-d9fe046539d5">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1692,7 +1692,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="ede1f172-e0ba-4230-840e-6b3a500e8cb7">
+        <staticBinding id="4fb8b9f8-e79d-426c-b780-ed8965d48da8">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1705,7 +1705,7 @@
           <value>changeit</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="6b32024b-233a-447e-82f7-45bb8ebdbe24">
+        <staticBinding id="4df89599-0cca-4ee4-b069-e996c898ee35">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1717,7 +1717,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="2563f23f-bd94-4b8d-b083-5fffe304e693">
+        <staticBinding id="91d1b7b6-e1b5-4adf-8650-e328cd5e831f">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1730,7 +1730,7 @@
           <value>changeit</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="9353b01d-0f55-4057-b30c-a1e465bf2b2d">
+        <staticBinding id="17a2b520-a764-4cd6-9fad-f8760222215e">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1743,7 +1743,7 @@
           <value>10</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="c22a0ad3-0703-4b7b-8882-540014cf60a6">
+        <staticBinding id="b7ab525f-eec3-45ca-b19a-7b82076ee8e7">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1756,7 +1756,7 @@
           <value>0</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="04c807a8-79ec-4a1c-a09a-82c0384b8a71">
+        <staticBinding id="4afc88e0-ff8c-4f08-8119-9917248012bd">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1769,7 +1769,7 @@
           <value>true</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="ee4cfd7c-3e21-47ed-856a-8072474a5878">
+        <staticBinding id="7a116101-321c-4fd0-9f5d-a78224ea2327">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1782,7 +1782,7 @@
           <value>true</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="ae0d47c9-c314-4241-a292-bd29940fb704">
+        <staticBinding id="c2bba69e-46b1-468f-94e9-f38d70181930">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1795,7 +1795,7 @@
           <value>20</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="0e3e8c85-38af-4f8d-b0b1-649b050624d4">
+        <staticBinding id="27c1520b-47e4-4b05-ad90-6b58d3797259">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1808,7 +1808,7 @@
           <value>200</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="7153c7ad-4f5d-4e43-ba55-054b7a0ccbf1">
+        <staticBinding id="2320aea7-5638-4845-832e-b0e976253944">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1820,7 +1820,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="c21a1da3-de23-49e6-b48f-9ae85c94fabc">
+        <staticBinding id="61687eb3-a578-4abe-9989-8dc12512e81e">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1833,7 +1833,7 @@
           <value>application/json</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="a3f804ac-c04d-41d1-8680-26abb2c5d3f8">
+        <staticBinding id="843ef9e6-1cac-4573-87af-47103ed4ee3d">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1846,7 +1846,7 @@
           <value>UTF-8</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="2d313873-0084-44ae-86d9-0e29a60a90e1">
+        <staticBinding id="eae195af-3950-4af7-8832-844374c4432e">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1858,7 +1858,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="3c990d3b-63fd-4a4d-b935-b96620633e9e">
+        <staticBinding id="521c3bde-61c7-48ed-8ac2-4928bb70153f">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1870,7 +1870,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="03c5b31f-6425-494e-a8b4-0080f05c47d5">
+        <staticBinding id="dfe0ef09-260c-4f3a-83e3-86208480a918">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1882,7 +1882,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="1d5548db-3ca3-4696-9d58-85f55b161597">
+        <staticBinding id="d574d8cf-dba7-44fa-a060-c0631bdeeb51">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1897,7 +1897,7 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="e3d8daeb-86ce-4db7-8d23-5d9f336d0629">
+        <transition id="39da56ba-2aea-4bc2-8ee5-c50757d6a5e4">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -1906,10 +1906,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>ee34a04b-2a4a-47ff-b27b-870e79bec909</refId>
+            <refId>033b9ca3-9a48-4805-b832-8d7ecdfbb2a1</refId>
           </destination>
           <source>
-            <refId>caa9b187-3ba7-4251-8062-ac1bb07eec7f</refId>
+            <refId>ea23be4b-071e-4e53-b3a1-6902944151c2</refId>
           </source>
           <positions>
             <point>
@@ -1926,7 +1926,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="366d4095-e4d0-44d3-842f-588ae1bc8e4d">
+        <transition id="d58d9e86-c810-46af-a588-aed3934d9a2e">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -1935,10 +1935,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>70bf82dd-41ef-4a2f-ae09-de74a30423d9</refId>
+            <refId>fee0e7ef-565e-4c1b-8c18-f6fa259728ca</refId>
           </destination>
           <source>
-            <refId>caa9b187-3ba7-4251-8062-ac1bb07eec7f</refId>
+            <refId>ea23be4b-071e-4e53-b3a1-6902944151c2</refId>
           </source>
           <positions>
             <point>
@@ -1961,13 +1961,13 @@
         <refId>bcdf0a82-9041-45be-be9b-fd915f4c473f</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="93ff0ca5-426c-42b5-8638-44f39819807b">
+        <flowVariableAssignment id="e91a7c32-640c-41cd-b40a-2df2e5504456">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>returnResult</contextKey>
-          <expression id="897367a0-8750-4985-aff9-42838b332f7d">
+          <expression id="2aa24fbd-26cb-4141-8e15-51da13c35292">
             <annotation></annotation>
             <name>Result Field: returnResult</name>
             <fieldName>returnResult</fieldName>
@@ -1975,13 +1975,13 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="f4a43808-d36d-46aa-9b06-2e4c209cad89">
+        <flowVariableAssignment id="814afb51-4c37-4f4e-9ef4-80b079f92e74">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>exception</contextKey>
-          <expression id="135a941e-0b8c-4f57-8572-51cdb4604e33">
+          <expression id="a1e84a23-7290-4108-b6cb-530406f010c2">
             <annotation></annotation>
             <name>Result Field: exception</name>
             <fieldName>exception</fieldName>
@@ -1989,13 +1989,13 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="f3c15d6c-fe29-48ae-b894-d0e973f1b9a6">
+        <flowVariableAssignment id="5ebc4b80-29a1-4415-a28a-9b52b1dae471">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>statusCode</contextKey>
-          <expression id="6d7172e4-7590-4eb1-88a3-35cb6c36d8ed">
+          <expression id="12017d0b-edc8-412f-a1ff-b4770a029025">
             <annotation></annotation>
             <name>Result Field: statusCode</name>
             <fieldName>statusCode</fieldName>
@@ -2003,13 +2003,13 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="3e1f37db-06c9-4625-8ffe-2de83acda554">
+        <flowVariableAssignment id="37ca120b-f0fa-4e99-9797-dd183918e307">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>statusCode</contextKey>
-          <expression id="711ab932-d980-4760-853b-cc1e054cb447">
+          <expression id="dcdf7d7f-2eed-423b-9768-7c50b40e4102">
             <annotation></annotation>
             <name>Result Field: statusCode</name>
             <fieldName>statusCode</fieldName>
@@ -2017,13 +2017,13 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="de132449-176a-4864-97f4-b031f66ca992">
+        <flowVariableAssignment id="a9389b55-5b7d-4fdd-8fa5-39d75caf4dc1">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>document</contextKey>
-          <expression id="e7d85043-ae5b-4836-b8c6-d98e0a5e2a7f">
+          <expression id="844e9db4-f7a5-483f-996a-7b24c69b405a">
             <annotation></annotation>
             <name>Result Field: responseHeaders</name>
             <fieldName>responseHeaders</fieldName>
@@ -2031,13 +2031,13 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="6ae49fea-4743-4e46-960e-901b6f940bf9">
+        <flowVariableAssignment id="618ec33f-8a63-4c5e-9a24-e3e0f827642c">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>returnResult</contextKey>
-          <expression id="ccbc3095-6aa3-4525-862d-ecad7df018b8">
+          <expression id="e69f68fb-ade1-48d4-991a-afb31ea21b61">
             <annotation></annotation>
             <name>Result Field: returnResult</name>
             <fieldName>returnResult</fieldName>
@@ -2048,8 +2048,8 @@
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="d9537561-570f-4d00-a7bd-e16d99fa4279">
-      <annotation>2ee85d5b-00be-4a14-a01f-8dc02926f2c6.d9537561-570f-4d00-a7bd-e16d99fa4279.description</annotation>
+    <step id="f03e550d-aeef-416c-a71c-0661c24145d0">
+      <annotation>8af8f450-29e4-41c1-a5de-b4536b426af8.f03e550d-aeef-416c-a71c-0661c24145d0.description</annotation>
       <name>Set Success Message</name>
       <bounds>
         <x>540.0</x>
@@ -2057,7 +2057,7 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="9d46620d-3bbf-4544-a9c9-cc78841fd057">
+      <iconSpec id="c97ae56a-232f-48cf-8b10-f2c724f703fa">
         <baseIcon>display_report.png</baseIcon>
         <basePath>Utilities/</basePath>
         <readOnly>false</readOnly>
@@ -2076,7 +2076,7 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="d019a90b-7354-4e0f-85b1-a7810aa3f342">
+        <staticBinding id="9f2af72f-7572-4329-b69b-f666cdc55f3e">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>true</assignToContext>
@@ -2091,7 +2091,7 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="1d9ba53b-c0ea-439d-90ee-adf8608a89a8">
+        <transition id="6fadbf99-ceaa-44cf-a888-2d3d94ee1e40">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -2100,10 +2100,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>c5d2e2b0-75bf-472c-8da4-0436bd80c33c</refId>
+            <refId>b601ad87-8fd5-4208-b383-bb65ac0fb551</refId>
           </destination>
           <source>
-            <refId>d9537561-570f-4d00-a7bd-e16d99fa4279</refId>
+            <refId>f03e550d-aeef-416c-a71c-0661c24145d0</refId>
           </source>
           <positions>
             <point>
@@ -2126,31 +2126,31 @@
         <refId>ddd79f22-8b1e-4605-88d5-d912bb2da2b9</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="bfa803c3-9645-4167-8949-ecfd9332991b">
+        <flowVariableAssignment id="58d33342-3af8-4489-bf4d-6cf57cf33534">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>returnResult</contextKey>
-          <expression id="5e56fd4c-587a-4f06-b4fe-5a20512a7d8a">
+          <expression id="4347759e-af74-4ed9-9432-799e72951678">
             <annotation></annotation>
             <name>Input: field1</name>
             <fieldName>field1</fieldName>
             <sourceType>INPUT</sourceType>
             <filters>
-              <stripTrailingFilter id="543c4016-31dd-4723-9c2c-ca6c4bd05031">
+              <stripTrailingFilter id="eaa12968-6f56-4a36-a127-bfbab6032dee">
                 <annotation></annotation>
                 <name>Strip</name>
                 <strip>resourceGroupName;</strip>
                 <type>ALL_CHARACTERS_UP_TO_AND_INCLUDING</type>
               </stripTrailingFilter>
-              <stripTrailingFilter id="702c9686-52b3-4d54-948a-7e0cb6fa6d40">
+              <stripTrailingFilter id="c266815a-daf0-40ef-9d40-af691193d0a6">
                 <annotation></annotation>
                 <name>Strip</name>
                 <strip></strip>
                 <type>ALL_CHARACTERS_AFTER_AND_INCLUDING</type>
               </stripTrailingFilter>
-              <stripTrailingFilter id="884e5d4c-8477-41e3-af40-f7a1ed982e6a">
+              <stripTrailingFilter id="5f0566ee-2def-4b0d-9177-33c7f9123ed7">
                 <annotation></annotation>
                 <name>Strip</name>
                 <strip>#</strip>
@@ -2162,8 +2162,8 @@
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="aacc7131-9cb1-4508-89d6-a16e1bfa59b0">
-      <annotation>2ee85d5b-00be-4a14-a01f-8dc02926f2c6.aacc7131-9cb1-4508-89d6-a16e1bfa59b0.description</annotation>
+    <step id="2a290cf4-6429-420b-b1ef-5565877deda1">
+      <annotation>8af8f450-29e4-41c1-a5de-b4536b426af8.2a290cf4-6429-420b-b1ef-5565877deda1.description</annotation>
       <name>String Comparator</name>
       <bounds>
         <x>809.0</x>
@@ -2171,7 +2171,7 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="7779df89-ebbc-426d-a2e3-0ab710a1299c">
+      <iconSpec id="a86cdde1-102c-458e-aebc-867d7c4a0979">
         <baseIcon>compare.png</baseIcon>
         <basePath>Utilities</basePath>
         <readOnly>false</readOnly>
@@ -2190,7 +2190,7 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="a6e2ae5d-4e46-4d7d-abdb-f2b6da291455">
+        <staticBinding id="51ea7196-d700-450f-940f-a28977867091">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2203,7 +2203,7 @@
           <value>Exact Match</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="7586af97-e2cf-4312-85fa-f072bbe2db55">
+        <staticBinding id="859f14cb-177c-44f0-ad47-dc3ccecd4874">
           <annotation></annotation>
           <fromContextKey>osPlatform</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -2217,7 +2217,7 @@
           <value></value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="7c7a2725-dbdb-4dc7-a0f8-b9c68a9dbe8f">
+        <staticBinding id="ff29dc88-d8a2-4f4a-ba87-d8fa1db1ae6c">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2230,7 +2230,7 @@
           <value>Windows</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="6888507d-0c1a-469a-861c-d5b332d9f1a0">
+        <staticBinding id="007366f7-3b5a-49ad-96cf-318e27ff1c4d">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2245,7 +2245,7 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="f3e18114-d452-427c-9469-c17b98f2be43">
+        <transition id="0cdd4a39-6061-41f0-bb8f-3c95b1ac0396">
           <annotation></annotation>
           <name>Windows</name>
           <command>NEXT</command>
@@ -2254,10 +2254,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>caa9b187-3ba7-4251-8062-ac1bb07eec7f</refId>
+            <refId>ea23be4b-071e-4e53-b3a1-6902944151c2</refId>
           </destination>
           <source>
-            <refId>aacc7131-9cb1-4508-89d6-a16e1bfa59b0</refId>
+            <refId>2a290cf4-6429-420b-b1ef-5565877deda1</refId>
           </source>
           <positions>
             <point>
@@ -2274,7 +2274,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="1d6c6500-556c-4fae-83be-5f8a8a034c6e">
+        <transition id="fc4ba06b-9e23-4646-a660-cf05cf68824c">
           <annotation></annotation>
           <name>Linux</name>
           <command>NEXT</command>
@@ -2283,10 +2283,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>b3bd33e0-bed7-46c2-8efc-21e42753db10</refId>
+            <refId>41d8aeeb-f22a-4b2b-9111-ba8add6d262b</refId>
           </destination>
           <source>
-            <refId>aacc7131-9cb1-4508-89d6-a16e1bfa59b0</refId>
+            <refId>2a290cf4-6429-420b-b1ef-5565877deda1</refId>
           </source>
           <positions>
             <point>
@@ -2311,8 +2311,8 @@
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="b3bd33e0-bed7-46c2-8efc-21e42753db10">
-      <annotation>2ee85d5b-00be-4a14-a01f-8dc02926f2c6.b3bd33e0-bed7-46c2-8efc-21e42753db10.description</annotation>
+    <step id="41d8aeeb-f22a-4b2b-9111-ba8add6d262b">
+      <annotation>8af8f450-29e4-41c1-a5de-b4536b426af8.41d8aeeb-f22a-4b2b-9111-ba8add6d262b.description</annotation>
       <name>API Call to Create Linux VM</name>
       <bounds>
         <x>930.0</x>
@@ -2320,7 +2320,7 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="477122e0-824a-4460-b1c5-a1162b4d64c1">
+      <iconSpec id="5a1a5317-409c-46b9-9c13-4142b0aa75f4">
         <baseIcon>earth.png</baseIcon>
         <basePath>/Networking/</basePath>
         <readOnly>false</readOnly>
@@ -2339,7 +2339,7 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="a985d30a-63a9-4cd3-9179-16f81376a822">
+        <staticBinding id="535a0067-93ea-468b-afaa-a96ccfef85db">
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
@@ -2351,7 +2351,7 @@
           <value>https://management.azure.com/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/Microsoft.Compute/virtualMachines/${vmName}?validating=false&amp;api-version=2017-03-30</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="25ed7bbc-eb83-423f-8404-add398e19b58">
+        <staticBinding id="6f7097eb-e440-44d8-bcbb-e0cdd6f7458d">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2417,7 +2417,7 @@
 }</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="9a9bc736-706d-4a07-9c0b-8560325092a8">
+        <staticBinding id="de05ed70-dbe2-4cfd-8c05-9929ec42c413">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2430,7 +2430,7 @@
           <value>Authorization:${authToken}</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="4db0093f-11a2-40ac-9a6f-47276c29ba63">
+        <staticBinding id="e840a02b-30e8-4dab-b635-e797ce6f0abb">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2443,7 +2443,7 @@
           <value>anonymous</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="7b031482-c88f-48d3-911c-ce0dcbaba52c">
+        <staticBinding id="b6546812-ac37-4b74-8c4e-79563c214962">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2455,7 +2455,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="fd63cf1a-d303-4f79-9be7-b78b32a567dc">
+        <staticBinding id="68eec773-7d2d-4086-9ab8-c84802da6fb7">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2467,7 +2467,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="160624ef-bb31-4f8a-a52c-37b746e820f2">
+        <staticBinding id="ce35fdf5-625c-4be9-abe1-061348b255ec">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2480,7 +2480,7 @@
           <value>true</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="fdf652aa-6423-46bc-ac17-d11d500b7667">
+        <staticBinding id="64cb3e05-fa78-45a5-80c8-b39470729c6f">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2492,7 +2492,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="c93b5f9f-3561-41a7-8616-e66a20ca9054">
+        <staticBinding id="5e37c3c1-5605-4db3-99e0-193dab16a3ef">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2505,7 +2505,7 @@
           <value>8080</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="dc1bf692-62c5-4027-af07-5339a2a71aaa">
+        <staticBinding id="7442cee8-7e38-4489-adc6-f97ad86773c7">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2517,7 +2517,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="767d3983-82d1-41b5-8371-5fb7284f3a71">
+        <staticBinding id="00e71d10-c2a6-4a78-b2cb-e70aa5d0d1db">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2529,7 +2529,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="b1306e52-cc7a-4487-a84c-b2c7e3025560">
+        <staticBinding id="24b802ca-6e8e-4d96-8431-542412847215">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2542,7 +2542,7 @@
           <value>false</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="d8e7faf6-6bf3-4958-8020-9242ce8716b1">
+        <staticBinding id="385f8837-09eb-4bc3-b0aa-83aa65940ff2">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2555,7 +2555,7 @@
           <value>strict</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="6285240c-966e-4802-b82b-40386fecf1a0">
+        <staticBinding id="de44e636-9efd-4c0e-b0d0-320f5097ad62">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2567,7 +2567,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="fe7f7d91-d381-4b77-9831-be632aa2d643">
+        <staticBinding id="c8d4c1a4-673e-4ba3-bc93-94efc3d967a4">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2580,7 +2580,7 @@
           <value>changeit</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="0f6a134c-75be-4bcd-973a-075cabaab545">
+        <staticBinding id="3e7e7608-748a-49c3-9044-f860d7e70f96">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2592,7 +2592,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="7734b5b5-9cc3-400c-b8b0-9f0e2e166aa1">
+        <staticBinding id="52aab4f9-de8a-46b1-a0a5-20f957fe1c63">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2605,7 +2605,7 @@
           <value>changeit</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="de1c57ec-ec6b-4ffb-9c6e-e987fc8bb5d6">
+        <staticBinding id="a5776cb6-e572-4c34-a309-0240b2c01c69">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2618,7 +2618,7 @@
           <value>10</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="ea58a695-3f6a-44dd-be5a-3e4321563e2e">
+        <staticBinding id="3bae470f-fd30-4b37-b1cb-bddabc8b8e93">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2631,7 +2631,7 @@
           <value>0</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="54638f2a-7064-4371-b5d0-cfa6323b3702">
+        <staticBinding id="70040afb-9e26-4feb-98c7-b7a3ab588b56">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2644,7 +2644,7 @@
           <value>true</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="e593bdc1-5467-49c0-a47f-3d2e441c73fe">
+        <staticBinding id="a79ca989-db33-4f77-b443-e7bf2b3320e1">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2657,7 +2657,7 @@
           <value>true</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="6da0e155-a126-4d53-b726-f06ef2c6ef43">
+        <staticBinding id="cc854938-7ab0-4bb3-8197-000111449d82">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2670,7 +2670,7 @@
           <value>20</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="1390ace8-1a8d-4121-a441-548fd6d68346">
+        <staticBinding id="69b866c2-f2a0-4539-8262-22f63fdf158d">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2683,7 +2683,7 @@
           <value>200</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="83425ee3-1a4b-49d4-8d67-b9e31845e1ca">
+        <staticBinding id="9030e485-35e7-4464-9572-6f4b8f31608c">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2695,7 +2695,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="70555b1b-cc10-47d9-9804-22def7f0c338">
+        <staticBinding id="0b0f3b2c-6766-4332-be2e-a8a656353f24">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2708,7 +2708,7 @@
           <value>application/json</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="b4a2242b-e082-44be-a847-fde4fba5cac5">
+        <staticBinding id="d39cb167-302a-4a93-b95a-f27bdf932bcd">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2721,7 +2721,7 @@
           <value>UTF-8</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="ac721fa0-31f2-4c1a-b9f4-f3fb6712c0e4">
+        <staticBinding id="ec4f8aa9-10fd-455e-8cc4-e1cdff4bb63f">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2733,7 +2733,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="97ba1084-494d-48a2-a2f5-531ba06e5624">
+        <staticBinding id="079503cd-22bb-44fc-8fb8-cebbab5a8337">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2745,7 +2745,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="775b3a89-e5d0-43c8-881f-c0adbf7c23a2">
+        <staticBinding id="8f738dd6-1e5d-4037-9d6d-e8685a62865c">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2757,7 +2757,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="5e2aac55-0085-4184-a5b2-42e085c5f564">
+        <staticBinding id="15a1c0c0-a916-4e29-b439-68f85f53d535">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2772,7 +2772,7 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="36766a3d-310e-4579-88f2-b4315440b59f">
+        <transition id="3a7d11f0-1e53-49ab-ada4-dc812b5d945e">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -2781,10 +2781,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>1c0125b7-b73c-48cb-bcf5-e54951e5080a</refId>
+            <refId>6f6540b8-7974-4a5e-9fc9-e10239302b83</refId>
           </destination>
           <source>
-            <refId>b3bd33e0-bed7-46c2-8efc-21e42753db10</refId>
+            <refId>41d8aeeb-f22a-4b2b-9111-ba8add6d262b</refId>
           </source>
           <positions>
             <point>
@@ -2801,7 +2801,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="5a1c6508-da8e-4fcc-8e11-49154f59fc42">
+        <transition id="08b91223-2f7c-4eb5-9795-adec3443de65">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -2810,10 +2810,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>ee34a04b-2a4a-47ff-b27b-870e79bec909</refId>
+            <refId>033b9ca3-9a48-4805-b832-8d7ecdfbb2a1</refId>
           </destination>
           <source>
-            <refId>b3bd33e0-bed7-46c2-8efc-21e42753db10</refId>
+            <refId>41d8aeeb-f22a-4b2b-9111-ba8add6d262b</refId>
           </source>
           <positions>
             <point>
@@ -2836,13 +2836,13 @@
         <refId>bcdf0a82-9041-45be-be9b-fd915f4c473f</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="2aa91079-83cf-4683-8054-77a800ece60d">
+        <flowVariableAssignment id="eb179bae-7d22-40c5-82eb-cbee58aa370b">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>returnResult</contextKey>
-          <expression id="d68aff42-c567-489d-a558-4a41883aa153">
+          <expression id="d33397c8-0470-41d7-88b2-8a7c47efce47">
             <annotation></annotation>
             <name>Result Field: returnResult</name>
             <fieldName>returnResult</fieldName>
@@ -2850,13 +2850,13 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="64bd44fa-21eb-4ab9-a2cb-31f1f1107204">
+        <flowVariableAssignment id="38e34ca8-7f8d-4be3-8a5f-b511782438af">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>exception</contextKey>
-          <expression id="78df0bda-0c9d-438f-8ff3-7a38cd0fe249">
+          <expression id="707ef390-9ba3-4e07-ae71-d468a2d6c193">
             <annotation></annotation>
             <name>Result Field: exception</name>
             <fieldName>exception</fieldName>
@@ -2864,13 +2864,13 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="cdee6859-ad10-4b67-ba78-14b0f4b47baf">
+        <flowVariableAssignment id="71842e82-f211-4c42-84b3-e0d96020fed7">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>statusCode</contextKey>
-          <expression id="559cac74-b7aa-4d7e-8518-cc48356b49f3">
+          <expression id="430147cd-15a1-43ce-80ad-1729771b3fef">
             <annotation></annotation>
             <name>Result Field: statusCode</name>
             <fieldName>statusCode</fieldName>
@@ -2878,13 +2878,13 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="1332d9b8-2069-4b82-900d-1f334b3989d7">
+        <flowVariableAssignment id="5ab1a8cf-84e1-4ff1-9f33-1ab437e3833f">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>statusCode</contextKey>
-          <expression id="64eee880-dc9f-4dfa-978a-6db9d2e3eb49">
+          <expression id="d7c382ee-20ac-40d3-9355-4b46c77ad3dc">
             <annotation></annotation>
             <name>Result Field: statusCode</name>
             <fieldName>statusCode</fieldName>
@@ -2892,13 +2892,13 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="45512182-4dc5-464c-b729-5fd4682d0202">
+        <flowVariableAssignment id="6cb156e4-3263-494e-b226-542fa8362bfd">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>document</contextKey>
-          <expression id="3f8cc6a8-89f9-414c-9464-31a67fa885cd">
+          <expression id="5d048501-4d59-4bad-823c-73ae4e401b00">
             <annotation></annotation>
             <name>Result Field: responseHeaders</name>
             <fieldName>responseHeaders</fieldName>
@@ -2906,13 +2906,13 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="70cbc7b6-9d53-42e3-b38b-5d0745770c62">
+        <flowVariableAssignment id="1ea15643-7716-4ef8-bcd5-8b16ab5d1cca">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>returnResult</contextKey>
-          <expression id="29f8e8bc-cb63-4b2b-a5a7-6e89a8bfd218">
+          <expression id="70165666-cbd1-4063-aedc-2d285fe28ea5">
             <annotation></annotation>
             <name>Result Field: returnResult</name>
             <fieldName>returnResult</fieldName>
@@ -2923,7 +2923,7 @@
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <returnStep id="1c0125b7-b73c-48cb-bcf5-e54951e5080a">
+    <returnStep id="6f6540b8-7974-4a5e-9fc9-e10239302b83">
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
@@ -2946,7 +2946,7 @@
       <userPrompt></userPrompt>
       <bindings/>
       <transitions>
-        <transition id="3617b9ae-01a0-4b5d-99e7-a51b38328b4a">
+        <transition id="29a2f2b0-854f-4d6d-bd08-ae5f7289bd9a">
           <annotation></annotation>
           <name>return</name>
           <command>NEXT</command>
@@ -2955,10 +2955,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>1c0125b7-b73c-48cb-bcf5-e54951e5080a</refId>
+            <refId>6f6540b8-7974-4a5e-9fc9-e10239302b83</refId>
           </destination>
           <source>
-            <refId>1c0125b7-b73c-48cb-bcf5-e54951e5080a</refId>
+            <refId>6f6540b8-7974-4a5e-9fc9-e10239302b83</refId>
           </source>
           <positions/>
         </transition>
@@ -2967,7 +2967,7 @@
       <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
-    <step id="c5d2e2b0-75bf-472c-8da4-0436bd80c33c">
+    <step id="b601ad87-8fd5-4208-b383-bb65ac0fb551">
       <annotation></annotation>
       <name>Wait VM Provisioning</name>
       <bounds>
@@ -2976,7 +2976,7 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="4c921f28-62b9-48dc-86a4-1102e55dd29d">
+      <iconSpec id="c46ab33b-fad7-4a3d-834b-cc713f004457">
         <baseIcon>flow.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>false</readOnly>
@@ -2995,7 +2995,7 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="e8a0d086-45b8-49f2-bb4a-b849342db0ee">
+        <userInputBinding id="ebf4e14a-0d4f-4264-ac01-3d5fa88b3c24">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3010,7 +3010,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="57d42bdb-69c9-4f31-803a-9fbf8fcd474a">
+        <staticBinding id="3828eb4b-573d-48ae-8c1d-a59cd92b9910">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3023,7 +3023,7 @@
           <value>9b83abdc-7bfe-4542-a3c1-398289a7a738</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="9594451d-5774-4cd0-8073-23ac05d3a883">
+        <staticBinding id="94f1a6b0-0f20-4f46-afe4-c37239338855">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3036,7 +3036,7 @@
           <value>testleninvm</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="b6082cc9-35d7-4823-a6fb-f191259ac5d3">
+        <staticBinding id="8593ed83-5972-47c6-8061-c61680c1ff61">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3051,7 +3051,7 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="7927245b-e32d-4d23-a220-006842e3f5b6">
+        <transition id="ff494a37-89a7-492d-9dd2-893a440753d5">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -3060,10 +3060,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>70bf82dd-41ef-4a2f-ae09-de74a30423d9</refId>
+            <refId>fee0e7ef-565e-4c1b-8c18-f6fa259728ca</refId>
           </destination>
           <source>
-            <refId>c5d2e2b0-75bf-472c-8da4-0436bd80c33c</refId>
+            <refId>b601ad87-8fd5-4208-b383-bb65ac0fb551</refId>
           </source>
           <positions>
             <point>
@@ -3080,7 +3080,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="aa5114bf-427e-4d62-8dd7-2b75cc8e102a">
+        <transition id="8d448134-2574-4e19-b583-c9fb14b15a5f">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -3089,10 +3089,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>4556f395-8edf-4e4d-a41a-5a884b1589de</refId>
+            <refId>816a61bf-1209-4173-871d-29ef8ddbdd6c</refId>
           </destination>
           <source>
-            <refId>c5d2e2b0-75bf-472c-8da4-0436bd80c33c</refId>
+            <refId>b601ad87-8fd5-4208-b383-bb65ac0fb551</refId>
           </source>
           <positions>
             <point>
@@ -3117,7 +3117,7 @@
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <returnStep id="97ebe642-fcea-4379-92e9-76ff967787a8">
+    <returnStep id="c1929087-4816-4fac-8a30-e234ec5bab31">
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
@@ -3126,7 +3126,7 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="1d91caea-a9e3-4818-8bb3-8763decbf217">
+      <iconSpec id="85815012-1711-4cdf-a7f5-2262738e67c5">
         <baseIcon>return_success.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -3146,7 +3146,7 @@
       <userPrompt></userPrompt>
       <bindings/>
       <transitions>
-        <transition id="0c4e80d8-be04-4493-a3d6-f0b4fb3a5221">
+        <transition id="c371819c-e65b-4e77-b0af-e2d1022e3c9d">
           <annotation></annotation>
           <name>return</name>
           <command>NEXT</command>
@@ -3155,10 +3155,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>97ebe642-fcea-4379-92e9-76ff967787a8</refId>
+            <refId>c1929087-4816-4fac-8a30-e234ec5bab31</refId>
           </destination>
           <source>
-            <refId>97ebe642-fcea-4379-92e9-76ff967787a8</refId>
+            <refId>c1929087-4816-4fac-8a30-e234ec5bab31</refId>
           </source>
           <positions/>
         </transition>
@@ -3167,7 +3167,7 @@
       <returnStepType>RESOLVED</returnStepType>
       <assignments/>
     </returnStep>
-    <step id="4556f395-8edf-4e4d-a41a-5a884b1589de">
+    <step id="816a61bf-1209-4173-871d-29ef8ddbdd6c">
       <annotation></annotation>
       <name>Get VM Details</name>
       <bounds>
@@ -3189,7 +3189,7 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="f676869a-a927-4cf3-b419-1f6fc4a23863">
+        <userInputBinding id="1f3a8f15-a69c-4cd0-a523-7e8423d29606">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3204,7 +3204,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="0b482c50-b46a-4fc5-a7ee-4cb3276c8d41">
+        <userInputBinding id="4f9c80b0-32a1-44f3-8d0a-70bc359b16a8">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3219,7 +3219,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="83e0de80-e406-4104-886a-370f830c835e">
+        <userInputBinding id="8d77ada3-de63-4bdb-8150-7290f150ff96">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3234,7 +3234,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="b7bfde5d-9f8b-49ed-91fb-f7b0b6ae6364">
+        <userInputBinding id="c8526e6f-d9c4-44a6-a2a2-a969d15826c7">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3249,7 +3249,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="91d5507a-6d5e-4fa2-b9d1-b4cc4af5b619">
+        <userInputBinding id="43c20c43-9c3d-4f19-b142-97a55fd8d423">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>true</assignToContext>
@@ -3266,7 +3266,7 @@
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="cf8edcd2-3aac-4777-a2c3-3c432a7ce6fd">
+        <transition id="2700fcd8-9761-4513-afdf-03b56c3031a7">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -3275,10 +3275,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>70bf82dd-41ef-4a2f-ae09-de74a30423d9</refId>
+            <refId>fee0e7ef-565e-4c1b-8c18-f6fa259728ca</refId>
           </destination>
           <source>
-            <refId>4556f395-8edf-4e4d-a41a-5a884b1589de</refId>
+            <refId>816a61bf-1209-4173-871d-29ef8ddbdd6c</refId>
           </source>
           <positions>
             <point>
@@ -3295,7 +3295,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="bca263a2-9b6b-41e1-88f4-f1fcd00a5b8a">
+        <transition id="541e3644-14ed-4bd1-8ee8-48ec16ab6588">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -3304,10 +3304,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>97ebe642-fcea-4379-92e9-76ff967787a8</refId>
+            <refId>c1929087-4816-4fac-8a30-e234ec5bab31</refId>
           </destination>
           <source>
-            <refId>4556f395-8edf-4e4d-a41a-5a884b1589de</refId>
+            <refId>816a61bf-1209-4173-871d-29ef8ddbdd6c</refId>
           </source>
           <positions>
             <point>
@@ -3330,13 +3330,13 @@
         <refId>a0c2816b-f3bf-4078-b0d3-0966c79504f5</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="5d4ff247-4f4c-4497-aa79-3bb262d5228c">
+        <flowVariableAssignment id="2868ad28-3344-4281-8c33-c60b140413eb">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>publicIPAddress</contextKey>
-          <expression id="102212d0-4a87-46ad-b137-bb8f00d752e4">
+          <expression id="e4560d4e-0634-41e6-b908-a08882932105">
             <annotation></annotation>
             <name>Result: publicIPAddress</name>
             <fieldName>publicIPAddress</fieldName>
@@ -3348,5 +3348,5 @@
       <throttleSize>0</throttleSize>
     </step>
   </steps>
-  <startSteps>63c1575c-dd16-4e71-b090-d5f713685ce4</startSteps>
+  <startSteps>ada79225-e245-4c14-aca5-70624b0695af</startSteps>
 </flow>
