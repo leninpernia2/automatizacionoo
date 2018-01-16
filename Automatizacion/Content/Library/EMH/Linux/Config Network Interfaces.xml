@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow id="e93454c9-9150-4c6e-8a06-6f206687a3de">
   <descriptionCdata><![CDATA[e93454c9-9150-4c6e-8a06-6f206687a3de.146c1e36-b0fe-4290-abd5-6902e1593912.description=<pre>\nCompares two strings, returning a true response if and only if they contain the same sequence of characters. A null string is considered to be equal to an empty string.\n\nInputs\:\n    string1 - The first string. \nDefault value\: "" (empty)\n    string2 - The second string.\nDefault value\: "" (empty)\n    ignoreCase - If set to 'true', then the comparison ignores case considerations. The two strings are considered equal ignoring case if they are of the same length and corresponding characters in the two strings are equal ignoring case. If set to any value other than 'true', then the strings must match exactly to be considered equal.\n\nResponses\:\n    true - If the two strings are equal.\n    false - If the two strings are not equal.\n\n</pre>
+e93454c9-9150-4c6e-8a06-6f206687a3de.642b1583-2885-42c9-acef-f9916ccbcc5f.description=<pre>\nCompares two strings, returning a true response if and only if they contain the same sequence of characters. A null string is considered to be equal to an empty string.\n\nInputs\:\n    string1 - The first string. \nDefault value\: "" (empty)\n    string2 - The second string.\nDefault value\: "" (empty)\n    ignoreCase - If set to 'true', then the comparison ignores case considerations. The two strings are considered equal ignoring case if they are of the same length and corresponding characters in the two strings are equal ignoring case. If set to any value other than 'true', then the strings must match exactly to be considered equal.\n\nResponses\:\n    true - If the two strings are equal.\n    false - If the two strings are not equal.\n\n</pre>
 e93454c9-9150-4c6e-8a06-6f206687a3de.81b35cb1-9551-4f10-a954-99f585792255.description=<pre>\nCompares two strings, returning a true response if and only if they contain the same sequence of characters. A null string is considered to be equal to an empty string.\n\nInputs\:\n    string1 - The first string. \nDefault value\: "" (empty)\n    string2 - The second string.\nDefault value\: "" (empty)\n    ignoreCase - If set to 'true', then the comparison ignores case considerations. The two strings are considered equal ignoring case if they are of the same length and corresponding characters in the two strings are equal ignoring case. If set to any value other than 'true', then the strings must match exactly to be considered equal.\n\nResponses\:\n    true - If the two strings are equal.\n    false - If the two strings are not equal.\n\n</pre>
 e93454c9-9150-4c6e-8a06-6f206687a3de.a46f6074-7803-4934-badc-6743ca13c56f.description=<pre>\nCompares two strings, returning a true response if and only if they contain the same sequence of characters. A null string is considered to be equal to an empty string.\n\nInputs\:\n    string1 - The first string. \nDefault value\: "" (empty)\n    string2 - The second string.\nDefault value\: "" (empty)\n    ignoreCase - If set to 'true', then the comparison ignores case considerations. The two strings are considered equal ignoring case if they are of the same length and corresponding characters in the two strings are equal ignoring case. If set to any value other than 'true', then the strings must match exactly to be considered equal.\n\nResponses\:\n    true - If the two strings are equal.\n    false - If the two strings are not equal.\n\n</pre>
 e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.description=<pre>\nCompares two strings, returning a true response if and only if they contain the same sequence of characters. A null string is considered to be equal to an empty string.\n\nInputs\:\n    string1 - The first string. \nDefault value\: "" (empty)\n    string2 - The second string.\nDefault value\: "" (empty)\n    ignoreCase - If set to 'true', then the comparison ignores case considerations. The two strings are considered equal ignoring case if they are of the same length and corresponding characters in the two strings are equal ignoring case. If set to any value other than 'true', then the strings must match exactly to be considered equal.\n\nResponses\:\n    true - If the two strings are equal.\n    false - If the two strings are not equal.\n\n</pre>
@@ -9,11 +10,11 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
   <name>Config Network Interfaces</name>
   <categories/>
   <inputs>
-    <userInputBinding id="9aabc780-c0aa-44d1-8d11-26e81b963bb2">
+    <userInputBinding id="9c5ae965-f1ab-480f-b2e9-11621431c60d">
       <annotation></annotation>
       <toContextKey></toContextKey>
       <fromContextKey></fromContextKey>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -26,11 +27,11 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="4c519e87-8f59-4574-8334-2fa3ab988670">
+    <userInputBinding id="b3e24dd9-1efc-4a3a-b9a4-65aa2c149da8">
       <annotation></annotation>
       <toContextKey></toContextKey>
       <fromContextKey></fromContextKey>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -43,11 +44,11 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="697d1f07-56b3-4e31-b6e3-7bf2e8a2b218">
+    <userInputBinding id="e8a073a1-7fba-48bb-9dd5-f554ab404547">
       <annotation></annotation>
       <toContextKey></toContextKey>
       <fromContextKey></fromContextKey>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>ENCRYPTED</inputType>
       <isList>false</isList>
@@ -60,11 +61,11 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="33e7aa20-2410-4a44-9570-4a51115056c0">
+    <userInputBinding id="acad3cf9-d179-4c41-8b4e-ee8dbb31b9a5">
       <annotation></annotation>
       <toContextKey></toContextKey>
       <fromContextKey></fromContextKey>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -77,9 +78,9 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="e06fcdef-27cf-4889-83e6-41e33444fbfb">
+    <userInputBinding id="fa950a9b-b1c1-4c4c-b761-eb06219ee337">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -92,9 +93,9 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="ea9e0150-2f59-41c9-adac-79882fbf643b">
+    <userInputBinding id="11a6b43f-9c35-4d22-bff7-a140d3571e54">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -107,9 +108,9 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="98d0c934-004b-4c46-b59e-ec0a79242c5d">
+    <userInputBinding id="fc9de444-fa10-4ee3-ae44-86b8c452ea96">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -122,9 +123,9 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="e82d8c6e-c11c-47f0-aef2-261d2bd4d1ae">
+    <userInputBinding id="154523e2-e987-4305-bc3e-60a35ea3b04f">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -137,9 +138,9 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="a73b2568-9b08-4754-89c2-240057ab1c00">
+    <userInputBinding id="8f9eb404-fcdf-438b-b2aa-e889791ae2ee">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -152,9 +153,24 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="cb9ae0e0-648e-4764-84d0-10701b79fb8f">
+    <userInputBinding id="491b30a3-394d-4167-bf17-10465744d9b7">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>WillItBeConfigured</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="71207a94-9d3d-4a8d-a759-e8b5539c9398">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -205,11 +221,237 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
   <compatibleRuntimeContext>false</compatibleRuntimeContext>
   <historyCheckPointFlow>true</historyCheckPointFlow>
   <steps>
+    <step id="642b1583-2885-42c9-acef-f9916ccbcc5f">
+      <annotation>e93454c9-9150-4c6e-8a06-6f206687a3de.642b1583-2885-42c9-acef-f9916ccbcc5f.description</annotation>
+      <name>String Equals</name>
+      <bounds>
+        <x>30.0</x>
+        <y>60.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="e222fed9-b94a-4a66-a779-3cb523e0c82b">
+          <annotation></annotation>
+          <fromContextKey>WillItBeConfigured</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>string1</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <staticBinding id="7166523c-1f53-4921-ae94-756d2bc7e862">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>string2</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>true</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="8d14c38c-f6e1-4ab2-a464-2238de34e24d">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>ignoreCase</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>true</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="213fb289-fcf8-40f7-831d-82001db1b77f">
+          <annotation></annotation>
+          <name>true</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>true</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>bd94abec-2bb0-4c32-b01c-dfff3ab8ad27</refId>
+          </destination>
+          <source>
+            <refId>642b1583-2885-42c9-acef-f9916ccbcc5f</refId>
+          </source>
+          <positions>
+            <point>
+              <x>80.0</x>
+              <y>94.0</y>
+            </point>
+            <point>
+              <x>260.0</x>
+              <y>94.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="e4deb125-5b9a-4180-a52d-7741b9126c26">
+          <annotation></annotation>
+          <name>false</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>false</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>a2cdeac2-d838-40af-9db6-e0c84ac213d7</refId>
+          </destination>
+          <source>
+            <refId>642b1583-2885-42c9-acef-f9916ccbcc5f</refId>
+          </source>
+          <positions>
+            <point>
+              <x>80.0</x>
+              <y>94.0</y>
+            </point>
+            <point>
+              <x>80.0</x>
+              <y>394.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>7c2f47aa-a4b3-4a7d-b3d4-007f285f7d29</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="6da96466-5060-4e9b-9975-7b89a42cbff4">
+      <annotation></annotation>
+      <name>Resolved : success</name>
+      <bounds>
+        <x>870.0</x>
+        <y>300.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="04930b68-a674-4dab-aa6e-9481932f8df7">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="d966a253-8c71-43b9-bbf2-2f2e0fd116a5">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>6da96466-5060-4e9b-9975-7b89a42cbff4</refId>
+          </destination>
+          <source>
+            <refId>6da96466-5060-4e9b-9975-7b89a42cbff4</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>RESOLVED</returnStepType>
+      <assignments/>
+    </returnStep>
+    <returnStep id="0e74aff5-0dce-4664-9725-e89de30cbfcb">
+      <annotation></annotation>
+      <name>Error : failure</name>
+      <bounds>
+        <x>204.0</x>
+        <y>361.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="b49255e1-4587-4551-b545-1787bf88e694">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>0e74aff5-0dce-4664-9725-e89de30cbfcb</refId>
+          </destination>
+          <source>
+            <refId>0e74aff5-0dce-4664-9725-e89de30cbfcb</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>ERROR</returnStepType>
+      <assignments/>
+    </returnStep>
     <step id="bd94abec-2bb0-4c32-b01c-dfff3ab8ad27">
       <annotation></annotation>
       <name>Get Interfaces Name</name>
       <bounds>
-        <x>90.0</x>
+        <x>210.0</x>
         <y>60.0</y>
       </bounds>
       <layer>-1</layer>
@@ -423,105 +665,11 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <returnStep id="6da96466-5060-4e9b-9975-7b89a42cbff4">
-      <annotation></annotation>
-      <name>Resolved : success</name>
-      <bounds>
-        <x>750.0</x>
-        <y>300.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <iconSpec id="04930b68-a674-4dab-aa6e-9481932f8df7">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings/>
-      <transitions>
-        <transition id="d966a253-8c71-43b9-bbf2-2f2e0fd116a5">
-          <annotation></annotation>
-          <name>return</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>6da96466-5060-4e9b-9975-7b89a42cbff4</refId>
-          </destination>
-          <source>
-            <refId>6da96466-5060-4e9b-9975-7b89a42cbff4</refId>
-          </source>
-          <positions/>
-        </transition>
-      </transitions>
-      <properties/>
-      <returnStepType>RESOLVED</returnStepType>
-      <assignments/>
-    </returnStep>
-    <returnStep id="0e74aff5-0dce-4664-9725-e89de30cbfcb">
-      <annotation></annotation>
-      <name>Error : failure</name>
-      <bounds>
-        <x>84.0</x>
-        <y>361.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings/>
-      <transitions>
-        <transition id="b49255e1-4587-4551-b545-1787bf88e694">
-          <annotation></annotation>
-          <name>return</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>0e74aff5-0dce-4664-9725-e89de30cbfcb</refId>
-          </destination>
-          <source>
-            <refId>0e74aff5-0dce-4664-9725-e89de30cbfcb</refId>
-          </source>
-          <positions/>
-        </transition>
-      </transitions>
-      <properties/>
-      <returnStepType>ERROR</returnStepType>
-      <assignments/>
-    </returnStep>
     <step id="dfea1955-1756-4639-b6b0-5dc1afa6fbba">
       <annotation>e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.description</annotation>
       <name>String Equals</name>
       <bounds>
-        <x>330.0</x>
+        <x>450.0</x>
         <y>60.0</y>
       </bounds>
       <layer>-1</layer>
@@ -659,7 +807,7 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <annotation>e93454c9-9150-4c6e-8a06-6f206687a3de.a46f6074-7803-4934-badc-6743ca13c56f.description</annotation>
       <name>String Equals</name>
       <bounds>
-        <x>330.0</x>
+        <x>450.0</x>
         <y>240.0</y>
       </bounds>
       <layer>-1</layer>
@@ -797,7 +945,7 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <annotation>e93454c9-9150-4c6e-8a06-6f206687a3de.146c1e36-b0fe-4290-abd5-6902e1593912.description</annotation>
       <name>String Equals</name>
       <bounds>
-        <x>330.0</x>
+        <x>450.0</x>
         <y>360.0</y>
       </bounds>
       <layer>-1</layer>
@@ -935,7 +1083,7 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <annotation>e93454c9-9150-4c6e-8a06-6f206687a3de.81b35cb1-9551-4f10-a954-99f585792255.description</annotation>
       <name>String Equals</name>
       <bounds>
-        <x>330.0</x>
+        <x>450.0</x>
         <y>540.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1067,7 +1215,7 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <annotation></annotation>
       <name>Config Network Interface eth0</name>
       <bounds>
-        <x>540.0</x>
+        <x>660.0</x>
         <y>60.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1310,7 +1458,7 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>420.0</x>
+        <x>540.0</x>
         <y>150.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1354,7 +1502,7 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <annotation></annotation>
       <name>Config Network Interface eth1</name>
       <bounds>
-        <x>540.0</x>
+        <x>660.0</x>
         <y>240.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1597,7 +1745,7 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>420.0</x>
+        <x>540.0</x>
         <y>450.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1641,7 +1789,7 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <annotation></annotation>
       <name>Config Network Interface eth2</name>
       <bounds>
-        <x>540.0</x>
+        <x>660.0</x>
         <y>360.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1890,7 +2038,7 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <annotation></annotation>
       <name>Config Network Interface</name>
       <bounds>
-        <x>540.0</x>
+        <x>660.0</x>
         <y>540.0</y>
       </bounds>
       <layer>-1</layer>
@@ -2129,6 +2277,50 @@ e93454c9-9150-4c6e-8a06-6f206687a3de.dfea1955-1756-4639-b6b0-5dc1afa6fbba.descri
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
+    <returnStep id="a2cdeac2-d838-40af-9db6-e0c84ac213d7">
+      <annotation></annotation>
+      <name>Resolved : success</name>
+      <bounds>
+        <x>30.0</x>
+        <y>360.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="f78d88ac-8b48-4b79-b166-e05258228507">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>a2cdeac2-d838-40af-9db6-e0c84ac213d7</refId>
+          </destination>
+          <source>
+            <refId>a2cdeac2-d838-40af-9db6-e0c84ac213d7</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>RESOLVED</returnStepType>
+      <assignments/>
+    </returnStep>
   </steps>
-  <startSteps>bd94abec-2bb0-4c32-b01c-dfff3ab8ad27</startSteps>
+  <startSteps>642b1583-2885-42c9-acef-f9916ccbcc5f</startSteps>
 </flow>
