@@ -254,7 +254,7 @@ d672212e-a3a4-4724-a04f-35c4d64b5a1c.f842a363-22ea-49b8-b30a-caa585bea1eb.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>string2</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>true</value>
+          <value>false</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="6e33803c-30cb-458a-b7e4-742819474da8">
@@ -272,41 +272,12 @@ d672212e-a3a4-4724-a04f-35c4d64b5a1c.f842a363-22ea-49b8-b30a-caa585bea1eb.descri
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="0af6a5d1-0260-4210-88fb-0e891b7c7d83">
+        <transition id="7d6d2d53-dac2-4b64-95ad-c001e3a1bf69">
           <annotation></annotation>
           <name>true</name>
           <command>NEXT</command>
           <linkMode>false</linkMode>
           <responseSymbol>true</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>01557543-b06f-4c69-aedb-af255a5afbae</refId>
-          </destination>
-          <source>
-            <refId>36bea9e5-f0b3-445b-a526-4b837ea427e1</refId>
-          </source>
-          <positions>
-            <point>
-              <x>80.0</x>
-              <y>94.0</y>
-            </point>
-            <point>
-              <x>260.0</x>
-              <y>94.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-        <transition id="4370b7d5-649c-44f3-a663-34e9d9db9af9">
-          <annotation></annotation>
-          <name>false</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>false</responseSymbol>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
@@ -323,6 +294,35 @@ d672212e-a3a4-4724-a04f-35c4d64b5a1c.f842a363-22ea-49b8-b30a-caa585bea1eb.descri
             <point>
               <x>80.0</x>
               <y>394.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="cdf1323c-9e5e-4a31-9c2f-1abbd545fa92">
+          <annotation></annotation>
+          <name>false</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>false</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>01557543-b06f-4c69-aedb-af255a5afbae</refId>
+          </destination>
+          <source>
+            <refId>36bea9e5-f0b3-445b-a526-4b837ea427e1</refId>
+          </source>
+          <positions>
+            <point>
+              <x>80.0</x>
+              <y>94.0</y>
+            </point>
+            <point>
+              <x>260.0</x>
+              <y>94.0</y>
             </point>
           </positions>
           <labelPosition>

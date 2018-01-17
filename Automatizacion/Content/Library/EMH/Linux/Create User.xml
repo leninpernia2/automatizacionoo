@@ -192,7 +192,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>string2</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>true</value>
+          <value>false</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="3d19bd94-f0b5-40f8-a212-1c606ee66371">
@@ -210,12 +210,12 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="7dc9fae3-7ac9-400d-ace3-5cfa58036fce">
+        <transition id="a8c35666-38a0-4879-9836-2a194fbc3c23">
           <annotation></annotation>
-          <name>true</name>
+          <name>false</name>
           <command>NEXT</command>
           <linkMode>false</linkMode>
-          <responseSymbol>true</responseSymbol>
+          <responseSymbol>false</responseSymbol>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
@@ -227,11 +227,11 @@
           <positions>
             <point>
               <x>110.0</x>
-              <y>94.0</y>
+              <y>184.0</y>
             </point>
             <point>
               <x>290.0</x>
-              <y>94.0</y>
+              <y>184.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -239,12 +239,12 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="71e761cd-1a38-4a09-ab1b-7c229a39bb80">
+        <transition id="47664e19-d48f-4c6e-add8-9e24772afb08">
           <annotation></annotation>
-          <name>false</name>
+          <name>true</name>
           <command>NEXT</command>
           <linkMode>false</linkMode>
-          <responseSymbol>false</responseSymbol>
+          <responseSymbol>true</responseSymbol>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
