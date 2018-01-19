@@ -59,10 +59,9 @@ dee4a9ad-f988-410b-860a-2d364bede4ef.f951f80d-3354-4387-9554-68216ca8eb58.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="960bd587-d821-4f47-8ee4-81dd5e5430e0">
+    <userInputBinding id="918c3e59-dbf5-44bc-a1d8-5c6577da343d">
       <annotation></annotation>
       <toContextKey></toContextKey>
-      <fromContextKey>serverId</fromContextKey>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
@@ -513,6 +512,12 @@ dee4a9ad-f988-410b-860a-2d364bede4ef.f951f80d-3354-4387-9554-68216ca8eb58.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="ca979da9-ac47-4a00-911c-3fde679d7ca3">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -601,6 +606,12 @@ dee4a9ad-f988-410b-860a-2d364bede4ef.f951f80d-3354-4387-9554-68216ca8eb58.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="f16215c7-1b83-4076-a793-cfd244e0eaca">
+        <baseIcon>calculator.png</baseIcon>
+        <basePath>Others</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -768,6 +779,12 @@ dee4a9ad-f988-410b-860a-2d364bede4ef.f951f80d-3354-4387-9554-68216ca8eb58.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="01b8b0d8-babe-414e-b66f-f98773083bfa">
+        <baseIcon>calculator.png</baseIcon>
+        <basePath>Others</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
