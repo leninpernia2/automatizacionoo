@@ -8,45 +8,97 @@
   <name>Update Org Settings</name>
   <categories/>
   <inputs>
-    <staticBinding id="3bf3a2a4-86e5-452e-9f62-4680ae6dbe29">
+    <userInputBinding id="71cbd416-4590-436e-bed2-744559f9e7fd">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>org</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <value>8abec922-4b82-4426-b252-4eeaf5514ce1</value>
-      <record>false</record>
-    </staticBinding>
-    <staticBinding id="6d6ca254-7182-41c1-8909-80d3c0611108">
-      <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>false</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>token</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <value>1a4ec224898b4ffe8e2847a9e3557aea</value>
-      <record>false</record>
-    </staticBinding>
-    <staticBinding id="5882f23f-383d-42be-aa98-2ab7ed506de9">
-      <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="e75c3e2f-b4dd-4d28-b718-d01bf003598f">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>username</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="12f14a99-f86c-46d8-99a3-5fae6ae5f41d">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>password</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="f17c37a3-8d6a-43bf-91b6-287efd9a45a7">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>organization</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="b7b386df-c4ac-4020-a4af-beb398c60832">
+      <annotation></annotation>
+      <fromContextKey>userOrg</fromContextKey>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>findOrg</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="e6a774c2-9c42-44a2-b78f-745188d32ba3">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>token</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="c8b0a48a-20eb-4474-a49f-b61b01ea5fdb">
@@ -85,6 +137,248 @@
   <compatibleRuntimeContext>false</compatibleRuntimeContext>
   <historyCheckPointFlow>true</historyCheckPointFlow>
   <steps>
+    <step id="0832c7ec-e6d7-49d6-86d5-bbc1bdb295a1">
+      <annotation></annotation>
+      <name>Get Organization</name>
+      <bounds>
+        <x>319.0</x>
+        <y>325.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="95d6fa54-42ed-4a7c-96aa-1a899725c98c">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="714d217f-7ae7-4975-9193-455c94db4fb1">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>hostname</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="c49c69a7-dce9-4a66-98f0-245651cba499">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>username</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="749896b9-2667-4afa-b599-35a2631548ce">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>password</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+        <userInputBinding id="a53a82a9-518e-43a1-8df8-f40dc49db78e">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>organization</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <staticBinding id="90ea4cb0-25a8-4a94-a9f9-fc5443c6aa82">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>findOrg</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="445e75b9-f8e7-4e8d-9c27-ca7c5299915f">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>token</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="b284c00d-63eb-4add-a49c-590ab5fa5759">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>666f6630-ed22-4264-a811-608dc8dde79c</refId>
+          </destination>
+          <source>
+            <refId>0832c7ec-e6d7-49d6-86d5-bbc1bdb295a1</refId>
+          </source>
+          <positions>
+            <point>
+              <x>369.0</x>
+              <y>359.0</y>
+            </point>
+            <point>
+              <x>140.0</x>
+              <y>304.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="6455132c-5479-4eef-928e-07dfc18a2746">
+          <annotation></annotation>
+          <name>unknown</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>unknown</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>666f6630-ed22-4264-a811-608dc8dde79c</refId>
+          </destination>
+          <source>
+            <refId>0832c7ec-e6d7-49d6-86d5-bbc1bdb295a1</refId>
+          </source>
+          <positions>
+            <point>
+              <x>369.0</x>
+              <y>359.0</y>
+            </point>
+            <point>
+              <x>316.4974137517096</x>
+              <y>320.6792688321213</y>
+            </point>
+            <point>
+              <x>204.17926333545563</x>
+              <y>293.70329384131793</y>
+            </point>
+            <point>
+              <x>140.0</x>
+              <y>304.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="440969ac-46e4-4dfc-aa67-a923f803f603">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>4ecce95b-6bd8-4b69-9493-a0840cd30ccf</refId>
+          </destination>
+          <source>
+            <refId>0832c7ec-e6d7-49d6-86d5-bbc1bdb295a1</refId>
+          </source>
+          <positions>
+            <point>
+              <x>369.0</x>
+              <y>359.0</y>
+            </point>
+            <point>
+              <x>140.0</x>
+              <y>124.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>d1d76b5e-7109-4860-ad0b-da5838383029</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="6430bf21-2d61-4362-b687-2792be577538">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>idOrg</contextKey>
+          <expression id="1d4ee484-be8f-4bba-a292-a17cfa9aef77">
+            <annotation></annotation>
+            <name>Result: idOrg</name>
+            <fieldName>idOrg</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="97af6d0a-e283-4e59-80fe-41fca857ec40">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>href</contextKey>
+          <expression id="77e7dcc0-3747-4383-9a3e-9da92e469aec">
+            <annotation></annotation>
+            <name>Result: href</name>
+            <fieldName>href</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
     <step id="4ecce95b-6bd8-4b69-9493-a0840cd30ccf">
       <annotation>07d8a867-5bbc-4fcf-9bdf-f2b87a453db0.4ecce95b-6bd8-4b69-9493-a0840cd30ccf.description</annotation>
       <name>Update vAppLeaseSettings</name>
@@ -122,7 +416,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>url</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>https://${hostname}/api/admin/org/${org}/settings/vAppLeaseSettings</value>
+          <value>https://${hostname}/api/admin/org/${idOrg}/settings/vAppLeaseSettings</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="0c6ef682-660b-43bf-a22f-bce8ab70e60f">
@@ -278,7 +572,7 @@ Content-Type:  application/vnd.vmware.admin.vAppLeaseSettings+xml</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>url</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>https://${hostname}/api/admin/org/${org}/settings/vAppTemplateLeaseSettings</value>
+          <value>https://${hostname}/api/admin/org/${idOrg}/settings/vAppTemplateLeaseSettings</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="2167cf81-424a-4a59-848a-969ccf09c77a">
@@ -406,7 +700,7 @@ Content-Type: application/vnd.vmware.admin.vAppTemplateLeaseSettings+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="db814248-51dd-430b-9548-62cbbdf39189">
+      <iconSpec id="c70f41da-6115-4d66-bf88-07b1346705e4">
         <baseIcon>return_success.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -456,6 +750,12 @@ Content-Type: application/vnd.vmware.admin.vAppTemplateLeaseSettings+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="61eae25a-aaf1-473d-b268-9312a4de9ac4">
+        <baseIcon>return_failure.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -528,7 +828,7 @@ Content-Type: application/vnd.vmware.admin.vAppTemplateLeaseSettings+xml</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>url</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>https://${hostname}/api/admin/org/${org}/settings/passwordPolicy</value>
+          <value>https://${hostname}/api/admin/org/${idOrg}/settings/passwordPolicy</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="57d6c049-a6ac-400b-b0dd-afe63ffa50f3">
@@ -574,7 +874,7 @@ Content-Type: application/vnd.vmware.admin.organizationPasswordPolicySettings+xm
     xmlns=&quot;http://www.vmware.com/vcloud/v1.5&quot;
     type=&quot;application/vnd.vmware.admin.organizationPasswordPolicySettings+xml&quot;&gt;
     &lt;AccountLockoutEnabled&gt;true&lt;/AccountLockoutEnabled&gt;
-    &lt;InvalidLoginsBeforeLockout&gt;5&lt;/InvalidLoginsBeforeLockout&gt;
+    &lt;InvalidLoginsBeforeLockout&gt;3&lt;/InvalidLoginsBeforeLockout&gt;
     &lt;AccountLockoutIntervalMinutes&gt;10&lt;/AccountLockoutIntervalMinutes&gt;
 &lt;/OrgPasswordPolicySettings&gt;</value>
           <record>false</record>
@@ -648,5 +948,5 @@ Content-Type: application/vnd.vmware.admin.organizationPasswordPolicySettings+xm
       <throttleSize>0</throttleSize>
     </step>
   </steps>
-  <startSteps>4ecce95b-6bd8-4b69-9493-a0840cd30ccf</startSteps>
+  <startSteps>0832c7ec-e6d7-49d6-86d5-bbc1bdb295a1</startSteps>
 </flow>
