@@ -21,58 +21,13 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="5472e948-c609-4152-99a6-446aedc52dc0">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>organization</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="869311c0-c09b-44b3-98ef-beb26dfc606d">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>username</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="c28db237-353b-4046-a137-e266c2c1b3f6">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>ENCRYPTED</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>password</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
     <userInputBinding id="648ad88b-4af6-443e-a97f-cb61ef12667c">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -87,7 +42,7 @@
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>userName</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -102,7 +57,7 @@
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>userEmail</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -117,7 +72,7 @@
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>userPassword</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -132,7 +87,7 @@
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>userOrg</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -147,7 +102,7 @@
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>roleHref</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -160,7 +115,7 @@
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>userFullName</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -244,51 +199,6 @@
           <required>false</required>
           <isPersisted>true</isPersisted>
           <inputSymbol>hostname</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="414ed452-4384-47c7-b2eb-7d4cdb27dd07">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>ENCRYPTED</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>username</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="6c8b2fa6-cdf2-4488-a85c-110f6862a776">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>ENCRYPTED</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>password</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="07dca8bb-00e5-460e-aa67-8f3d8531aee7">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>organization</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <record>false</record>
           <prompt></prompt>

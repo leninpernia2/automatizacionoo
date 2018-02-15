@@ -23,51 +23,6 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="e75c3e2f-b4dd-4d28-b718-d01bf003598f">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>username</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="12f14a99-f86c-46d8-99a3-5fae6ae5f41d">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>password</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="f17c37a3-8d6a-43bf-91b6-287efd9a45a7">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>organization</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
     <userInputBinding id="b7b386df-c4ac-4020-a4af-beb398c60832">
       <annotation></annotation>
       <fromContextKey>userOrg</fromContextKey>
@@ -178,47 +133,6 @@
           <value></value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="c49c69a7-dce9-4a66-98f0-245651cba499">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>username</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value></value>
-          <record>false</record>
-        </staticBinding>
-        <staticBinding id="749896b9-2667-4afa-b599-35a2631548ce">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>password</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value></value>
-          <record>false</record>
-        </staticBinding>
-        <userInputBinding id="a53a82a9-518e-43a1-8df8-f40dc49db78e">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>organization</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
         <staticBinding id="90ea4cb0-25a8-4a94-a9f9-fc5443c6aa82">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
@@ -700,12 +614,6 @@ Content-Type: application/vnd.vmware.admin.vAppTemplateLeaseSettings+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="c70f41da-6115-4d66-bf88-07b1346705e4">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -750,12 +658,6 @@ Content-Type: application/vnd.vmware.admin.vAppTemplateLeaseSettings+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="61eae25a-aaf1-473d-b268-9312a4de9ac4">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

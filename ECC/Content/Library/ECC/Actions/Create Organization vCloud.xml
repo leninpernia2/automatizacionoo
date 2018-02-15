@@ -548,12 +548,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="afaaca69-6261-4266-8f5f-38062322fc28">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -598,12 +592,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="81c43f8c-1e94-4296-803b-31d56b20b450">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -676,51 +664,6 @@
           <required>true</required>
           <isPersisted>true</isPersisted>
           <inputSymbol>hostname</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="1c0bcdf2-0461-4918-9f79-b13179c66d74">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>organization</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="40c23117-90ec-426b-9cdd-d10e9f661b96">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>username</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="368be33b-bc70-4588-a401-e9658299e589">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>ENCRYPTED</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>password</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <record>false</record>
           <prompt></prompt>
@@ -936,51 +879,6 @@
           <required>true</required>
           <isPersisted>true</isPersisted>
           <inputSymbol>hostname</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="66c0d625-81f4-4f7e-aabc-53e1e2318c6c">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>username</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="6b333326-567c-465d-af09-35d82c1c5563">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>password</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="74b4d14a-868d-46e1-9232-f2bc9ee529e0">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>organization</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <record>false</record>
           <prompt></prompt>

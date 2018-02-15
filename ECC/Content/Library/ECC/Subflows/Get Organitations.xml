@@ -21,21 +21,6 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="8bafb576-e618-4c80-9f83-bf4b42c39639">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>true</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>organization</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
     <userInputBinding id="50488d27-297f-4f4b-a2c2-de6798ddbd81">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
@@ -270,12 +255,6 @@ Content-Type: application/vnd.vmware.vcloud.orgList+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="c7dbfc0f-ab5d-4f6a-9319-e5b052a5824f">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -320,12 +299,6 @@ Content-Type: application/vnd.vmware.vcloud.orgList+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="c6eea352-cc00-4e84-b689-d4ed8a5b4407">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

@@ -22,36 +22,6 @@ d1d76b5e-7109-4860-ad0b-da5838383029.c6c2e6cf-4159-4755-bacf-f560a9b39ba0.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="1e05885a-3c57-49f7-95d9-8229b6ad12a6">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>true</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>username</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="e7bca29c-05cf-49aa-9d1d-89f83a85af31">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>true</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>password</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
     <userInputBinding id="3e07101c-0b96-41b1-9fb7-66a820394ac9">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
@@ -61,21 +31,6 @@ d1d76b5e-7109-4860-ad0b-da5838383029.c6c2e6cf-4159-4755-bacf-f560a9b39ba0.descri
       <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="1757bf3e-9581-4353-87ea-0705e6819794">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>true</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>organization</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <record>false</record>
       <prompt></prompt>
@@ -193,7 +148,7 @@ d1d76b5e-7109-4860-ad0b-da5838383029.c6c2e6cf-4159-4755-bacf-f560a9b39ba0.descri
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="55c482d9-fe7a-4efd-860c-51fa1660e606">
+        <staticBinding id="bd47ed3c-256f-43c7-8dd7-fd476c73f409">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>true</assignToContext>
@@ -203,27 +158,10 @@ d1d76b5e-7109-4860-ad0b-da5838383029.c6c2e6cf-4159-4755-bacf-f560a9b39ba0.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>hostname</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="7252f71e-8932-4f18-84f5-b8075301d93c">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>organization</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="69cce17f-df5e-48c5-87d5-5d821f3cec74">
+        </staticBinding>
+        <staticBinding id="f25d31af-4c3f-4d2c-9b4a-d79fdacf6080">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>true</assignToContext>
@@ -233,11 +171,9 @@ d1d76b5e-7109-4860-ad0b-da5838383029.c6c2e6cf-4159-4755-bacf-f560a9b39ba0.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>token</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
+        </staticBinding>
       </bindings>
       <transitions>
         <transition id="e20bf145-7118-47fb-8d1f-b5c12d989fa0">
@@ -340,12 +276,6 @@ d1d76b5e-7109-4860-ad0b-da5838383029.c6c2e6cf-4159-4755-bacf-f560a9b39ba0.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="5a4161cd-648c-4519-a1e2-57309e824f57">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

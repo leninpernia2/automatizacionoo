@@ -7,7 +7,7 @@ b53aa7ed-7c39-4bff-9a8d-53c129c30e8e.efcab1fd-1cbe-4e5b-8a62-b1e45facf985.descri
   <name>Add vdc org Network</name>
   <categories/>
   <inputs>
-    <staticBinding id="4a551807-1bf9-409c-b876-5be496dfd446">
+    <userInputBinding id="f111f3d0-ddf0-43d0-b826-36f3f2f93659">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -17,10 +17,12 @@ b53aa7ed-7c39-4bff-9a8d-53c129c30e8e.efcab1fd-1cbe-4e5b-8a62-b1e45facf985.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="f4a16cf5-c065-4116-b773-7a47f113c97a">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="70d6fb4e-5dd4-4b79-9646-5772c2027610">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -30,10 +32,12 @@ b53aa7ed-7c39-4bff-9a8d-53c129c30e8e.efcab1fd-1cbe-4e5b-8a62-b1e45facf985.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>vdc</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>faae21dd-a6d9-4a60-8bea-ca174003196b</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="6ec639f7-65a3-4f84-9a19-21f6b06bdf60">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="68452a06-286a-4daf-b22d-9d6c6b37c3b2">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -43,22 +47,26 @@ b53aa7ed-7c39-4bff-9a8d-53c129c30e8e.efcab1fd-1cbe-4e5b-8a62-b1e45facf985.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>67ba15ed74a44fcba0f21325fb21b3ef</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="4df8141b-befa-4626-98d2-4a685bc0cc1f">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="b090649e-51df-4da7-a387-0c9b4a8a84e2">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>hrefExtNetwork</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>https://vcloud.enterprisecomputing.mx/api/admin/network/e8d897eb-fdfa-46fa-ae5c-a7d890c0c27e</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
     <staticBinding id="81d90a9b-a595-4851-858b-dd0472e0c467">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
@@ -72,30 +80,32 @@ b53aa7ed-7c39-4bff-9a8d-53c129c30e8e.efcab1fd-1cbe-4e5b-8a62-b1e45facf985.descri
       <value>true</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="442e9123-63ae-421b-b5ea-5393e6adf271">
+    <userInputBinding id="02e8c14a-00e8-40eb-bd66-d23a691d795f">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>netVDCName</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Gestion-1541</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
     <staticBinding id="5106b268-4152-438a-8350-afdf31d8b734">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>netVDCDesc</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>gestion</value>
+      <value>RED DE GESTION</value>
       <record>false</record>
     </staticBinding>
   </inputs>
@@ -551,12 +561,6 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="daa35fca-29fc-4238-ae2c-461f765432ce">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
