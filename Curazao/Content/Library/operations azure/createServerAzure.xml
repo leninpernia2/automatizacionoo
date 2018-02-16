@@ -33,6 +33,21 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
+    <userInputBinding id="032c75aa-4b8e-46ff-8d5b-960baa063222">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>passvm</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
     <userInputBinding id="a267ce53-6517-49d5-bd8a-5335c8626a4d">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
@@ -2476,8 +2491,8 @@
     },
     &quot;osProfile&quot;: {
       &quot;computerName&quot;: &quot;${namevm}&quot;,
-      &quot;adminUsername&quot;: &quot;jcglobal&quot;,
-      &quot;adminPassword&quot;: &quot;Jcglobal2012&quot;,
+      &quot;adminUsername&quot;: &quot;axteladmin&quot;,
+      &quot;adminPassword&quot;: &quot;${passvm}&quot;,
       &quot;windowsConfiguration&quot;: {
         &quot;provisionVMAgent&quot;: true
       }
@@ -2878,8 +2893,8 @@
     },
     &quot;osProfile&quot;: {
       &quot;computerName&quot;: &quot;${namevm}&quot;,
-      &quot;adminUsername&quot;: &quot;jcglobal&quot;,
-      &quot;adminPassword&quot;: &quot;Jcglobal2012&quot;,
+      &quot;adminUsername&quot;: &quot;axteladmin&quot;,
+      &quot;adminPassword&quot;: &quot;${passvm}&quot;,
       &quot;linuxConfiguration&quot;: {
         &quot;disablePasswordAuthentication&quot;: false
       }
