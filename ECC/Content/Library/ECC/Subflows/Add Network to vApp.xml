@@ -254,7 +254,7 @@ xmlns:ovf=&quot;http://schemas.dmtf.org/ovf/envelope/1&quot;&gt;
 &lt;ovf:Info&gt;Configuration parameters for logical networks&lt;/ovf:Info&gt;
 &lt;NetworkConfig networkName=&quot;${NetworkName}&quot;&gt;
 &lt;Configuration&gt;
-&lt;ParentNetwork href=&quot;https://${hostname}/api/network/${NetworkID}&quot;/&gt;
+&lt;ParentNetwork href=&quot;https://${hostname}/api/admin/network/${NetworkID}&quot;/&gt;
 &lt;FenceMode&gt;${FenceMode}&lt;/FenceMode&gt;
 &lt;/Configuration&gt;
 &lt;/NetworkConfig&gt;
