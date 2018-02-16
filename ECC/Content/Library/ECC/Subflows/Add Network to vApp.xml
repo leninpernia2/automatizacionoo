@@ -90,7 +90,7 @@ f93e1de0-6161-42b3-9882-0a271e6ecd16.abd5fa98-2002-4898-bec5-fb8b0ac1d736.descri
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>NetworkName</inputSymbol>
+      <inputSymbol>InternalNetworkName</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <record>false</record>
       <prompt></prompt>
@@ -105,7 +105,67 @@ f93e1de0-6161-42b3-9882-0a271e6ecd16.abd5fa98-2002-4898-bec5-fb8b0ac1d736.descri
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>NetworkID</inputSymbol>
+      <inputSymbol>InternalNetworkID</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="03b40d21-dc61-4ecf-b489-5f309f01d46b">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>GestionNetworkName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="f802de5e-28be-46d5-8a9a-3dbd7c368099">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>GestionNetworkID</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="52d5f97f-acbc-4910-aa4f-77339aace0fb">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>BackupNetworkName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="e9768ed1-256d-44e4-8c27-140291eddafc">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>BackupNetworkID</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <record>false</record>
       <prompt></prompt>
@@ -252,9 +312,21 @@ xmlns:ovf=&quot;http://schemas.dmtf.org/ovf/envelope/1&quot;&gt;
 &lt;InstantiationParams&gt;
 &lt;NetworkConfigSection&gt;
 &lt;ovf:Info&gt;Configuration parameters for logical networks&lt;/ovf:Info&gt;
-&lt;NetworkConfig networkName=&quot;${NetworkName}&quot;&gt;
+&lt;NetworkConfig networkName=&quot;${InternalNetworkName}&quot;&gt;
 &lt;Configuration&gt;
-&lt;ParentNetwork href=&quot;https://${hostname}/api/admin/network/${NetworkID}&quot;/&gt;
+&lt;ParentNetwork href=&quot;https://${hostname}/api/network/${InternalNetworkID}&quot;/&gt;
+&lt;FenceMode&gt;${FenceMode}&lt;/FenceMode&gt;
+&lt;/Configuration&gt;
+&lt;/NetworkConfig&gt;
+&lt;NetworkConfig networkName=&quot;${GestionNetworkName}&quot;&gt;
+&lt;Configuration&gt;
+&lt;ParentNetwork href=&quot;https://${hostname}/api/network/${GestionNetworkID}&quot;/&gt;
+&lt;FenceMode&gt;${FenceMode}&lt;/FenceMode&gt;
+&lt;/Configuration&gt;
+&lt;/NetworkConfig&gt;
+&lt;NetworkConfig networkName=&quot;${BackupNetworkName}&quot;&gt;
+&lt;Configuration&gt;
+&lt;ParentNetwork href=&quot;https://${hostname}/api/network/${BackupNetworkID}&quot;/&gt;
 &lt;FenceMode&gt;${FenceMode}&lt;/FenceMode&gt;
 &lt;/Configuration&gt;
 &lt;/NetworkConfig&gt;
@@ -356,6 +428,12 @@ xmlns:ovf=&quot;http://schemas.dmtf.org/ovf/envelope/1&quot;&gt;
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="51431b94-d69b-4ad4-a68c-210f56a5e5f8">
+        <baseIcon>return_failure.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
