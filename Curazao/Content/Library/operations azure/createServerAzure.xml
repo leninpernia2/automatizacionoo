@@ -2491,7 +2491,7 @@
     },
     &quot;osProfile&quot;: {
       &quot;computerName&quot;: &quot;${namevm}&quot;,
-      &quot;adminUsername&quot;: &quot;jcglobal&quot;,
+      &quot;adminUsername&quot;: &quot;axteladmin&quot;,
       &quot;adminPassword&quot;: &quot;${passvm}&quot;,
       &quot;windowsConfiguration&quot;: {
         &quot;provisionVMAgent&quot;: true
@@ -2893,7 +2893,7 @@
     },
     &quot;osProfile&quot;: {
       &quot;computerName&quot;: &quot;${namevm}&quot;,
-      &quot;adminUsername&quot;: &quot;jcglobal&quot;,
+      &quot;adminUsername&quot;: &quot;axteladmin&quot;,
       &quot;adminPassword&quot;: &quot;${passvm}&quot;,
       &quot;linuxConfiguration&quot;: {
         &quot;disablePasswordAuthentication&quot;: false
