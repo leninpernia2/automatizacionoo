@@ -33,6 +33,19 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
+    <staticBinding id="37593bd8-e819-4d77-998a-81e19a726b3d">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>passvm</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
     <userInputBinding id="a267ce53-6517-49d5-bd8a-5335c8626a4d">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
@@ -2477,7 +2490,7 @@
     &quot;osProfile&quot;: {
       &quot;computerName&quot;: &quot;${namevm}&quot;,
       &quot;adminUsername&quot;: &quot;jcglobal&quot;,
-      &quot;adminPassword&quot;: &quot;Jcglobal2012&quot;,
+      &quot;adminPassword&quot;: &quot;${passvm}&quot;,
       &quot;windowsConfiguration&quot;: {
         &quot;provisionVMAgent&quot;: true
       }
@@ -2879,7 +2892,7 @@
     &quot;osProfile&quot;: {
       &quot;computerName&quot;: &quot;${namevm}&quot;,
       &quot;adminUsername&quot;: &quot;jcglobal&quot;,
-      &quot;adminPassword&quot;: &quot;Jcglobal2012&quot;,
+      &quot;adminPassword&quot;: &quot;${passvm}&quot;,
       &quot;linuxConfiguration&quot;: {
         &quot;disablePasswordAuthentication&quot;: false
       }
