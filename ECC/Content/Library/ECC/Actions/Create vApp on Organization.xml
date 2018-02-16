@@ -80,7 +80,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>namevApp</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>jcgr-vApp-lenin</value>
+      <value>jcgr-vApp</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="048902b9-87f5-4f00-84c9-c10608fd80fc">
