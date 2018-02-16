@@ -11,7 +11,7 @@ a48ae9a8-8861-48c0-8b0c-df46f3259393.e7250fcc-0a7c-4895-a058-b85685e50cbf.descri
   <name>List vApp Templates</name>
   <categories/>
   <inputs>
-    <staticBinding id="336d2d0e-a2c2-4acb-af74-49f77604daee">
+    <userInputBinding id="8b4321b2-6bb7-48b7-ae99-95227a7bf807">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -21,10 +21,12 @@ a48ae9a8-8861-48c0-8b0c-df46f3259393.e7250fcc-0a7c-4895-a058-b85685e50cbf.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="80ab30cc-f761-4de2-b1e8-0d805d3da73f">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="4dfbdf35-4afa-483d-95e6-0762798a6058">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -34,10 +36,12 @@ a48ae9a8-8861-48c0-8b0c-df46f3259393.e7250fcc-0a7c-4895-a058-b85685e50cbf.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>7ebcb5df036a49a4a90e8b02291c143c</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="578d3321-a02e-4442-9a17-2a3cd34dc400">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="ea470ba1-11c1-4f28-ad44-6e43d793404b">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -47,9 +51,11 @@ a48ae9a8-8861-48c0-8b0c-df46f3259393.e7250fcc-0a7c-4895-a058-b85685e50cbf.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>catalogId</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>557097b6-f77c-4cc5-a739-a5561a54fe51</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="076857d5-2e59-40a9-8a1a-af8e6d9607cd">
@@ -256,7 +262,7 @@ Content-Type: application/vnd.vmware.vcloud.catalog+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="5d1dafbf-c0aa-4f32-ac14-390af2510e3b">
+      <iconSpec id="69516f2e-f7f3-4b41-84cc-5513e68c4166">
         <baseIcon>return_success.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
