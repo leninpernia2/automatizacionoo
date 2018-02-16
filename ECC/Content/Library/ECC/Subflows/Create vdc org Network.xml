@@ -7,7 +7,7 @@
   <name>Create vdc org Network</name>
   <categories/>
   <inputs>
-    <staticBinding id="5d92a9eb-94bf-44be-bd2a-b5c341e5b648">
+    <userInputBinding id="c08f9381-7473-4f05-9873-6e0c36b0787d">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -17,10 +17,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="fb315e8e-71c1-4d5c-9baf-510bca7c13a4">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="f0696ba9-7f09-4edb-8c5c-a776573c6ccd">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -30,10 +32,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>vdc</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>faae21dd-a6d9-4a60-8bea-ca174003196b</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="a3012d0b-d340-4d80-8ec9-59b596c462ee">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="056cd7e3-c7a6-4ce4-83f4-e82bb3c7a689">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -43,10 +47,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>67ba15ed74a44fcba0f21325fb21b3ef</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="c447c776-00bf-477f-96b3-2df8312586c5">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="81f5088b-2f89-4112-8300-0c86e70d6342">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -56,10 +62,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>orgVDCName</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>testcsa-vdc</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="ac4f6cdd-9de9-4800-8aa4-26d5c7ac166f">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="8eedc5df-0b75-4aac-bd0e-46f60bc3e03c">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -69,10 +77,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>orgVDCDescription</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>test test test</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="dfe1af5f-74e1-4afe-8900-5ebbe96ec5aa">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="7979e8f5-3776-4d1a-b9ba-c62750af6d77">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -82,10 +92,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>Gateway</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>198.18.117.145</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="5dacb5c5-c8b5-4d60-9c0b-88aea6c1eaa8">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="a7f1dc51-c3d5-4d28-b0ad-a8e7db9e7af6">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -95,10 +107,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>Netmask</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>255.255.255.248</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="fe552f5e-aef0-49ad-8e8b-0b7f7e74a2d1">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="d42872f7-2fd3-4df9-b9c1-c04e5bc6850e">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -108,10 +122,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>Dns1</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>207.248.224.71</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="df0ccab8-6be4-4ed5-baef-471574d2775e">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="ef9993db-b5cd-4a2d-9ce0-4fa1923882e2">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -121,9 +137,11 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>Dns2</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>207.248.224.72</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
     <staticBinding id="7ec8498a-4076-4b78-aa7e-3267f3151fb0">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
@@ -137,7 +155,7 @@
       <value></value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="1f676d0b-c40c-4ab9-b3b6-db9468e1e75d">
+    <userInputBinding id="1cb3a94a-6ffd-417b-a5d3-dadb41743fac">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -147,10 +165,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>StartAddress</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>198.18.117.146</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="735b0d03-016a-4ada-9ba1-089430f22ef7">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="4d824660-533b-4f3d-b323-74e048b9bc54">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -160,9 +180,11 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>EndAddress</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>198.18.117.150</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
     <staticBinding id="49523917-f2a0-46d0-9179-9bd7a6c4e86b">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
@@ -437,12 +459,6 @@ Content-Type: application/vnd.vmware.vcloud.orgVdcNetwork+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="6641da21-b754-4e16-85ea-fbd19b4c5313">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

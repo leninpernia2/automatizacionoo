@@ -6,7 +6,7 @@
   <name>Create Organization</name>
   <categories/>
   <inputs>
-    <staticBinding id="49e04299-442a-4f0b-903e-eaeeb75cc008">
+    <userInputBinding id="64b43bc7-dcf4-449b-9920-3dc3afe1020d">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -16,10 +16,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="dfca80ec-a393-4628-85a5-e4b2e82aa0f7">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="00288f0c-192f-4f81-a797-f42b052ab4ee">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -29,9 +31,56 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>78936e077ebd4b70871b7c2a244dc18f</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="a2a06a8a-3eef-4d7d-9136-ce48ca180c40">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>name</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="fb24db11-7d0c-4db9-9a58-467fc670a8a1">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>fullname</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="fbbbb4e2-ecb6-4ee3-a7ec-0e0763134a54">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>description</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="7e790346-add9-4a4e-aa44-0af103dfa422">
@@ -138,10 +187,10 @@ Content-Type: application/vnd.vmware.admin.organization+xml</value>
           <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;AdminOrg
     xmlns=&quot;http://www.vmware.com/vcloud/v1.5&quot;
-    name=&quot;testcsa2&quot;
+    name=&quot;${name}&quot;
     type=&quot;application/vnd.vmware.admin.organization+xml&quot;&gt;
-    &lt;Description&gt;Example Corporation&#8217;s Finance Organization&lt;/Description&gt;
-    &lt;FullName&gt;Finance&lt;/FullName&gt;
+    &lt;Description&gt;${description}&lt;/Description&gt;
+    &lt;FullName&gt;${fullname}&lt;/FullName&gt;
     &lt;Settings&gt;
         &lt;OrgGeneralSettings&gt;
             &lt;CanPublishCatalogs&gt;false&lt;/CanPublishCatalogs&gt;
@@ -153,7 +202,7 @@ Content-Type: application/vnd.vmware.admin.organization+xml</value>
             &lt;DelayAfterPowerOnSeconds&gt;0&lt;/DelayAfterPowerOnSeconds&gt;
         &lt;/OrgGeneralSettings&gt;
         &lt;OrgLdapSettings&gt;
-            &lt;OrgLdapMode&gt;SYSTEM&lt;/OrgLdapMode&gt;
+            &lt;OrgLdapMode&gt;NONE&lt;/OrgLdapMode&gt;
             &lt;CustomUsersOu /&gt;
         &lt;/OrgLdapSettings&gt;
         &lt;OrgEmailSettings&gt;
@@ -161,12 +210,8 @@ Content-Type: application/vnd.vmware.admin.organization+xml</value>
             &lt;IsDefaultOrgEmail&gt;true&lt;/IsDefaultOrgEmail&gt;
             &lt;FromEmailAddress /&gt;
             &lt;DefaultSubjectPrefix /&gt;
-            &lt;IsAlertEmailToAllAdmins&gt;true&lt;/IsAlertEmailToAllAdmins&gt;
+            &lt;IsAlertEmailToAllAdmins&gt;false&lt;/IsAlertEmailToAllAdmins&gt;
         &lt;/OrgEmailSettings&gt;
-        &lt;OrgVAppTemplateLeaseSettings&gt;
-            &lt;DeleteOnStorageLeaseExpiration&gt;false&lt;/DeleteOnStorageLeaseExpiration&gt;
-            &lt;StorageLeaseSeconds&gt;0&lt;/StorageLeaseSeconds&gt;
-        &lt;/OrgVAppTemplateLeaseSettings&gt;
     &lt;/Settings&gt;
 &lt;/AdminOrg&gt;</value>
           <record>false</record>
@@ -261,7 +306,7 @@ Content-Type: application/vnd.vmware.admin.organization+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="4c8f21dc-5937-405f-96ce-b89133b02b20">
+      <iconSpec id="de783e88-00de-4cc2-8791-ef4269743aac">
         <baseIcon>return_success.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -311,7 +356,7 @@ Content-Type: application/vnd.vmware.admin.organization+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="b51065b9-d400-4c99-ba5b-7d76679e5d66">
+      <iconSpec id="1c4b294b-b05e-4afa-91ab-c4a53129259e">
         <baseIcon>return_failure.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
