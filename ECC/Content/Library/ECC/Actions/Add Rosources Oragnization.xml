@@ -371,6 +371,19 @@
       <value>198.18.117.150</value>
       <record>false</record>
     </staticBinding>
+    <staticBinding id="3fcf0973-7db9-4e2c-b106-f2b793362206">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>internalNetworkName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>Internal-2212</value>
+      <record>false</record>
+    </staticBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="f16712da-ca81-4c6c-8ee2-b0d70ea42fdc">
@@ -390,7 +403,36 @@
       <matchRules/>
     </opResponse>
   </possibleResponses>
-  <availableResultExpressions/>
+  <availableResultExpressions>
+    <expression id="a225f31e-6737-425c-98c2-60cfe007abcd">
+      <annotation></annotation>
+      <name>BackupNetworkID</name>
+      <fieldName>BackupNetworkID</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+    <expression id="66289b46-08dd-4d0b-92ec-0604beeb14cf">
+      <annotation></annotation>
+      <name>GestionNetworkID</name>
+      <fieldName>GestionNetworkID</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+    <expression id="c90f85cf-0e87-4bb7-98fe-8fa912c9c0b3">
+      <annotation></annotation>
+      <name>idVdc</name>
+      <fieldName>idVdc</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+    <expression id="b1967f60-1a08-467f-9120-26a70df39ac0">
+      <annotation></annotation>
+      <name>InternalNetworkID</name>
+      <fieldName>InternalNetworkID</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+  </availableResultExpressions>
   <resultExpression id="229faedc-2eca-411c-ae6c-5f938c0fa73f">
     <annotation></annotation>
     <name>FailureMessage</name>
@@ -961,16 +1003,30 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="7b44753e-3ba8-4ea3-9225-0c502a179bc4">
+        <flowVariableAssignment id="1248b7dd-a205-4c52-b41d-95ec42f1161b">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>href</contextKey>
-          <expression id="4d97d557-db8a-4cef-a7b5-78845a5e0702">
+          <expression id="6481e4f7-1d71-4944-8c06-cc082117fa99">
             <annotation></annotation>
             <name>Result: href</name>
             <fieldName>href</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="7b44753e-3ba8-4ea3-9225-0c502a179bc4">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>idVdc</contextKey>
+          <expression id="59763cfc-21fd-49f5-b399-3e1101f1febf">
+            <annotation></annotation>
+            <name>Result: idVdc</name>
+            <fieldName>idVdc</fieldName>
             <sourceType>AVAILABLE_RESULT</sourceType>
             <filters/>
           </expression>
@@ -1606,12 +1662,107 @@
             </filters>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="916388d2-c4c1-479a-a5a9-e57ad84cad8e">
+        <flowVariableAssignment id="dc324621-5be3-417a-aa4b-cb091f7c1286">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>hrefGestionNetwork</contextKey>
+          <expression id="441a9514-fdff-41a6-b063-40f24504ba8d">
+            <annotation></annotation>
+            <name>Result: provider_vdc_info</name>
+            <fieldName>provider_vdc_info</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters>
+              <regexFilter id="17b372d7-a7e4-4449-8df1-61ecfb66a473">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>.*${Gestion_network}</expression>
+                <ignoreCase>true</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>false</entireString>
+                <multiLine>true</multiLine>
+              </regexFilter>
+              <regexFilter id="f26b8907-35af-44ce-9c82-2ed4515f51d3">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>http.*\&quot;\s</expression>
+                <ignoreCase>true</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>false</entireString>
+                <multiLine>true</multiLine>
+              </regexFilter>
+              <stripWhitespaceFilter id="88c29670-2329-448d-9931-cd9f491ace97">
+                <annotation></annotation>
+                <name>Strip Whitespace</name>
+              </stripWhitespaceFilter>
+              <replaceAllFilter id="894249e2-7cde-462c-8e82-3572c2c9201d">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>true</ignoreCase>
+                <searchString>&quot;</searchString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="3d3e2665-a3a3-419e-a413-226a9e0dada1">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>BackupNetworkID</contextKey>
+          <expression id="0b852e9d-8c44-4b5a-a642-8b9cddae41ce">
+            <annotation></annotation>
+            <name>Result: provider_vdc_info</name>
+            <fieldName>provider_vdc_info</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters>
+              <regexFilter id="8ca3e601-1357-4910-b077-46cd2bd15d1f">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>.*${Backup_network}</expression>
+                <ignoreCase>true</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>false</entireString>
+                <multiLine>true</multiLine>
+              </regexFilter>
+              <regexFilter id="86f2c2a1-7ac9-4d96-9c70-0c51b4ecd18d">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>http.*\&quot;\s</expression>
+                <ignoreCase>true</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>false</entireString>
+                <multiLine>true</multiLine>
+              </regexFilter>
+              <stripWhitespaceFilter id="a0d39366-9c89-449f-9f07-3dee339e1308">
+                <annotation></annotation>
+                <name>Strip Whitespace</name>
+              </stripWhitespaceFilter>
+              <replaceAllFilter id="6da8110e-07d8-432a-806a-522961799c46">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>true</ignoreCase>
+                <searchString>&quot;</searchString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+              <replaceAllFilter id="da661dd6-4c2f-4f1f-b4cf-1882796448f4">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>false</ignoreCase>
+                <searchString>https://vcloud.enterprisecomputing.mx/api/admin/network/</searchString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="916388d2-c4c1-479a-a5a9-e57ad84cad8e">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>GestionNetworkID</contextKey>
           <expression id="902fcd05-f029-41f6-8a1b-75ecbb21389d">
             <annotation></annotation>
             <name>Result: provider_vdc_info</name>
@@ -1645,6 +1796,13 @@
                 <name>Replace</name>
                 <ignoreCase>true</ignoreCase>
                 <searchString>&quot;</searchString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+              <replaceAllFilter id="7a3e2bd1-c6cc-44dd-8764-806a5cbe4d5b">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>false</ignoreCase>
+                <searchString>https://vcloud.enterprisecomputing.mx/api/admin/network/</searchString>
                 <replaceType>ALL</replaceType>
               </replaceAllFilter>
             </filters>
@@ -1727,7 +1885,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="624ea49e-2e78-4a10-b9ab-cb114c5e159c">
+        <userInputBinding id="d7361dcd-46fb-48c8-aad9-c629fd585140">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1735,7 +1893,7 @@
           <isList>false</isList>
           <required>true</required>
           <isPersisted>true</isPersisted>
-          <inputSymbol>orgVDCName</inputSymbol>
+          <inputSymbol>internalNetworkName</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <record>false</record>
           <prompt></prompt>
@@ -1958,7 +2116,22 @@
       <opRef>
         <refId>7ffb471b-8840-40f3-931e-bd7d0bf5b92a</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="1d6fddf6-9c5c-4c3f-bb23-4a766a7a3b5b">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>InternalNetworkID</contextKey>
+          <expression id="0c023503-00bf-4974-b624-9756c85a3a2a">
+            <annotation></annotation>
+            <name>Result: InternalNetworkID</name>
+            <fieldName>InternalNetworkID</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <step id="c0498e72-e950-4f20-b568-82b3f721e756">
