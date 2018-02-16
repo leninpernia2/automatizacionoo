@@ -156,7 +156,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>url</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>https://${hostname}/api/admin/vdc/${idvdc}/action/composeVApp</value>
+          <value>https://${hostname}/api/vdc/${idvdc}/action/composeVApp</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="3264233f-5749-42c5-ac59-e4d7f2e12650">
@@ -283,7 +283,7 @@ xmlns=&quot;http://www.vmware.com/vcloud/v1.5&quot; xmlns:ovf=&quot;http://schem
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="81e0e4bb-65a5-4f8c-88c0-91aad95c74f2">
+      <iconSpec id="5c5375d3-1905-4906-bc0d-b0c78f44e381">
         <baseIcon>return_success.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
