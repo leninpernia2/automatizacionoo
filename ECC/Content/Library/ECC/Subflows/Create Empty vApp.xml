@@ -128,6 +128,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="a61e505e-f0b9-4d42-97d0-c137b2d51b3c">
+        <baseIcon>earth.png</baseIcon>
+        <basePath>/Networking/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -191,11 +197,10 @@ Content-Type: application/vnd.vmware.vcloud.composeVAppParams+xml</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>body</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>&lt;?xml version=&#8221;1.0&#8243; encoding=&#8221;UTF-8&#8243;?&gt;
+          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;ComposeVAppParams
 name=&quot;${namevApp}&quot;
-xmlns=&quot;http://www.vmware.com/vcloud/v1.5&quot;
-xmlns:ovf=&quot;http://schemas.dmtf.org/ovf/envelope/1&quot;&gt;
+xmlns=&quot;http://www.vmware.com/vcloud/v1.5&quot; xmlns:ovf=&quot;http://schemas.dmtf.org/ovf/envelope/1&quot;&gt;
 &lt;Description&gt;${vAppDescription}&lt;/Description&gt;
 &lt;AllEULAsAccepted&gt;true&lt;/AllEULAsAccepted&gt;
 &lt;/ComposeVAppParams&gt;</value>
@@ -278,6 +283,12 @@ xmlns:ovf=&quot;http://schemas.dmtf.org/ovf/envelope/1&quot;&gt;
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="81e0e4bb-65a5-4f8c-88c0-91aad95c74f2">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

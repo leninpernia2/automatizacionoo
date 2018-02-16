@@ -7,7 +7,7 @@
   <inputs>
     <staticBinding id="a836fc66-9ec9-4489-809d-995fe42bf54e">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -20,7 +20,7 @@
     </staticBinding>
     <staticBinding id="c34cf3b6-dcef-42b3-b8fd-a0afd9da36cd">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -33,7 +33,7 @@
     </staticBinding>
     <staticBinding id="f6009a36-45c5-4602-a8fd-0289f4c9e8a9">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -46,7 +46,7 @@
     </staticBinding>
     <staticBinding id="7eba14af-8ce5-42ea-ad89-9d45e720b1e3">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -55,6 +55,45 @@
       <inputSymbol>password</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <value>Pa$$w0rd</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="e28ed6d9-4e26-45ee-86d6-1bfb4378fa89">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>idvdc</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>b7785257-579d-4d84-b1c7-db46e70ee16c</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="3d86e7c5-0fcf-40b2-86c2-234b87c55dab">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>namevApp</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>jcgr-vApp</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="048902b9-87f5-4f00-84c9-c10608fd80fc">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>vAppDescription</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>jcgr-vApp test</value>
       <record>false</record>
     </staticBinding>
   </inputs>
@@ -214,7 +253,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="8a8b7c50-3e4a-46a3-b5e0-685a1540e1cf">
+        <transition id="6cc4a833-6319-44e7-9cc2-d1bfc439dd90">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -223,7 +262,7 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>75704abd-955c-47d0-9868-9d5b42c299f8</refId>
+            <refId>1d78cb2f-9293-473f-8680-d75511f5b1ee</refId>
           </destination>
           <source>
             <refId>ea0c4910-7311-4fd2-918e-18f62115dad7</refId>
@@ -234,8 +273,8 @@
               <y>94.0</y>
             </point>
             <point>
-              <x>530.0</x>
-              <y>258.0</y>
+              <x>174.0</x>
+              <y>242.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -271,7 +310,7 @@
       <name>Resolved : success</name>
       <bounds>
         <x>480.0</x>
-        <y>224.0</y>
+        <y>208.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -354,6 +393,171 @@
       <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
+    <step id="1d78cb2f-9293-473f-8680-d75511f5b1ee">
+      <annotation></annotation>
+      <name>Create Empty vApp</name>
+      <bounds>
+        <x>108.0</x>
+        <y>208.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="48e6441a-5643-4aec-9c74-0d93e609c407">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>hostname</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="c5bba0b2-3308-453b-9ea2-db7eeccb29fd">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>token</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="0c7773a4-fa42-43c3-a265-8a6f98373a5f">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>idvdc</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="236572df-dca3-4a44-9520-d69a0a69ceb6">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>namevApp</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="57329c91-661f-4faa-8220-df8623abb553">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>vAppDescription</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="64f172e2-b808-488f-bb41-7a246a662dc7">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>75704abd-955c-47d0-9868-9d5b42c299f8</refId>
+          </destination>
+          <source>
+            <refId>1d78cb2f-9293-473f-8680-d75511f5b1ee</refId>
+          </source>
+          <positions>
+            <point>
+              <x>174.0</x>
+              <y>242.0</y>
+            </point>
+            <point>
+              <x>530.0</x>
+              <y>258.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="3f03f720-6c20-46ae-9822-c54cdc370034">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>a8d8ef81-cee2-468f-9be4-15a868d8b65b</refId>
+          </destination>
+          <source>
+            <refId>1d78cb2f-9293-473f-8680-d75511f5b1ee</refId>
+          </source>
+          <positions>
+            <point>
+              <x>174.0</x>
+              <y>242.0</y>
+            </point>
+            <point>
+              <x>530.0</x>
+              <y>94.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>46ea26cc-c514-40d3-a786-d02f5f06c1dd</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
   </steps>
   <startSteps>ea0c4910-7311-4fd2-918e-18f62115dad7</startSteps>
 </flow>
