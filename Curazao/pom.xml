@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>DEFAULT</groupId>
   <artifactId>Curazao</artifactId>
-  <version>1.0.19</version>
+  <version>1.0.20-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>DEFAULT</groupId>
