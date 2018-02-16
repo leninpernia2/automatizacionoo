@@ -33,7 +33,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <staticBinding id="37593bd8-e819-4d77-998a-81e19a726b3d">
+    <userInputBinding id="032c75aa-4b8e-46ff-8d5b-960baa063222">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -43,9 +43,11 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>passvm</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value></value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
     <userInputBinding id="a267ce53-6517-49d5-bd8a-5335c8626a4d">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
