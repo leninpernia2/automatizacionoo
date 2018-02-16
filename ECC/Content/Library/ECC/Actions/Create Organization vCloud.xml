@@ -7,7 +7,7 @@
   <inputs>
     <staticBinding id="80c9665c-5f87-4cec-81ad-86f5bd1a16b3">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -20,7 +20,7 @@
     </staticBinding>
     <staticBinding id="268f50aa-ccc2-4aee-9307-0b7ec2cc27ec">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -33,7 +33,7 @@
     </staticBinding>
     <staticBinding id="0fbd105c-c8ff-4018-b0d0-0934c6cd8370">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -46,7 +46,7 @@
     </staticBinding>
     <staticBinding id="ee775279-3b69-42a6-85d4-10dfc8cfd773">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -59,7 +59,7 @@
     </staticBinding>
     <staticBinding id="bb83aa31-c0fc-4282-82d7-6e43928852d4">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -72,7 +72,7 @@
     </staticBinding>
     <staticBinding id="f2c8cb7c-385b-42d1-ab38-579e149eb443">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -85,7 +85,7 @@
     </staticBinding>
     <staticBinding id="8724c328-5a12-499c-b06b-7b3fbdde7564">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -137,7 +137,7 @@
     </staticBinding>
     <staticBinding id="1f23ebb6-0308-4539-bab9-8bee8c99fde1">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -150,7 +150,7 @@
     </staticBinding>
     <staticBinding id="9f68ba4c-6da9-41c3-b92f-e15439c3c386">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
