@@ -210,10 +210,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
          &lt;ovf:Info&gt;VApp startup section&lt;/ovf:Info&gt;
          &lt;ovf:Item
             ovf:order=&quot;0&quot;
-            ovf:id=&quot;0e7a68f3-51a1-48d4-9b34-6c8e4e23e336&quot; /&gt;
+            ovf:id=&quot;WIN2016ESSX64_11AGO17&quot; /&gt;
          &lt;ovf:Item
             ovf:order=&quot;1&quot;
-            ovf:id=&quot;28053638-fc77-47cf-a659-e5c5dd5b6bc0&quot; /&gt;
+            ovf:id=&quot;UBUNTU-16-16FEB18&quot; /&gt;
       &lt;/ovf:StartupSection&gt;
    &lt;/InstantiationParams&gt;
    &lt;AllEULAsAccepted&gt;true&lt;/AllEULAsAccepted&gt;
