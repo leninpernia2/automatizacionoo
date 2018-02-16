@@ -154,7 +154,15 @@
       <matchRules/>
     </opResponse>
   </possibleResponses>
-  <availableResultExpressions/>
+  <availableResultExpressions>
+    <expression id="d638e011-9fc3-4e8a-a0aa-d1205874b353">
+      <annotation></annotation>
+      <name>vAppID</name>
+      <fieldName>vAppID</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+  </availableResultExpressions>
   <resultExpression id="3cb6935d-1026-4c63-899c-53ecf79b6f06">
     <annotation></annotation>
     <name>FailureMessage</name>
@@ -601,11 +609,25 @@
         <refId>46ea26cc-c514-40d3-a786-d02f5f06c1dd</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="e315bc77-d819-41fc-b937-344c4685907c">
+        <flowVariableAssignment id="1fa9d92f-3163-4493-b947-f96fa3cb3a21">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>vAppID</contextKey>
+          <expression id="e8aa9cea-b71e-4d8c-92da-b224b11aa0b5">
+            <annotation></annotation>
+            <name>Result: vAppID</name>
+            <fieldName>vAppID</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="e315bc77-d819-41fc-b937-344c4685907c">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>vAppID</contextKey>
           <expression id="6aea0b19-f449-40dc-95cc-c095d02954f6">
             <annotation></annotation>
