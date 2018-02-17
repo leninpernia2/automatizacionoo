@@ -14,7 +14,7 @@
   <name>Get Available Networks on VDC</name>
   <categories/>
   <inputs>
-    <staticBinding id="81b29d0b-79bd-4adc-b638-3d8207c7ad5e">
+    <userInputBinding id="01cabd0b-1c74-47d1-a622-9143f0fc356b">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -24,10 +24,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>idVdc</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>7bdd3520-ba91-406f-9693-2581e0aec6d8</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="95a80415-3c9a-4276-b0c8-fbc2294a67d0">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="7d4b79f8-2ea3-4fd4-9f47-8ed57f36eb64">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -37,10 +39,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="26531b7c-1faa-425c-a1ee-d29739709356">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="f27d8f1b-9ed5-402c-b629-8863e5b1f1d7">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -50,10 +54,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>9c237007a041474b8a8c29dce3a63b68</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="f998b27b-e60c-489d-90a4-ddca01cfa87e">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="ad759858-0144-4b34-ab48-e521e9517b96">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -63,9 +69,11 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>NetworkName</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Internal-2212</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="51460ac8-b75e-47b2-9b1f-5408db2a9f57">
@@ -121,6 +129,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="795d478b-5bd9-43cb-a1b4-b88eb3e6eeea">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -134,9 +148,9 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="697ef80b-195f-4fa5-80ab-fed16c8cfede">
+        <userInputBinding id="7c6c119f-0c07-41c0-9592-a586fe47f9a1">
           <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
+          <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
@@ -144,12 +158,14 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>idVdc</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>7bdd3520-ba91-406f-9693-2581e0aec6d8</value>
           <record>false</record>
-        </staticBinding>
-        <staticBinding id="6ce0a7b9-814d-41ad-8047-15aa279e08e2">
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="b8bb50c8-da25-4d27-a5b7-a50055c2097c">
           <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
+          <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
@@ -157,12 +173,14 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>hostname</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>vcloud.enterprisecomputing.mx</value>
           <record>false</record>
-        </staticBinding>
-        <staticBinding id="54fe613b-19ae-4f91-beb7-374a29358a76">
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="d020e201-7aa2-4369-8bfc-5d7980bb27c1">
           <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
+          <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
@@ -170,9 +188,11 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>token</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>9c237007a041474b8a8c29dce3a63b68</value>
           <record>false</record>
-        </staticBinding>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
       </bindings>
       <transitions>
         <transition id="ab27f99a-1df2-48d0-b140-b05043475e2e">
@@ -265,6 +285,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="5cff4481-cf5d-49c0-9c41-a6ea3b50ae4c">
+        <baseIcon>return_failure.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -353,6 +379,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="9cc1ce84-efdb-4d63-9741-5b206fc36895">
+        <baseIcon>text_msg.png</baseIcon>
+        <basePath>/E-mail/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -474,6 +506,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="f729abfa-d0df-4637-a3d4-b012c1b67eaf">
+        <baseIcon>text_code_javascript.png</baseIcon>
+        <basePath>/Others/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

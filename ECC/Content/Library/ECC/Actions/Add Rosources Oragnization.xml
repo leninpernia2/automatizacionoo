@@ -160,7 +160,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>limitVdcStorageProfileGB</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>10</value>
+      <value>70</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="dbf0c594-f269-4050-b47f-0f24600fbb6b">
@@ -1043,6 +1043,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="1281f345-377e-454e-9745-ec4c3203e144">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -2143,6 +2149,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="46978ce4-fa39-411e-baa5-310e5d40edd0">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -2337,6 +2349,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="3a7dd311-df85-423e-bd48-2772a5541f22">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

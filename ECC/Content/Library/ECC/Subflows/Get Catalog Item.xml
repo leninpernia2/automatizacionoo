@@ -112,7 +112,7 @@
       <annotation>6323be6d-27e4-4aa5-81e0-e04890f74f23.875953c9-fb42-48cb-95ba-54960afaa867.description</annotation>
       <name>Http Client Get</name>
       <bounds>
-        <x>90.0</x>
+        <x>89.0</x>
         <y>90.0</y>
       </bounds>
       <layer>-1</layer>
@@ -263,12 +263,12 @@ Content-Type: application/vnd.vmware.vcloud.catalogitem+xml;version=1.5</value>
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>90.0</x>
+        <x>89.0</x>
         <y>450.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="a64d0792-d3ba-4953-ae8e-e844c5b5d486">
+      <iconSpec id="d37f977f-09b1-4020-bb28-8cfd30a0b981">
         <baseIcon>return_success.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -313,8 +313,8 @@ Content-Type: application/vnd.vmware.vcloud.catalogitem+xml;version=1.5</value>
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>94.0</x>
-        <y>352.0</y>
+        <x>89.0</x>
+        <y>287.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -483,7 +483,7 @@ Content-Type: application/vnd.vmware.vcloud.catalogitem+xml;version=1.5</value>
       <annotation>6323be6d-27e4-4aa5-81e0-e04890f74f23.43eecf20-bd51-4db1-abd7-06fd902afa95.description</annotation>
       <name>Get Value from Object</name>
       <bounds>
-        <x>480.0</x>
+        <x>468.0</x>
         <y>90.0</y>
       </bounds>
       <layer>-1</layer>
@@ -623,8 +623,8 @@ Content-Type: application/vnd.vmware.vcloud.catalogitem+xml;version=1.5</value>
       <annotation>6323be6d-27e4-4aa5-81e0-e04890f74f23.9b5b20c6-e423-4d36-8325-5580140b9ad8.description</annotation>
       <name>Get Value from Object</name>
       <bounds>
-        <x>480.0</x>
-        <y>210.0</y>
+        <x>468.0</x>
+        <y>220.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -763,8 +763,8 @@ Content-Type: application/vnd.vmware.vcloud.catalogitem+xml;version=1.5</value>
       <annotation>6323be6d-27e4-4aa5-81e0-e04890f74f23.73f5d650-aa07-430a-bff9-6eb399bd686f.description</annotation>
       <name>Get Value from Object</name>
       <bounds>
-        <x>480.0</x>
-        <y>330.0</y>
+        <x>468.0</x>
+        <y>350.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -903,7 +903,7 @@ Content-Type: application/vnd.vmware.vcloud.catalogitem+xml;version=1.5</value>
       <annotation>6323be6d-27e4-4aa5-81e0-e04890f74f23.6cd38cad-8c9f-4afb-b07e-c99a0a6671d7.description</annotation>
       <name>Get Value from Object</name>
       <bounds>
-        <x>420.0</x>
+        <x>468.0</x>
         <y>450.0</y>
       </bounds>
       <layer>-1</layer>

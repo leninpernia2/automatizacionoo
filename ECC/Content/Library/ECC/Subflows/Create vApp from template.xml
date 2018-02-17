@@ -8,24 +8,9 @@
   <name>Create vApp from template</name>
   <categories/>
   <inputs>
-    <userInputBinding id="4a2f2f95-c954-44e2-b9b9-0f54fd53ae72">
-      <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>idvdc</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
     <userInputBinding id="37333f76-c4a6-4686-9845-a35c6b975814">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -40,7 +25,7 @@
     </userInputBinding>
     <userInputBinding id="af3796e4-939c-403e-8d40-d4afecae3d3f">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -53,9 +38,24 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
+    <userInputBinding id="4a2f2f95-c954-44e2-b9b9-0f54fd53ae72">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>idvdc</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
     <userInputBinding id="8f99307c-58e3-47c6-af33-ef114636e2e9">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -70,13 +70,118 @@
     </userInputBinding>
     <userInputBinding id="82bbd5f0-d632-46d8-bede-1f732d985a6a">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>vAppDescription</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="4eab01a3-1185-4a21-aeac-2a9faaeaa10d">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>vAppTemplateHRef</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="40e7e7bd-e585-405d-aa25-82b23fb9b1ed">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>InternalNetworkName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="089bd19e-34e7-4760-8590-9b9bb88f66af">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>GestionNetworkName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="a27795c7-0179-4225-9baf-353eb57b0fc7">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>BackupNetworkName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="6ae66c63-0054-49e3-89e3-35d507ad8f62">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>InternalNetworkID</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="37772a4c-0478-4eba-a751-939d2fe4a71c">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>GestionNetworkID</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="a8f195d7-5c3e-4036-8d12-3c7a0694641c">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>BackupNetworkID</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <record>false</record>
       <prompt></prompt>
@@ -166,7 +271,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>url</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>https://${hostname}/api/vdc/${idvdc}/action/composeVApp</value>
+          <value>https://${hostname}/api/vdc/${idvdc}/action/instantiateVAppTemplate</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="e3c1dace-d142-45cc-9d30-cbe75483cb28">
@@ -194,7 +299,7 @@
           <listDelimiter>,</listDelimiter>
           <value>x-vcloud-authorization: ${token}
 Accept: application/*;version=9.0
-Content-Type: application/vnd.vmware.vcloud.composeVAppParams+xml</value>
+Content-Type: application/vnd.vmware.vcloud.instantiateVAppTemplateParams+xml</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="5db42dc2-121a-4350-81e9-73958811c4f4">
@@ -208,12 +313,40 @@ Content-Type: application/vnd.vmware.vcloud.composeVAppParams+xml</value>
           <inputSymbol>body</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;ComposeVAppParams
-name=&quot;${namevApp}&quot;
-xmlns=&quot;http://www.vmware.com/vcloud/v1.5&quot; xmlns:ovf=&quot;http://schemas.dmtf.org/ovf/envelope/1&quot;&gt;
-&lt;Description&gt;${vAppDescription}&lt;/Description&gt;
-&lt;AllEULAsAccepted&gt;true&lt;/AllEULAsAccepted&gt;
-&lt;/ComposeVAppParams&gt;</value>
+&lt;InstantiateVAppTemplateParams
+   xmlns=&quot;http://www.vmware.com/vcloud/v1.5&quot;
+   name=&quot;Linux FTP server&quot;
+   deploy=&quot;true&quot;
+   powerOn=&quot;true&quot;
+   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+   xmlns:ovf=&quot;http://schemas.dmtf.org/ovf/envelope/1&quot;&gt;
+   &lt;Description&gt;Example FTP Server&lt;/Description&gt;
+   &lt;InstantiationParams&gt;
+      &lt;NetworkConfigSection&gt;
+         &lt;ovf:Info&gt;Configuration parameters for logical networks&lt;/ovf:Info&gt;
+         &lt;NetworkConfig networkName=&quot;${InternalNetworkName}&quot;&gt;
+			&lt;Configuration&gt;
+			&lt;ParentNetwork href=&quot;https://${hostname}/api/network/${InternalNetworkID}&quot;/&gt;
+			&lt;FenceMode&gt;bridged&lt;/FenceMode&gt;
+			&lt;/Configuration&gt;
+		&lt;/NetworkConfig&gt;
+		&lt;NetworkConfig networkName=&quot;${GestionNetworkName}&quot;&gt;
+			&lt;Configuration&gt;
+			&lt;ParentNetwork href=&quot;https://${hostname}/api/network/${GestionNetworkID}&quot;/&gt;
+			&lt;FenceMode&gt;bridged&lt;/FenceMode&gt;
+			&lt;/Configuration&gt;
+		&lt;/NetworkConfig&gt;
+		&lt;NetworkConfig networkName=&quot;${BackupNetworkName}&quot;&gt;
+			&lt;Configuration&gt;
+			&lt;ParentNetwork href=&quot;https://${hostname}/api/network/${BackupNetworkID}&quot;/&gt;
+			&lt;FenceMode&gt;bridged&lt;/FenceMode&gt;
+			&lt;/Configuration&gt;
+		&lt;/NetworkConfig&gt;
+      &lt;/NetworkConfigSection&gt;
+   &lt;/InstantiationParams&gt;
+   &lt;Source href=&quot;${vAppTemplateHRef}&quot;/&gt;
+   &lt;AllEULAsAccepted&gt;true&lt;/AllEULAsAccepted&gt;
+&lt;/InstantiateVAppTemplateParams&gt;</value>
           <record>false</record>
         </staticBinding>
       </bindings>
@@ -649,7 +782,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="c3ce1877-96e7-4631-8546-cd4413f86403">
+        <staticBinding id="97df4819-0f27-4c3b-924b-b42072566d91">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -659,12 +792,10 @@ http://xml.org/sax/features/external-parameter-entities false</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>hostname</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="9b13d52f-69e3-4a4e-978d-71a180aba13f">
+        </staticBinding>
+        <staticBinding id="e39b5af9-34ed-45e4-961a-78d1fc732a51">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -674,12 +805,10 @@ http://xml.org/sax/features/external-parameter-entities false</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>token</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="3151f6ca-8001-4136-ab59-bbb582285882">
+        </staticBinding>
+        <staticBinding id="f4b884f1-e263-4d1f-8133-4f733349e063">
           <annotation></annotation>
           <fromContextKey>taskID</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -690,11 +819,9 @@ http://xml.org/sax/features/external-parameter-entities false</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>task</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
+        </staticBinding>
       </bindings>
       <transitions>
         <transition id="e3b04074-43f0-4f43-9152-902b66f6bfef">
