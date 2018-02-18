@@ -42,7 +42,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <staticBinding id="0ed16a65-1d8c-4023-a5b4-87e424004b7d">
+    <userInputBinding id="1c62545c-bf70-40d1-83a8-f557bc52bbc0">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -50,11 +50,13 @@
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>catalogID</inputSymbol>
+      <inputSymbol>catalogItemID</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>5d97ffba-0926-4104-995a-87cdc90e7da9</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="1d2a9f77-78b0-480d-adaa-afef7163dee0">
@@ -145,7 +147,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>url</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>https://${hostname}/api/catalogItem/${catalogID}</value>
+          <value>https://${hostname}/api/catalogItem/${catalogItemID}</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="ccf4617c-5fd3-4e8a-8c3c-120b3a6faf71">
@@ -268,12 +270,6 @@ Content-Type: application/vnd.vmware.vcloud.catalogitem+xml;version=1.5</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="d37f977f-09b1-4020-bb28-8cfd30a0b981">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

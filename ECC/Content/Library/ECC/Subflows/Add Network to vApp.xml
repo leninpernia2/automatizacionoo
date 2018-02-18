@@ -60,7 +60,7 @@ f93e1de0-6161-42b3-9882-0a271e6ecd16.abd5fa98-2002-4898-bec5-fb8b0ac1d736.descri
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>namevApp</inputSymbol>
+      <inputSymbol>vAppName</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <record>false</record>
       <prompt></prompt>
@@ -305,7 +305,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <listDelimiter>,</listDelimiter>
           <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;RecomposeVAppParams
-name=&quot;${namevApp}&quot;
+name=&quot;${vAppName}&quot;
 xmlns=&quot;http://www.vmware.com/vcloud/v1.5&quot;
 xmlns:ovf=&quot;http://schemas.dmtf.org/ovf/envelope/1&quot;&gt;
 &lt;Description&gt;${vAppDescription}&lt;/Description&gt;
@@ -428,12 +428,6 @@ xmlns:ovf=&quot;http://schemas.dmtf.org/ovf/envelope/1&quot;&gt;
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="51431b94-d69b-4ad4-a68c-210f56a5e5f8">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -478,12 +472,6 @@ xmlns:ovf=&quot;http://schemas.dmtf.org/ovf/envelope/1&quot;&gt;
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="ac64c4f9-e0ac-460d-a98a-b2801e00eeaa">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

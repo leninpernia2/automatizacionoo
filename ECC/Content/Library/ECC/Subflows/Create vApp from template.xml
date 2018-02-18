@@ -61,7 +61,7 @@
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>namevApp</inputSymbol>
+      <inputSymbol>vAppName</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <record>false</record>
       <prompt></prompt>
@@ -113,36 +113,6 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="089bd19e-34e7-4760-8590-9b9bb88f66af">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>GestionNetworkName</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="a27795c7-0179-4225-9baf-353eb57b0fc7">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>BackupNetworkName</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
     <userInputBinding id="6ae66c63-0054-49e3-89e3-35d507ad8f62">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
@@ -152,36 +122,6 @@
       <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>InternalNetworkID</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="37772a4c-0478-4eba-a751-939d2fe4a71c">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>GestionNetworkID</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="a8f195d7-5c3e-4036-8d12-3c7a0694641c">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>BackupNetworkID</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <record>false</record>
       <prompt></prompt>
@@ -315,30 +255,18 @@ Content-Type: application/vnd.vmware.vcloud.instantiateVAppTemplateParams+xml</v
           <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;InstantiateVAppTemplateParams
    xmlns=&quot;http://www.vmware.com/vcloud/v1.5&quot;
-   name=&quot;Linux FTP server&quot;
+   name=&quot;${vAppName}&quot;
    deploy=&quot;true&quot;
    powerOn=&quot;true&quot;
    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
    xmlns:ovf=&quot;http://schemas.dmtf.org/ovf/envelope/1&quot;&gt;
-   &lt;Description&gt;Example FTP Server&lt;/Description&gt;
+   &lt;Description&gt;${vAppDescription}&lt;/Description&gt;
    &lt;InstantiationParams&gt;
       &lt;NetworkConfigSection&gt;
          &lt;ovf:Info&gt;Configuration parameters for logical networks&lt;/ovf:Info&gt;
          &lt;NetworkConfig networkName=&quot;${InternalNetworkName}&quot;&gt;
 			&lt;Configuration&gt;
 			&lt;ParentNetwork href=&quot;https://${hostname}/api/network/${InternalNetworkID}&quot;/&gt;
-			&lt;FenceMode&gt;bridged&lt;/FenceMode&gt;
-			&lt;/Configuration&gt;
-		&lt;/NetworkConfig&gt;
-		&lt;NetworkConfig networkName=&quot;${GestionNetworkName}&quot;&gt;
-			&lt;Configuration&gt;
-			&lt;ParentNetwork href=&quot;https://${hostname}/api/network/${GestionNetworkID}&quot;/&gt;
-			&lt;FenceMode&gt;bridged&lt;/FenceMode&gt;
-			&lt;/Configuration&gt;
-		&lt;/NetworkConfig&gt;
-		&lt;NetworkConfig networkName=&quot;${BackupNetworkName}&quot;&gt;
-			&lt;Configuration&gt;
-			&lt;ParentNetwork href=&quot;https://${hostname}/api/network/${BackupNetworkID}&quot;/&gt;
 			&lt;FenceMode&gt;bridged&lt;/FenceMode&gt;
 			&lt;/Configuration&gt;
 		&lt;/NetworkConfig&gt;
@@ -465,6 +393,12 @@ Content-Type: application/vnd.vmware.vcloud.instantiateVAppTemplateParams+xml</v
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="7307e9a8-5626-41c8-93c9-c18b683a8df6">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -769,6 +703,12 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="b699f6b1-afe6-4d83-9828-1baefa890015">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
