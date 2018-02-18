@@ -104,7 +104,7 @@
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>userName</inputSymbol>
+      <inputSymbol>userNameCliente</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <value>admJCGR</value>
       <record>false</record>
