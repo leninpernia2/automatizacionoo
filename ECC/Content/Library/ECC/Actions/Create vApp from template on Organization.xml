@@ -1800,6 +1800,21 @@
           <value>Gestion-1541</value>
           <record>false</record>
         </staticBinding>
+        <userInputBinding id="b1acfbf7-0832-4e2e-92f0-c563ca0cd906">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>BackupNetworkName</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
       </bindings>
       <transitions>
         <transition id="3187b634-0a27-4b8e-8cc3-9d4ccee161c5">

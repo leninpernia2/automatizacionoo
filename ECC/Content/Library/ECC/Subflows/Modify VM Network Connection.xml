@@ -7,7 +7,7 @@
   <name>Modify VM Network Connection</name>
   <categories/>
   <inputs>
-    <staticBinding id="956c63d6-b465-44a4-b14e-b234f177ccf2">
+    <userInputBinding id="18450b2a-099e-4025-94c9-057c66e17b6b">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -17,10 +17,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>vAppID</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vapp-7927c01b-b21c-4acd-8e8f-f83294631051</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="95d092e6-3039-48c3-9a24-2f06be3d9703">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="6c5a5178-b069-46fe-be5d-2d04c0df9bbf">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -30,10 +32,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="c2dc8b04-97be-43e1-b477-64e3e429701b">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="3a5a29af-7410-4345-a4ca-b653d14c03e0">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -43,35 +47,56 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>fc427ffa84c44170b1174f198f36eb8f</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="5f6dc44c-6e17-4152-8020-885d80c3f2ee">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="b5eb9245-bc62-4b2d-bcbb-177076071709">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>InternalNetworkName</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Internal-2212</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="7539df93-886c-4885-865f-af3c685f52ad">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="4504420d-c441-42d4-962f-e0fc8f6f8d56">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>GestionNetworkName</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Gestion-1541</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="410223b4-2d2d-4008-971a-b46934ab1dbc">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>BackupNetworkName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="56261d01-114f-4521-822a-199ba148a64b">
@@ -278,17 +303,11 @@
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>570.0</x>
-        <y>450.0</y>
+        <x>546.0</x>
+        <y>379.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="484d0444-c8ce-4488-a631-01f7102e9f50">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -333,12 +352,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="1989659b-9650-4e87-a7de-f4cdee936f8e">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -453,6 +466,11 @@ Content-type: application/vnd.vmware.vcloud.networkConnectionSection+xml</value>
     &lt;IpAddressAllocationMode&gt;POOL&lt;/IpAddressAllocationMode&gt;
   &lt;/NetworkConnection&gt;
   &lt;NetworkConnection network=&quot;${GestionNetworkName}&quot;&gt;
+    &lt;NetworkConnectionIndex&gt;1&lt;/NetworkConnectionIndex&gt;
+    &lt;IsConnected&gt;true&lt;/IsConnected&gt;
+    &lt;IpAddressAllocationMode&gt;POOL&lt;/IpAddressAllocationMode&gt;
+  &lt;/NetworkConnection&gt;
+  &lt;NetworkConnection network=&quot;${BackupNetworkName}&quot;&gt;
     &lt;NetworkConnectionIndex&gt;1&lt;/NetworkConnectionIndex&gt;
     &lt;IsConnected&gt;true&lt;/IsConnected&gt;
     &lt;IpAddressAllocationMode&gt;POOL&lt;/IpAddressAllocationMode&gt;
