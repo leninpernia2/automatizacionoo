@@ -191,6 +191,7 @@ Content-Type: application/vnd.vmware.admin.organization+xml</value>
     type=&quot;application/vnd.vmware.admin.organization+xml&quot;&gt;
     &lt;Description&gt;${description}&lt;/Description&gt;
     &lt;FullName&gt;${fullname}&lt;/FullName&gt;
+    &lt;IsEnabled&gt;true&lt;/IsEnabled&gt;
     &lt;Settings&gt;
         &lt;OrgGeneralSettings&gt;
             &lt;CanPublishCatalogs&gt;false&lt;/CanPublishCatalogs&gt;
@@ -295,6 +296,36 @@ Content-Type: application/vnd.vmware.admin.organization+xml</value>
         <refId>f389fb81-422b-4a18-b6b9-70264bfda2cf</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="5dcce3ac-1b77-450b-a3f9-3de0893d296f">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>URL_Org</contextKey>
+          <expression id="6cd984b0-6d2d-4be2-b5a4-9e115674f38f">
+            <annotation></annotation>
+            <name>Result Field: Result</name>
+            <fieldName>Result</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters>
+              <regexFilter id="c9ea637a-86ca-4211-a9cc-1f092189b182">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>HOLA</expression>
+                <ignoreCase>true</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>false</entireString>
+                <multiLine>true</multiLine>
+              </regexFilter>
+              <concat id="0967de8d-f32f-4333-9bd4-bad6bd870b4e">
+                <annotation></annotation>
+                <name>Format</name>
+                <text>https://${hostname}/cloud/org/${name}</text>
+                <position>END</position>
+              </concat>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="36ab00fa-4eb5-4c22-90ed-9a237a6026a9">
           <annotation></annotation>
           <name>assignment</name>
@@ -335,6 +366,12 @@ Content-Type: application/vnd.vmware.admin.organization+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="f6d48412-71f9-47b3-a7f5-103c20ecedb0">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -423,6 +460,12 @@ Content-Type: application/vnd.vmware.admin.organization+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="a8e547d4-ac4b-43f3-ae73-f915a5eeac0e">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
