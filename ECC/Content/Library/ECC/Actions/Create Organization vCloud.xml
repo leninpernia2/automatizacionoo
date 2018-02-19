@@ -670,8 +670,9 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="a994c60a-c462-418f-ae8c-c494e4de9715">
+        <userInputBinding id="f43ff665-5b1c-4b47-aa5f-fcd9de96d44d">
           <annotation></annotation>
+          <fromContextKey>userNameCliente</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
@@ -731,9 +732,9 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="afabe80e-6d92-4f22-8229-55ba7cb6f1fb">
+        <staticBinding id="d5d9c4bd-091c-47f4-a148-97ffe8ea11f7">
           <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
+          <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
