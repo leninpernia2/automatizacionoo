@@ -181,6 +181,13 @@
     </opResponse>
   </possibleResponses>
   <availableResultExpressions>
+    <expression id="6865e28b-e15c-4518-969c-9724a246ff8f">
+      <annotation></annotation>
+      <name>hrefUser</name>
+      <fieldName>hrefUser</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
     <expression id="db33dae1-d35b-496d-9a6a-38c74a33581c">
       <annotation></annotation>
       <name>UrlOrg</name>
@@ -863,7 +870,22 @@
       <opRef>
         <refId>88f375be-da28-4216-8f64-4df0fb4f9f2e</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="4fa0624e-9f76-401a-849a-5c08f59b4134">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>hrefUser</contextKey>
+          <expression id="8ee5861a-d4ce-4950-9a0b-e927b684d08b">
+            <annotation></annotation>
+            <name>Result: hrefUser</name>
+            <fieldName>hrefUser</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <step id="6e50f92d-92b1-4a6b-91b5-04d17be74ea2">

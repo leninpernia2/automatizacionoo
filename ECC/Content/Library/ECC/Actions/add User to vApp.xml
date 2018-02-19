@@ -70,9 +70,9 @@
       <value>vapp-f88bce3e-442b-4eba-b986-df143ef588aa</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="1e58b2f3-3a38-4296-a873-d10ae7cce805">
+    <staticBinding id="14b46773-7523-4ff2-9f92-7c41e3aa57b8">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>

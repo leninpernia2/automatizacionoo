@@ -143,7 +143,15 @@
       <matchRules/>
     </opResponse>
   </possibleResponses>
-  <availableResultExpressions/>
+  <availableResultExpressions>
+    <expression id="7f99b037-803e-48dd-805f-3b75762dffa6">
+      <annotation></annotation>
+      <name>hrefUser</name>
+      <fieldName>hrefUser</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+  </availableResultExpressions>
   <resultExpression id="e4c72de3-f2b5-4f21-a8bb-843c0fdeb692">
     <annotation></annotation>
     <name>FailureMessage</name>
@@ -461,35 +469,6 @@ Content-Type: application/vnd.vmware.admin.user+xml</value>
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="4f74860a-c72a-4883-8e73-84b13da6aad3">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>af5d5b98-5261-42f0-bdc0-4c24db6f5f0c</refId>
-          </destination>
-          <source>
-            <refId>7f081142-3395-4dd0-888b-4fffffc9c590</refId>
-          </source>
-          <positions>
-            <point>
-              <x>676.4230769230769</x>
-              <y>126.0</y>
-            </point>
-            <point>
-              <x>680.0</x>
-              <y>291.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
         <transition id="4b54f321-9e16-44a4-a23d-4880ef847a9a">
           <annotation></annotation>
           <name>failure</name>
@@ -519,20 +498,102 @@ Content-Type: application/vnd.vmware.admin.user+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
+        <transition id="121ba92c-72b0-4010-80ed-8713e92d3fa3">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>5ca7b8f3-21ba-4993-9c51-2e3b1a3d333b</refId>
+          </destination>
+          <source>
+            <refId>7f081142-3395-4dd0-888b-4fffffc9c590</refId>
+          </source>
+          <positions>
+            <point>
+              <x>380.0</x>
+              <y>274.0</y>
+            </point>
+            <point>
+              <x>556.0</x>
+              <y>276.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
       </transitions>
       <properties/>
       <opRef>
         <refId>f389fb81-422b-4a18-b6b9-70264bfda2cf</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="6ce962c3-b576-4765-8331-a4f7685fe29d">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>statusCode</contextKey>
+          <expression id="caff9415-2a6f-49b8-841b-6e9ff217b35d">
+            <annotation></annotation>
+            <name>Result Field: statusCode</name>
+            <fieldName>statusCode</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="3bc8a2cc-c042-4c3a-97b0-34803f69ff29">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>xml</contextKey>
+          <expression id="452d8c92-27b9-4d51-8957-8d2414fd6025">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="676cc836-bb26-48fe-a32b-3ae80d9d94eb">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>hrefUser</contextKey>
+          <expression id="4cf9ba32-e0c5-41e0-8654-28c04c3657a0">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters>
+              <xmlGetAttributeFilter id="0e8dd128-c753-4da9-9f1e-1c638eab15ea">
+                <annotation></annotation>
+                <name>XML Get Attribute</name>
+                <attributeName>href</attributeName>
+                <elementPath>//*[name()=&quot;User&quot;]</elementPath>
+                <includeSubElements>false</includeSubElements>
+                <resultAsFirstResult>true</resultAsFirstResult>
+                <resultAsTable>false</resultAsTable>
+              </xmlGetAttributeFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <returnStep id="af5d5b98-5261-42f0-bdc0-4c24db6f5f0c">
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>630.0</x>
-        <y>240.0</y>
+        <x>600.0</x>
+        <y>390.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -615,6 +676,126 @@ Content-Type: application/vnd.vmware.admin.user+xml</value>
       <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
+    <step id="5ca7b8f3-21ba-4993-9c51-2e3b1a3d333b">
+      <annotation></annotation>
+      <name>isOK</name>
+      <bounds>
+        <x>330.0</x>
+        <y>390.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="9fa30e98-dd50-4ae0-87f2-e5230d49d8d6">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>xml</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="103ddab2-249a-4cb3-a8be-74fd2a86cc2f">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>statusCode</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="2ee660d5-1d0f-4ea3-88d0-c8739cbc96b9">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>71a2169e-75d6-47e3-80ed-8f196cc29d7c</refId>
+          </destination>
+          <source>
+            <refId>5ca7b8f3-21ba-4993-9c51-2e3b1a3d333b</refId>
+          </source>
+          <positions>
+            <point>
+              <x>387.0</x>
+              <y>423.0</y>
+            </point>
+            <point>
+              <x>110.0</x>
+              <y>274.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="97e8e749-e4ac-4ba9-a154-3d46a3397b4a">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>af5d5b98-5261-42f0-bdc0-4c24db6f5f0c</refId>
+          </destination>
+          <source>
+            <refId>5ca7b8f3-21ba-4993-9c51-2e3b1a3d333b</refId>
+          </source>
+          <positions>
+            <point>
+              <x>380.0</x>
+              <y>424.0</y>
+            </point>
+            <point>
+              <x>680.0</x>
+              <y>274.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>7d7fe10e-080b-4de0-b498-9d0f2e6c02e2</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
   </steps>
   <startSteps>7e8e7497-8b1c-4b90-bf24-4e6e6acb03ff</startSteps>
 </flow>
