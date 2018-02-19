@@ -180,7 +180,15 @@
       <matchRules/>
     </opResponse>
   </possibleResponses>
-  <availableResultExpressions/>
+  <availableResultExpressions>
+    <expression id="db33dae1-d35b-496d-9a6a-38c74a33581c">
+      <annotation></annotation>
+      <name>UrlOrg</name>
+      <fieldName>URL_Org</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+  </availableResultExpressions>
   <resultExpression id="66d3b46a-995f-4920-a1b9-e5ab86c22be7">
     <annotation></annotation>
     <name>FailureMessage</name>
@@ -541,7 +549,7 @@
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>URL_Org</contextKey>
           <expression id="7704d256-4a94-42bb-a5a1-e0e4d1df642a">
             <annotation></annotation>
