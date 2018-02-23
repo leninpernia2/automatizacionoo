@@ -65,7 +65,7 @@ d077dd1f-a08d-4f21-9730-2faf1bd5bcb1.fdc28cd4-ddc2-4acc-9676-55b40b5b4e4c.prompt
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>hostname</inputSymbol>
+      <inputSymbol>serverHostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <record>false</record>
       <prompt></prompt>
@@ -238,7 +238,7 @@ d077dd1f-a08d-4f21-9730-2faf1bd5bcb1.fdc28cd4-ddc2-4acc-9676-55b40b5b4e4c.prompt
 
 ${mensaje}.
 
-Servidor: ${hostname}.
+Servidor: ${serverHostname}.
 
 Este es un mensaje enviado desde CSA.</value>
           <record>false</record>
@@ -399,12 +399,6 @@ Este es un mensaje enviado desde CSA.</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="b7abe4eb-55dc-44a1-98d9-e7f214cd8379">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
