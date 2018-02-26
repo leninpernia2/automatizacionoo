@@ -218,21 +218,6 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="8c375512-834f-45ce-a0cd-e44df236efd2">
-          <annotation></annotation>
-          <toContextKey></toContextKey>
-          <fromContextKey></fromContextKey>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>coreVersion</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>sas105</value>
-          <record>false</record>
-        </staticBinding>
         <staticBinding id="9b975e40-5d3c-46f2-8c3d-0a51b9f0b6ba">
           <annotation></annotation>
           <toContextKey></toContextKey>
