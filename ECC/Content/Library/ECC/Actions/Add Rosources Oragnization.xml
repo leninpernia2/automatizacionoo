@@ -173,7 +173,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>ResourceGuaranteedMemory</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>0.75</value>
+      <value>0.20</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="14193f69-50ed-44d3-95de-a1f8f4053745">
@@ -186,7 +186,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>ResourceGuaranteedCpu</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>0.35</value>
+      <value>0</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="41e5f515-274b-48fc-aae5-f04bf40bfab9">
@@ -199,7 +199,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>VCpuInGhz</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>2</value>
+      <value>1</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="e940096f-091b-4a28-a2ea-d0ebf720d181">
@@ -1043,12 +1043,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="1281f345-377e-454e-9745-ec4c3203e144">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

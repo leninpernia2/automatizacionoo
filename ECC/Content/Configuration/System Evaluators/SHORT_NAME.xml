@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regexEvaluator id="5a2f63b3-9c97-4cb0-9112-5564675fdc06">
+  <descriptionCdata><![CDATA[5a2f63b3-9c97-4cb0-9112-5564675fdc06.description=VALIDA QUE EL NOMBRE CORTO DE LA ORGINIZACION CONTENGA SOLO LETRAS, NUMEROS Y GUION BAJO. LONGITUD MAXIMA DE 25 CARACTERES
+]]></descriptionCdata>
+  <annotation>5a2f63b3-9c97-4cb0-9112-5564675fdc06.description</annotation>
+  <name>SHORT_NAME</name>
+  <entireString>true</entireString>
+  <expression>\w{1,25}</expression>
+  <ignoreCase>false</ignoreCase>
+  <multiLine>false</multiLine>
+  <regType>JAVA</regType>
+</regexEvaluator>

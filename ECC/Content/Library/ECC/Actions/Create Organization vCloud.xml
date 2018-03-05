@@ -67,8 +67,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>name</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>JCGRTEST</value>
+      <value>JCGR TEST</value>
       <record>false</record>
+      <validationFormat>
+        <refId>5a2f63b3-9c97-4cb0-9112-5564675fdc06</refId>
+        <refName>SHORT_NAME</refName>
+      </validationFormat>
     </staticBinding>
     <staticBinding id="f2c8cb7c-385b-42d1-ab38-579e149eb443">
       <annotation></annotation>
@@ -89,7 +93,7 @@
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>true</required>
+      <required>false</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>description</inputSymbol>
       <listDelimiter>,</listDelimiter>
