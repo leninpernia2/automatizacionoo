@@ -713,6 +713,12 @@ Content-Type: application/vnd.vmware.admin.createVdcParams+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="b02155dd-542c-4152-8918-47ee1f898e89">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1523,6 +1529,12 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="de2f1904-0b7d-4cdb-b257-1b55ff64759f">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1895,7 +1907,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <bindings>
         <userInputBinding id="65c0f27e-4ab3-499e-b48c-200cdbbf642e">
           <annotation></annotation>
-          <fromContextKey>limitVdcStorageProfileGB</fromContextKey>
+          <fromContextKey>limitVdcStorageProfile</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>

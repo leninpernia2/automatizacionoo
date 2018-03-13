@@ -69,7 +69,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>findOrg</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>JCGRTEST</value>
+      <value>JCGR_TEST</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="2511f2b4-2245-445a-84a2-047e9c375ab3">

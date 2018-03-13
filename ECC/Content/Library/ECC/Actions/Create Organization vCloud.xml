@@ -67,7 +67,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>name</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>JCGR TEST</value>
+      <value>JCGR_TEST</value>
       <record>false</record>
       <validationFormat>
         <refId>5a2f63b3-9c97-4cb0-9112-5564675fdc06</refId>
