@@ -283,11 +283,17 @@
       <annotation></annotation>
       <name>Add VM to vApp</name>
       <bounds>
-        <x>86.0</x>
+        <x>78.0</x>
         <y>193.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="8ddc4ad6-fe96-4d2d-a958-ca969f6ca3ff">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -492,11 +498,17 @@
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>98.0</x>
+        <x>78.0</x>
         <y>365.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="7a46bfad-b531-4e11-97bb-edbe38ee3173">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
