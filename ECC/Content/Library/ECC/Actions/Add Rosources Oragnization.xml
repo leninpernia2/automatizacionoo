@@ -160,7 +160,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>limitVdcStorageProfileGB</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>70</value>
+      <value>200</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="dbf0c594-f269-4050-b47f-0f24600fbb6b">
