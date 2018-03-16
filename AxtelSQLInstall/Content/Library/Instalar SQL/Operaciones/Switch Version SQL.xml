@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="c7f0a8c5-03ef-4b49-8c1b-42b77aa97de8">
+  <descriptionCdata><![CDATA[c7f0a8c5-03ef-4b49-8c1b-42b77aa97de8.description=Realiza la selecci\u00F3n de la respuesta dependiendo de la versi\u00F3n SQL que se instalar\u00E1
+]]></descriptionCdata>
+  <annotation>c7f0a8c5-03ef-4b49-8c1b-42b77aa97de8.description</annotation>
+  <name>Switch Version SQL</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="d8a2352a-8515-4933-938c-6c56b21ca95e">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>Field_1</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="ffa7f36e-0e71-4289-9840-470de0eb0fe7">
+      <annotation></annotation>
+      <name>SQL2008</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="655041ff-a332-48ea-be8c-956d0c4611cd">
+          <annotation></annotation>
+          <name>Field_1</name>
+          <fieldName>Field_1</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="48c09143-8c87-4e7e-887c-56c871527440">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>2008</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>MATCH_AT_LEAST_ONE_WORD</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="7f5a3ee2-1e42-4ef6-a68f-c36144c65e75">
+      <annotation></annotation>
+      <name>SQL2012STD</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="50dcf4ce-5567-4231-96c4-7ed7a43fc70e">
+          <annotation></annotation>
+          <name>Field_1</name>
+          <fieldName>Field_1</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="8dfd28f1-2c2e-4f71-a23f-a122dcdcff4d">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>2012 Standard</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>MATCH_AT_LEAST_ONE_WORD</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="adee92ba-cce5-416e-8cfd-7544345796f7">
+      <annotation></annotation>
+      <name>SQL2012ENT</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="83a42960-8c13-44db-86d4-b8a3b093f5a0">
+          <annotation></annotation>
+          <name>Field_1</name>
+          <fieldName>Field_1</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="80046c83-04b9-4f4d-a165-b43ee84a4f6e">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>2012 Enterprise</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>MATCH_AT_LEAST_ONE_WORD</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="d2fa524f-9a4e-44f7-a643-1a8fd8347c23">
+      <annotation></annotation>
+      <name>SQL2014STD</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="9f2602e4-82b8-4b98-83a8-00ed27df2267">
+          <annotation></annotation>
+          <name>Field_1</name>
+          <fieldName>Field_1</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="974c3dd5-98a7-4b39-bf1b-ede43c57926e">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>2014 Standard</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>MATCH_AT_LEAST_ONE_WORD</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="2e8c9638-6d48-481e-bf7f-563d57cca0fb">
+      <annotation></annotation>
+      <name>SQL2014ENT</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="7039a3fd-ea8b-4961-b5c6-2a89ad357ee3">
+          <annotation></annotation>
+          <name>Field_1</name>
+          <fieldName>Field_1</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="57959a10-efa6-43b0-8594-8525f27e94f0">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>2014 Enterprise</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>MATCH_AT_LEAST_ONE_WORD</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="5a0719b0-035d-4669-b202-55b9b6ff0557">
+      <annotation></annotation>
+      <name>SQL2016STD</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="2504357c-4ddb-48c7-8ced-93dc42e725f5">
+          <annotation></annotation>
+          <name>Field_1</name>
+          <fieldName>Field_1</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="53575975-4929-4cf4-89c4-a944a5043226">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>2016 Standard</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>MATCH_AT_LEAST_ONE_WORD</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="50976e86-7d55-4e66-ab56-c8a83f9cf4ee">
+      <annotation></annotation>
+      <name>SQL2017</name>
+      <isDefault>true</isDefault>
+      <onFailure>true</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="a8aa7956-ab9e-45cc-ae52-5d3fd9ed74cb">
+          <annotation></annotation>
+          <name>Field_1</name>
+          <fieldName>Field_1</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="4d61b07b-34dd-495b-93cc-43f7abbfb5ba">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>2017</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>MATCH_AT_LEAST_ONE_WORD</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="f212c185-a5a9-4cc0-8b53-7ebb49f16dd2">
+    <baseIcon>branch.png</baseIcon>
+    <basePath>/Others/</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.9.1</version>
+    <actionName>noOp</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow id="7ffea058-c21f-41e1-b9c3-0be89c6cdd49">
+  <descriptionCdata><![CDATA[7ffea058-c21f-41e1-b9c3-0be89c6cdd49.150451eb-83f8-46ce-bcff-7ffc52327725.prompt=The location for the Analysis Services configuration files.
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.19f94b06-8f00-4edb-868a-af0ca4c69e50.prompt=The location for the Analysis Services backup files. 
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.259f9789-50ae-469e-ba67-665cf2497765.prompt=Account for Integration Services\: Domain\\User or system account.
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.2d9dfadf-8c53-4aaf-a6e9-682668f92991.prompt=Specify the Instance ID for the SQL Server features you have specified. SQL Server directory structure, registry structure, and service names will reflect the instance ID of the SQL Server instance.
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.40933285-1777-44ec-adca-330ae1e86ec6.prompt=Password for the SQL SA Account
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.4ac59408-0ddb-4d8a-b7bc-8645b6e3a9b9.description=<pre> \nCheck to see if the value stored in a specified flow variable, denoted by key, is null.\n\nInputs\:\n    keyName - The key to check, i.e. the name of the flow variable. \n    trimSpaces - If set on "true" then all the whitespaces will be removed from the value stored. \nValid values\: true, false\nDefault value\: false\n\nReturns\: \n    The value in the specified key, i.e. flow variable with all whitespaces removed.\n\nResponses\:\n    isNull - If the key is a null pointer, i.e. the flow variable doesn't have an assigned value.\n    notNull - If some value is stored in the key, i.e the flow variable has a value assigned. \n\nNotes\: \n    1. If the "trimSpaces" input is set on "true" and the value from "keyName" contains only whitespaces then the response will be "isNull". \n    2. If the "trimSpaces" input is set on "false" and the value from "keyName" contains only whitespaces then the response will be "notNull". \n    3. If any other value than "true" or "false" is passed on "trimSpaces" input then the default value (false) will be used.\n</pre>
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.4f4f73b6-387b-41ae-92f1-0c34d9129aa4.prompt=The location for the Analysis Services temporary files.
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.53823f3f-78f0-4565-b14d-42ceedbcf2c4.prompt=Specifies the list of administrator accounts that need to be provisioned.\nWindows account(s) to provision as SQL Server system administrators.
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.7205eda1-7f52-490a-9cad-9a812c46b750.prompt=Account for SQL Server service\: Domain\\User or system account.
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.748e3b7a-6147-4593-870a-b6b0b0d6c7ba.prompt=The collation to be used by Analysis Services.\nSpecifies a Windows collation or an SQL collation to use for the Database Engine. 
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.82e7ec36-b8c8-4483-8107-1ff58e88f91b.description=<pre> \nThis operation reads the content of a file. The operation can be used to read the entire file content in one step or to iterate the file line by line.\n\nInputs\:\n    source - The full path and filename of the file to be read. A UNC path can be supported as the source file path.\n    filter -  Regular expression filter to be applied to each line (leave blank for no filter). If this filter is not blank, all rows that contain the filter string will be returned. If no match is found, no lines will be returned.\n    store - Whether to store results in the session for retrieval. If "store" is set to true, then all matching lines are pushed into the Session and then subsequent calls to the operation results in the next line being returned.  If set to "false", the file will be iterated and in any iteration the number of remaining lines that matched the "filter" will be returned.\nValid values \: true, false\n    delimiter - If specified, the entire content of the file  will be read, the specified value will be used as a delimiter between the rows and  the resulting content will be returned. If left blank, the next row will be returned for each subsequent call. \n    user - Username to use for thread impersonation on the RAS host when reading.\n    password - Password for the user.\n    eofReset -  If set to true, after the No More response has been returned once, the operation will restart reading the file from the beginning on the next call.\nValid values\: true, false\n    characterSet - The character set of the file to read from. For invalid or empty input value the default encoding will be used. \nValid values\: UTF-8, UTF-16 and UTF-32 \nDefault value\: UTF-8\n\nResponses\:\n    more lines - More lines are available to be read in the session.\n    no more lines - No lines are available for reading in the session.\n    failure - If something went wrong. \n\nResults\:\n    returnCode - This is the primary output. It is 0 if the operation completed successfully  (or if more rows are available when iterate is set to true), 1 if no more items (if iterate is set to true) and -1 in case of failure. \n    COUNT- The number of lines that matched the filter, or if no filter specified, the total lines read (if iterate is false, or delimiter is not null). Otherwise, it returns the number of lines remaining in the session. This result is only returned in line-by-line mode.\n    returnResult - Each row by turn (if iterate is true and delimiter is blank) or all rows separated by the delimiter (if iterate is true and delimiter is not blank).\n    exception - An exception message if the operation fails.\n\nNote\:\n1. If you are using UTF-8 special characters(for example japanese characters), please ensure that your file is encoded in UTF-8 and not in ANSI wich is the default file encoding in windows when you are creating a new file.\n2. The "filter" and "eofReset" fields are taken into consideration only if iterate is set to true. Otherwise, they have no impact on the result.\n3. If i"store" is set to "true" and "delimiter" is not null, the entire file may or may not still be fully read at once, depending on size. \n4. If "store" is set to "true", then all matching lines are pushed into the Session and then, subsequent calls to the operation, result in the next line being returned.\n\nExamples\:\n    The following examples are used to illustrate the behavior of the operation for three specific use cases. For these examples, the operation will use as the input source a file called "example.txt", with the absolute path "C\:\\Program Files\\example.txt" and the following content\:\n        "line1\n         line2\n         line3\n         line4"\n1. This is a valid inputs example for reading the content of a file, when the "store" input field is set to "true" and the "delimiter" input field is not left blank\:\n        source\: C\:\\Program Files\\example.txt\n        filter\:\n        store\: true\n        delimiter\: ,\n        eofReset\: false\n        characterSet\: UTF-8\n    In this case, the "returnResult" output field of the operation will have the following value\: line1,line2,line3,line4\n2. This is a valid inputs example for reading the content of a file, when the "store" input field is set to "true" and the "delimiter" input field is left blank\:\n        source\: C\:\\Program Files\\example.txt\n        filter\:\n        store\: true\n        delimiter\:\n        eofReset\: false\n        characterSet\: UTF-8\n    In this case, the file will be iterated row by row in four subsequent calls. At each call, the "returnResult" output field of the operation will contain the value of one line from the file, in the same order as they are found in the source file (i.e. line1, line2, lin3, line4). \n3. This is a valid inputs example for reading the content of a file, when the "store" input field is set to "false" and the "delimiter" input field is left blank\:       \n        source\: C\:\\Program Files\\example.txt\n        filter\:\n        iterate\: false\n        delimiter\:\n        eofReset\: false\n        characterSet\: UTF-8\n    In this case, all matching lines will be iterated and the "returnResult" field will contain, at each iteration, the number of lines remaining to be iterated (i.e\: 4, 3, 2, 1).\n\n</pre>
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.84d261b6-0e88-47be-aead-c166cb750acb.prompt=Agent account name
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.b825abe6-90b6-4147-a5f0-0b4efd16631f.description=<pre>Writes the data from "contents" input to the requested file. The operation can be used to overwrite existing content of the file,  append extra lines to it or even create a new file.\n\nInput Parameters\:\nfile                - Full path to file (can be a UNC path, will attempt to create directory structure). If the file does not exist it is created first.\ncontents        - The contents to write to the file. Contents can have a new line delimiter which is also given as input to the operation, but it is optional. Example\: "This is line no. 01\\nThis is line no. 2\\n" where \\n is the delimiter.\nuser              - Username to use for thread impersonation on the RAS host for this operation.\npassword      - Password for the user.\ndelimiter       - Specifies the newline delimiter (\\n, \\r\\n, etc) that is used for the "contents" input.\noverwrite      - Specifies whether to overwrite the file or append to it. By default, the used value is true. Accepted values\: true, false or the empty string. If this is left empty, the file will be overwritten.\ncharacterSet - The character encoding used to write to the file. The default is UTF-8. Example values\: windows-1252, UTF-16, UTF-16BE,  ISO-8859-1, US-ASCII, Shift_JIS etc.\n\nResponses\:\nsuccess - The contents were written to the file.\nfailure - The operation did not succeed in writing the contents to file.\n</pre>
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.c841cc57-e7f5-428b-a643-6083488a1e85.prompt=Text To Write\:
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.cad9a6bf-3cc3-48c6-b651-955a6178cb3e.prompt=The name of the account that the Analysis Services service runs under.
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.de7e5f02-05dd-479c-960c-6f567a41e25d.prompt=The location for the Analysis Services log files.
+7ffea058-c21f-41e1-b9c3-0be89c6cdd49.f922865e-e971-42c0-91f0-daba19c0468c.prompt=The location for the Analysis Services data files.
+]]></descriptionCdata>
+  <annotation></annotation>
+  <name>ConfigurationFileSQL2008</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="2d9dfadf-8c53-4aaf-a6e9-682668f92991">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>InstanceID</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.2d9dfadf-8c53-4aaf-a6e9-682668f92991.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="84d261b6-0e88-47be-aead-c166cb750acb">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>AgenteACC</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.84d261b6-0e88-47be-aead-c166cb750acb.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="259f9789-50ae-469e-ba67-665cf2497765">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>IntegrationACC</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.259f9789-50ae-469e-ba67-665cf2497765.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="cad9a6bf-3cc3-48c6-b651-955a6178cb3e">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>AnalisysACC</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.cad9a6bf-3cc3-48c6-b651-955a6178cb3e.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="53823f3f-78f0-4565-b14d-42ceedbcf2c4">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>AdministratorACC</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.53823f3f-78f0-4565-b14d-42ceedbcf2c4.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="40933285-1777-44ec-adca-330ae1e86ec6">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>PasswordSA</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.40933285-1777-44ec-adca-330ae1e86ec6.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="7205eda1-7f52-490a-9cad-9a812c46b750">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>ServiceSQLACC</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.7205eda1-7f52-490a-9cad-9a812c46b750.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="748e3b7a-6147-4593-870a-b6b0b0d6c7ba">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>ColationSQL</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.748e3b7a-6147-4593-870a-b6b0b0d6c7ba.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="f922865e-e971-42c0-91f0-daba19c0468c">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>DataDIR</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.f922865e-e971-42c0-91f0-daba19c0468c.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="de7e5f02-05dd-479c-960c-6f567a41e25d">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>LogDIR</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.de7e5f02-05dd-479c-960c-6f567a41e25d.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="19f94b06-8f00-4edb-868a-af0ca4c69e50">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>BackupDIR</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.19f94b06-8f00-4edb-868a-af0ca4c69e50.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="4f4f73b6-387b-41ae-92f1-0c34d9129aa4">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>TempDIR</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.4f4f73b6-387b-41ae-92f1-0c34d9129aa4.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="150451eb-83f8-46ce-bcff-7ffc52327725">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>ConfigDIR</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.150451eb-83f8-46ce-bcff-7ffc52327725.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="b45a51cb-d468-4514-a739-1cd2b9ee8451">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+    <opResponse id="78dae60c-e8a4-43ff-acbb-3fa77afc5b55">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>false</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="1344574b-4e8c-42d3-92fa-4355958e97ef">
+    <annotation></annotation>
+    <name>FailureMessage</name>
+    <fieldName>FailureMessage</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="aea7885d-50f1-4904-bd84-99c092dcabfe">
+    <baseIcon>flow.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <callouts/>
+  <checkPointFlow>true</checkPointFlow>
+  <compatibleRuntimeContext>false</compatibleRuntimeContext>
+  <historyCheckPointFlow>true</historyCheckPointFlow>
+  <steps>
+    <step id="82e7ec36-b8c8-4483-8107-1ff58e88f91b">
+      <annotation>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.82e7ec36-b8c8-4483-8107-1ff58e88f91b.description</annotation>
+      <name>Read File</name>
+      <bounds>
+        <x>22.0</x>
+        <y>14.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="6b658d30-ce3f-440b-802a-49c657521355">
+        <baseIcon>document_text.png</baseIcon>
+        <basePath>Operating System/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="4e9e0f0f-096c-4694-a8a7-2dd8963edbe2">
+            <baseIcon>read2.png</baseIcon>
+            <basePath>Annotations/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>true</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="eeb3b7df-db50-441c-9bd2-2a49c72d81b4">
+          <annotation></annotation>
+          <toContextKey></toContextKey>
+          <fromContextKey></fromContextKey>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>source</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>\\Mac\Home\Documents\Axtel DMA\Instalaciones Funcionales de SQL\Configurations Files\ConfigurationFile2008.ini</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="f5f99a1c-9b4c-41ef-b150-a2b6d88fa639">
+          <annotation></annotation>
+          <toContextKey></toContextKey>
+          <fromContextKey></fromContextKey>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>store</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>true</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="7e3fc31e-4f1b-4a50-92dd-b80f4d1dbe11">
+          <annotation></annotation>
+          <toContextKey></toContextKey>
+          <fromContextKey></fromContextKey>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>delimiter</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>
+</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="5eea445e-daff-436c-9703-f2f51e5308dd">
+          <annotation></annotation>
+          <name>done</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>done</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>4ac59408-0ddb-4d8a-b7bc-8645b6e3a9b9</refId>
+          </destination>
+          <source>
+            <refId>82e7ec36-b8c8-4483-8107-1ff58e88f91b</refId>
+          </source>
+          <positions>
+            <point>
+              <x>299.0</x>
+              <y>132.0</y>
+            </point>
+            <point>
+              <x>534.0</x>
+              <y>120.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>f09173f6-bfb0-4d5b-8475-6c859e538bca</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="d25023bc-db7f-453d-a64a-81a78c6b7dbc">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>ArchivoInicial</contextKey>
+          <expression id="a6a94282-5a1b-4105-bb3f-a88031a6b926">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters>
+              <replaceAllFilter id="0ae9d438-593d-463c-964f-1d7749fb8670">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>false</ignoreCase>
+                <searchString>
+
+</searchString>
+                <replaceString>
+</replaceString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+              <regexFilter id="c9776c39-9b5b-43cf-887e-7d13497bf8e9">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>(\;|\w|\[).*</expression>
+                <ignoreCase>false</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>false</entireString>
+                <multiLine>true</multiLine>
+              </regexFilter>
+              <scriptletFilter id="20e79227-fd41-49d5-9a63-5b2fca5b7e3b">
+                <annotation></annotation>
+                <name>Scriptlet</name>
+                <scriptlet id="0708697e-d837-4b0f-b60f-164804382efc">
+                  <annotation></annotation>
+                  <name>default</name>
+                  <script>if (scriptletInput !== null) {
+  var ent=scriptletInput.split(&quot;\n&quot;);
+  var instance_id=scriptletContext.get(&quot;InstanceID&quot;);
+  var agente_acc=scriptletContext.get(&quot;AgenteACC&quot;);
+  var integration_acc=scriptletContext.get(&quot;IntegrationACC&quot;);
+  var analisys_acc=scriptletContext.get(&quot;AnalisysACC&quot;);
+  var administrator_acc=scriptletContext.get(&quot;AdministratorACC&quot;);
+  var password_sa=scriptletContext.get(&quot;PasswordSA&quot;);
+  var servicesql_acc=scriptletContext.get(&quot;ServiceSQLACC&quot;);
+  var colation_sql=scriptletContext.get(&quot;ColationSQL&quot;);
+  var data_dir=scriptletContext.get(&quot;DataDIR&quot;);
+  var log_dir=scriptletContext.get(&quot;LogDIR&quot;);
+  var backup_dir=scriptletContext.get(&quot;BackupDIR&quot;);
+  var temp_dir=scriptletContext.get(&quot;TempDIR&quot;);
+  var config_dir=scriptletContext.get(&quot;ConfigDIR&quot;);
+  var salida=&quot;&quot;;
+  for(i=0;i&lt;ent.length;i++){
+  	if(ent[i].search(/INSTANCEID\=\&quot;/ig)!=-1){
+    	salida+=&quot;INSTANCEID=\&quot;&quot;+instance_id+&quot;\&quot;\n&quot;;
+   	}else if(ent[i].search(/INSTANCENAME\=\&quot;/ig)!=-1){
+    	salida+=&quot;INSTANCENAME=\&quot;&quot;+instance_id+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/AGTSVCACCOUNT\=\&quot;/ig)!=-1){
+        salida+=&quot;AGTSVCACCOUNT=\&quot;&quot;+agente_acc+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/ISSVCACCOUNT\=\&quot;/ig)!=-1){
+    	salida+=&quot;ISSVCACCOUNT=\&quot;&quot;+integration_acc+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/ASSVCACCOUNT\=\&quot;/ig)!=-1){
+        salida+=&quot;ASSVCACCOUNT=\&quot;&quot;+analisys_acc+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/ASSYSADMINACCOUNTS\=\&quot;/ig)!=-1){
+        salida+=&quot;ASSYSADMINACCOUNTS=\&quot;&quot;+administrator_acc+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/SQLSYSADMINACCOUNTS\=\&quot;/ig)!=-1){
+        salida+=&quot;SQLSYSADMINACCOUNTS=\&quot;&quot;+administrator_acc+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/SAPWD\=\&quot;/ig)!=-1){
+        salida+=&quot;SAPWD=\&quot;&quot;+password_sa+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/SQLSVCACCOUNT\=\&quot;/ig)!=-1){
+        salida+=&quot;SQLSVCACCOUNT=\&quot;&quot;+servicesql_acc+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/ASCOLLATION\=\&quot;/ig)!=-1){
+        salida+=&quot;ASCOLLATION=\&quot;&quot;+colation_sql+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/SQLCOLLATION\=\&quot;/ig)!=-1){
+        salida+=&quot;SQLCOLLATION=\&quot;&quot;+colation_sql+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/ASDATADIR\=\&quot;/ig)!=-1){
+        salida+=&quot;ASDATADIR=\&quot;&quot;+data_dir+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/ASLOGDIR\=\&quot;/ig)!=-1){
+        salida+=&quot;ASLOGDIR=\&quot;&quot;+log_dir+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/ASBACKUPDIR\=\&quot;/ig)!=-1){
+        salida+=&quot;ASBACKUPDIR=\&quot;&quot;+backup_dir+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/ASTEMPDIR\=\&quot;/ig)!=-1){
+        salida+=&quot;ASTEMPDIR=\&quot;&quot;+temp_dir+&quot;\&quot;\n&quot;;
+    }else if(ent[i].search(/ASCONFIGDIR\=\&quot;/ig)!=-1){
+        salida+=&quot;ASCONFIGDIR=\&quot;&quot;+config_dir+&quot;\&quot;\n&quot;;
+    }else{
+  		salida+=ent[i]+&quot;\n&quot;;
+  	}
+  }
+  scriptletResult = salida;
+}</script>
+                  <type>RHINO</type>
+                </scriptlet>
+              </scriptletFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="1080857f-1ff8-4ddc-9f4e-57b04c767982">
+      <annotation></annotation>
+      <name>Resolved : success</name>
+      <bounds>
+        <x>466.0</x>
+        <y>14.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="5da10053-34da-4748-95f8-2da037ee42f1">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>1080857f-1ff8-4ddc-9f4e-57b04c767982</refId>
+          </destination>
+          <source>
+            <refId>1080857f-1ff8-4ddc-9f4e-57b04c767982</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>RESOLVED</returnStepType>
+      <assignments/>
+    </returnStep>
+    <step id="b825abe6-90b6-4147-a5f0-0b4efd16631f">
+      <annotation>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.b825abe6-90b6-4147-a5f0-0b4efd16631f.description</annotation>
+      <name>Write to File</name>
+      <bounds>
+        <x>316.0</x>
+        <y>14.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="187c5a9d-4f55-4849-add1-39d348854f77">
+        <baseIcon>document_text.png</baseIcon>
+        <basePath>Operating System/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="0969a099-2655-4ce4-a10b-b28345c3c6cd">
+            <baseIcon>edit.png</baseIcon>
+            <basePath>Annotations/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="dcb9ab73-8802-4814-9986-8b98e85705b9">
+          <annotation></annotation>
+          <toContextKey></toContextKey>
+          <fromContextKey></fromContextKey>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>file</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>c:\SQLINSTALLER\ConfigurationFiles\ConfigurationFile.ini</value>
+          <record>false</record>
+        </staticBinding>
+        <userInputBinding id="c841cc57-e7f5-428b-a643-6083488a1e85">
+          <annotation></annotation>
+          <toContextKey></toContextKey>
+          <fromContextKey>ArchivoInicial</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>contents</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.c841cc57-e7f5-428b-a643-6083488a1e85.prompt</prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <staticBinding id="ca491acc-ff92-47f4-8717-14cb99a9cbfd">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>overwrite</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>true</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="a80b4ca8-46ca-4a9f-bf86-db83f20397dc">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>0dab83ac-1ab8-47a2-a5ed-4a959467a466</refId>
+          </destination>
+          <source>
+            <refId>b825abe6-90b6-4147-a5f0-0b4efd16631f</refId>
+          </source>
+          <positions>
+            <point>
+              <x>567.0</x>
+              <y>194.0</y>
+            </point>
+            <point>
+              <x>609.0</x>
+              <y>34.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="168125be-afc6-4dc4-8477-2ca4f85c5ff3">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>1080857f-1ff8-4ddc-9f4e-57b04c767982</refId>
+          </destination>
+          <source>
+            <refId>b825abe6-90b6-4147-a5f0-0b4efd16631f</refId>
+          </source>
+          <positions>
+            <point>
+              <x>567.0</x>
+              <y>194.0</y>
+            </point>
+            <point>
+              <x>708.0</x>
+              <y>133.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>53d04fe8-927b-405e-a1a7-5c5fd3110a11</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="4ac59408-0ddb-4d8a-b7bc-8645b6e3a9b9">
+      <annotation>7ffea058-c21f-41e1-b9c3-0be89c6cdd49.4ac59408-0ddb-4d8a-b7bc-8645b6e3a9b9.description</annotation>
+      <name>Check Null</name>
+      <bounds>
+        <x>167.0</x>
+        <y>14.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="886195ba-6400-4b72-b142-37fe4f3d72e9">
+        <baseIcon>compare.png</baseIcon>
+        <basePath>Utilities/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="d39c2b20-451b-435e-8c74-3e3c3cdcc7c4">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>keyName</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>ArchivoInicial</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="d87d6a03-8b3b-47f8-84e0-8015c3ee52b8">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>trimSpaces</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>false</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="c24123ca-c492-4daf-9b12-e22d0bbd5912">
+          <annotation></annotation>
+          <name>notNull</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>notNull</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>b825abe6-90b6-4147-a5f0-0b4efd16631f</refId>
+          </destination>
+          <source>
+            <refId>4ac59408-0ddb-4d8a-b7bc-8645b6e3a9b9</refId>
+          </source>
+          <positions>
+            <point>
+              <x>534.0</x>
+              <y>120.0</y>
+            </point>
+            <point>
+              <x>499.0</x>
+              <y>237.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="7fc68dea-0fc4-448b-9c02-6df80c99bb2c">
+          <annotation></annotation>
+          <name>isNull</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>isNull</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>0dab83ac-1ab8-47a2-a5ed-4a959467a466</refId>
+          </destination>
+          <source>
+            <refId>4ac59408-0ddb-4d8a-b7bc-8645b6e3a9b9</refId>
+          </source>
+          <positions>
+            <point>
+              <x>534.0</x>
+              <y>120.0</y>
+            </point>
+            <point>
+              <x>609.0</x>
+              <y>34.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>b9997f7f-d19c-4dc6-acc4-fa91a8644a38</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="0dab83ac-1ab8-47a2-a5ed-4a959467a466">
+      <annotation></annotation>
+      <name>Error : failure</name>
+      <bounds>
+        <x>168.0</x>
+        <y>151.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="cfd7f5f0-30b2-458d-bb46-d600023ab76b">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>0dab83ac-1ab8-47a2-a5ed-4a959467a466</refId>
+          </destination>
+          <source>
+            <refId>0dab83ac-1ab8-47a2-a5ed-4a959467a466</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>ERROR</returnStepType>
+      <assignments/>
+    </returnStep>
+  </steps>
+  <startSteps>82e7ec36-b8c8-4483-8107-1ff58e88f91b</startSteps>
+</flow>
