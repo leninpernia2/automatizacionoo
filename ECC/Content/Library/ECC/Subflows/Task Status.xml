@@ -270,6 +270,12 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="f393dcc9-2c19-4695-95c9-d928fa07b466">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -314,12 +320,6 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="a718fca1-3150-4bb6-856e-4ade21d2b916">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -500,12 +500,6 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="538e4234-269e-4cd7-b6a1-4d7eb2d7a72c">
-        <baseIcon>hourglass.png</baseIcon>
-        <basePath>Utilities</basePath>
-        <readOnly>false</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -529,7 +523,7 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>seconds</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>10</value>
+          <value>30</value>
           <record>false</record>
         </staticBinding>
       </bindings>
