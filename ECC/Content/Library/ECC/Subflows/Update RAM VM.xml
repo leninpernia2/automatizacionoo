@@ -70,7 +70,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>idVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vm-d5291d5a-40e6-411e-bdfa-c70d4cb7839f</value>
+      <value>vm-8a1de8c0-f4bf-49d6-9db5-8503f0d749c9</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="512135f9-ec15-4296-affd-99bb7cfe316f">
@@ -664,12 +664,6 @@ Content-Type: application/vnd.vmware.vcloud.rasdItem+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="8112d69d-e5b1-4581-88f1-261115dda3f7">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -714,12 +708,6 @@ Content-Type: application/vnd.vmware.vcloud.rasdItem+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="2dfc493d-1451-4e29-bff7-008ca649dbf8">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

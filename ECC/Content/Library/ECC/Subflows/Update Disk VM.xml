@@ -71,7 +71,7 @@ d031d1aa-0e81-437a-9670-38fba69a24ce.c271befb-af4f-47ce-801f-43ba96beb6e4.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>idVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vm-d5291d5a-40e6-411e-bdfa-c70d4cb7839f</value>
+      <value>vm-8a1de8c0-f4bf-49d6-9db5-8503f0d749c9</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="05df962c-0fa5-498f-a7fe-4db733561011">
@@ -354,7 +354,7 @@ d031d1aa-0e81-437a-9670-38fba69a24ce.c271befb-af4f-47ce-801f-43ba96beb6e4.descri
           <listDelimiter>,</listDelimiter>
           <value>x-vcloud-authorization: ${token}
 Accept: application/*;version=9.0
-Content-Type: application/vnd.vmware.vcloud.rasdItem+xml</value>
+Content-Type: application/vnd.vmware.vcloud.rasdItemsList+xml</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="3cfffe0b-2ca0-45f2-a925-fe876058d0e5">
@@ -380,7 +380,8 @@ Content-Type: application/vnd.vmware.vcloud.rasdItem+xml</value>
          xmlns:vcloud=&quot;http://www.vmware.com/vcloud/v1.5&quot;
          vcloud:capacity=&quot;${diskAllocation}&quot;
          vcloud:busSubType=&quot;lsilogic&quot;
-         vcloud:busType=&quot;6&quot;&gt;&lt;/rasd:HostResource&gt;
+         vcloud:busType=&quot;6&quot;
+		 vcloud:storageProfileHref=&quot;https://vcloud.enterprisecomputing.mx/api/vdcStorageProfile/db7a6d56-df32-4d89-bb51-59e64ca5e106&quot;&gt;&lt;/rasd:HostResource&gt;
       &lt;rasd:InstanceID&gt;2000&lt;/rasd:InstanceID&gt;
       &lt;rasd:Parent&gt;3&lt;/rasd:Parent&gt;
       &lt;rasd:ResourceType&gt;17&lt;/rasd:ResourceType&gt;
@@ -680,7 +681,7 @@ Content-Type: application/vnd.vmware.vcloud.rasdItem+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="5063ee5d-c757-4b87-bdd7-86facdc55b35">
+      <iconSpec id="c2fec823-24f5-410e-828e-a125ac4cb7b1">
         <baseIcon>return_failure.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -730,12 +731,6 @@ Content-Type: application/vnd.vmware.vcloud.rasdItem+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="573aaa3c-e8d4-4337-8c95-72e351f3a768">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
