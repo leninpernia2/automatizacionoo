@@ -241,7 +241,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>sourceCode</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>echo &quot;systemctl restart network&quot; &gt;&gt; /tmp/script.sh
+          <value>echo &quot;service network restart&quot; &gt;&gt; /tmp/script.sh
 echo &quot;/opt/opsware/agent/pylibs/cog/bs_hardware --force&quot; &gt;&gt; /tmp/script.sh
 chmod 777 /tmp/script.sh
 /tmp/script.sh</value>
