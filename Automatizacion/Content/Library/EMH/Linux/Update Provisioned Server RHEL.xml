@@ -560,8 +560,9 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="f69dccb1-f591-489f-88a6-ab82d2294edd">
+        <staticBinding id="74fa5324-33d2-42d8-8b46-5a8edd3d9e1e">
           <annotation></annotation>
+          <fromContextKey>serverIds</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
