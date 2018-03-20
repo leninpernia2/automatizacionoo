@@ -122,7 +122,15 @@
       <matchRules/>
     </opResponse>
   </possibleResponses>
-  <availableResultExpressions/>
+  <availableResultExpressions>
+    <expression id="1e0c0947-2cf0-41b5-b299-9b44d3095761">
+      <annotation></annotation>
+      <name>message</name>
+      <fieldName>message</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+  </availableResultExpressions>
   <resultExpression id="3f14a93c-9076-4d10-b7a8-b5c3cb294aca">
     <annotation></annotation>
     <name>FailureMessage</name>
@@ -326,7 +334,22 @@
       <opRef>
         <refId>33681a76-da0d-46d7-bb52-d92859c4850c</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="117620bf-5b50-44cc-8922-0f0a9faaff30">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>message</contextKey>
+          <expression id="d0aa0dc3-43a7-4891-8c45-d350cb9a7e0a">
+            <annotation></annotation>
+            <name>Result: message</name>
+            <fieldName>message</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <step id="a55a3f2c-3f4e-40b9-bd5f-61c118228b66">

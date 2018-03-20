@@ -1653,7 +1653,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>sourceCode</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>hostname ${hostname}</value>
+          <value>sed -i &apos;s/HOSTNAME=localhost.localdomain/HOSTNAME=${hostname}/gi&apos; /etc/sysconfig/network</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="a9c788dc-60f6-4e43-a85a-5f307acdcb17">
