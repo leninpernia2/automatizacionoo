@@ -153,8 +153,8 @@
       <annotation></annotation>
       <name>Register Rhel</name>
       <bounds>
-        <x>90.0</x>
-        <y>60.0</y>
+        <x>60.0</x>
+        <y>30.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -356,8 +356,8 @@
       <annotation></annotation>
       <name>Update Rhel</name>
       <bounds>
-        <x>330.0</x>
-        <y>60.0</y>
+        <x>270.0</x>
+        <y>30.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -502,6 +502,35 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
+        <transition id="a03e1f76-70a9-46a0-8e64-e4fb1154d4c7">
+          <annotation></annotation>
+          <name>unknown</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>unknown</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>58081975-377b-4a37-9933-f8ce5d59b793</refId>
+          </destination>
+          <source>
+            <refId>a55a3f2c-3f4e-40b9-bd5f-61c118228b66</refId>
+          </source>
+          <positions>
+            <point>
+              <x>380.0</x>
+              <y>94.0</y>
+            </point>
+            <point>
+              <x>680.0</x>
+              <y>394.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
       </transitions>
       <properties/>
       <opRef>
@@ -514,8 +543,8 @@
       <annotation></annotation>
       <name>Reboot Server</name>
       <bounds>
-        <x>540.0</x>
-        <y>60.0</y>
+        <x>270.0</x>
+        <y>180.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -668,8 +697,8 @@
       <annotation></annotation>
       <name>Remove old Kernel</name>
       <bounds>
-        <x>630.0</x>
-        <y>180.0</y>
+        <x>480.0</x>
+        <y>330.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -826,8 +855,8 @@
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>90.0</x>
-        <y>210.0</y>
+        <x>60.0</x>
+        <y>330.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -870,8 +899,8 @@
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>630.0</x>
-        <y>360.0</y>
+        <x>480.0</x>
+        <y>30.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
