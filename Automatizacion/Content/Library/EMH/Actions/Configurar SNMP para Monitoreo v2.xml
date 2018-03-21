@@ -78,9 +78,9 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
       <value>250001</value>
       <record>false</record>
     </staticBinding>
-    <userInputBinding id="f03daf17-dd3f-44c8-97bc-66736fefbbe2">
+    <userInputBinding id="44bec938-2fde-4292-92b7-0baa1b95baf3">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -108,9 +108,9 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <staticBinding id="16582853-c2a8-4918-b4a4-5a792f8fba7e">
+    <userInputBinding id="236de5ab-fc86-44fb-bd3f-d4ace2c6e233">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -118,9 +118,11 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>snmpHosts</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>192.168.149.44,192.168.149.45</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="4d0280a3-e955-4e87-ab42-eae99bb8e208">
