@@ -96,9 +96,9 @@ ffa55f3c-8b9c-444d-98ee-9a1c2e56ff1c.ffa166ed-82cc-42f0-8834-c82675a1c38b.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="58c6dd67-01d9-4742-aba3-667fad174c62">
+    <userInputBinding id="025d73fd-aec5-4b52-ac9c-d456b8bf34e3">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -111,15 +111,30 @@ ffa55f3c-8b9c-444d-98ee-9a1c2e56ff1c.ffa166ed-82cc-42f0-8834-c82675a1c38b.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="28dc9b7e-901c-45f7-832f-f15befcacc50">
+    <userInputBinding id="bb393d99-49ad-4a6c-8cdd-da858814e068">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>newUserPassword</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="059bd7a6-802a-417f-8720-78897192b0f6">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>newUserDesc</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <record>false</record>
       <prompt></prompt>
@@ -279,8 +294,7 @@ ffa55f3c-8b9c-444d-98ee-9a1c2e56ff1c.ffa166ed-82cc-42f0-8834-c82675a1c38b.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>sourceCode</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>net user ${newUser} ${newUserPassword} /add
-</value>
+          <value>New-LocalUser ${newUser} -Password ${newUserPassword} -Description &quot;${newUserDesc}&quot;</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="555e8e27-b191-4a94-a1f3-85e0a4d96352">
@@ -295,7 +309,7 @@ ffa55f3c-8b9c-444d-98ee-9a1c2e56ff1c.ffa166ed-82cc-42f0-8834-c82675a1c38b.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>sourceCodeType</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>BAT</value>
+          <value>PS1</value>
           <record>false</record>
         </staticBinding>
         <userInputBinding id="3baa1a49-1f9a-4a68-8648-43bda00bc9f6">

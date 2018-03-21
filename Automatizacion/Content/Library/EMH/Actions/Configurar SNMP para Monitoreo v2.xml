@@ -108,6 +108,19 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
+    <staticBinding id="16582853-c2a8-4918-b4a4-5a792f8fba7e">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>snmpHosts</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>192.168.149.44,192.168.149.45</value>
+      <record>false</record>
+    </staticBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="4d0280a3-e955-4e87-ab42-eae99bb8e208">
@@ -150,7 +163,7 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
       <annotation>c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.description</annotation>
       <name>Configurar SNMP</name>
       <bounds>
-        <x>30.0</x>
+        <x>60.0</x>
         <y>30.0</y>
       </bounds>
       <layer>-1</layer>
@@ -281,7 +294,7 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
  ####################################
 
  #Variables :)
- $pmanagers = @(&quot;192.168.149.44&quot;,&quot;192.168.149.45&quot;) # ADD YOUR MANAGER(s) in format @(&quot;manager1&quot;,&quot;manager2&quot;)
+ $pmanagers = @(${snmpHosts}) # ADD YOUR MANAGER(s) in format @(&quot;manager1&quot;,&quot;manager2&quot;)
  $CommString = @(&quot;${CommunityString}&quot;) # ADD YOUR COMM STRING(s) in format @(&quot;Community1&quot;,&quot;Community2&quot;)
 
  #Import ServerManger Module
@@ -471,7 +484,7 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>30.0</x>
+        <x>60.0</x>
         <y>270.0</y>
       </bounds>
       <layer>-1</layer>
@@ -515,17 +528,11 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>270.0</x>
+        <x>300.0</x>
         <y>270.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="98cf9c40-afb7-4085-8753-a038f024cd90">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -565,7 +572,7 @@ c540cb77-95d4-4759-992d-a92b947bade6.ddb7434a-5c70-449b-97d1-9c02a6fd0b09.descri
       <annotation>c540cb77-95d4-4759-992d-a92b947bade6.5db92bd8-51fb-429a-8b96-80967224770d.description</annotation>
       <name>Wait for Job</name>
       <bounds>
-        <x>270.0</x>
+        <x>300.0</x>
         <y>30.0</y>
       </bounds>
       <layer>-1</layer>
