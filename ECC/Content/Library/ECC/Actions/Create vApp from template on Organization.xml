@@ -123,6 +123,19 @@
       <value>Backup-1741</value>
       <record>false</record>
     </staticBinding>
+    <staticBinding id="e6243383-6bae-45e2-9940-ba12c35b8528">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>vAppName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>TestvAppTemplate</value>
+      <record>false</record>
+    </staticBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="f9f7c0c7-1a56-4bc0-bda6-bdace4d68062">
@@ -1288,7 +1301,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>vAppName</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>VMS0000${NEXT_NEXT_ID}</value>
+          <value>VAPP-${vAppName}</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="bb6d76a6-26a6-4014-a603-95137840674f">
