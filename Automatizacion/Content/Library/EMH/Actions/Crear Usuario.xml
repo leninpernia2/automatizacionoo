@@ -294,7 +294,8 @@ ffa55f3c-8b9c-444d-98ee-9a1c2e56ff1c.ffa166ed-82cc-42f0-8834-c82675a1c38b.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>sourceCode</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>New-LocalUser ${newUser} -Password ${newUserPassword} -Description &quot;${newUserDesc}&quot;</value>
+          <value>$Password = ConvertTo-SecureString &quot;${newUserPassword}&quot; -AsPlainText -Force
+New-LocalUser ${newUser} -Password $Password -Description &quot;${newUserDesc}&quot;</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="555e8e27-b191-4a94-a1f3-85e0a4d96352">
@@ -763,7 +764,7 @@ ffa55f3c-8b9c-444d-98ee-9a1c2e56ff1c.ffa166ed-82cc-42f0-8834-c82675a1c38b.descri
     </step>
     <step id="63ce18b7-8f6c-4af2-adb5-622e8377a113">
       <annotation>ffa55f3c-8b9c-444d-98ee-9a1c2e56ff1c.63ce18b7-8f6c-4af2-adb5-622e8377a113.description</annotation>
-      <name>Asignar a Grupo Administradores</name>
+      <name>Asignar a Grupo Remote Desktop Users</name>
       <bounds>
         <x>630.0</x>
         <y>210.0</y>
