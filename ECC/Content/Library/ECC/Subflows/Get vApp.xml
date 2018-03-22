@@ -16,7 +16,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>vAppID</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vapp-22cff565-47e8-4669-909e-2ab3809adf22</value>
+      <value>vapp-6b25d0b0-c366-4a86-a1ff-dfbb73b8861d</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="7f18170b-ad07-48e0-83bb-cfd7e2ac5b74">
@@ -32,17 +32,17 @@
       <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="90a7accb-f116-4b51-95cf-f157be389ef8">
+    <staticBinding id="85d01da7-0337-4277-b5c4-d254e1b09f1d">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>9c237007a041474b8a8c29dce3a63b68</value>
+      <value>6c2d3642a40e4359b1957f64c0b43a1c</value>
       <record>false</record>
     </staticBinding>
   </inputs>
@@ -228,12 +228,6 @@ Content-Type: application/vnd.vmware.vcloud.vApp+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="fe31b0ec-7202-429c-bcff-fd54f6e7e31e">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
