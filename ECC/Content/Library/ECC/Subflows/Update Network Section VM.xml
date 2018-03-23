@@ -1115,6 +1115,12 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="9809602b-4c87-4ff6-9720-8f571fa8e11c">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1360,6 +1366,12 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="71c69ac8-ee56-488d-8599-ba9dddf2d2d1">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1489,7 +1501,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>GestionNetworkIP</contextKey>
           <expression id="be88e09a-5948-45e8-a2fe-2f15da6fb039">
             <annotation></annotation>
@@ -1522,7 +1534,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>InternalNetworkIP</contextKey>
           <expression id="5d32505a-2135-4daa-88ab-40b1085559dd">
             <annotation></annotation>
@@ -1563,6 +1575,12 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="0df68d04-4689-4709-bfa3-abd8c24ab1c8">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1697,7 +1715,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="5635464f-6570-4cad-b8f6-5b509458a579">
+        <transition id="b356629a-af84-44a7-98f4-52f0140ff5f9">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -1706,7 +1724,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>38471dc3-2111-4e12-92d3-5b6c7d7c4e9e</refId>
+            <refId>c9848db0-72fa-48fc-88f6-e2dd60379481</refId>
           </destination>
           <source>
             <refId>7bad58cb-6ff5-4ee4-8722-78421c8ef9bb</refId>
@@ -1717,8 +1735,16 @@ http://xml.org/sax/features/external-parameter-entities false</value>
               <y>390.0</y>
             </point>
             <point>
+              <x>163.32896062389833</x>
+              <y>375.35613622377167</y>
+            </point>
+            <point>
+              <x>224.80542804084908</x>
+              <y>331.27866901916553</y>
+            </point>
+            <point>
               <x>259.0</x>
-              <y>103.0</y>
+              <y>276.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -1743,6 +1769,12 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="f2f39614-f06b-4592-8cd3-0a53636d07a4">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

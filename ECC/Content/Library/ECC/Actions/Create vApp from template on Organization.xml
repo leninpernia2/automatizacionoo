@@ -2651,7 +2651,36 @@
       <opRef>
         <refId>4677b2b2-077e-4253-9789-a2598a72a02c</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="944b1ce3-c75b-414e-9cc6-59d3b782257a">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>GestionNetworkIP</contextKey>
+          <expression id="589901bb-b048-4247-b44b-d6ff73ae7858">
+            <annotation></annotation>
+            <name>Result Field: GestionNetworkIP</name>
+            <fieldName>GestionNetworkIP</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="37110e78-42d5-46ad-9a64-df5669b15dbe">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>InternalNetworkIP</contextKey>
+          <expression id="9cb00d06-7ccb-4330-8511-8889e99fef8b">
+            <annotation></annotation>
+            <name>Result Field: InternalNetworkIP</name>
+            <fieldName>InternalNetworkIP</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <step id="eac42566-22ed-4d75-9038-f15798d7cf7d">
@@ -2663,6 +2692,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="d14cafb3-7445-4a4b-9ede-741b550ef052">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

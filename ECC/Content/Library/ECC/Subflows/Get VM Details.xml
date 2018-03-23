@@ -16,7 +16,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>vmID</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vm-8712491c-b5fe-4c6a-b825-d06f6a576545</value>
+      <value>vm-e7a4f404-007e-4041-862d-1514fd204298</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="24f54428-62ba-4e15-9cff-dfcf6e60f9fc">
@@ -42,7 +42,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>6c2d3642a40e4359b1957f64c0b43a1c</value>
+      <value>c9b461523bad42768318a242f73f0c77</value>
       <record>false</record>
     </staticBinding>
   </inputs>
