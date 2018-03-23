@@ -2230,11 +2230,48 @@
         <refId>ff98e48c-83b1-4152-ba32-f7f78baf9e84</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="c7fb3de0-18e5-4da1-abd7-353552a8e86e">
+        <flowVariableAssignment id="f680429a-a1de-4049-bc84-f53d5185b7a9">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>idVM</contextKey>
+          <expression id="7b380fed-f092-44fd-90bb-0fe516a087ca">
+            <annotation></annotation>
+            <name>Result Field: VMLIST_COMPLETE</name>
+            <fieldName>VMLIST_COMPLETE</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters>
+              <regexFilter id="13aadb27-4bdc-49a4-9a23-0b68b8e88e0c">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>.*containerName=&quot;${vAppName}&quot;.*</expression>
+                <ignoreCase>true</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>false</entireString>
+                <multiLine>true</multiLine>
+              </regexFilter>
+              <regexFilter id="71a23aee-0b4b-4e88-ab07-994d1479b64c">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>vm\-\w+\-\w+\-\w+\-\w+\-\w+</expression>
+                <ignoreCase>false</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>false</entireString>
+                <multiLine>true</multiLine>
+              </regexFilter>
+              <stripWhitespaceFilter id="96d693c7-8614-4013-9941-15b079be8acf">
+                <annotation></annotation>
+                <name>Strip Whitespace</name>
+              </stripWhitespaceFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="c7fb3de0-18e5-4da1-abd7-353552a8e86e">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>idVM</contextKey>
           <expression id="ed123f38-b5f2-46ad-b82e-a6c058a2ce68">
             <annotation></annotation>
@@ -2435,7 +2472,22 @@
       <opRef>
         <refId>29912a2b-9b8c-421c-875a-7f9bc36ce123</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="a85a2238-729f-49fb-a9af-8588c071bf24">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>NameVM</contextKey>
+          <expression id="f29ca92d-45ea-4431-a98d-5577ed953725">
+            <annotation></annotation>
+            <name>Input: NameVM</name>
+            <fieldName>NameVM</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <step id="c1e0d096-bb8e-4234-8114-bbd1c70d3491">

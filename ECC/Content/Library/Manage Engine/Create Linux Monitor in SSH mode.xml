@@ -306,6 +306,30 @@
                 <replaceString>+</replaceString>
                 <replaceType>ALL</replaceType>
               </replaceAllFilter>
+              <replaceAllFilter id="10bc52d3-4bfc-402a-83fd-00f4d2ab20bb">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>true</ignoreCase>
+                <searchString>Centos</searchString>
+                <replaceString>Linux</replaceString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+              <replaceAllFilter id="ee397f29-f9a5-4735-bf8c-f33a7dfeed35">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>true</ignoreCase>
+                <searchString>Redhat</searchString>
+                <replaceString>Linux</replaceString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+              <replaceAllFilter id="282817dd-8bff-47d2-a3ed-d192d97cbcfc">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>true</ignoreCase>
+                <searchString>Ubuntu</searchString>
+                <replaceString>Linux</replaceString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
             </filters>
           </expression>
         </flowVariableAssignment>
@@ -449,8 +473,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>url</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>http://${hostname}:${port}/AppManager/xml/AddMonitor?apikey=${API_KEY}&amp;type=servers&amp;displayname=${NameMonitor}+(${NameVM})
-&amp;host=${ipVM}&amp;snmptelnetport=22&amp;os=${SO}&amp;mode=SSH&amp;username=${usernameVM}&amp;password=${passwordVM}&amp;timeout=${timeout}</value>
+          <value>http://${hostname}:${port}/AppManager/xml/AddMonitor?apikey=${API_KEY}&amp;type=servers&amp;displayname=${NameMonitor}+${NameVM}&amp;host=${ipVM}&amp;snmptelnetport=22&amp;os=${SO}&amp;mode=SSH&amp;timeout=${timeout}&amp;username=${usernameVM}&amp;password=${passwordVM}</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="42a2d8c3-a831-445e-8377-b879da1436b6">
