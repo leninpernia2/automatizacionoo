@@ -156,6 +156,20 @@
     </opResponse>
   </possibleResponses>
   <availableResultExpressions>
+    <expression id="768c0545-cfee-45c5-bc16-b18be9f64748">
+      <annotation></annotation>
+      <name>idVM</name>
+      <fieldName>idVM</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+    <expression id="f5b23b90-facd-4ab9-a712-2661f33d9815">
+      <annotation></annotation>
+      <name>NameVM</name>
+      <fieldName>NameVM</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
     <expression id="bff641a7-a592-4dc9-93e4-89020ed7c61d">
       <annotation></annotation>
       <name>vAppID</name>
@@ -362,12 +376,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="240f1d9d-42e9-4f77-b12b-1a5f3db2b411">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
