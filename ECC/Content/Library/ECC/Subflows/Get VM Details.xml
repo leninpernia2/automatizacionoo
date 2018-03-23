@@ -16,7 +16,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>vmID</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vapp-b867499a-3a95-4ed3-a224-69009b189674</value>
+      <value>vm-e7a4f404-007e-4041-862d-1514fd204298</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="24f54428-62ba-4e15-9cff-dfcf6e60f9fc">
@@ -42,7 +42,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>fc427ffa84c44170b1174f198f36eb8f</value>
+      <value>c9b461523bad42768318a242f73f0c77</value>
       <record>false</record>
     </staticBinding>
   </inputs>
@@ -259,6 +259,20 @@ Content-Type: application/vnd.vmware.vcloud.vm+xml</value>
             <filters/>
           </expression>
         </flowVariableAssignment>
+        <flowVariableAssignment id="587dbcae-b356-4920-91b0-1182d4dbcc5c">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>IP_NETWORKGESTION</contextKey>
+          <expression id="34cefdaa-c88e-46c3-9dcd-36c49d07433e">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
@@ -271,7 +285,7 @@ Content-Type: application/vnd.vmware.vcloud.vm+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="fc2ee4f8-9eb3-4ab7-a693-e4c7ac6aa9d8">
+      <iconSpec id="63b9bf3b-4fc2-43f7-8fb3-a6d1f8b03758">
         <baseIcon>return_success.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -321,7 +335,7 @@ Content-Type: application/vnd.vmware.vcloud.vm+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="937af084-7c34-4bee-8fec-9b0046c6aabc">
+      <iconSpec id="f7682abc-7c4e-4da6-a9e7-a4c49eeb1053">
         <baseIcon>return_failure.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -371,6 +385,12 @@ Content-Type: application/vnd.vmware.vcloud.vm+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="eb213f78-5d8c-41e5-abde-c066f92a3e3a">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

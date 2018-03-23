@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regexEvaluator id="70348ff6-59cd-4bb4-8662-b4d995d9492e">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Windows_SO</name>
+  <entireString>true</entireString>
+  <expression>Windows\s2000|Windows\s2003|Windows\s2008|Windows\s2012|Windows\s7|Windows\s8|Windows\sXP|WindowsNT|Windows\sVista</expression>
+  <ignoreCase>false</ignoreCase>
+  <multiLine>false</multiLine>
+  <regType>JAVA</regType>
+</regexEvaluator>

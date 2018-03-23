@@ -220,6 +220,20 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
         <refId>ab413782-7e23-41a7-85a7-79f543cf8858</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="9704e8e2-4377-4f11-9ed5-6f0be70d2864">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>APPEND</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>outputTask</contextKey>
+          <expression id="b28fa830-ab97-4858-865b-c77361b6b008">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="50a4c307-18a3-4df4-ade9-34fd8061cbd2">
           <annotation></annotation>
           <name>assignment</name>
@@ -294,7 +308,7 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="7198bf8c-c594-44c3-a037-ba28cfc716c4">
+      <iconSpec id="5dda9c73-0831-4739-95a2-a07f359c6f2c">
         <baseIcon>return_success.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -344,7 +358,7 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="71cd1647-856e-4221-b3ee-c296c8792b39">
+      <iconSpec id="e73e4f2d-2548-46a4-bded-1fa40fabda49">
         <baseIcon>return_failure.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
