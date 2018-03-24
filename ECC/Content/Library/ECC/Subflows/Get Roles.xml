@@ -85,7 +85,15 @@
       <matchRules/>
     </opResponse>
   </possibleResponses>
-  <availableResultExpressions/>
+  <availableResultExpressions>
+    <expression id="b64b345e-d58e-45b0-ba16-2f602e20e0c3">
+      <annotation></annotation>
+      <name>rolesXML</name>
+      <fieldName>rolesXML</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+  </availableResultExpressions>
   <resultExpression id="7523a3f6-725c-49ea-8cd4-3fe3dda3e168">
     <annotation></annotation>
     <name>FailureMessage</name>
@@ -396,7 +404,22 @@ Content-Type: application/vnd.vmware.vcloud.orgList+xml</value>
       <opRef>
         <refId>ab413782-7e23-41a7-85a7-79f543cf8858</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="4f07f524-b714-4e2f-b867-a5da73ac8ef0">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>rolesXML</contextKey>
+          <expression id="9506b7c0-8808-43fc-b26e-1d8a30304d84">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <returnStep id="cbd23e81-762b-4899-9fc8-9691ea837933">
