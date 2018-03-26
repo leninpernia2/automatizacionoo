@@ -128,7 +128,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>ipVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>192.18.84.12</value>
+      <value>198.18.84.12</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="dc5b974e-af5f-4120-86cb-bd509613bfd3">
@@ -473,7 +473,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>url</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>http://${hostname}:${port}/AppManager/xml/AddMonitor?apikey=${API_KEY}&amp;type=servers&amp;displayname=${NameMonitor}+${NameVM}&amp;host=${ipVM}&amp;snmptelnetport=22&amp;os=${SO}&amp;mode=SSH&amp;timeout=${timeout}&amp;username=${usernameVM}&amp;password=${passwordVM}</value>
+          <value>http://${hostname}:${port}/AppManager/xml/AddMonitor?apikey=${API_KEY}&amp;type=servers&amp;displayname=${NameMonitor}+${NameVM}&amp;host=${ipVM}&amp;snmptelnetport=22&amp;os=${SO}&amp;mode=SSH&amp;timeout=${timeout}&amp;username=${usernameVM}&amp;password=${passwordVM}&amp;prompt=#</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="42a2d8c3-a831-445e-8377-b879da1436b6">
