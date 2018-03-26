@@ -402,7 +402,7 @@ Content-Type: application/vnd.vmware.admin.edgeGateway+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="99fd91ab-6ec9-48ea-90eb-1be619f7976e">
+        <transition id="3177f9da-2ec9-4407-bfb7-660365758bbf">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -411,7 +411,7 @@ Content-Type: application/vnd.vmware.admin.edgeGateway+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>53f5d9f0-0483-4878-acb4-deae0363b4b3</refId>
+            <refId>a9443e60-b3ad-43d2-82c8-254c599ecb1a</refId>
           </destination>
           <source>
             <refId>1a53147c-49ae-4d84-ac96-3db244955bf1</refId>
@@ -422,8 +422,8 @@ Content-Type: application/vnd.vmware.admin.edgeGateway+xml</value>
               <y>94.0</y>
             </point>
             <point>
-              <x>350.0</x>
-              <y>94.0</y>
+              <x>800.0</x>
+              <y>64.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -437,6 +437,20 @@ Content-Type: application/vnd.vmware.admin.edgeGateway+xml</value>
         <refId>f389fb81-422b-4a18-b6b9-70264bfda2cf</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="89a1acc0-fc19-4ce0-b0f6-3edd926b7317">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>statusCode</contextKey>
+          <expression id="04ae17eb-1309-4deb-bc8f-ae788be83ec1">
+            <annotation></annotation>
+            <name>Result Field: statusCode</name>
+            <fieldName>statusCode</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="b6d28c90-72dc-4a9f-a54e-0a0b196f6c6d">
           <annotation></annotation>
           <name>assignment</name>
@@ -526,7 +540,7 @@ Content-Type: application/vnd.vmware.admin.edgeGateway+xml</value>
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>540.0</x>
+        <x>690.0</x>
         <y>420.0</y>
       </bounds>
       <layer>-1</layer>
@@ -570,7 +584,7 @@ Content-Type: application/vnd.vmware.admin.edgeGateway+xml</value>
       <annotation>19d938f3-d4c5-4dd9-931d-e2e627ca86eb.53f5d9f0-0483-4878-acb4-deae0363b4b3.description</annotation>
       <name>XML Get Attributes</name>
       <bounds>
-        <x>300.0</x>
+        <x>450.0</x>
         <y>60.0</y>
       </bounds>
       <layer>-1</layer>
@@ -725,11 +739,11 @@ http://xml.org/sax/features/external-parameter-entities false</value>
               <y>94.0</y>
             </point>
             <point>
-              <x>375.0</x>
+              <x>525.0</x>
               <y>154.0</y>
             </point>
             <point>
-              <x>375.0</x>
+              <x>525.0</x>
               <y>214.0</y>
             </point>
             <point>
@@ -801,7 +815,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <annotation>19d938f3-d4c5-4dd9-931d-e2e627ca86eb.399099a5-1b42-404d-b784-dd6f67fc1072.description</annotation>
       <name>XML Get Attributes</name>
       <bounds>
-        <x>300.0</x>
+        <x>450.0</x>
         <y>240.0</y>
       </bounds>
       <layer>-1</layer>
@@ -956,11 +970,11 @@ http://xml.org/sax/features/external-parameter-entities false</value>
               <y>274.0</y>
             </point>
             <point>
-              <x>375.0</x>
+              <x>525.0</x>
               <y>334.0</y>
             </point>
             <point>
-              <x>375.0</x>
+              <x>525.0</x>
               <y>394.0</y>
             </point>
             <point>
@@ -1017,7 +1031,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <annotation></annotation>
       <name>Task Status</name>
       <bounds>
-        <x>300.0</x>
+        <x>450.0</x>
         <y>420.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1139,6 +1153,127 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <properties/>
       <opRef>
         <refId>6e974e0d-19fb-4c23-83f8-121f1d8c3e89</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="a9443e60-b3ad-43d2-82c8-254c599ecb1a">
+      <annotation></annotation>
+      <name>isOK</name>
+      <bounds>
+        <x>270.0</x>
+        <y>60.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="f45b229f-8762-44f5-a9fd-e947db9e1aab">
+          <annotation></annotation>
+          <fromContextKey>edgexml</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>xml</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="58c9517d-9dc2-4cfb-83b9-eebad0d938b4">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>statusCode</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="258ea8cf-08da-462c-a00c-291685589c8a">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>53f5d9f0-0483-4878-acb4-deae0363b4b3</refId>
+          </destination>
+          <source>
+            <refId>a9443e60-b3ad-43d2-82c8-254c599ecb1a</refId>
+          </source>
+          <positions>
+            <point>
+              <x>320.0</x>
+              <y>94.0</y>
+            </point>
+            <point>
+              <x>500.0</x>
+              <y>94.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="672166cb-cb38-4910-94a2-487ff478b0d9">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>b00f9468-b1fb-4d1d-9685-eb592627468b</refId>
+          </destination>
+          <source>
+            <refId>a9443e60-b3ad-43d2-82c8-254c599ecb1a</refId>
+          </source>
+          <positions>
+            <point>
+              <x>320.0</x>
+              <y>94.0</y>
+            </point>
+            <point>
+              <x>140.0</x>
+              <y>274.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>7d7fe10e-080b-4de0-b498-9d0f2e6c02e2</refId>
       </opRef>
       <assignments/>
       <throttleSize>0</throttleSize>

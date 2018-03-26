@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regexEvaluator id="fd005a33-0335-44d5-a935-ccea8394e3fd">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>POWER_ACTION</name>
+  <entireString>true</entireString>
+  <expression>On|Off</expression>
+  <ignoreCase>false</ignoreCase>
+  <multiLine>false</multiLine>
+  <regType>JAVA</regType>
+</regexEvaluator>

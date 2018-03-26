@@ -278,7 +278,7 @@ ff98e48c-83b1-4152-ba32-f7f78baf9e84.f5a792f9-f54e-48b1-8009-9202db035de4.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="87d2e606-32ac-49f0-b9fc-4bcf6b5d2212">
+      <iconSpec id="e97bb015-9b27-486d-a275-eaa8770f3705">
         <baseIcon>return_success.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -496,6 +496,30 @@ Accept: application/*;version=9.0</value>
         <refId>ab413782-7e23-41a7-85a7-79f543cf8858</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="75c0f254-c44f-4ddb-baff-99daf2dd8fe7">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>VMLIST_COMPLETE</contextKey>
+          <expression id="7027817d-0a19-4597-9a3e-8a969385ec48">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters>
+              <regexFilter id="1683e69d-ffd5-4da2-8847-bb872907f2fc">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>&lt;ResourcePoolVMRecord.*</expression>
+                <ignoreCase>true</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>false</entireString>
+                <multiLine>true</multiLine>
+              </regexFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="5bde7c6f-0cd9-40a6-98d5-8fca3c2d46b1">
           <annotation></annotation>
           <name>assignment</name>
@@ -1003,6 +1027,30 @@ Accept: application/*;version=9.0</value>
         <refId>ab413782-7e23-41a7-85a7-79f543cf8858</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="af737b47-4bc0-408b-b7fd-bd45641c575a">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>APPEND</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>VMLIST_COMPLETE</contextKey>
+          <expression id="5e258ca6-60de-41ea-a7d7-d3173578d87f">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters>
+              <regexFilter id="6cad4a42-75b2-4e6a-9c37-fe3d317b9c68">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>&lt;ResourcePoolVMRecord.*</expression>
+                <ignoreCase>true</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>false</entireString>
+                <multiLine>true</multiLine>
+              </regexFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="b51f3af9-f0ac-479c-8399-ae446092c0d8">
           <annotation></annotation>
           <name>assignment</name>

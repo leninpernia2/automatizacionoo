@@ -220,6 +220,44 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
         <refId>ab413782-7e23-41a7-85a7-79f543cf8858</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="9704e8e2-4377-4f11-9ed5-6f0be70d2864">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>APPEND</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>outputTask</contextKey>
+          <expression id="b28fa830-ab97-4858-865b-c77361b6b008">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="50a4c307-18a3-4df4-ade9-34fd8061cbd2">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>DetailsMessage</contextKey>
+          <expression id="dd7dd144-ad64-4135-a319-70d762c9cc98">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters>
+              <regexFilter id="a6baabfe-6435-4427-8fbb-2ac45cf13bc5">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>&lt;Details&gt;.*</expression>
+                <ignoreCase>true</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>false</entireString>
+                <multiLine>true</multiLine>
+              </regexFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="cc44ba7c-ad2f-4a86-b4b0-86ca6c181041">
           <annotation></annotation>
           <name>assignment</name>
@@ -270,6 +308,12 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="5dda9c73-0831-4739-95a2-a07f359c6f2c">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -314,7 +358,7 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="a718fca1-3150-4bb6-856e-4ade21d2b916">
+      <iconSpec id="e73e4f2d-2548-46a4-bded-1fa40fabda49">
         <baseIcon>return_failure.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
