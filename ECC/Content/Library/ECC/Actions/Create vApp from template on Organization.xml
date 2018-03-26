@@ -6,7 +6,7 @@
   <name>Create vApp from template on Organization</name>
   <categories/>
   <inputs>
-    <staticBinding id="c61f4d47-6be4-4fed-bb6b-bf49114fa0d4">
+    <userInputBinding id="5e16866c-94ed-4dd9-bccf-48ff5a7e6fd0">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -16,10 +16,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="c6a63147-7d80-4c35-87e1-d85f1c78cb84">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="23f686b7-c881-4091-b19e-e11ae59b0fd0">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -29,10 +31,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>organization</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>system</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="6fc94dbf-a72c-49d5-85b8-c9f7065eef29">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="c46365f8-1105-4609-b88f-f31412afeb54">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -42,10 +46,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>username</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>adminvcd</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="2afbb5b4-05f4-4783-ab91-8bfb413a09f7">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="1eb9cad0-f4fc-420f-974c-aca118850986">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -55,10 +61,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>password</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Pa$$w0rd</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="64c8c810-f590-4384-9f98-5f35062a492e">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="c79767d3-ba5d-43d3-ad77-6939089a6b5a">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -68,10 +76,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>catalogItemID</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>415d6331-9703-4768-a36d-5f2846be3c20</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="f68b85dc-89df-4d86-94a8-c13b556c65bf">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="94f3af39-ec5b-4bd3-9d13-70d8346ddc29">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -81,10 +91,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>idVdc</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>01f83166-28f6-4aa3-85bb-2c8a87530d10</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="af27f519-b71e-4a8e-912f-747025fade00">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="38420820-4371-4256-9164-e18b31542e2c">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -94,10 +106,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>InternalNetworkName</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Internal-2212</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="209a24f5-fa96-4d17-92d5-636eae752a22">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="c5e3be95-656c-4a3d-b63f-39d46d7bb68e">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -107,10 +121,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>GestionNetworkName</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Gestion-1541</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="76fd2d8e-9c1d-42da-99f5-2f880aa21462">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="136ff492-9779-4166-912c-cf1912a27b2c">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -120,10 +136,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>BackupNetworkName</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Backup-1741</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="e6243383-6bae-45e2-9940-ba12c35b8528">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="b47c498e-73d3-4f92-acf1-56ce6deba5c9">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -133,9 +151,11 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>vAppName</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>TestvAppTemplate</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="f9f7c0c7-1a56-4bc0-bda6-bdace4d68062">
@@ -1387,7 +1407,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>vAppName</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>VAPP-${vAppName}</value>
+          <value>VAPP-${vAppName}-${NEXT_NEXT_ID}</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="bb6d76a6-26a6-4014-a603-95137840674f">
