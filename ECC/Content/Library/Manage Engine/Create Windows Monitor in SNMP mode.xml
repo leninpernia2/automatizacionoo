@@ -59,7 +59,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>CommunityString</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>public</value>
+      <value>M0n17ore0$A600</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="f8c27c9d-6719-4b89-b1c4-f3215e58dbcc">
@@ -115,7 +115,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>ipVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>192.168.10.10</value>
+      <value>198.18.84.12</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="dbc6e9aa-969e-4831-93ca-601cbea79354">
@@ -308,12 +308,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="6ad9a7cb-6127-49c9-8c5f-34626668f106">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -358,12 +352,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="e765ca47-4170-4764-9c72-a372e52ae374">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

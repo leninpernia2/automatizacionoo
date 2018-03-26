@@ -16,7 +16,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>vmID</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vm-e7a4f404-007e-4041-862d-1514fd204298</value>
+      <value>vm-58d79bf3-142d-4fea-9b13-889884b808d5</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="24f54428-62ba-4e15-9cff-dfcf6e60f9fc">
@@ -42,7 +42,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>c9b461523bad42768318a242f73f0c77</value>
+      <value>d25fc2486a83442a80076fd9cf51e4ed</value>
       <record>false</record>
     </staticBinding>
   </inputs>
@@ -285,7 +285,7 @@ Content-Type: application/vnd.vmware.vcloud.vm+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="63b9bf3b-4fc2-43f7-8fb3-a6d1f8b03758">
+      <iconSpec id="6ba97349-4fab-47e8-8ce5-561631d046c9">
         <baseIcon>return_success.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -335,12 +335,6 @@ Content-Type: application/vnd.vmware.vcloud.vm+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="f7682abc-7c4e-4da6-a9e7-a4c49eeb1053">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
