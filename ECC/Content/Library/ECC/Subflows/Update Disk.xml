@@ -34,9 +34,8 @@
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
+    </staticBinding>
+    <staticBinding id="4e904b91-8603-465f-be45-02171f030332">
     </userInputBinding>
     <userInputBinding id="ddadac81-c567-456f-9073-7b5972b9ff9f">
       <annotation></annotation>
