@@ -59,7 +59,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>usernameVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>root</value>
+      <value>monitoreo</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="b2e6374f-ff7a-44cf-9eb3-22a77bce7e00">
@@ -72,7 +72,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>passwordVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Al3str4$c4rr13r567</value>
+      <value>M0n17ore0$A600</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="a591884c-f5de-4b98-b455-ba1b717cfd12">
@@ -85,7 +85,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>SO</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Centos</value>
+      <value>RedHat</value>
       <record>false</record>
       <validationFormat>
         <refId>829a5ed4-0ab5-4ebd-912a-38c52809d804</refId>
@@ -128,7 +128,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>ipVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>198.18.84.12</value>
+      <value>198.18.84.20</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="dc5b974e-af5f-4120-86cb-bd509613bfd3">
@@ -286,12 +286,59 @@
         <refId>d1bbf441-824a-450e-afae-2ddec0e0f35e</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="c2651d48-1ae9-4959-ac08-18abbeeb1143">
+        <flowVariableAssignment id="5ac962f9-261f-4855-ba78-e09befb9ac23">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>SO</contextKey>
+          <expression id="c7fcb79d-4ab8-4d18-9908-9237c6274760">
+            <annotation></annotation>
+            <name>Input: SO</name>
+            <fieldName>SO</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters>
+              <replaceAllFilter id="e184d1d6-c37d-4690-8ea8-24e92713cd23">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>false</ignoreCase>
+                <searchString> </searchString>
+                <replaceString>+</replaceString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+              <replaceAllFilter id="0be02c8b-1033-4a33-962c-54946512d65d">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>true</ignoreCase>
+                <searchString>Centos</searchString>
+                <replaceString>Linux</replaceString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+              <replaceAllFilter id="0875d4a6-5b0e-47da-8485-740c6c909bfe">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>true</ignoreCase>
+                <searchString>Redhat</searchString>
+                <replaceString>Linux</replaceString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+              <replaceAllFilter id="b0c5de5b-e7d2-43d0-a756-bd83bed69f59">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>true</ignoreCase>
+                <searchString>Ubuntu</searchString>
+                <replaceString>Linux</replaceString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="c2651d48-1ae9-4959-ac08-18abbeeb1143">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>prompt</contextKey>
           <expression id="15527145-b654-4288-87b8-601b7edc87e2">
             <annotation></annotation>
             <name>Input: SO</name>
@@ -311,7 +358,7 @@
                 <name>Replace</name>
                 <ignoreCase>true</ignoreCase>
                 <searchString>Centos</searchString>
-                <replaceString>Linux</replaceString>
+                <replaceString>$</replaceString>
                 <replaceType>ALL</replaceType>
               </replaceAllFilter>
               <replaceAllFilter id="ee397f29-f9a5-4735-bf8c-f33a7dfeed35">
@@ -319,7 +366,7 @@
                 <name>Replace</name>
                 <ignoreCase>true</ignoreCase>
                 <searchString>Redhat</searchString>
-                <replaceString>Linux</replaceString>
+                <replaceString>#</replaceString>
                 <replaceType>ALL</replaceType>
               </replaceAllFilter>
               <replaceAllFilter id="282817dd-8bff-47d2-a3ed-d192d97cbcfc">
@@ -327,7 +374,7 @@
                 <name>Replace</name>
                 <ignoreCase>true</ignoreCase>
                 <searchString>Ubuntu</searchString>
-                <replaceString>Linux</replaceString>
+                <replaceString>$</replaceString>
                 <replaceType>ALL</replaceType>
               </replaceAllFilter>
             </filters>
@@ -345,12 +392,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="99a30b5a-1c72-4a9f-b60f-fd23816ceda2">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -395,12 +436,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="96776af3-8262-4001-bed5-8955933de739">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -473,7 +508,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>url</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>http://${hostname}:${port}/AppManager/xml/AddMonitor?apikey=${API_KEY}&amp;type=servers&amp;displayname=${NameMonitor}+${NameVM}&amp;host=${ipVM}&amp;snmptelnetport=22&amp;os=${SO}&amp;mode=SSH&amp;timeout=${timeout}&amp;username=${usernameVM}&amp;password=${passwordVM}&amp;prompt=#</value>
+          <value>http://${hostname}:${port}/AppManager/xml/AddMonitor?apikey=${API_KEY}&amp;type=servers&amp;displayname=${NameMonitor}+${NameVM}&amp;host=${ipVM}&amp;snmptelnetport=22&amp;os=${SO}&amp;mode=SSH&amp;timeout=${timeout}&amp;username=${usernameVM}&amp;password=${passwordVM}&amp;prompt=${prompt}</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="42a2d8c3-a831-445e-8377-b879da1436b6">
