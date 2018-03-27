@@ -8,22 +8,7 @@
   <name>Update Disk</name>
   <categories/>
   <inputs>
-    <userInputBinding id="68d0de59-20bd-46a6-a793-cbc94407cfe7">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>SizeDisk</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="484c6b6f-06b5-48f3-b123-5a3ca9e2f34b">
+    <userInputBinding id="dc1c5a53-5f1d-46f0-94b6-dcccf346b9c1">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -38,37 +23,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="ddadac81-c567-456f-9073-7b5972b9ff9f">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>nameDisk</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="a4324263-c732-46ca-8443-f8bc694109be">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>true</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>idVM</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="05a1f2f2-fcae-46a4-888d-b1819541fd6c">
+    <userInputBinding id="69166979-4bc7-4afc-aa19-773893721bd7">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -83,11 +38,11 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="3d6f09cc-670d-431f-8a04-1c2e37c68f86">
+    <userInputBinding id="01a38c2a-78cf-49ad-a5ac-27ee45879cb7">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
+      <inputType>ENCRYPTED</inputType>
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
@@ -98,7 +53,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="91d2260d-a05a-46f9-bc06-cb528f1c4136">
+    <userInputBinding id="9438faef-429e-4059-9144-96f068f85df4">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -113,7 +68,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="8748d116-4ae6-4d6f-a657-662fb6305dc4">
+    <userInputBinding id="3770862d-eaf3-42a5-bd75-7b7f760495d7">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -121,7 +76,22 @@
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>IdVapp</inputSymbol>
+      <inputSymbol>idVM</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="ae29b21f-19b5-45c1-a02b-9b3d612a1dea">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>SizeDisk</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <record>false</record>
       <prompt></prompt>
@@ -170,8 +140,8 @@
       <annotation></annotation>
       <name>Get Token</name>
       <bounds>
-        <x>21.0</x>
-        <y>31.0</y>
+        <x>30.0</x>
+        <y>30.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -279,7 +249,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="88e3117b-1f87-4a86-8962-39f8b77256f1">
+        <transition id="b5a5e5ea-c06d-4058-80b8-096722ac8e68">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -288,19 +258,19 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>34fcb3a3-6d5f-44e1-8f52-e3edf9257e2b</refId>
+            <refId>6c23799b-982d-4a3b-a503-b48570e5b280</refId>
           </destination>
           <source>
             <refId>a2c72fc4-6bd5-4ec8-98e7-5f47c731fdee</refId>
           </source>
           <positions>
             <point>
-              <x>71.0</x>
-              <y>65.0</y>
+              <x>80.0</x>
+              <y>64.0</y>
             </point>
             <point>
-              <x>202.0</x>
-              <y>59.0</y>
+              <x>260.0</x>
+              <y>64.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -313,15 +283,30 @@
       <opRef>
         <refId>4162689e-3582-4632-b557-7e1874bcfc49</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="5d09925c-2ec1-4da8-8e50-6d1abc1be8e2">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>token</contextKey>
+          <expression id="f38bb3ee-85fe-43c5-a52b-8e19df77a4bd">
+            <annotation></annotation>
+            <name>Result: token</name>
+            <fieldName>token</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <returnStep id="c35a63e4-70eb-4ece-99ca-a2e09165e834">
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>406.0</x>
-        <y>359.0</y>
+        <x>420.0</x>
+        <y>360.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -408,8 +393,8 @@
       <annotation>22dd8922-1287-4f75-b7da-a9aedc16916c.c14d3e8d-81b8-4c97-99b8-56643b9f97aa.description</annotation>
       <name>Post Disk</name>
       <bounds>
-        <x>275.0</x>
-        <y>29.0</y>
+        <x>540.0</x>
+        <y>30.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -463,11 +448,12 @@
           <listDelimiter>,</listDelimiter>
           <value>x-vcloud-authorization: ${token}
 Accept: application/*;version=9.0
-Content-Type: application/vnd.vmware.vcloud.rasditemslist+xml</value>
+Content-Type: application/vnd.vmware.vcloud.rasdItemsList+xml</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="e3bfa4df-9a93-45d1-aff4-e6e178900852">
           <annotation></annotation>
+          <toContextKey>&lt;not assigned</toContextKey>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
@@ -485,21 +471,21 @@ Content-Type: application/vnd.vmware.vcloud.rasditemslist+xml</value>
       &lt;rasd:Address&gt;0&lt;/rasd:Address&gt;
       &lt;rasd:Description&gt;SCSI Controller&lt;/rasd:Description&gt;
       &lt;rasd:ElementName&gt;SCSI Controller 0&lt;/rasd:ElementName&gt;
-      &lt;rasd:InstanceID&gt;2&lt;/rasd:InstanceID&gt;
-      &lt;rasd:ResourceSubType&gt;lsilogic&lt;/rasd:ResourceSubType&gt;
-      &lt;rasd:ResourceType&gt;6&lt;/rasd:ResourceType&gt;
+      &lt;rasd:InstanceID&gt;${instanceID}&lt;/rasd:InstanceID&gt;
+      &lt;rasd:ResourceSubType&gt;${busSubType}&lt;/rasd:ResourceSubType&gt;
+      &lt;rasd:ResourceType&gt;${resourceType}&lt;/rasd:ResourceType&gt;
    &lt;/Item&gt;
    &lt;Item&gt;
       &lt;rasd:AddressOnParent&gt;0&lt;/rasd:AddressOnParent&gt;
       &lt;rasd:Description&gt;Hard disk&lt;/rasd:Description&gt;
-      &lt;rasd:ElementName&gt;${nameDisk}&lt;/rasd:ElementName&gt;
+      &lt;rasd:ElementName&gt;${hardDiskName}&lt;/rasd:ElementName&gt;
       &lt;rasd:HostResource
          xmlns:vcloud=&quot;http://www.vmware.com/vcloud/v1.5&quot;
          vcloud:capacity=&quot;${limitVdcStorageProfile}&quot;
-         vcloud:busSubType=&quot;lsilogic&quot;
+         vcloud:busSubType=&quot;${busSubType}&quot;
          vcloud:busType=&quot;6&quot;&gt;&lt;/rasd:HostResource&gt;
       &lt;rasd:InstanceID&gt;2000&lt;/rasd:InstanceID&gt;
-      &lt;rasd:Parent&gt;2&lt;/rasd:Parent&gt;
+      &lt;rasd:Parent&gt;${instanceID}&lt;/rasd:Parent&gt;
       &lt;rasd:ResourceType&gt;17&lt;/rasd:ResourceType&gt;
    &lt;/Item&gt;
 &lt;/RasdItemsList&gt;</value>
@@ -536,7 +522,7 @@ Content-Type: application/vnd.vmware.vcloud.rasditemslist+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="61e426dc-b625-48b6-adab-a84f63dfe902">
+        <transition id="b88707e9-f282-4d88-b4a7-52962ead3558">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -545,19 +531,19 @@ Content-Type: application/vnd.vmware.vcloud.rasditemslist+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>0ac1789b-64da-4887-a271-5a3ff3a78c4f</refId>
+            <refId>5661f78b-831e-41cf-b74b-2f0a41fd6263</refId>
           </destination>
           <source>
             <refId>c14d3e8d-81b8-4c97-99b8-56643b9f97aa</refId>
           </source>
           <positions>
             <point>
-              <x>353.0</x>
-              <y>90.0</y>
+              <x>325.0</x>
+              <y>63.0</y>
             </point>
             <point>
-              <x>364.0</x>
-              <y>262.0</y>
+              <x>500.0</x>
+              <y>64.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -571,6 +557,34 @@ Content-Type: application/vnd.vmware.vcloud.rasditemslist+xml</value>
         <refId>f389fb81-422b-4a18-b6b9-70264bfda2cf</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="6c849b68-84b5-406d-af62-6b7e670d59fc">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>statusCode</contextKey>
+          <expression id="85e0316f-293a-4ca5-8dd7-0ca6071a5894">
+            <annotation></annotation>
+            <name>Result Field: statusCode</name>
+            <fieldName>statusCode</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="1031b976-3e83-423e-a6e6-b40fa3291c65">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>xmlDisk</contextKey>
+          <expression id="82c8aabb-e3dc-4498-852c-204ecea6c1ee">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="b791330d-ca0a-4f7c-a32b-0485ed38f8ac">
           <annotation></annotation>
           <name>assignment</name>
@@ -602,8 +616,8 @@ Content-Type: application/vnd.vmware.vcloud.rasditemslist+xml</value>
       <annotation>22dd8922-1287-4f75-b7da-a9aedc16916c.0ac1789b-64da-4887-a271-5a3ff3a78c4f.description</annotation>
       <name>XML Get Attributes</name>
       <bounds>
-        <x>409.0</x>
-        <y>30.0</y>
+        <x>663.0</x>
+        <y>161.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -753,25 +767,25 @@ http://xml.org/sax/features/external-parameter-entities false</value>
           </source>
           <positions>
             <point>
-              <x>361.0</x>
-              <y>263.0</y>
+              <x>483.3051948051948</x>
+              <y>96.0</y>
             </point>
             <point>
-              <x>367.9094778997711</x>
-              <y>327.6317191102989</y>
+              <x>776.0</x>
+              <y>239.0</y>
             </point>
             <point>
-              <x>359.02709126132015</x>
-              <y>357.5839531236799</y>
+              <x>767.0</x>
+              <y>295.0</y>
             </point>
             <point>
-              <x>318.0</x>
-              <y>408.0</y>
+              <x>456.0</x>
+              <y>219.0</y>
             </point>
           </positions>
           <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
+            <x>306.15351607289773</x>
+            <y>2.704554080563326</y>
           </labelPosition>
         </transition>
       </transitions>
@@ -818,8 +832,8 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <annotation></annotation>
       <name>Task Status</name>
       <bounds>
-        <x>406.0</x>
-        <y>169.0</y>
+        <x>660.0</x>
+        <y>300.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -954,8 +968,8 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <annotation>22dd8922-1287-4f75-b7da-a9aedc16916c.34fcb3a3-6d5f-44e1-8f52-e3edf9257e2b.description</annotation>
       <name>limitVdcStorageProfile GB to MB</name>
       <bounds>
-        <x>152.0</x>
-        <y>25.0</y>
+        <x>390.0</x>
+        <y>30.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -1109,6 +1123,372 @@ http://xml.org/sax/features/external-parameter-entities false</value>
             <fieldName>result</fieldName>
             <sourceType>RAWRESULT</sourceType>
             <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="5661f78b-831e-41cf-b74b-2f0a41fd6263">
+      <annotation></annotation>
+      <name>isOK</name>
+      <bounds>
+        <x>660.0</x>
+        <y>60.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="1d97f2f4-c840-462c-823c-041d1ddb7a3e">
+          <annotation></annotation>
+          <fromContextKey>xmlDisk</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>xml</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="add18eb9-fe69-4bcb-91c4-d7c405e8793a">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>statusCode</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="ac9d1995-c134-4dc5-9a18-71029a29bda2">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>0ac1789b-64da-4887-a271-5a3ff3a78c4f</refId>
+          </destination>
+          <source>
+            <refId>5661f78b-831e-41cf-b74b-2f0a41fd6263</refId>
+          </source>
+          <positions>
+            <point>
+              <x>500.0</x>
+              <y>64.0</y>
+            </point>
+            <point>
+              <x>697.0</x>
+              <y>62.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="d7c4f89d-8758-438d-83d1-803bbb94a1db">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>cfcc0dbe-ef0b-4cab-badc-7bf995e43139</refId>
+          </destination>
+          <source>
+            <refId>5661f78b-831e-41cf-b74b-2f0a41fd6263</refId>
+          </source>
+          <positions>
+            <point>
+              <x>500.0</x>
+              <y>64.0</y>
+            </point>
+            <point>
+              <x>78.0</x>
+              <y>265.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>7d7fe10e-080b-4de0-b498-9d0f2e6c02e2</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="17692d29-44be-44a7-9938-db6c31b2d063">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>majorErrorCode</contextKey>
+          <expression id="5969fad1-c71f-4dd7-aaa2-86891b89f815">
+            <annotation></annotation>
+            <name>Result: majorErrorCode</name>
+            <fieldName>majorErrorCode</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="6c23799b-982d-4a3b-a503-b48570e5b280">
+      <annotation></annotation>
+      <name>Get VM Disk</name>
+      <bounds>
+        <x>210.0</x>
+        <y>30.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="2be764ed-59f3-47a0-90ec-125b5bd2b94a">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>hostname</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="3d22363d-f9c9-44b3-98ef-005fa7dca8b8">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>idVM</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="509d20da-c91a-4da6-bbc4-90d294e30f0f">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>token</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="d6f310d5-cf32-45be-80c8-c8a685949e03">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>cfcc0dbe-ef0b-4cab-badc-7bf995e43139</refId>
+          </destination>
+          <source>
+            <refId>6c23799b-982d-4a3b-a503-b48570e5b280</refId>
+          </source>
+          <positions>
+            <point>
+              <x>260.0</x>
+              <y>64.0</y>
+            </point>
+            <point>
+              <x>78.0</x>
+              <y>265.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="7582bf6e-9c07-45f5-bfed-da223f337df4">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>34fcb3a3-6d5f-44e1-8f52-e3edf9257e2b</refId>
+          </destination>
+          <source>
+            <refId>6c23799b-982d-4a3b-a503-b48570e5b280</refId>
+          </source>
+          <positions>
+            <point>
+              <x>260.0</x>
+              <y>64.0</y>
+            </point>
+            <point>
+              <x>440.0</x>
+              <y>64.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>1a5b3dcb-f532-4607-8d66-2eb0ee553c2c</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="e10ab8ca-1f99-437e-a16a-f6ca11f7ffc4">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>resourceType</contextKey>
+          <expression id="267892b3-e6b2-4cf1-8fc8-d642ace517fd">
+            <annotation></annotation>
+            <name>Result: vmDiskXML</name>
+            <fieldName>vmDiskXML</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters>
+              <xmlGetElementValueFilter id="8cff2f53-2402-42d7-9b9a-e1801f489692">
+                <annotation></annotation>
+                <name>XML Get Element Value</name>
+                <elementPath>//*[name()=&quot;rasd:ResourceType&quot;]</elementPath>
+              </xmlGetElementValueFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="1c345040-186b-4089-9ea6-018674f56f3e">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>instanceID</contextKey>
+          <expression id="936c7fb0-82ab-4959-989d-4312268f5dc9">
+            <annotation></annotation>
+            <name>Result: vmDiskXML</name>
+            <fieldName>vmDiskXML</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters>
+              <xmlGetElementValueFilter id="1f5c022f-657d-44d1-9d78-84b1ac1afaba">
+                <annotation></annotation>
+                <name>XML Get Element Value</name>
+                <elementPath>//*[name()=&quot;rasd:InstanceID&quot;]</elementPath>
+              </xmlGetElementValueFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="482de597-ab65-4d0e-801c-9b10a87becf0">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>busSubType</contextKey>
+          <expression id="44d22717-35b4-4bf4-a23a-f93ef4a0e3ae">
+            <annotation></annotation>
+            <name>Result: vmDiskXML</name>
+            <fieldName>vmDiskXML</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters>
+              <xmlGetElementValueFilter id="0dc3b60e-9844-4de2-b7ba-8a8f9da4b715">
+                <annotation></annotation>
+                <name>XML Get Element Value</name>
+                <elementPath>//*[name()=&quot;rasd:ResourceSubType&quot;]</elementPath>
+              </xmlGetElementValueFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="9e3c4e00-0872-4381-9847-8a9d8158ebc4">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>hardDiskName</contextKey>
+          <expression id="525dd1d1-7340-4e37-8274-58353edf5b8b">
+            <annotation></annotation>
+            <name>Result: vmDiskXML</name>
+            <fieldName>vmDiskXML</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters>
+              <xpathFilter id="02de1692-029f-4f25-a2fa-7544faebca07">
+                <annotation></annotation>
+                <name>XPath Query</name>
+                <xpathQuery>//*[name()=&quot;rasd:ElementName&quot;]</xpathQuery>
+              </xpathFilter>
+              <selectLineFilter id="336240da-150c-4d4d-98ac-32e7139ecc1f">
+                <annotation></annotation>
+                <name>Select Line</name>
+                <text>2</text>
+                <type>LINE_NUMBER_(STARTING_FROM_0)</type>
+                <autoSelectLineEnding>false</autoSelectLineEnding>
+                <windowsLineEnding>false</windowsLineEnding>
+                <unixLineEnding>true</unixLineEnding>
+              </selectLineFilter>
+              <xmlGetElementValueFilter id="8846cd81-db72-48b9-9a93-419ec77ae632">
+                <annotation></annotation>
+                <name>XML Get Element Value</name>
+                <elementPath>//*[name()=&quot;rasd:ElementName&quot;]</elementPath>
+              </xmlGetElementValueFilter>
+            </filters>
           </expression>
         </flowVariableAssignment>
       </assignments>

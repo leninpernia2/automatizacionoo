@@ -70,7 +70,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>idVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vm-e7a4f404-007e-4041-862d-1514fd204298</value>
+      <value>vm-2e1739c4-40a8-4252-ab25-6fae7187b308</value>
       <record>false</record>
     </staticBinding>
     <userInputBinding id="b8bd5323-c9f2-483c-854f-9247b9f35654">
@@ -487,12 +487,6 @@ Accept: application/*;version=9.0</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="14d321d9-3853-4d90-9572-bd8e25f90422">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -537,7 +531,7 @@ Accept: application/*;version=9.0</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="38845b0a-f475-406c-a7ee-9c0bd7b25eec">
+      <iconSpec id="2f58c490-dc4e-48c2-96a8-199a17211297">
         <baseIcon>return_success.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
