@@ -8,6 +8,7 @@ a850cfa3-c8c9-4492-b6b7-2ae095466a5f.b9fbe659-d5ee-4423-a351-3a7915dc4d18.descri
 a850cfa3-c8c9-4492-b6b7-2ae095466a5f.cc1e6e73-4ec0-4cda-a699-94aa93b8b10c.description=<pre>\nMultiplies two numbers\n\nInputs\:\nvalue1 - The first value.\nvalue2 - The second value.\n\nReturns\:\nThe product of the two numbers.\n\nResponses\:\nsuccess - The operation completed successfully.\nfailure - Something went wrong.\n</pre>
 a850cfa3-c8c9-4492-b6b7-2ae095466a5f.cf4c25c9-b9d4-4739-848f-338dd65858ed.description=<pre>Retrieves attributes from the root element of the given XML. If an "attributeName" is specified, this operation returns that specific attribute. If not, it returns an iterator with all attributes.\n\nInputs\:\n    xml - The xml (in the form of a String).\n    attributeName - The name of the attribute (optional. If empty, returns all)\n    parsingFeatures - The list of XML parsing features separated by new line (CRLF). The feature name - value must be separated by empty space. Setting specific features this field could be used to avoid XML security issues like "XML Entity Expansion injection" and "XML External Entity injection". To avoid aforementioned security issues we strongly recommend to set this input to the following values\: \nhttp\://apache.org/xml/features/disallow-doctype-decl true \nhttp\://xml.org/sax/features/external-general-entities false \nhttp\://xml.org/sax/features/external-parameter-entities false \nWhen the "http\://apache.org/xml/features/disallow-doctype-decl" feature is set to "true" the parser will throw a FATAL ERROR if the incoming document contains a DOCTYPE declaration.  \nWhen the "http\://xml.org/sax/features/external-general-entities" feature is set to "false" the parser will not include external general entities. \nWhen the "http\://xml.org/sax/features/external-parameter-entities" feature is set to "false" the parser will not include external parameter entities or the external DTD subset. \nIf any of the validations fails, the operation will fail with an error message describing the problem. \nDefault value\:\nhttp\://apache.org/xml/features/disallow-doctype-decl true\nhttp\://xml.org/sax/features/external-general-entities false\nhttp\://xml.org/sax/features/external-parameter-entities false\n\nResponses\:\n    has more - Another attribute was in the Element, and has been returned.\n    failure - The operation completed unsuccessfully.\n    no more - No more attributes. This will only be returned once, then iteration restarts.\n\nReturns\:\n    returnResult - The value of the attribute.\n    attributeName - The name of the attribute.\n</pre>
 a850cfa3-c8c9-4492-b6b7-2ae095466a5f.e1442285-61b2-4752-b744-e7c757aee4de.description=<pre>\nMultiplies two numbers\n\nInputs\:\nvalue1 - The first value.\nvalue2 - The second value.\n\nReturns\:\nThe product of the two numbers.\n\nResponses\:\nsuccess - The operation completed successfully.\nfailure - Something went wrong.\n</pre>
+a850cfa3-c8c9-4492-b6b7-2ae095466a5f.ed302405-ae6b-4cd9-8ea6-2ceb4ae88cbc.description=<pre>Retrieves attributes from the root element of the given XML. If an "attributeName" is specified, this operation returns that specific attribute. If not, it returns an iterator with all attributes.\n\nInputs\:\n    xml - The xml (in the form of a String).\n    attributeName - The name of the attribute (optional. If empty, returns all)\n    parsingFeatures - The list of XML parsing features separated by new line (CRLF). The feature name - value must be separated by empty space. Setting specific features this field could be used to avoid XML security issues like "XML Entity Expansion injection" and "XML External Entity injection". To avoid aforementioned security issues we strongly recommend to set this input to the following values\: \nhttp\://apache.org/xml/features/disallow-doctype-decl true \nhttp\://xml.org/sax/features/external-general-entities false \nhttp\://xml.org/sax/features/external-parameter-entities false \nWhen the "http\://apache.org/xml/features/disallow-doctype-decl" feature is set to "true" the parser will throw a FATAL ERROR if the incoming document contains a DOCTYPE declaration.  \nWhen the "http\://xml.org/sax/features/external-general-entities" feature is set to "false" the parser will not include external general entities. \nWhen the "http\://xml.org/sax/features/external-parameter-entities" feature is set to "false" the parser will not include external parameter entities or the external DTD subset. \nIf any of the validations fails, the operation will fail with an error message describing the problem. \nDefault value\:\nhttp\://apache.org/xml/features/disallow-doctype-decl true\nhttp\://xml.org/sax/features/external-general-entities false\nhttp\://xml.org/sax/features/external-parameter-entities false\n\nResponses\:\n    has more - Another attribute was in the Element, and has been returned.\n    failure - The operation completed unsuccessfully.\n    no more - No more attributes. This will only be returned once, then iteration restarts.\n\nReturns\:\n    returnResult - The value of the attribute.\n    attributeName - The name of the attribute.\n</pre>
 ]]></descriptionCdata>
   <annotation></annotation>
   <name>Create Organization VDC</name>
@@ -163,7 +164,7 @@ a850cfa3-c8c9-4492-b6b7-2ae095466a5f.e1442285-61b2-4752-b744-e7c757aee4de.descri
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <staticBinding id="dc125e27-2774-4d9b-b5c7-5e72342744e4">
+    <userInputBinding id="428bb230-ff50-4ba5-b29c-937cadab1852">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -173,9 +174,11 @@ a850cfa3-c8c9-4492-b6b7-2ae095466a5f.e1442285-61b2-4752-b744-e7c757aee4de.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>hrefProviderVdcStorageProfile</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>https://vcloud.enterprisecomputing.mx/api/admin/pvdcStorageProfile/4bf33944-b18f-4f0d-b2af-fdd73147fece</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
     <userInputBinding id="676cadb0-a9ca-44c5-b6c2-147b9301e2f7">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
@@ -652,7 +655,7 @@ Content-Type: application/vnd.vmware.admin.createVdcParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="a29b8141-d7ef-4db9-9e97-c4e5105c82c9">
+        <transition id="346d1675-d287-4ed1-a386-0d7d4cf489a3">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -661,7 +664,7 @@ Content-Type: application/vnd.vmware.admin.createVdcParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>cf4c25c9-b9d4-4739-848f-338dd65858ed</refId>
+            <refId>4d496cc8-b7ba-4de9-98f2-c6d024e63e22</refId>
           </destination>
           <source>
             <refId>9943f2a5-bc57-4328-9de9-ff666975a87c</refId>
@@ -669,11 +672,11 @@ Content-Type: application/vnd.vmware.admin.createVdcParams+xml</value>
           <positions>
             <point>
               <x>560.0</x>
-              <y>124.0</y>
+              <y>454.0</y>
             </point>
             <point>
-              <x>562.0</x>
-              <y>445.0</y>
+              <x>763.0</x>
+              <y>466.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -687,6 +690,44 @@ Content-Type: application/vnd.vmware.admin.createVdcParams+xml</value>
         <refId>bcdf0a82-9041-45be-be9b-fd915f4c473f</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="9c3a2e14-5f08-4d83-9c03-bdfffb78ecf8">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>statusCode</contextKey>
+          <expression id="e3ba1611-0f8e-4787-b2ab-0edbf591afbb">
+            <annotation></annotation>
+            <name>Result Field: statusCode</name>
+            <fieldName>statusCode</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="a981ba89-1417-41c5-997e-6b55172f3b6e">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>taskXML</contextKey>
+          <expression id="bf564ba0-33e6-4503-b285-1c76af8f35c4">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters>
+              <regexFilter id="a2591417-44ba-4c43-915f-8c7a9593f4f7">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>&lt;Task .*&lt;/Task&gt;</expression>
+                <ignoreCase>false</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>true</entireString>
+                <multiLine>false</multiLine>
+              </regexFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="9dbf778d-a45f-4659-86f2-4c074c3dce06">
           <annotation></annotation>
           <name>assignment</name>
@@ -713,12 +754,6 @@ Content-Type: application/vnd.vmware.admin.createVdcParams+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="b02155dd-542c-4152-8918-47ee1f898e89">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -2039,6 +2074,523 @@ http://xml.org/sax/features/external-parameter-entities false</value>
           </expression>
         </flowVariableAssignment>
       </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="4e030475-cdd8-488f-8c95-06702905bab3">
+      <annotation></annotation>
+      <name>Task Status</name>
+      <bounds>
+        <x>511.0</x>
+        <y>247.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="37fa34b0-a99a-4ae6-a2b8-6f651b2d3a83">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>hostname</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="4b947ec1-3afd-4eec-966c-8b66b9087f62">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>token</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="38920fb1-9a48-48f6-bb5f-8937af6ee552">
+          <annotation></annotation>
+          <fromContextKey>taskID</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>task</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="89f5f435-aa67-4174-9875-d767bc9f6968">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>64bb12bb-c567-4a97-a2b8-76eb4a8d2279</refId>
+          </destination>
+          <source>
+            <refId>4e030475-cdd8-488f-8c95-06702905bab3</refId>
+          </source>
+          <positions>
+            <point>
+              <x>572.0</x>
+              <y>278.0</y>
+            </point>
+            <point>
+              <x>320.0</x>
+              <y>124.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="48d2c8a5-d529-4452-857d-abd7fe5feb88">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>cf4c25c9-b9d4-4739-848f-338dd65858ed</refId>
+          </destination>
+          <source>
+            <refId>4e030475-cdd8-488f-8c95-06702905bab3</refId>
+          </source>
+          <positions>
+            <point>
+              <x>572.0</x>
+              <y>278.0</y>
+            </point>
+            <point>
+              <x>560.0</x>
+              <y>124.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>6e974e0d-19fb-4c23-83f8-121f1d8c3e89</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="ed302405-ae6b-4cd9-8ea6-2ceb4ae88cbc">
+      <annotation>a850cfa3-c8c9-4492-b6b7-2ae095466a5f.ed302405-ae6b-4cd9-8ea6-2ceb4ae88cbc.description</annotation>
+      <name>XML Get Attributes</name>
+      <bounds>
+        <x>708.0</x>
+        <y>253.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="a526141b-dbf3-4139-9b79-65a5c60d41d5">
+        <baseIcon>document_xml.png</baseIcon>
+        <basePath>Operating System</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="821864ca-6575-4922-8690-e9a22dee3af8">
+            <baseIcon>wrench.png</baseIcon>
+            <basePath>Annotations</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="76140fc6-7964-4785-b2ce-699c3005aa59">
+          <annotation></annotation>
+          <fromContextKey>taskXML</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>xml</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <staticBinding id="deb76646-e0ae-462c-828d-9953eb5c66a2">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>attributeName</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>href</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="e29b712e-fa96-46c7-80f7-fddc41033613">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>parsingFeatures</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>http://apache.org/xml/features/disallow-doctype-decl true
+http://xml.org/sax/features/external-general-entities false
+http://xml.org/sax/features/external-parameter-entities false</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="d70ea014-98ab-4170-8027-842180cdb394">
+          <annotation></annotation>
+          <name>no more</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>no more</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>4e030475-cdd8-488f-8c95-06702905bab3</refId>
+          </destination>
+          <source>
+            <refId>ed302405-ae6b-4cd9-8ea6-2ceb4ae88cbc</refId>
+          </source>
+          <positions>
+            <point>
+              <x>748.0</x>
+              <y>459.0</y>
+            </point>
+            <point>
+              <x>561.0</x>
+              <y>281.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="31cf48ab-0267-44fa-8056-016f5367ae1a">
+          <annotation></annotation>
+          <name>has more</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>has more</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>4e030475-cdd8-488f-8c95-06702905bab3</refId>
+          </destination>
+          <source>
+            <refId>ed302405-ae6b-4cd9-8ea6-2ceb4ae88cbc</refId>
+          </source>
+          <positions>
+            <point>
+              <x>758.0</x>
+              <y>287.0</y>
+            </point>
+            <point>
+              <x>698.788877661169</x>
+              <y>260.18502300250884</y>
+            </point>
+            <point>
+              <x>621.7332591598806</x>
+              <y>257.8381513730279</y>
+            </point>
+            <point>
+              <x>561.0</x>
+              <y>281.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="6c82ae5f-2ea8-4386-a8a9-1f4e840154c4">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>3a7a05a4-f365-4da8-a619-e7cb3df445a4</refId>
+          </destination>
+          <source>
+            <refId>ed302405-ae6b-4cd9-8ea6-2ceb4ae88cbc</refId>
+          </source>
+          <positions>
+            <point>
+              <x>758.0</x>
+              <y>287.0</y>
+            </point>
+            <point>
+              <x>958.0</x>
+              <y>386.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>ab919e7c-fd1c-461f-a711-02e219d22dd7</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="a6aeb592-5823-49a1-8b28-b0edd06e8b9b">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>taskID</contextKey>
+          <expression id="3136a91f-3e12-44c3-998e-bdc862a3cae3">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters>
+              <regexFilter id="ca5a91ba-73e0-45f1-981b-567f485768b2">
+                <annotation></annotation>
+                <name>Regular Expression</name>
+                <expression>task.*</expression>
+                <ignoreCase>false</ignoreCase>
+                <regType>JAVA</regType>
+                <entireString>true</entireString>
+                <multiLine>false</multiLine>
+              </regexFilter>
+              <replaceAllFilter id="ba28b4f0-9307-45d1-be5d-04f5a23654db">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>false</ignoreCase>
+                <searchString>task/</searchString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="3a7a05a4-f365-4da8-a619-e7cb3df445a4">
+      <annotation></annotation>
+      <name>Error : failure</name>
+      <bounds>
+        <x>908.0</x>
+        <y>352.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="6395d8f1-7ef5-41e6-9af2-119a6718324e">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>3a7a05a4-f365-4da8-a619-e7cb3df445a4</refId>
+          </destination>
+          <source>
+            <refId>3a7a05a4-f365-4da8-a619-e7cb3df445a4</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>ERROR</returnStepType>
+      <assignments/>
+    </returnStep>
+    <step id="4d496cc8-b7ba-4de9-98f2-c6d024e63e22">
+      <annotation></annotation>
+      <name>isOK</name>
+      <bounds>
+        <x>713.0</x>
+        <y>432.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="4a82c707-4681-4000-bff4-fc7781526f3b">
+          <annotation></annotation>
+          <fromContextKey>vdcxml</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>xml</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="671a6d16-8ed2-4065-a276-252fecafb996">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>statusCode</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="5967c2f3-1244-48f6-aa81-9b27a7883fe3">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>3a7a05a4-f365-4da8-a619-e7cb3df445a4</refId>
+          </destination>
+          <source>
+            <refId>4d496cc8-b7ba-4de9-98f2-c6d024e63e22</refId>
+          </source>
+          <positions>
+            <point>
+              <x>763.0</x>
+              <y>466.0</y>
+            </point>
+            <point>
+              <x>958.0</x>
+              <y>386.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="687e60bc-155c-43c9-a6be-a7fda4a43602">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>ed302405-ae6b-4cd9-8ea6-2ceb4ae88cbc</refId>
+          </destination>
+          <source>
+            <refId>4d496cc8-b7ba-4de9-98f2-c6d024e63e22</refId>
+          </source>
+          <positions>
+            <point>
+              <x>763.0</x>
+              <y>466.0</y>
+            </point>
+            <point>
+              <x>758.0</x>
+              <y>287.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>7d7fe10e-080b-4de0-b498-9d0f2e6c02e2</refId>
+      </opRef>
+      <assignments/>
       <throttleSize>0</throttleSize>
     </step>
   </steps>
