@@ -77,6 +77,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>catalogItemID</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>4bf957fb-b9da-4650-8f77-0344c7cee1a1</value>
       <record>false</record>
       <prompt></prompt>
       <isMultiSelect>false</isMultiSelect>
@@ -92,6 +93,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>idVdc</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>18d2d5df-fcab-425f-b39e-426a40dcdf60</value>
       <record>false</record>
       <prompt></prompt>
       <isMultiSelect>false</isMultiSelect>
@@ -137,6 +139,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>BackupNetworkName</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>Backup-1743</value>
       <record>false</record>
       <prompt></prompt>
       <isMultiSelect>false</isMultiSelect>
