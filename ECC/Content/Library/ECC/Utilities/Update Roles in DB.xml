@@ -12,7 +12,7 @@ d07e2fd7-903c-40d8-a172-aeb55710ce1c.f7cbf539-2234-44d9-95d0-21e356be8439.descri
   <name>Update Roles in DB</name>
   <categories/>
   <inputs>
-    <userInputBinding id="fef1156b-129c-49ce-87a3-f7d8d7f08ab3">
+    <staticBinding id="306ff219-02be-4a6b-99d2-5a1b07c79b6e">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -22,12 +22,10 @@ d07e2fd7-903c-40d8-a172-aeb55710ce1c.f7cbf539-2234-44d9-95d0-21e356be8439.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="a4ff666f-fa04-4bdc-b3b1-790c421b5d24">
+    </staticBinding>
+    <staticBinding id="35570bc1-30b0-4c18-ba75-8dea92c2278b">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -37,12 +35,10 @@ d07e2fd7-903c-40d8-a172-aeb55710ce1c.f7cbf539-2234-44d9-95d0-21e356be8439.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>username</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>adminvcd</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="12eec8e9-92b0-4a49-bf94-3fc83245c42e">
+    </staticBinding>
+    <staticBinding id="cd0f16f8-d9f7-43e2-b122-a247a5eb4c9f">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -52,12 +48,10 @@ d07e2fd7-903c-40d8-a172-aeb55710ce1c.f7cbf539-2234-44d9-95d0-21e356be8439.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>password</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>{OBFUSCATED}1AOPwR2NtGmidObUx+KDmw==</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="0575dc47-f676-48e4-9ded-0ebef54c435c">
+    </staticBinding>
+    <staticBinding id="861def42-5045-42ba-a870-39c33b8d80d7">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -67,12 +61,10 @@ d07e2fd7-903c-40d8-a172-aeb55710ce1c.f7cbf539-2234-44d9-95d0-21e356be8439.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>organization</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>system</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="a4d96fd5-b057-47f2-a252-10ca292f8935">
+    </staticBinding>
+    <staticBinding id="c7cdde90-8255-4479-b47f-1b33c7102433">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -82,12 +74,10 @@ d07e2fd7-903c-40d8-a172-aeb55710ce1c.f7cbf539-2234-44d9-95d0-21e356be8439.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>DBServerName</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>198.19.53.95</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="ece72d3b-15fe-43c2-bbc6-a6740efafaf9">
+    </staticBinding>
+    <staticBinding id="8da3204b-b074-4ac1-a344-0894a0a9349d">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -97,12 +87,10 @@ d07e2fd7-903c-40d8-a172-aeb55710ce1c.f7cbf539-2234-44d9-95d0-21e356be8439.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>UsernameDB</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>postgres</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="997f3a93-90db-4c82-ab7f-23e77e70e39c">
+    </staticBinding>
+    <staticBinding id="9ab44081-94ff-48c7-be39-65686593103f">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -112,11 +100,9 @@ d07e2fd7-903c-40d8-a172-aeb55710ce1c.f7cbf539-2234-44d9-95d0-21e356be8439.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>PasswordDB</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>{OBFUSCATED}cxJMWRS6bAx/fs93NI4TfA==</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
+    </staticBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="67e7e898-1db6-41a5-ad62-d45db3b0fba4">
@@ -312,7 +298,7 @@ d07e2fd7-903c-40d8-a172-aeb55710ce1c.f7cbf539-2234-44d9-95d0-21e356be8439.descri
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="e44ced9b-034b-42b1-b7e9-1d21209d2ab4">
+        <staticBinding id="629ef677-2a48-4c17-b82c-8652c6c30e35">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -322,12 +308,10 @@ d07e2fd7-903c-40d8-a172-aeb55710ce1c.f7cbf539-2234-44d9-95d0-21e356be8439.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>hostname</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="e95888b0-4c9b-4b4d-b87a-83fe1ddc58d7">
+        </staticBinding>
+        <staticBinding id="0c6b43b8-7ca7-405b-941f-7721847ba888">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -337,12 +321,10 @@ d07e2fd7-903c-40d8-a172-aeb55710ce1c.f7cbf539-2234-44d9-95d0-21e356be8439.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>username</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="409f53c4-34be-4928-bf79-62ef422e1910">
+        </staticBinding>
+        <staticBinding id="8a3efe6d-b644-4177-a6bb-27b6aaf9678c">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -352,11 +334,9 @@ d07e2fd7-903c-40d8-a172-aeb55710ce1c.f7cbf539-2234-44d9-95d0-21e356be8439.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>password</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
+        </staticBinding>
         <userInputBinding id="45a851fb-a391-4eb0-a974-bb8383ea1708">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
