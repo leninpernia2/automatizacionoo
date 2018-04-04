@@ -115,7 +115,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>ipVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>198.18.84.12</value>
+      <value>198.18.84.20</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="dbc6e9aa-969e-4831-93ca-601cbea79354">

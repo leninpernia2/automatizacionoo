@@ -59,7 +59,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>usernameVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>root</value>
+      <value>monitoreo</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="b2e6374f-ff7a-44cf-9eb3-22a77bce7e00">
@@ -72,7 +72,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>passwordVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Al3str4$c4rr13r567</value>
+      <value>M0n17ore0$A600</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="a591884c-f5de-4b98-b455-ba1b717cfd12">
@@ -85,7 +85,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>SO</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Centos</value>
+      <value>Redhat</value>
       <record>false</record>
       <validationFormat>
         <refId>829a5ed4-0ab5-4ebd-912a-38c52809d804</refId>
@@ -128,7 +128,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>ipVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>198.18.84.12</value>
+      <value>198.18.84.20</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="dc5b974e-af5f-4120-86cb-bd509613bfd3">
@@ -345,12 +345,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="99a30b5a-1c72-4a9f-b60f-fd23816ceda2">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -395,12 +389,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="96776af3-8262-4001-bed5-8955933de739">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
