@@ -1773,9 +1773,8 @@ Get-WindowsFeature -name SNMP* | Add-WindowsFeature -IncludeManagementTools | Ou
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="df28b9e9-f629-4d04-9fb1-1240f4e7cd4b">
+        <userInputBinding id="f1fd6641-6232-4a6a-8c0a-4690ea0d7020">
           <annotation></annotation>
-          <fromContextKey>jobId</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
