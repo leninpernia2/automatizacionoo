@@ -68,7 +68,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>idVdc</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>01f83166-28f6-4aa3-85bb-2c8a87530d10</value>
+      <value>18d2d5df-fcab-425f-b39e-426a40dcdf60</value>
       <record>false</record>
     </staticBinding>
   </inputs>
@@ -440,12 +440,6 @@ Content-Type: application/vnd.vmware.vcloud.vdc+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="246bb08b-5aaf-4178-8d48-e70c0db77ab3">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

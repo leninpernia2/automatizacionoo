@@ -7,7 +7,7 @@
   <name>Undeploy vapp powerOff</name>
   <categories/>
   <inputs>
-    <userInputBinding id="00feb149-1497-4bc3-b81c-a33354921937">
+    <staticBinding id="1fd89c13-74f7-43d5-84e0-1cbf0936f840">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -17,12 +17,10 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="8edf6ce8-ea64-45e8-b7c5-a94f1fadedc5">
+    </staticBinding>
+    <staticBinding id="95b8a975-1e0f-4dd9-a532-05ba1ee0ff89">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -32,12 +30,10 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>64f83ffec1424d45beab86f7a0529552</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="2913b7a1-cb3a-4aa5-9ed7-4b6d07f3455e">
+    </staticBinding>
+    <staticBinding id="8f147e91-46a3-43f7-9484-71e89c378541">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -47,11 +43,9 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>vappID</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>vapp-7ac58e07-8650-4c23-8928-c21730ac6607</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
+    </staticBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="e376bcbe-d001-4dbb-9b5f-b8fd47ec81e2">
