@@ -1048,12 +1048,16 @@ b4c0b69e-e270-45ea-b19c-517260984c04.fe641bc4-61af-4e0a-b31d-9c6f356234d5.descri
           </source>
           <positions>
             <point>
-              <x>537.0</x>
-              <y>54.0</y>
+              <x>335.0</x>
+              <y>33.93121350394073</y>
             </point>
             <point>
-              <x>523.0</x>
-              <y>211.0</y>
+              <x>379.0</x>
+              <y>151.0</y>
+            </point>
+            <point>
+              <x>379.0</x>
+              <y>222.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -1478,12 +1482,16 @@ b4c0b69e-e270-45ea-b19c-517260984c04.fe641bc4-61af-4e0a-b31d-9c6f356234d5.descri
           </source>
           <positions>
             <point>
-              <x>569.0</x>
-              <y>34.0</y>
+              <x>521.0</x>
+              <y>64.84042553191489</y>
+            </point>
+            <point>
+              <x>437.0</x>
+              <y>156.0</y>
             </point>
             <point>
               <x>379.0</x>
-              <y>206.0</y>
+              <y>222.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -1507,12 +1515,16 @@ b4c0b69e-e270-45ea-b19c-517260984c04.fe641bc4-61af-4e0a-b31d-9c6f356234d5.descri
           </source>
           <positions>
             <point>
-              <x>569.0</x>
-              <y>34.0</y>
+              <x>619.0</x>
+              <y>45.99387236735219</y>
             </point>
             <point>
-              <x>796.0</x>
-              <y>169.0</y>
+              <x>678.0</x>
+              <y>117.0</y>
+            </point>
+            <point>
+              <x>744.0</x>
+              <y>181.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -1677,12 +1689,16 @@ b4c0b69e-e270-45ea-b19c-517260984c04.fe641bc4-61af-4e0a-b31d-9c6f356234d5.descri
           </source>
           <positions>
             <point>
-              <x>600.0</x>
-              <y>232.0</y>
+              <x>544.1875</x>
+              <y>261.0</y>
             </point>
             <point>
-              <x>750.0</x>
-              <y>382.0</y>
+              <x>566.0</x>
+              <y>297.0</y>
+            </point>
+            <point>
+              <x>568.0</x>
+              <y>390.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -1706,12 +1722,16 @@ b4c0b69e-e270-45ea-b19c-517260984c04.fe641bc4-61af-4e0a-b31d-9c6f356234d5.descri
           </source>
           <positions>
             <point>
-              <x>600.0</x>
-              <y>232.0</y>
+              <x>521.0</x>
+              <y>228.72340425531914</y>
+            </point>
+            <point>
+              <x>481.0</x>
+              <y>220.0</y>
             </point>
             <point>
               <x>379.0</x>
-              <y>206.0</y>
+              <y>222.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -1780,12 +1800,16 @@ b4c0b69e-e270-45ea-b19c-517260984c04.fe641bc4-61af-4e0a-b31d-9c6f356234d5.descri
           </source>
           <positions>
             <point>
-              <x>796.0</x>
-              <y>169.0</y>
+              <x>787.0</x>
+              <y>176.9938723673522</y>
             </point>
             <point>
-              <x>600.0</x>
-              <y>232.0</y>
+              <x>665.0</x>
+              <y>197.0</y>
+            </point>
+            <point>
+              <x>569.0</x>
+              <y>245.0</y>
             </point>
           </positions>
           <labelPosition>

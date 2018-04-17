@@ -2,6 +2,7 @@
 <flow id="e9bb7df0-596f-4688-ab48-462e041bae91">
   <descriptionCdata><![CDATA[e9bb7df0-596f-4688-ab48-462e041bae91.3c0a5d87-ab41-455e-8f8f-4a9f2efa2b4d.prompt=Enter the SAS version used\:
 e9bb7df0-596f-4688-ab48-462e041bae91.735a16fe-09e1-4e84-a06e-94479248c324.description=<pre>\nThis operation waits for the number of seconds specified in the "seconds" input.\n\nInputs\:\n    seconds - The number of seconds to wait.\n\nResults\:\n    resultString \u2013 This is the primary output. It contains the "completed sleep" message if the operation completed successfully and an error message otherwise. \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
+e9bb7df0-596f-4688-ab48-462e041bae91.73e1374a-aa63-4bc1-98c5-1061b4aa225d.description=<pre> \nCheck to see if the value stored in a specified flow variable, denoted by key, is null.\n\nInputs\:\n    keyName - The key to check, i.e. the name of the flow variable. \n    trimSpaces - If set on "true" then all the whitespaces will be removed from the value stored. \nValid values\: true, false\nDefault value\: false\n\nReturns\: \n    The value in the specified key, i.e. flow variable with all whitespaces removed.\n\nResponses\:\n    isNull - If the key is a null pointer, i.e. the flow variable doesn't have an assigned value.\n    notNull - If some value is stored in the key, i.e the flow variable has a value assigned. \n\nNotes\: \n    1. If the "trimSpaces" input is set on "true" and the value from "keyName" contains only whitespaces then the response will be "isNull". \n    2. If the "trimSpaces" input is set on "false" and the value from "keyName" contains only whitespaces then the response will be "notNull". \n    3. If any other value than "true" or "false" is passed on "trimSpaces" input then the default value (false) will be used.\n</pre>
 e9bb7df0-596f-4688-ab48-462e041bae91.9496b01c-9647-433d-8b25-927fc0c26897.description=Retrieves the HP SA agent reference being given the id of the device where it is hosted. This operation is supported from SA version 10.0 (sas10).\n\nInputs\:\ncoreHost - The DNS name or IP Address of your SAS core.\ncorePort - The port to Connect to your SAS core on.\ncoreProtocol - The protocol to connect to your SAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for host.\ncorePassword - The password for host.\ncoreVersion - The version of SAS to use.\ndeviceId - The id of the device where the searched HP SA agent is hosted.\nseparator - The separator used for separating the results. The default value for the separator is a comma (,).\n\nOutputs\:\nagentId - The id of the HP SA agent.\nagentName - The name of the HP SA agent.\n\nResponses\:\nsuccess - The operation has completed successfully.\nfailure - The operation has failed.
 e9bb7df0-596f-4688-ab48-462e041bae91.970970fa-d46e-4797-803a-2710276168f2.description=Checks to see if a job is completed or not\n\nInputs\:\ncoreHost - The DNS name or IP Address of your SAS core.\ncorePort - The port to Connect to your SAS core on.\ncoreProtocol - The protocol to connect to your SAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for host.\ncorePassword - The password for host.\ncoreVersion - The version of SAS to use.\njobID - the id of the job\n\nResponses\:\nrunning - job is still running\ncompleted - job has completed or is terminated in error\nfailure - failed to retrieve data
 e9bb7df0-596f-4688-ab48-462e041bae91.a2add0e4-fdc7-4d48-8be5-5a9bbaf7ff74.description=<pre>This operation can be used to find the SA version in the form of 'sasXXX' (Similar to the entries in the Selection List 'SAS Version'). Output of this operations  could be mapped to the input parameter 'coreVersion' which is used in other SA Operations. For SA version 6.x, this operation is not supported. For other SA versions, if the output variable 'coreVersion' is reported with 'UNKNOWN', then user is recommended to manually find the SA version to use in other SA Operations.\n\nInputs\:\ncoreHost - IP Address or DNS name of the SA Web Service.\ncorePort - HTTP(S) port of SA Web Service. By default it is '443'.\ncoreProtocol - HTTP / HTTPS. By default it is 'HTTPS'.\ncoreUsername - Username of the SA.\ncorePassword - Password of SA user.\n\nOutputs\:\nstatus - Operation completion Status.\ncoreVersion - SA version.  It could be one of [sas10, sas101, sas102, sas105, UNKNOWN].\n\nResponses\:\nsuccess - retrieved successfully\nfailure - failed to retrieve data\n</pre>
@@ -55,7 +56,7 @@ e9bb7df0-596f-4688-ab48-462e041bae91.fcfc95b1-d2e5-4c5c-9e96-318f44247c6e.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>password</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Jcglobal2017</value>
+      <value>Jcglobal2010</value>
       <record>false</record>
     </staticBinding>
   </inputs>
@@ -288,7 +289,7 @@ e9bb7df0-596f-4688-ab48-462e041bae91.fcfc95b1-d2e5-4c5c-9e96-318f44247c6e.descri
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>956.0</x>
+        <x>1067.0</x>
         <y>0.0</y>
       </bounds>
       <layer>-1</layer>
@@ -882,7 +883,7 @@ e9bb7df0-596f-4688-ab48-462e041bae91.fcfc95b1-d2e5-4c5c-9e96-318f44247c6e.descri
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="761118c1-3dfe-4773-b0a0-0386044f30ad">
+        <transition id="aa052ebf-f016-4337-92ba-9a21a5298a5e">
           <annotation></annotation>
           <name>completed</name>
           <command>NEXT</command>
@@ -891,7 +892,7 @@ e9bb7df0-596f-4688-ab48-462e041bae91.fcfc95b1-d2e5-4c5c-9e96-318f44247c6e.descri
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>b3bceae6-5e55-453d-86b9-14e18f2c44ed</refId>
+            <refId>73e1374a-aa63-4bc1-98c5-1061b4aa225d</refId>
           </destination>
           <source>
             <refId>970970fa-d46e-4797-803a-2710276168f2</refId>
@@ -902,8 +903,8 @@ e9bb7df0-596f-4688-ab48-462e041bae91.fcfc95b1-d2e5-4c5c-9e96-318f44247c6e.descri
               <y>34.0</y>
             </point>
             <point>
-              <x>769.0</x>
-              <y>114.0</y>
+              <x>927.0</x>
+              <y>175.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -916,7 +917,22 @@ e9bb7df0-596f-4688-ab48-462e041bae91.fcfc95b1-d2e5-4c5c-9e96-318f44247c6e.descri
       <opRef>
         <refId>b9969b26-65f6-49a1-87aa-06d18f28e2ef</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="6d499851-3fd0-4c72-82d6-5a00821936ad">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>status</contextKey>
+          <expression id="fdfc19a3-91da-4d64-9462-acb77c349669">
+            <annotation></annotation>
+            <name>Result Field: status</name>
+            <fieldName>status</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <step id="fcfc95b1-d2e5-4c5c-9e96-318f44247c6e">
@@ -1093,8 +1109,8 @@ e9bb7df0-596f-4688-ab48-462e041bae91.fcfc95b1-d2e5-4c5c-9e96-318f44247c6e.descri
       <annotation>e9bb7df0-596f-4688-ab48-462e041bae91.735a16fe-09e1-4e84-a06e-94479248c324.description</annotation>
       <name>Sleep</name>
       <bounds>
-        <x>681.0</x>
-        <y>135.0</y>
+        <x>619.0</x>
+        <y>133.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -1121,7 +1137,7 @@ e9bb7df0-596f-4688-ab48-462e041bae91.fcfc95b1-d2e5-4c5c-9e96-318f44247c6e.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>seconds</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>10</value>
+          <value>20</value>
           <record>false</record>
         </staticBinding>
       </bindings>
@@ -1211,8 +1227,8 @@ e9bb7df0-596f-4688-ab48-462e041bae91.fcfc95b1-d2e5-4c5c-9e96-318f44247c6e.descri
       <annotation>e9bb7df0-596f-4688-ab48-462e041bae91.b3bceae6-5e55-453d-86b9-14e18f2c44ed.description</annotation>
       <name>Get Job Info VO</name>
       <bounds>
-        <x>662.0</x>
-        <y>2.0</y>
+        <x>843.0</x>
+        <y>0.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -1420,7 +1436,7 @@ e9bb7df0-596f-4688-ab48-462e041bae91.fcfc95b1-d2e5-4c5c-9e96-318f44247c6e.descri
       <annotation>e9bb7df0-596f-4688-ab48-462e041bae91.9496b01c-9647-433d-8b25-927fc0c26897.description</annotation>
       <name>Find HP SA Agents By Device Id</name>
       <bounds>
-        <x>798.0</x>
+        <x>937.0</x>
         <y>0.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1626,6 +1642,166 @@ e9bb7df0-596f-4688-ab48-462e041bae91.fcfc95b1-d2e5-4c5c-9e96-318f44247c6e.descri
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
+    <step id="73e1374a-aa63-4bc1-98c5-1061b4aa225d">
+      <annotation>e9bb7df0-596f-4688-ab48-462e041bae91.73e1374a-aa63-4bc1-98c5-1061b4aa225d.description</annotation>
+      <name>Check Null</name>
+      <bounds>
+        <x>705.0</x>
+        <y>0.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="92b01d6e-b7c2-4ea7-9df4-49885aaab277">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>keyName</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>jobId</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="22c2937b-1b2e-4ad2-86a4-da9387d65cf2">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>trimSpaces</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>false</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="a8be7e8d-284f-45bc-9780-31a661955c3a">
+          <annotation></annotation>
+          <name>notNull</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>notNull</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>b3bceae6-5e55-453d-86b9-14e18f2c44ed</refId>
+          </destination>
+          <source>
+            <refId>73e1374a-aa63-4bc1-98c5-1061b4aa225d</refId>
+          </source>
+          <positions>
+            <point>
+              <x>927.0</x>
+              <y>175.0</y>
+            </point>
+            <point>
+              <x>712.0</x>
+              <y>36.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="2e56c038-873e-4027-a5a2-713aaa4b266c">
+          <annotation></annotation>
+          <name>isNull</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>isNull</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>e3bde54d-4691-4684-b5de-76d800a6b7c7</refId>
+          </destination>
+          <source>
+            <refId>73e1374a-aa63-4bc1-98c5-1061b4aa225d</refId>
+          </source>
+          <positions>
+            <point>
+              <x>927.0</x>
+              <y>175.0</y>
+            </point>
+            <point>
+              <x>830.0</x>
+              <y>268.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>b9997f7f-d19c-4dc6-acc4-fa91a8644a38</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="e3bde54d-4691-4684-b5de-76d800a6b7c7">
+      <annotation></annotation>
+      <name>Diagnosed : diagnosed</name>
+      <bounds>
+        <x>780.0</x>
+        <y>234.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="92e9c424-3634-418a-abf1-bea47b01c4c4">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>diagnosed</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>e3bde54d-4691-4684-b5de-76d800a6b7c7</refId>
+          </destination>
+          <source>
+            <refId>e3bde54d-4691-4684-b5de-76d800a6b7c7</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>DIAGNOSED</returnStepType>
+      <assignments/>
+    </returnStep>
   </steps>
   <startSteps>a2add0e4-fdc7-4d48-8be5-5a9bbaf7ff74</startSteps>
 </flow>
