@@ -1070,7 +1070,7 @@ b79ba618-fa6e-4144-bab3-14d169580ab6.fc0700a1-5656-4cc5-934a-00a53eff29f3.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>seconds</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>120</value>
+          <value>60</value>
           <record>false</record>
         </staticBinding>
       </bindings>

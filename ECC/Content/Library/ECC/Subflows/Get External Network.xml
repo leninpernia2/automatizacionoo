@@ -53,7 +53,7 @@
       </link>
       <identityAttribute>PASSWORD</identityAttribute>
     </identityBinding>
-    <staticBinding id="1c2f47ba-b530-42ce-a936-9c85a71a461e">
+    <userInputBinding id="0436fd5a-5b35-4f76-b783-87406ebee86a">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -63,9 +63,11 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>network</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value></value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="a8e01855-dc91-442d-94ce-8d9d03a2ed82">
@@ -207,7 +209,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>network</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value></value>
+          <value>External-1173</value>
           <record>false</record>
         </staticBinding>
       </bindings>
@@ -316,6 +318,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="ad9bf0e9-8a95-4608-8cc0-89df4e213117">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
