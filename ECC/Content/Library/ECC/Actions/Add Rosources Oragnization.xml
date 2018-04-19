@@ -160,7 +160,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>limitVdcStorageProfileGB</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>200</value>
+      <value>1024</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="dbf0c594-f269-4050-b47f-0f24600fbb6b">
@@ -173,7 +173,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>ResourceGuaranteedMemory</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>0.20</value>
+      <value>20</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="14193f69-50ed-44d3-95de-a1f8f4053745">
@@ -451,6 +451,155 @@
   <compatibleRuntimeContext>false</compatibleRuntimeContext>
   <historyCheckPointFlow>true</historyCheckPointFlow>
   <steps>
+    <step id="815975cc-3354-4841-bffb-3ae8cb42e457">
+      <annotation></annotation>
+      <name>Ajustar Parametros Resource Guaranteed</name>
+      <bounds>
+        <x>297.0</x>
+        <y>0.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="e10dfa4f-9e8e-4d8d-82cd-733c5c15a715">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>ResourceGuaranteedMemory</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="c6db23de-dc99-4df1-86de-c50231227e7e">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>ResourceGuaranteedCpu</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="6350d148-20a6-473f-aab5-b6aa9d856bb2">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>5b4a5282-2a92-468d-8c9e-4ccad0933f74</refId>
+          </destination>
+          <source>
+            <refId>815975cc-3354-4841-bffb-3ae8cb42e457</refId>
+          </source>
+          <positions>
+            <point>
+              <x>347.0</x>
+              <y>34.0</y>
+            </point>
+            <point>
+              <x>466.0</x>
+              <y>170.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="5443d953-6009-4d28-9cd7-d3905fda0cc0">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>eea5c469-84f1-4182-98af-11a29446e338</refId>
+          </destination>
+          <source>
+            <refId>815975cc-3354-4841-bffb-3ae8cb42e457</refId>
+          </source>
+          <positions>
+            <point>
+              <x>347.0</x>
+              <y>34.0</y>
+            </point>
+            <point>
+              <x>144.0</x>
+              <y>87.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>ba4bc879-5e3d-46d8-8280-4fdefda4a177</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="d5f192f7-e502-4e4a-b279-845d54b36d9c">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>ResourceGuaranteedCpu</contextKey>
+          <expression id="b6e62741-311c-4492-968c-0eba00742f42">
+            <annotation></annotation>
+            <name>Result: ResourceGuaranteedCpu</name>
+            <fieldName>ResourceGuaranteedCpu</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="5dd5ed63-7c60-413d-bac1-e2a86fce7d2a">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>ResourceGuaranteedMemory</contextKey>
+          <expression id="5a3cd739-b284-4d0a-bf4f-0badec94d80c">
+            <annotation></annotation>
+            <name>Result: ResourceGuaranteedMemory</name>
+            <fieldName>ResourceGuaranteedMemory</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
     <step id="eea5c469-84f1-4182-98af-11a29446e338">
       <annotation></annotation>
       <name>Get Token</name>
@@ -2297,207 +2446,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="bded2592-eac0-4863-adda-80eb01ed30ee">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>fc270aa1-13c0-4306-a1e5-e7be9d398cbd</refId>
-          </destination>
-          <source>
-            <refId>c0498e72-e950-4f20-b568-82b3f721e756</refId>
-          </source>
-          <positions>
-            <point>
-              <x>644.0</x>
-              <y>480.0</y>
-            </point>
-            <point>
-              <x>643.0</x>
-              <y>337.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-      </transitions>
-      <properties/>
-      <opRef>
-        <refId>b53aa7ed-7c39-4bff-9a8d-53c129c30e8e</refId>
-      </opRef>
-      <assignments/>
-      <throttleSize>0</throttleSize>
-    </step>
-    <step id="fc270aa1-13c0-4306-a1e5-e7be9d398cbd">
-      <annotation></annotation>
-      <name>Add BackUp Network</name>
-      <bounds>
-        <x>592.0</x>
-        <y>303.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <iconSpec id="3a7dd311-df85-423e-bd48-2772a5541f22">
-        <baseIcon>flow.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>false</readOnly>
-        <layers/>
-      </iconSpec>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings>
-        <userInputBinding id="ff7f39b7-1da1-46b2-ba2e-62469d0791b1">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>hostname</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="f05cc54b-7be3-4554-bb96-eae1bc55d110">
-          <annotation></annotation>
-          <fromContextKey>idVdc</fromContextKey>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>vdc</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="0169dad3-0f8a-4edc-8ba4-548f6dffdc74">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>token</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="8a2dbbac-dfd7-42ae-99cc-cbfa017e0300">
-          <annotation></annotation>
-          <fromContextKey>hrefBackupNetwork</fromContextKey>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>hrefExtNetwork</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <staticBinding id="1dda407c-a443-4159-81c8-468e3ce4280f">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>IsShared</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>true</value>
-          <record>false</record>
-        </staticBinding>
-        <userInputBinding id="bf3928ac-76f7-4cfd-b4ca-757d276e00a0">
-          <annotation></annotation>
-          <fromContextKey>Backup_network</fromContextKey>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>netVDCName</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <staticBinding id="e15fa492-4eb7-446d-998f-a79f341f97d9">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>netVDCDesc</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>RED DE BACKUP</value>
-          <record>false</record>
-        </staticBinding>
-      </bindings>
-      <transitions>
-        <transition id="c5b9724d-cfc0-4180-886b-2854b727b1a1">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>5b4a5282-2a92-468d-8c9e-4ccad0933f74</refId>
-          </destination>
-          <source>
-            <refId>fc270aa1-13c0-4306-a1e5-e7be9d398cbd</refId>
-          </source>
-          <positions>
-            <point>
-              <x>643.0</x>
-              <y>337.0</y>
-            </point>
-            <point>
-              <x>466.0</x>
-              <y>170.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-        <transition id="8cd886e1-60f3-4a9b-a8a6-f0a1a9813219">
+        <transition id="e5ac136d-47e0-4590-ba73-90815992e08f">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -2509,16 +2458,16 @@
             <refId>f4876a2a-dc36-462e-a09f-281ceba0c38d</refId>
           </destination>
           <source>
-            <refId>fc270aa1-13c0-4306-a1e5-e7be9d398cbd</refId>
+            <refId>c0498e72-e950-4f20-b568-82b3f721e756</refId>
           </source>
           <positions>
             <point>
-              <x>643.0</x>
-              <y>337.0</y>
+              <x>642.0</x>
+              <y>480.0</y>
             </point>
             <point>
-              <x>840.0</x>
-              <y>480.0</y>
+              <x>642.0</x>
+              <y>170.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -2535,5 +2484,5 @@
       <throttleSize>0</throttleSize>
     </step>
   </steps>
-  <startSteps>eea5c469-84f1-4182-98af-11a29446e338</startSteps>
+  <startSteps>815975cc-3354-4841-bffb-3ae8cb42e457</startSteps>
 </flow>

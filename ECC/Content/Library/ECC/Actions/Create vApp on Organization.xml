@@ -445,7 +445,7 @@
       <name>Create Empty vApp</name>
       <bounds>
         <x>60.0</x>
-        <y>180.0</y>
+        <y>190.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -644,8 +644,8 @@
       <annotation></annotation>
       <name>Get Internal Network ID</name>
       <bounds>
-        <x>63.0</x>
-        <y>318.0</y>
+        <x>60.0</x>
+        <y>320.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -688,19 +688,6 @@
           <value>vcloud.enterprisecomputing.mx</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="4138d47b-543c-4b7f-aebd-c83992734a50">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>token</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>9c237007a041474b8a8c29dce3a63b68</value>
-          <record>false</record>
-        </staticBinding>
         <staticBinding id="4f24603e-22a7-4123-b259-130882eba7e1">
           <annotation></annotation>
           <fromContextKey>InternalNetworkName</fromContextKey>
@@ -713,6 +700,45 @@
           <inputSymbol>NetworkName</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <value>Internal-2212</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="c27ad35c-8400-45a4-abce-400b8566fc48">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>username</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="1b2890b2-8697-4cdf-b281-b885a9d5fd03">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>password</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="d3652747-6d31-48fd-adb3-1e7f36395527">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>organization</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
         </staticBinding>
       </bindings>
@@ -802,7 +828,7 @@
       <annotation></annotation>
       <name>Get Gestion Network ID</name>
       <bounds>
-        <x>90.0</x>
+        <x>60.0</x>
         <y>450.0</y>
       </bounds>
       <layer>-1</layer>
@@ -846,19 +872,6 @@
           <value>vcloud.enterprisecomputing.mx</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="427600ac-f0e9-4abd-9236-bf97bd69ddb6">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>token</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>9c237007a041474b8a8c29dce3a63b68</value>
-          <record>false</record>
-        </staticBinding>
         <staticBinding id="36c4dc71-5f0e-4dfc-8547-71a162f2baaa">
           <annotation></annotation>
           <fromContextKey>GestionNetworkName</fromContextKey>
@@ -871,6 +884,45 @@
           <inputSymbol>NetworkName</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <value>Internal-2212</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="76625776-c6b3-4913-bd6e-7bcac9e8153c">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>username</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="b0a07f01-9b46-489e-8b0d-4e1ea1dfcd8b">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>password</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="49a49889-5654-49e9-89fa-b28a2c3e04a5">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>organization</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
         </staticBinding>
       </bindings>
@@ -1004,19 +1056,6 @@
           <value>vcloud.enterprisecomputing.mx</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="724d00c4-7476-49dc-bf51-0539e56a9b30">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>token</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>9c237007a041474b8a8c29dce3a63b68</value>
-          <record>false</record>
-        </staticBinding>
         <staticBinding id="047af12e-19f3-48d4-8737-f6caf5cfcd29">
           <annotation></annotation>
           <fromContextKey>BackupNetworkName</fromContextKey>
@@ -1029,6 +1068,45 @@
           <inputSymbol>NetworkName</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <value>Internal-2212</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="b6df4d6f-dc3e-4cfd-b7c8-e6477331135a">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>username</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="cea108cf-20ac-4873-bb9b-4382916f13e0">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>password</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="b1ff52ae-02ce-466e-a221-aba3af9c19e6">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>organization</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
         </staticBinding>
       </bindings>

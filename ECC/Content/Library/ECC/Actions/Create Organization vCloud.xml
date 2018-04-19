@@ -149,7 +149,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>roleHref</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>https://vcloud.enterprisecomputing.mx/api/admin/role/d442b6cb-9e17-4619-acc4-e2528d575bb1</value>
+      <value>https://vcloud.enterprisecomputing.mx/api/admin/role/28c3a990-5264-40d0-b266-fa9e270a648f</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="9f68ba4c-6da9-41c3-b92f-e15439c3c386">

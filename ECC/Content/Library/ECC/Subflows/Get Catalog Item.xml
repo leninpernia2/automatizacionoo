@@ -12,7 +12,7 @@
   <name>Get Catalog Item</name>
   <categories/>
   <inputs>
-    <userInputBinding id="5bb0f302-a81e-4e3e-986f-6eb72624aab8">
+    <staticBinding id="4e517643-e078-4259-8374-25a2d477c251">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -22,12 +22,10 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="d27828bc-1092-442b-9970-cb4630a59819">
+    </staticBinding>
+    <staticBinding id="304e1dd7-a3d2-4f41-b1da-1169213e157a">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -37,12 +35,10 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>faf1ae5c8a9644d4b5fdcf3153f6888e</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="1c62545c-bf70-40d1-83a8-f557bc52bbc0">
+    </staticBinding>
+    <staticBinding id="58c1aa71-da08-487e-8cf1-a13f70524789">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -52,11 +48,9 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>catalogItemID</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>415d6331-9703-4768-a36d-5f2846be3c20</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
+    </staticBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="1d2a9f77-78b0-480d-adaa-afef7163dee0">
@@ -270,6 +264,12 @@ Content-Type: application/vnd.vmware.vcloud.catalogitem+xml;version=1.5</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="00a56f03-d44e-45f3-b49b-dbe9c7e18369">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

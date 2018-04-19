@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regexEvaluator id="829a5ed4-0ab5-4ebd-912a-38c52809d804">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Linux_SO</name>
+  <entireString>true</entireString>
+  <expression>RedHat|Ubuntu|Centos</expression>
+  <ignoreCase>true</ignoreCase>
+  <multiLine>false</multiLine>
+  <regType>JAVA</regType>
+</regexEvaluator>
