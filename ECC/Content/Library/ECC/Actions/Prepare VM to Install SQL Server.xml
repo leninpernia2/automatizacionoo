@@ -90,7 +90,7 @@
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>SizeDiskE</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -103,7 +103,7 @@
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>SizeDiskF</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -116,7 +116,7 @@
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>SizeDiskG</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -129,7 +129,7 @@
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>TotalSizeDisks</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -142,7 +142,7 @@
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>Gestion_network</inputSymbol>
       <listDelimiter>,</listDelimiter>
@@ -155,7 +155,7 @@
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>realmName</inputSymbol>
       <listDelimiter>,</listDelimiter>
