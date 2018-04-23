@@ -764,11 +764,25 @@
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="805abe91-c32b-4651-b911-73a14762830e">
+        <flowVariableAssignment id="2d5b71e3-b449-4900-be3c-276efb205869">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>vdcID</contextKey>
+          <expression id="ba054b0c-d19e-457b-b86d-23e827f67f6f">
+            <annotation></annotation>
+            <name>Result: vdcID</name>
+            <fieldName>vdcID</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="805abe91-c32b-4651-b911-73a14762830e">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>vdcID</contextKey>
           <expression id="6e52caa4-46f6-48c9-bfc4-ba9ee342d17b">
             <annotation></annotation>
