@@ -68,7 +68,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>idVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vm-2b5b0d51-fc1c-4af0-b461-2e7cfd932707</value>
+      <value>vm-1d33deb1-1888-4e32-ac42-0c78ce4d8b50</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="b262c396-694d-48f7-9916-ba5a80370154">
@@ -269,7 +269,15 @@
       <matchRules/>
     </opResponse>
   </possibleResponses>
-  <availableResultExpressions/>
+  <availableResultExpressions>
+    <expression id="88c62936-f108-4ce3-ab8c-bb0c809c0ced">
+      <annotation></annotation>
+      <name>serverID</name>
+      <fieldName>serverID</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+  </availableResultExpressions>
   <resultExpression id="d4540c34-d08f-4c34-9f80-bc885d953caa">
     <annotation></annotation>
     <name>FailureMessage</name>
@@ -1191,11 +1199,25 @@
         <refId>a4404740-b98e-4259-bde6-41506a0da1c6</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="9a904c9c-c09e-42f9-a408-a6034535d992">
+        <flowVariableAssignment id="7a9d2cff-d1c8-491c-94cc-cc4f9ec03e61">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>serverID</contextKey>
+          <expression id="5598f743-2ac8-4d3c-8db0-42fc7063d95c">
+            <annotation></annotation>
+            <name>Result: serverID</name>
+            <fieldName>serverID</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="9a904c9c-c09e-42f9-a408-a6034535d992">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>serverID</contextKey>
           <expression id="d4f5cc8b-26d1-446e-a729-fd616b48bc51">
             <annotation></annotation>

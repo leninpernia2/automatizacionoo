@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow id="5910366b-490a-4200-83d0-e3b745b5ac66">
-  <descriptionCdata><![CDATA[5910366b-490a-4200-83d0-e3b745b5ac66.faf63b5d-26c5-4af6-a9a4-89216c287d6a.description=<pre>\nPerforms a mathematical operation on two numbers\n\nInputs\:\noperator - The operation to perform (+, -, *, /, <, >, <\=, >\=, \=\=, \!\=).\nvalue1 - The first value.\nvalue2 - The second value.\n\nReturns\:\nThe result of the operation, for boolean values this is true or false.\n\nResponses\:\nsuccess - The operation completed successfully. If a boolean operation, it evaluated to true.\nfailure - Something went wrong or the boolean operation returned false.\n</pre>
+  <descriptionCdata><![CDATA[5910366b-490a-4200-83d0-e3b745b5ac66.87862623-73e0-482b-99f9-3d05f5ec17e9.description=<pre>\nThis operation adds a flow variable to the local context. The variable is available in the current flow and its child flows.\n\nInputs\:\n    keyName - The name of the flow variable to add.\n    myValue - The value to assign to the flow variable.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of "myValue" input field.\n\nResponses\:\n    success - The operation completed as stated in the description.\n\nNote\:\n   If a flow variable with the same name already exists, its value will be overwritten.\n</pre>
+5910366b-490a-4200-83d0-e3b745b5ac66.985af6bc-ed41-4bdf-bcd7-5c8f0165fe62.description=<pre>Checks if a number or word is equal to another number or word. Word comparison is case-sensitive in alphabetical order.\n\nInputs\:\nvalue1 - The first value.\nvalue2 - The second value.\n\nReturns\:\nvalue1 \=\= value2\n\nResponses\:\nsuccess - The boolean operation was evaluated to true.\nfailure - Something went wrong or the boolean operation returned false.\n</pre>
+5910366b-490a-4200-83d0-e3b745b5ac66.f841b08a-57fd-463c-8b23-3d7582ffc58c.description=<pre>\nThis operation adds a flow variable to the local context. The variable is available in the current flow and its child flows.\n\nInputs\:\n    keyName - The name of the flow variable to add.\n    myValue - The value to assign to the flow variable.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of "myValue" input field.\n\nResponses\:\n    success - The operation completed as stated in the description.\n\nNote\:\n   If a flow variable with the same name already exists, its value will be overwritten.\n</pre>
+5910366b-490a-4200-83d0-e3b745b5ac66.faf63b5d-26c5-4af6-a9a4-89216c287d6a.description=<pre>\nPerforms a mathematical operation on two numbers\n\nInputs\:\noperator - The operation to perform (+, -, *, /, <, >, <\=, >\=, \=\=, \!\=).\nvalue1 - The first value.\nvalue2 - The second value.\n\nReturns\:\nThe result of the operation, for boolean values this is true or false.\n\nResponses\:\nsuccess - The operation completed successfully. If a boolean operation, it evaluated to true.\nfailure - Something went wrong or the boolean operation returned false.\n</pre>
 ]]></descriptionCdata>
   <annotation></annotation>
   <name>Create vApp from template on Organization</name>
@@ -196,12 +199,99 @@
   <compatibleRuntimeContext>false</compatibleRuntimeContext>
   <historyCheckPointFlow>true</historyCheckPointFlow>
   <steps>
+    <step id="87862623-73e0-482b-99f9-3d05f5ec17e9">
+      <annotation>5910366b-490a-4200-83d0-e3b745b5ac66.87862623-73e0-482b-99f9-3d05f5ec17e9.description</annotation>
+      <name>Set Flow Variable</name>
+      <bounds>
+        <x>210.0</x>
+        <y>30.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="98ae4bac-8e4b-4c47-9f15-53140159915c">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>keyName</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>counter</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="ab28e297-ec9a-4a35-af1d-a5f4721a2851">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>myValue</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>0</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="7089da8d-e98f-4b2d-9b26-d254491cfc9f">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>04b02a55-86e8-48a9-afcf-509aa302b2df</refId>
+          </destination>
+          <source>
+            <refId>87862623-73e0-482b-99f9-3d05f5ec17e9</refId>
+          </source>
+          <positions>
+            <point>
+              <x>260.0</x>
+              <y>64.0</y>
+            </point>
+            <point>
+              <x>80.0</x>
+              <y>64.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>f3112e9d-ed88-47bf-be86-2f99e8541a33</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
     <step id="04b02a55-86e8-48a9-afcf-509aa302b2df">
       <annotation></annotation>
       <name>Get Token</name>
       <bounds>
-        <x>209.0</x>
-        <y>31.0</y>
+        <x>30.0</x>
+        <y>30.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -371,7 +461,7 @@
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>1290.0</x>
+        <x>1411.0</x>
         <y>330.0</y>
       </bounds>
       <layer>-1</layer>
@@ -460,7 +550,7 @@
       <name>Get Internal Network ID</name>
       <bounds>
         <x>30.0</x>
-        <y>180.0</y>
+        <y>330.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -655,7 +745,7 @@
       <annotation></annotation>
       <name>Get Gestion Network ID</name>
       <bounds>
-        <x>30.0</x>
+        <x>210.0</x>
         <y>330.0</y>
       </bounds>
       <layer>-1</layer>
@@ -852,7 +942,7 @@
       <name>Get Catalog Item</name>
       <bounds>
         <x>30.0</x>
-        <y>31.0</y>
+        <y>180.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -1263,7 +1353,7 @@
       <annotation></annotation>
       <name>Get Last VM Name</name>
       <bounds>
-        <x>212.0</x>
+        <x>390.0</x>
         <y>330.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1461,8 +1551,8 @@
       <annotation>5910366b-490a-4200-83d0-e3b745b5ac66.faf63b5d-26c5-4af6-a9a4-89216c287d6a.description</annotation>
       <name>Evaluate Expression</name>
       <bounds>
-        <x>391.0</x>
-        <y>330.0</y>
+        <x>390.0</x>
+        <y>180.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -1630,7 +1720,7 @@
       <annotation></annotation>
       <name>Get idVM</name>
       <bounds>
-        <x>569.0</x>
+        <x>690.0</x>
         <y>181.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1870,7 +1960,7 @@
       <annotation></annotation>
       <name>Update Name VM</name>
       <bounds>
-        <x>569.0</x>
+        <x>690.0</x>
         <y>330.0</y>
       </bounds>
       <layer>-1</layer>
@@ -2053,7 +2143,7 @@
       <annotation></annotation>
       <name>Update Network Section VM</name>
       <bounds>
-        <x>931.0</x>
+        <x>1052.0</x>
         <y>331.0</y>
       </bounds>
       <layer>-1</layer>
@@ -2314,7 +2404,7 @@
       <annotation></annotation>
       <name>Install VM Tools</name>
       <bounds>
-        <x>750.0</x>
+        <x>871.0</x>
         <y>331.0</y>
       </bounds>
       <layer>-1</layer>
@@ -2485,7 +2575,7 @@
       <annotation></annotation>
       <name>vApp unDeploy</name>
       <bounds>
-        <x>931.0</x>
+        <x>1052.0</x>
         <y>181.0</y>
       </bounds>
       <layer>-1</layer>
@@ -2635,7 +2725,7 @@
       <annotation></annotation>
       <name>Deploy vapp powerOn</name>
       <bounds>
-        <x>930.0</x>
+        <x>1051.0</x>
         <y>31.0</y>
       </bounds>
       <layer>-1</layer>
@@ -2771,7 +2861,7 @@
       <annotation></annotation>
       <name>PowerOn VM</name>
       <bounds>
-        <x>1110.0</x>
+        <x>1231.0</x>
         <y>31.0</y>
       </bounds>
       <layer>-1</layer>
@@ -2951,7 +3041,7 @@
       <annotation></annotation>
       <name>Add Network Gestion to vApp</name>
       <bounds>
-        <x>569.0</x>
+        <x>690.0</x>
         <y>30.0</y>
       </bounds>
       <layer>-1</layer>
@@ -3189,7 +3279,7 @@
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>750.0</x>
+        <x>871.0</x>
         <y>181.0</y>
       </bounds>
       <layer>-1</layer>
@@ -3233,7 +3323,7 @@
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>1290.0</x>
+        <x>1411.0</x>
         <y>30.0</y>
       </bounds>
       <layer>-1</layer>
@@ -3277,8 +3367,8 @@
       <annotation></annotation>
       <name>Local Ping to VM</name>
       <bounds>
-        <x>1290.0</x>
-        <y>180.0</y>
+        <x>1231.0</x>
+        <y>330.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -3352,7 +3442,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="5b89d07f-8b2b-4193-8acd-537e86c46917">
+        <transition id="c68bffd4-cc7a-4461-ba3f-77f946479c5b">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -3361,19 +3451,19 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>251ae70e-9ada-4d78-aef9-3bb6c31eaf6c</refId>
+            <refId>985af6bc-ed41-4bdf-bcd7-5c8f0165fe62</refId>
           </destination>
           <source>
             <refId>c0804651-09dd-452d-9fb1-146dcea8c2d9</refId>
           </source>
           <positions>
             <point>
-              <x>1160.0</x>
-              <y>215.0</y>
+              <x>1340.0</x>
+              <y>214.0</y>
             </point>
             <point>
-              <x>1340.0</x>
-              <y>64.0</y>
+              <x>1160.0</x>
+              <y>364.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -3393,7 +3483,7 @@
       <annotation></annotation>
       <name>Get VM Details</name>
       <bounds>
-        <x>1110.0</x>
+        <x>1231.0</x>
         <y>180.0</y>
       </bounds>
       <layer>-1</layer>
@@ -3554,6 +3644,448 @@
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
+    <step id="985af6bc-ed41-4bdf-bcd7-5c8f0165fe62">
+      <annotation>5910366b-490a-4200-83d0-e3b745b5ac66.985af6bc-ed41-4bdf-bcd7-5c8f0165fe62.description</annotation>
+      <name>Equal</name>
+      <bounds>
+        <x>1230.0</x>
+        <y>480.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="89f05f55-5b86-4e50-9a0b-918154889342">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>value1</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>${counter}</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="dfc4e351-1ca7-4a0c-9456-81666fd0f0ac">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>value2</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>0</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="66be4b95-614b-483e-a4d7-592aa9cb7b46">
+          <annotation></annotation>
+          <toContextKey></toContextKey>
+          <fromContextKey></fromContextKey>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <recordKey></recordKey>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>operation</inputSymbol>
+          <listDelimiter></listDelimiter>
+          <value>==</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="50cef1e5-84fe-4ec5-82df-0e2a7b9f7902">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>f841b08a-57fd-463c-8b23-3d7582ffc58c</refId>
+          </destination>
+          <source>
+            <refId>985af6bc-ed41-4bdf-bcd7-5c8f0165fe62</refId>
+          </source>
+          <positions>
+            <point>
+              <x>450.0</x>
+              <y>254.0</y>
+            </point>
+            <point>
+              <x>300.0</x>
+              <y>254.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="e0b56158-d255-4f08-aaea-c4f55f13ea42">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>8ec3d0ac-1cdf-4b17-9cc7-748cb809abeb</refId>
+          </destination>
+          <source>
+            <refId>985af6bc-ed41-4bdf-bcd7-5c8f0165fe62</refId>
+          </source>
+          <positions>
+            <point>
+              <x>1160.0</x>
+              <y>514.0</y>
+            </point>
+            <point>
+              <x>980.0</x>
+              <y>664.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>6c87ce31-0fc7-40c6-9673-ecd1f8eba999</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="f841b08a-57fd-463c-8b23-3d7582ffc58c">
+      <annotation>5910366b-490a-4200-83d0-e3b745b5ac66.f841b08a-57fd-463c-8b23-3d7582ffc58c.description</annotation>
+      <name>Set Flow Variable</name>
+      <bounds>
+        <x>539.0</x>
+        <y>480.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="1e199988-7826-4d8d-b1ff-001312d45fe9">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>keyName</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>counter</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="4d9062bf-eee5-43ee-a977-a7fd279a790c">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>myValue</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>1</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="5b90aab3-3c95-47eb-bfa0-b3b54836f803">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>579685db-4324-48ce-a029-97b11c9da2a8</refId>
+          </destination>
+          <source>
+            <refId>f841b08a-57fd-463c-8b23-3d7582ffc58c</refId>
+          </source>
+          <positions>
+            <point>
+              <x>270.0</x>
+              <y>254.0</y>
+            </point>
+            <point>
+              <x>270.0</x>
+              <y>74.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>f3112e9d-ed88-47bf-be86-2f99e8541a33</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="579685db-4324-48ce-a029-97b11c9da2a8">
+      <annotation></annotation>
+      <name>Delete vApp</name>
+      <bounds>
+        <x>540.0</x>
+        <y>329.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="16bc227b-224f-4ed7-9918-853af462d26a">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>hostname</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="286ce7d6-2b3a-456e-9ebf-efbb7722a7c5">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>token</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="e7057995-8dde-415a-a4fd-2cf760f80989">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>vAppID</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="03e1d30e-c6af-4e65-a250-771a9960ef54">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>3496d135-45e2-444b-aa99-ca62f3dac036</refId>
+          </destination>
+          <source>
+            <refId>579685db-4324-48ce-a029-97b11c9da2a8</refId>
+          </source>
+          <positions>
+            <point>
+              <x>620.0</x>
+              <y>514.0</y>
+            </point>
+            <point>
+              <x>440.0</x>
+              <y>64.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="4b203ec6-280e-4034-a60f-8968967c3fd9">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>c488451f-8362-4ba6-b352-84745a9cbad0</refId>
+          </destination>
+          <source>
+            <refId>579685db-4324-48ce-a029-97b11c9da2a8</refId>
+          </source>
+          <positions>
+            <point>
+              <x>590.0</x>
+              <y>363.0</y>
+            </point>
+            <point>
+              <x>589.0</x>
+              <y>214.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>06230e6c-ae98-4f26-8882-0314b37a5146</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="8ec3d0ac-1cdf-4b17-9cc7-748cb809abeb">
+      <annotation></annotation>
+      <name>Error : failure</name>
+      <bounds>
+        <x>1409.0</x>
+        <y>481.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="cffc35af-8f8d-458b-9540-a5f5c4caacd3">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>8ec3d0ac-1cdf-4b17-9cc7-748cb809abeb</refId>
+          </destination>
+          <source>
+            <refId>8ec3d0ac-1cdf-4b17-9cc7-748cb809abeb</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>ERROR</returnStepType>
+      <assignments/>
+    </returnStep>
+    <returnStep id="c488451f-8362-4ba6-b352-84745a9cbad0">
+      <annotation></annotation>
+      <name>Error : failure</name>
+      <bounds>
+        <x>539.0</x>
+        <y>180.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="796e8c46-61e7-4af4-b387-f9176f28b071">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>c488451f-8362-4ba6-b352-84745a9cbad0</refId>
+          </destination>
+          <source>
+            <refId>c488451f-8362-4ba6-b352-84745a9cbad0</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>ERROR</returnStepType>
+      <assignments/>
+    </returnStep>
   </steps>
-  <startSteps>04b02a55-86e8-48a9-afcf-509aa302b2df</startSteps>
+  <startSteps>87862623-73e0-482b-99f9-3d05f5ec17e9</startSteps>
 </flow>
