@@ -11,7 +11,7 @@ a48ae9a8-8861-48c0-8b0c-df46f3259393.e7250fcc-0a7c-4895-a058-b85685e50cbf.descri
   <name>List vApp Templates</name>
   <categories/>
   <inputs>
-    <userInputBinding id="8b4321b2-6bb7-48b7-ae99-95227a7bf807">
+    <staticBinding id="21c382bb-2924-435d-af0e-e6b466e24e19">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -21,12 +21,10 @@ a48ae9a8-8861-48c0-8b0c-df46f3259393.e7250fcc-0a7c-4895-a058-b85685e50cbf.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="4dfbdf35-4afa-483d-95e6-0762798a6058">
+    </staticBinding>
+    <staticBinding id="5a6d3944-5e4a-4054-a0d2-7a073caa23e7">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -36,12 +34,10 @@ a48ae9a8-8861-48c0-8b0c-df46f3259393.e7250fcc-0a7c-4895-a058-b85685e50cbf.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>520e4260ff754dc385866d2f354395c6</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="ea470ba1-11c1-4f28-ad44-6e43d793404b">
+    </staticBinding>
+    <staticBinding id="2e1a2509-1d93-4bb9-bcaa-2f52abce56f2">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -51,11 +47,9 @@ a48ae9a8-8861-48c0-8b0c-df46f3259393.e7250fcc-0a7c-4895-a058-b85685e50cbf.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>catalogId</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>e0b0e1bc-39fa-4d0f-9848-d92343270dae</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
+    </staticBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="076857d5-2e59-40a9-8a1a-af8e6d9607cd">

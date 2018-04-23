@@ -10,7 +10,7 @@ e7d96788-a643-4628-946c-7cbf96031bc1.f9cfe8e3-1cff-42e3-8e44-e5d8e3987d99.descri
   <name>Get Catalogs</name>
   <categories/>
   <inputs>
-    <userInputBinding id="f1e99de6-beef-49f6-8f73-af8e3041dd37">
+    <staticBinding id="23427ebb-e570-43d6-b6af-fc7278a82952">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -20,12 +20,10 @@ e7d96788-a643-4628-946c-7cbf96031bc1.f9cfe8e3-1cff-42e3-8e44-e5d8e3987d99.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>hostname</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="e7930aa6-7014-437f-ac9c-6693a879a001">
+    </staticBinding>
+    <staticBinding id="6c15cbc6-7644-4a3b-805b-9e6a98b8b617">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -35,11 +33,9 @@ e7d96788-a643-4628-946c-7cbf96031bc1.f9cfe8e3-1cff-42e3-8e44-e5d8e3987d99.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>520e4260ff754dc385866d2f354395c6</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
+    </staticBinding>
     <staticBinding id="a3dd6d93-8b07-458e-b0ea-a8e00afff465">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
@@ -251,12 +247,6 @@ Content-Type: application/vnd.vmware.vcloud.catalog+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="901ac6f6-1aec-43ac-9809-7a22ec5acc63">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
