@@ -58,9 +58,9 @@
       <value>{OBFUSCATED}cxJMWRS6bAx/fs93NI4TfA==</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="51ea95f3-3dff-450b-b83b-dbe1cad82756">
+    <staticBinding id="5e41405c-81d5-497a-9555-5d79d9f30f8c">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
