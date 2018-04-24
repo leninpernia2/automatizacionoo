@@ -1221,7 +1221,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>vAppName</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>VAPP-${vAppName}-${LAST_VM_ID}</value>
+          <value>VAPP-${vAppName}-${NEXT_NEXT_ID}</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="bb6d76a6-26a6-4014-a603-95137840674f">

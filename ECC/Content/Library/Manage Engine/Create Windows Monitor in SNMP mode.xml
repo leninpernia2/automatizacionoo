@@ -424,7 +424,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>url</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>http://${hostname}:${port}/AppManager/xml/AddMonitor?apikey=${API_KEY}&amp;type=servers&amp;displayname=${NameMonitor}+(${NameVM})&amp;host=${ipVM}&amp;os=${SO}&amp;mode=SNMP&amp;snmptelnetport=161&amp;snmpCommunityString=${CommunityString}&amp;timeout=${timeout}&amp;timeout=${timeout}</value>
+          <value>http://${hostname}:${port}/AppManager/xml/AddMonitor?apikey=${API_KEY}&amp;type=servers&amp;displayname=${NameMonitor}+(${NameVM})&amp;host=${ipVM}&amp;os=${SO}&amp;mode=SNMP&amp;snmptelnetport=161&amp;snmpCommunityString=${CommunityString}&amp;timeout=${timeout}</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="d2727816-bf79-4093-8b5b-ac053ce1bd67">
