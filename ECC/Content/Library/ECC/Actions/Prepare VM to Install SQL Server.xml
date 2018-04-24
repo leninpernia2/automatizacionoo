@@ -207,11 +207,11 @@
       <value>{OBFUSCATED}cxJMWRS6bAx/fs93NI4TfA==</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="6014041a-8210-458d-9b04-914c43a26bff">
+    <staticBinding id="2f270c33-fa09-4728-9e25-6cbd51557ec6">
       <annotation></annotation>
       <toContextKey></toContextKey>
       <fromContextKey></fromContextKey>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -222,11 +222,11 @@
       <value>Administrator</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="8b27d608-cfc6-4389-952f-ebb2c4287ec7">
+    <staticBinding id="dc37e8c2-4a0c-4af0-8eb2-4fbf92f63cfc">
       <annotation></annotation>
       <toContextKey></toContextKey>
       <fromContextKey></fromContextKey>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>ENCRYPTED</inputType>
       <isList>false</isList>
