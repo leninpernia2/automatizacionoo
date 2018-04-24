@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regexEvaluator id="f52bde14-18c6-4bd7-9e5d-5e6fbeb4525c">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>SOList_VM</name>
+  <entireString>true</entireString>
+  <expression>RedHat.*|Ubuntu.*|Centos.*|Windows.*</expression>
+  <ignoreCase>true</ignoreCase>
+  <multiLine>true</multiLine>
+  <regType>JAVA</regType>
+</regexEvaluator>

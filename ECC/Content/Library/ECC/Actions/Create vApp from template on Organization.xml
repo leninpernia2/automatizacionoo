@@ -71,7 +71,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>catalogItemID</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>0e7a68f3-51a1-48d4-9b34-6c8e4e23e336</value>
+      <value>1f4ada7d-278d-4f74-be8a-f7893d5c4eaa</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="cb601e93-70ba-48d6-adf2-36093a4035a9">
@@ -136,7 +136,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>vAppName</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>WindowsTest</value>
+      <value>CentosTest</value>
       <record>false</record>
     </staticBinding>
   </inputs>

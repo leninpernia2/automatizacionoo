@@ -35,7 +35,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>faf1ae5c8a9644d4b5fdcf3153f6888e</value>
+      <value>520e4260ff754dc385866d2f354395c6</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="58c1aa71-da08-487e-8cf1-a13f70524789">
@@ -264,12 +264,6 @@ Content-Type: application/vnd.vmware.vcloud.catalogitem+xml;version=1.5</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="00a56f03-d44e-45f3-b49b-dbe9c7e18369">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
