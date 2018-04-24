@@ -556,6 +556,20 @@
         <refId>e6790773-843f-47f9-8706-f839f7b41664</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="c9b9e496-9e24-473f-a1e2-5f753435381b">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>URL_Org</contextKey>
+          <expression id="e11c98f3-f57e-4e1c-a962-c343176b05b1">
+            <annotation></annotation>
+            <name>Result Field: URL_Org</name>
+            <fieldName>URL_Org</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="cc0468ab-c900-4a0b-a534-eab523633805">
           <annotation></annotation>
           <name>assignment</name>
@@ -935,22 +949,6 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="c10628de-e641-4e2b-87ec-8c04bab26eb5">
-          <annotation></annotation>
-          <fromContextKey>name</fromContextKey>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>findOrg</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
         <userInputBinding id="0fc6064a-cb86-460b-a880-623560e5744a">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
@@ -960,6 +958,22 @@
           <required>true</required>
           <isPersisted>true</isPersisted>
           <inputSymbol>token</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="a8b213a1-e61c-429e-b53a-77c9a3e914b5">
+          <annotation></annotation>
+          <fromContextKey>name</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>org</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <record>false</record>
           <prompt></prompt>
