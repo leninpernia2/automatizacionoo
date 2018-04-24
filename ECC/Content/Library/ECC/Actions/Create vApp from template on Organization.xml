@@ -4221,11 +4221,50 @@
         <refId>6d35cdef-6ad5-425c-8e85-82a50b31b1fa</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="d343ca34-6e4b-44f2-9a27-fdb1e68cdf7d">
+        <flowVariableAssignment id="014c6718-8a03-4a34-825a-883a6899df04">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>idVM</contextKey>
+          <expression id="8401303b-3ace-4e85-b9ac-27251338886d">
+            <annotation></annotation>
+            <name>Result: vappxml</name>
+            <fieldName>vappxml</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters>
+              <xmlGetAttributeFilter id="526cdf0d-1c1b-4367-8600-1218d574d99f">
+                <annotation></annotation>
+                <name>XML Get Attribute</name>
+                <attributeName>id</attributeName>
+                <elementPath>//*[name()=&quot;Vm&quot;]</elementPath>
+                <includeSubElements>false</includeSubElements>
+                <resultAsFirstResult>true</resultAsFirstResult>
+                <resultAsTable>false</resultAsTable>
+              </xmlGetAttributeFilter>
+              <replaceAllFilter id="98adf26d-3672-462f-9c7b-0a2597bc66e4">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>false</ignoreCase>
+                <searchString>urn:vcloud:</searchString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+              <replaceAllFilter id="9b540efe-a0e1-41cc-93ea-7a5b9d2a72bf">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>false</ignoreCase>
+                <searchString>:</searchString>
+                <replaceString>-</replaceString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="d343ca34-6e4b-44f2-9a27-fdb1e68cdf7d">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>idVM</contextKey>
           <expression id="032aa120-991f-4545-b88c-314331c9a6a1">
             <annotation></annotation>
@@ -4258,20 +4297,6 @@
                 <replaceType>ALL</replaceType>
               </replaceAllFilter>
             </filters>
-          </expression>
-        </flowVariableAssignment>
-        <flowVariableAssignment id="5434c603-b91d-4158-a2cf-6cfa45826a78">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
-          <contextKey>idVM</contextKey>
-          <expression id="2feaef85-c5c5-4161-a530-397e0a296fe1">
-            <annotation></annotation>
-            <name>Result: vappxml</name>
-            <fieldName>vappxml</fieldName>
-            <sourceType>AVAILABLE_RESULT</sourceType>
-            <filters/>
           </expression>
         </flowVariableAssignment>
       </assignments>
