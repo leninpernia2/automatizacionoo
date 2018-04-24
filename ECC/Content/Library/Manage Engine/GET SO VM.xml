@@ -61,9 +61,9 @@ a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.descri
       <value>Pa$$w0rd</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="9fbbe4b4-39c5-4a38-9d00-ad70ef9ed736">
+    <staticBinding id="d8144c90-58da-4c59-a997-4b1fa6975a03">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
@@ -545,12 +545,6 @@ a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="711f6709-841a-4e06-a078-32782a7ffb5e">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
