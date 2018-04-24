@@ -11,7 +11,7 @@ a48ae9a8-8861-48c0-8b0c-df46f3259393.e7250fcc-0a7c-4895-a058-b85685e50cbf.descri
   <name>List vApp Templates</name>
   <categories/>
   <inputs>
-    <staticBinding id="21c382bb-2924-435d-af0e-e6b466e24e19">
+    <staticBinding id="336d2d0e-a2c2-4acb-af74-49f77604daee">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -24,30 +24,30 @@ a48ae9a8-8861-48c0-8b0c-df46f3259393.e7250fcc-0a7c-4895-a058-b85685e50cbf.descri
       <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="5a6d3944-5e4a-4054-a0d2-7a073caa23e7">
+    <staticBinding id="80ab30cc-f761-4de2-b1e8-0d805d3da73f">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>true</required>
+      <required>false</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>520e4260ff754dc385866d2f354395c6</value>
+      <value>7ebcb5df036a49a4a90e8b02291c143c</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="2e1a2509-1d93-4bb9-bcaa-2f52abce56f2">
+    <staticBinding id="578d3321-a02e-4442-9a17-2a3cd34dc400">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>true</required>
+      <required>false</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>catalogId</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>e0b0e1bc-39fa-4d0f-9848-d92343270dae</value>
+      <value>557097b6-f77c-4cc5-a739-a5561a54fe51</value>
       <record>false</record>
     </staticBinding>
   </inputs>
@@ -105,12 +105,6 @@ a48ae9a8-8861-48c0-8b0c-df46f3259393.e7250fcc-0a7c-4895-a058-b85685e50cbf.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="6c9ae6c1-24f9-4301-be8f-44e4a475974c">
-        <baseIcon>earth.png</baseIcon>
-        <basePath>/Networking/</basePath>
-        <readOnly>false</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -344,12 +338,6 @@ Content-Type: application/vnd.vmware.vcloud.catalog+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="6456cc4c-4132-4fdf-979f-5d204601d4c5">
-        <baseIcon>text_msg.png</baseIcon>
-        <basePath>/E-mail/</basePath>
-        <readOnly>false</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -538,12 +526,6 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="743402a3-34cf-4abd-b255-df66662d3760">
-        <baseIcon>text_code_javascript.png</baseIcon>
-        <basePath>/Others/</basePath>
-        <readOnly>false</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -678,12 +660,6 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="91192fdb-f7f6-484c-9356-4be894c013cd">
-        <baseIcon>text_code_javascript.png</baseIcon>
-        <basePath>/Others/</basePath>
-        <readOnly>false</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -818,12 +794,6 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="4754d44a-4974-421b-8bf4-80d94da5b627">
-        <baseIcon>text_code_javascript.png</baseIcon>
-        <basePath>/Others/</basePath>
-        <readOnly>false</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

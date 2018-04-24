@@ -29,7 +29,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>53c92584ddd54411a4d5a47103b39267</value>
+      <value>1a4ec224898b4ffe8e2847a9e3557aea</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="b75712c7-7fad-497d-ae92-9abb90e60e91">
@@ -228,6 +228,12 @@ Content-Type: application/vnd.vmware.vcloud.org+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="0bd25518-e27e-4206-88da-04758cac134a">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

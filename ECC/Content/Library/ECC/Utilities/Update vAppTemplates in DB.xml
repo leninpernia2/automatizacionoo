@@ -2,8 +2,8 @@
 <flow id="6fa240e3-8be9-48d2-9284-9ca6f51ddb84">
   <descriptionCdata><![CDATA[6fa240e3-8be9-48d2-9284-9ca6f51ddb84.0e4d5c88-e822-4a7b-978c-8a2cf95871aa.description=This operation iterates through a string that contains an array in the JavaScript Object Notation format (JSON).  Each time  this operation is called, it places the value of the current array element into the "returnResult" output and advances the iterator to the next array element.\n\nThe JSON format is used to encode arrays and other values using JavaScript notation.  For arrays, this means that the values need to be enclosed by square brackets, and each element in the array can be a string (enclosed by quotes), a number, true, false, null, or  nested array or object.  Commas are always used as delimiters between array elements, and they can also appear within string elements. \n\nThe benefits of JavaScript arrays are that delimiters are fixed and cannot be confused with data, and that complex nesting of arrays and objects are supported.  The description of the enclosing folder, /Library/Utility Operations/Container/JavaScript Objects has more examples, and the JSON format is described completely at http\://www.json.org.\n\nInputs\:\n    array - The JavaScript array that will be iterated through. A normal OO list is NOT a JavaScript array.\nExamples\:\n    For example, the following is a simple JSON array\:\n        [ "cat", "dog", "horse" ]\n    The equivalent OO list (that is not a JavaScript array) is\:\n        cat,dog,horse\n\n Results\:\n    returnResult - This is the primary output and contains the current array element or an exception message if something went wrong.  When incorporating this operation into a flow, you should assign a meaningful result value from this field.\n\nResponses\:\n   has more - The iterator has not yet reached the end of the array. The "returnResult" output will be populated with the value of the current element in the array, and the iterator will advance to the next element in the array.\n   no more - The iterator has reached the end of the array, and there is no more data to return.  The iterator will become undefined after this call, which basically will reset it so that if called again, this operation will begin another iteration at the beginning of the array.\n   failure - There was some error in iterating through the list, and the "returnResult" output will contain information about the error. This will occur if the input array is not a valid JavaScript array. You may wish to use a tool such as http\://www.jsonlint.com/ to help diagnose problems with JavaScript Object Notation.\n\nNotes\:\n1. Modifying the contents of the array during iteration is not supported unless the iteration has finished.\n2. The operation supports iterating through nested arrays.\n
 6fa240e3-8be9-48d2-9284-9ca6f51ddb84.197646ce-3cf6-4e73-b738-f066b82920b9.description=<pre>\nAccepts an object in the JavaScript Object Notation format (JSON) and\nreturns a value for the specified key.\n\nThe JSON format encodes objects as a set of unordered key/value pairs, which is\nsimilar to a structure or map in other programming languages.  For example,\n   { "city" \: "Palo Alto", \n     "state" \: "CA" }\nis an object with two elements one with the name "city" having the value "Palo\nAlto", and the other being the name "state" with the value "CA". This operation would \nreturn "Palo Alto" if user enters "city" as a key.\n\nIf the input object contains JSON array, array index can be used in the key input. For example, \n{ "location"\: [\n      {"city"\: "Roseville", "country"\: "United States"},\n      {"city"\: "Cluj", "country"\: "Romania"},\n      {"city"\: "Yehud", "country"\: "Israel"}]    \n}\nThe operation would return "Roseville" if user enters "location[0].city" as a key.\n\nJavaScript objects are useful for representing structured data, and are\nespecially when used within an array.  For example, an operation that retrieves\na set of incidents from an external system may return the entire list in one\narray of incident objects.  The description of the enclosing folder,\n/Library/Utility Operations/Container/JavaScript Objects has more examples, and\nthe JSON format is described completely at http\://www.json.org.\n\nInputs\n\n   object\n      The JavaScript object.  \n      The operation will return a failure if it is not a JavaScript object.\n\n   key\n      The key in the object to get the value of.\n\nResponses\n\n   success\n      The value was successfully returned for the specified key. \n\n   failure\n      There was some error in processing the object, most likely because the\n      object is not in valid JavaScript Object Notation or the specified key does not exist in the object.  \n      You may wish to use a tool such as http\://www.jsonlint.com/ to help diagnose problems with\n      JavaScript Object Notation.\n\nOutputs\n\n   The primary output will be the value for the specified key in the object.\n\nNote\n\n    If the value in JSON object is in scientific notation, the returned output will be converted to an equivalent decimal number. Ex, 2.9e+1 will be converted to 29.\n</pre>
+6fa240e3-8be9-48d2-9284-9ca6f51ddb84.2f85ab10-b303-4288-8473-ffdb07b5b660.description=<pre>\nAccepts an object in the JavaScript Object Notation format (JSON) and\nreturns a value for the specified key.\n\nThe JSON format encodes objects as a set of unordered key/value pairs, which is\nsimilar to a structure or map in other programming languages.  For example,\n   { "city" \: "Palo Alto", \n     "state" \: "CA" }\nis an object with two elements one with the name "city" having the value "Palo\nAlto", and the other being the name "state" with the value "CA". This operation would \nreturn "Palo Alto" if user enters "city" as a key.\n\nIf the input object contains JSON array, array index can be used in the key input. For example, \n{ "location"\: [\n      {"city"\: "Roseville", "country"\: "United States"},\n      {"city"\: "Cluj", "country"\: "Romania"},\n      {"city"\: "Yehud", "country"\: "Israel"}]    \n}\nThe operation would return "Roseville" if user enters "location[0].city" as a key.\n\nJavaScript objects are useful for representing structured data, and are\nespecially when used within an array.  For example, an operation that retrieves\na set of incidents from an external system may return the entire list in one\narray of incident objects.  The description of the enclosing folder,\n/Library/Utility Operations/Container/JavaScript Objects has more examples, and\nthe JSON format is described completely at http\://www.json.org.\n\nInputs\n\n   object\n      The JavaScript object.  \n      The operation will return a failure if it is not a JavaScript object.\n\n   key\n      The key in the object to get the value of.\n\nResponses\n\n   success\n      The value was successfully returned for the specified key. \n\n   failure\n      There was some error in processing the object, most likely because the\n      object is not in valid JavaScript Object Notation or the specified key does not exist in the object.  \n      You may wish to use a tool such as http\://www.jsonlint.com/ to help diagnose problems with\n      JavaScript Object Notation.\n\nOutputs\n\n   The primary output will be the value for the specified key in the object.\n\nNote\n\n    If the value in JSON object is in scientific notation, the returned output will be converted to an equivalent decimal number. Ex, 2.9e+1 will be converted to 29.\n</pre>
 6fa240e3-8be9-48d2-9284-9ca6f51ddb84.6f336e87-6e92-4cd4-a2b6-898a8b08cbe0.description=<pre>\nAccepts an object in the JavaScript Object Notation format (JSON) and\nreturns a value for the specified key.\n\nThe JSON format encodes objects as a set of unordered key/value pairs, which is\nsimilar to a structure or map in other programming languages.  For example,\n   { "city" \: "Palo Alto", \n     "state" \: "CA" }\nis an object with two elements one with the name "city" having the value "Palo\nAlto", and the other being the name "state" with the value "CA". This operation would \nreturn "Palo Alto" if user enters "city" as a key.\n\nIf the input object contains JSON array, array index can be used in the key input. For example, \n{ "location"\: [\n      {"city"\: "Roseville", "country"\: "United States"},\n      {"city"\: "Cluj", "country"\: "Romania"},\n      {"city"\: "Yehud", "country"\: "Israel"}]    \n}\nThe operation would return "Roseville" if user enters "location[0].city" as a key.\n\nJavaScript objects are useful for representing structured data, and are\nespecially when used within an array.  For example, an operation that retrieves\na set of incidents from an external system may return the entire list in one\narray of incident objects.  The description of the enclosing folder,\n/Library/Utility Operations/Container/JavaScript Objects has more examples, and\nthe JSON format is described completely at http\://www.json.org.\n\nInputs\n\n   object\n      The JavaScript object.  \n      The operation will return a failure if it is not a JavaScript object.\n\n   key\n      The key in the object to get the value of.\n\nResponses\n\n   success\n      The value was successfully returned for the specified key. \n\n   failure\n      There was some error in processing the object, most likely because the\n      object is not in valid JavaScript Object Notation or the specified key does not exist in the object.  \n      You may wish to use a tool such as http\://www.jsonlint.com/ to help diagnose problems with\n      JavaScript Object Notation.\n\nOutputs\n\n   The primary output will be the value for the specified key in the object.\n\nNote\n\n    If the value in JSON object is in scientific notation, the returned output will be converted to an equivalent decimal number. Ex, 2.9e+1 will be converted to 29.\n</pre>
-6fa240e3-8be9-48d2-9284-9ca6f51ddb84.88a13742-a6d3-4051-8cae-75fa0777a2d9.description=<pre>\nAccepts an object in the JavaScript Object Notation format (JSON) and\nreturns a value for the specified key.\n\nThe JSON format encodes objects as a set of unordered key/value pairs, which is\nsimilar to a structure or map in other programming languages.  For example,\n   { "city" \: "Palo Alto", \n     "state" \: "CA" }\nis an object with two elements one with the name "city" having the value "Palo\nAlto", and the other being the name "state" with the value "CA". This operation would \nreturn "Palo Alto" if user enters "city" as a key.\n\nIf the input object contains JSON array, array index can be used in the key input. For example, \n{ "location"\: [\n      {"city"\: "Roseville", "country"\: "United States"},\n      {"city"\: "Cluj", "country"\: "Romania"},\n      {"city"\: "Yehud", "country"\: "Israel"}]    \n}\nThe operation would return "Roseville" if user enters "location[0].city" as a key.\n\nJavaScript objects are useful for representing structured data, and are\nespecially when used within an array.  For example, an operation that retrieves\na set of incidents from an external system may return the entire list in one\narray of incident objects.  The description of the enclosing folder,\n/Library/Utility Operations/Container/JavaScript Objects has more examples, and\nthe JSON format is described completely at http\://www.json.org.\n\nInputs\n\n   object\n      The JavaScript object.  \n      The operation will return a failure if it is not a JavaScript object.\n\n   key\n      The key in the object to get the value of.\n\nResponses\n\n   success\n      The value was successfully returned for the specified key. \n\n   failure\n      There was some error in processing the object, most likely because the\n      object is not in valid JavaScript Object Notation or the specified key does not exist in the object.  \n      You may wish to use a tool such as http\://www.jsonlint.com/ to help diagnose problems with\n      JavaScript Object Notation.\n\nOutputs\n\n   The primary output will be the value for the specified key in the object.\n\nNote\n\n    If the value in JSON object is in scientific notation, the returned output will be converted to an equivalent decimal number. Ex, 2.9e+1 will be converted to 29.\n</pre>
 ]]></descriptionCdata>
   <annotation></annotation>
   <name>Update vAppTemplates in DB</name>
@@ -406,12 +406,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="8397ba58-26de-40b0-9a37-37243b77fd02">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -691,7 +685,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="ed77848c-cb5d-4b37-adfc-c85f5ca30368">
+        <transition id="a8330ab3-8570-42a8-b3b4-395a550cce69">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -700,19 +694,19 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>88a13742-a6d3-4051-8cae-75fa0777a2d9</refId>
+            <refId>2f85ab10-b303-4288-8473-ffdb07b5b660</refId>
           </destination>
           <source>
             <refId>197646ce-3cf6-4e73-b738-f066b82920b9</refId>
           </source>
           <positions>
             <point>
-              <x>650.0</x>
-              <y>244.0</y>
+              <x>617.0</x>
+              <y>181.0</y>
             </point>
             <point>
-              <x>530.0</x>
-              <y>304.0</y>
+              <x>619.0</x>
+              <y>266.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -743,152 +737,12 @@
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="88a13742-a6d3-4051-8cae-75fa0777a2d9">
-      <annotation>6fa240e3-8be9-48d2-9284-9ca6f51ddb84.88a13742-a6d3-4051-8cae-75fa0777a2d9.description</annotation>
-      <name>Get Value from Object</name>
-      <bounds>
-        <x>574.0</x>
-        <y>270.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <iconSpec id="68287da4-a5ff-4a51-b661-afb64e30d527">
-        <baseIcon>text_code_javascript.png</baseIcon>
-        <basePath>/Others/</basePath>
-        <readOnly>false</readOnly>
-        <layers/>
-      </iconSpec>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings>
-        <userInputBinding id="25706fb5-04e7-4ee9-aca5-aabf100b8246">
-          <annotation></annotation>
-          <fromContextKey>vAppObject</fromContextKey>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>object</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <staticBinding id="85ef6cfb-19fd-42fc-a695-38c671d5794e">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>key</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>@id</value>
-          <record>false</record>
-        </staticBinding>
-      </bindings>
-      <transitions>
-        <transition id="fdbf246e-c484-49b7-a1c4-ca944830c6f7">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>0a192e05-c05c-4fb4-898e-e2eaf7f24d0f</refId>
-          </destination>
-          <source>
-            <refId>88a13742-a6d3-4051-8cae-75fa0777a2d9</refId>
-          </source>
-          <positions>
-            <point>
-              <x>530.0</x>
-              <y>304.0</y>
-            </point>
-            <point>
-              <x>170.0</x>
-              <y>274.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-        <transition id="a00f3345-2386-4953-b791-218c43603e62">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>6f336e87-6e92-4cd4-a2b6-898a8b08cbe0</refId>
-          </destination>
-          <source>
-            <refId>88a13742-a6d3-4051-8cae-75fa0777a2d9</refId>
-          </source>
-          <positions>
-            <point>
-              <x>530.0</x>
-              <y>364.0</y>
-            </point>
-            <point>
-              <x>408.0</x>
-              <y>424.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-      </transitions>
-      <properties/>
-      <opRef>
-        <refId>61fc6fd2-7d5c-4d5c-aaa9-71c8250310f2</refId>
-      </opRef>
-      <assignments>
-        <flowVariableAssignment id="bfe20b70-bae6-4de1-bd64-f9bbb32687dc">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
-          <contextKey>vAppId</contextKey>
-          <expression id="71a1979e-5823-424a-a96c-b8954f868e17">
-            <annotation></annotation>
-            <name>Result Field: returnResult</name>
-            <fieldName>returnResult</fieldName>
-            <sourceType>RAWRESULT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
-      </assignments>
-      <throttleSize>0</throttleSize>
-    </step>
     <step id="6f336e87-6e92-4cd4-a2b6-898a8b08cbe0">
       <annotation>6fa240e3-8be9-48d2-9284-9ca6f51ddb84.6f336e87-6e92-4cd4-a2b6-898a8b08cbe0.description</annotation>
       <name>Get Value from Object</name>
       <bounds>
-        <x>575.0</x>
-        <y>400.0</y>
+        <x>583.0</x>
+        <y>386.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -1342,6 +1196,146 @@
         <refId>51199da4-183d-4295-99e6-c8a6e882eba1</refId>
       </opRef>
       <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="2f85ab10-b303-4288-8473-ffdb07b5b660">
+      <annotation>6fa240e3-8be9-48d2-9284-9ca6f51ddb84.2f85ab10-b303-4288-8473-ffdb07b5b660.description</annotation>
+      <name>Get Value from Object</name>
+      <bounds>
+        <x>569.0</x>
+        <y>251.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="b7f94fd7-c99e-4267-b713-6cedd74dbc99">
+        <baseIcon>text_code_javascript.png</baseIcon>
+        <basePath>/Others/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="99098ac6-478e-4e55-a70f-8457121b6d6e">
+          <annotation></annotation>
+          <fromContextKey>vAppObject</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>object</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <staticBinding id="1b92cb44-b592-4cb6-867e-6db3e56b3262">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>key</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>@id</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="104dca17-996f-4539-9ace-b8aabd3fb23a">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>6f336e87-6e92-4cd4-a2b6-898a8b08cbe0</refId>
+          </destination>
+          <source>
+            <refId>2f85ab10-b303-4288-8473-ffdb07b5b660</refId>
+          </source>
+          <positions>
+            <point>
+              <x>619.0</x>
+              <y>285.0</y>
+            </point>
+            <point>
+              <x>618.0</x>
+              <y>369.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="bdde4146-3a7d-4fdf-968a-3d4d4a9df92a">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>0a192e05-c05c-4fb4-898e-e2eaf7f24d0f</refId>
+          </destination>
+          <source>
+            <refId>2f85ab10-b303-4288-8473-ffdb07b5b660</refId>
+          </source>
+          <positions>
+            <point>
+              <x>619.0</x>
+              <y>285.0</y>
+            </point>
+            <point>
+              <x>156.0</x>
+              <y>291.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>61fc6fd2-7d5c-4d5c-aaa9-71c8250310f2</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="82852cc9-1fd4-421a-bcea-710325c3988d">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>vAppId</contextKey>
+          <expression id="2a2b757b-d10c-497f-a120-9a6e21f261ae">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
   </steps>

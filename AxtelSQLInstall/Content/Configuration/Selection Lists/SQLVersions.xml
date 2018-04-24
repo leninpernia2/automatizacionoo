@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selectionList id="254e539c-c294-458a-9327-c4d10f63c38f">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>SQLVersions</name>
+  <storage>
+    <string>2008</string>
+    <string>2012 Enterprise</string>
+    <string>2012 Standard</string>
+    <string>2014 Enterprise</string>
+    <string>2014 Standard</string>
+    <string>2016 Standard</string>
+    <string>2017</string>
+  </storage>
+</selectionList>
