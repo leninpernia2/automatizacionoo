@@ -305,9 +305,9 @@ a5384f2b-e62f-4a56-8587-c0ea82134f58.b4482648-3668-4525-86d0-8a05e4c117c2.transi
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="49e4e48a-8d0e-4162-9877-d726225d2a71">
+        <userInputBinding id="1f034aa0-f37f-4113-a200-b40b7a39f240">
           <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
+          <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
@@ -315,61 +315,42 @@ a5384f2b-e62f-4a56-8587-c0ea82134f58.b4482648-3668-4525-86d0-8a05e4c117c2.transi
           <isPersisted>true</isPersisted>
           <inputSymbol>hostname</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>vcloud.enterprisecomputing.mx</value>
           <record>false</record>
-        </staticBinding>
-        <staticBinding id="f5bb3f5f-0978-4b97-9142-0b3aed8e5f48">
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="d209518d-a3e4-4622-8950-8fca8faa8d82">
           <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
+          <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
           <required>true</required>
           <isPersisted>true</isPersisted>
-          <inputSymbol>username</inputSymbol>
+          <inputSymbol>token</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>adminvcd</value>
           <record>false</record>
-        </staticBinding>
-        <staticBinding id="3a8758d6-74eb-4cdd-a320-e688258449dc">
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="76434e46-4654-4dac-95e5-7386bd7c9d55">
           <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
+          <fromContextKey>idVdc</fromContextKey>
+          <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
           <required>true</required>
           <isPersisted>true</isPersisted>
-          <inputSymbol>password</inputSymbol>
+          <inputSymbol>vdcID</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>Pa$$w0rd</value>
           <record>false</record>
-        </staticBinding>
-        <staticBinding id="980a9a72-354a-424e-a9ad-4a4cc1fca43f">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>organization</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>system</value>
-          <record>false</record>
-        </staticBinding>
-        <staticBinding id="2c423e11-9f4f-43b2-a8da-1e7ab34b9518">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>idVdc</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>01f83166-28f6-4aa3-85bb-2c8a87530d10</value>
-          <record>false</record>
-        </staticBinding>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
       </bindings>
       <transitions>
         <transition id="071bad08-f76d-4ecf-af84-64a14e5b6690">

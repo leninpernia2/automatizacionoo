@@ -131,6 +131,81 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
+    <userInputBinding id="f2ae10e5-dd42-4164-b8b1-c5fc584c363c">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>GestionNetworkName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="3d071c32-97e6-452c-9edd-2e7e1486a342">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>GestionNetworkID</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="c9d802d3-b7d6-47c5-a38a-74e4d98caba4">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>nameVM</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="5b95b178-cfea-4c02-8395-bf27ef3a3986">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>hostnameVM</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="370fb2e7-7188-40df-9949-bf457252358e">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>description</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="499bb837-163a-45ca-84e6-9915dd60b35e">
@@ -186,6 +261,19 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="fa82ccdf-345c-4503-9880-98c45257c8bd">
+        <baseIcon>jar.png</baseIcon>
+        <basePath>Others/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="94e18948-7380-495a-ac42-cb6c5790b7d1">
+            <baseIcon>edit.png</baseIcon>
+            <basePath>Annotations/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -227,7 +315,7 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="b5ec69c1-983b-41a3-b4b4-7c052d674c4a">
+        <transition id="a6cc895e-2514-4b16-b2d7-fae5f38ce3ea">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -236,7 +324,7 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>2f53fb69-3b37-4ddb-9392-76a1bc498745</refId>
+            <refId>244d6b61-791d-4755-9b77-f2e0bff5c3de</refId>
           </destination>
           <source>
             <refId>fbdeae4a-448b-42be-a143-3dc89a8b60e2</refId>
@@ -268,7 +356,7 @@
       <annotation>42115282-32cd-41bd-9da6-47b4751c08bf.2f53fb69-3b37-4ddb-9392-76a1bc498745.description</annotation>
       <name>Http Client Post</name>
       <bounds>
-        <x>210.0</x>
+        <x>390.0</x>
         <y>60.0</y>
       </bounds>
       <layer>-1</layer>
@@ -355,14 +443,28 @@ Content-Type: application/vnd.vmware.vcloud.instantiateVAppTemplateParams+xml</v
       &lt;NetworkConfigSection&gt;
          &lt;ovf:Info&gt;Configuration parameters for logical networks&lt;/ovf:Info&gt;
          &lt;NetworkConfig networkName=&quot;${InternalNetworkName}&quot;&gt;
-			&lt;Configuration&gt;
-			&lt;ParentNetwork href=&quot;https://${hostname}/api/network/${InternalNetworkID}&quot;/&gt;
-			&lt;FenceMode&gt;bridged&lt;/FenceMode&gt;
-			&lt;/Configuration&gt;
-		&lt;/NetworkConfig&gt;
+            &lt;Configuration&gt;
+            &lt;ParentNetwork href=&quot;https://${hostname}/api/network/${InternalNetworkID}&quot;/&gt;
+            &lt;FenceMode&gt;bridged&lt;/FenceMode&gt;
+            &lt;/Configuration&gt;
+        &lt;/NetworkConfig&gt;
+		&lt;NetworkConfig networkName=&quot;${GestionNetworkName}&quot;&gt;
+            &lt;Configuration&gt;
+            &lt;ParentNetwork href=&quot;https://${hostname}/api/network/${GestionNetworkID}&quot;/&gt;
+            &lt;FenceMode&gt;bridged&lt;/FenceMode&gt;
+            &lt;/Configuration&gt;
+        &lt;/NetworkConfig&gt;
       &lt;/NetworkConfigSection&gt;
    &lt;/InstantiationParams&gt;
    &lt;Source href=&quot;${vAppTemplateHRef}&quot;/&gt;
+   &lt;SourcedItem&gt;
+      &lt;Source href=&quot;https://${hostname}/api/vAppTemplate/${vAppTemaplateVMID}&quot;/&gt;
+      &lt;VmGeneralParams&gt;
+         &lt;Name&gt;${nameVM}&lt;/Name&gt;
+         &lt;Description&gt;${description}&lt;/Description&gt;
+         &lt;NeedsCustomization&gt;true&lt;/NeedsCustomization&gt;
+      &lt;/VmGeneralParams&gt;
+   &lt;/SourcedItem&gt;
    &lt;AllEULAsAccepted&gt;true&lt;/AllEULAsAccepted&gt;
 &lt;/InstantiateVAppTemplateParams&gt;</value>
           <record>false</record>
@@ -534,17 +636,11 @@ Content-Type: application/vnd.vmware.vcloud.instantiateVAppTemplateParams+xml</v
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>780.0</x>
+        <x>960.0</x>
         <y>450.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="3051cf5b-1eb6-44ab-86c6-f85f2482bafa">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -584,12 +680,12 @@ Content-Type: application/vnd.vmware.vcloud.instantiateVAppTemplateParams+xml</v
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>390.0</x>
+        <x>570.0</x>
         <y>270.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="15d9095d-c649-4698-967a-49293c943010">
+      <iconSpec id="f25f19c2-5da4-4192-b7e4-1d67ff26a955">
         <baseIcon>return_failure.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -634,7 +730,7 @@ Content-Type: application/vnd.vmware.vcloud.instantiateVAppTemplateParams+xml</v
       <annotation>42115282-32cd-41bd-9da6-47b4751c08bf.b00e4742-a6b4-47df-8dec-c930e72045e6.description</annotation>
       <name>XML Get Attributes</name>
       <bounds>
-        <x>600.0</x>
+        <x>780.0</x>
         <y>270.0</y>
       </bounds>
       <layer>-1</layer>
@@ -760,11 +856,11 @@ http://xml.org/sax/features/external-parameter-entities false</value>
               <y>336.0</y>
             </point>
             <point>
-              <x>690.0</x>
+              <x>870.0</x>
               <y>360.0</y>
             </point>
             <point>
-              <x>690.0</x>
+              <x>870.0</x>
               <y>420.0</y>
             </point>
             <point>
@@ -850,7 +946,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <annotation></annotation>
       <name>Task Status</name>
       <bounds>
-        <x>600.0</x>
+        <x>780.0</x>
         <y>450.0</y>
       </bounds>
       <layer>-1</layer>
@@ -986,7 +1082,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <annotation>42115282-32cd-41bd-9da6-47b4751c08bf.b97cf5e3-3c94-4593-9a91-b03ee9d67e43.description</annotation>
       <name>XML Get Attributes</name>
       <bounds>
-        <x>600.0</x>
+        <x>780.0</x>
         <y>60.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1112,11 +1208,11 @@ http://xml.org/sax/features/external-parameter-entities false</value>
               <y>126.0</y>
             </point>
             <point>
-              <x>720.0</x>
+              <x>900.0</x>
               <y>180.0</y>
             </point>
             <point>
-              <x>720.0</x>
+              <x>900.0</x>
               <y>240.0</y>
             </point>
             <point>
@@ -1215,7 +1311,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <annotation></annotation>
       <name>isOK</name>
       <bounds>
-        <x>390.0</x>
+        <x>570.0</x>
         <y>60.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1341,7 +1437,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <annotation>42115282-32cd-41bd-9da6-47b4751c08bf.2e045a8f-5b70-4f76-82dc-c7e74bd70bea.description</annotation>
       <name>Equal</name>
       <bounds>
-        <x>390.0</x>
+        <x>570.0</x>
         <y>450.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1473,7 +1569,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <annotation>42115282-32cd-41bd-9da6-47b4751c08bf.35275bad-0e65-432a-9cb7-b67a86c08249.description</annotation>
       <name>Set Flow Variable</name>
       <bounds>
-        <x>210.0</x>
+        <x>390.0</x>
         <y>450.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1560,7 +1656,7 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <annotation></annotation>
       <name>Delete vApp</name>
       <bounds>
-        <x>210.0</x>
+        <x>390.0</x>
         <y>270.0</y>
       </bounds>
       <layer>-1</layer>
@@ -1682,6 +1778,201 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
+    <step id="244d6b61-791d-4755-9b77-f2e0bff5c3de">
+      <annotation></annotation>
+      <name>Get VM Details From vAppTemplate</name>
+      <bounds>
+        <x>210.0</x>
+        <y>60.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="8c581af7-8a75-4f5a-a585-67d9c21b475b">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>token</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="36f95805-cd90-4b90-8564-e4d3b1128622">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>hostname</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="af6d8f47-53b3-4076-bf05-177d043ac18d">
+          <annotation></annotation>
+          <fromContextKey>vAppTemplateHRef</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>vAppTemplateHref</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="143019e2-f9d2-4138-814b-cf9092a2145e">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>2f53fb69-3b37-4ddb-9392-76a1bc498745</refId>
+          </destination>
+          <source>
+            <refId>244d6b61-791d-4755-9b77-f2e0bff5c3de</refId>
+          </source>
+          <positions>
+            <point>
+              <x>80.0</x>
+              <y>94.0</y>
+            </point>
+            <point>
+              <x>260.0</x>
+              <y>94.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="3845ae5d-94f6-446c-b942-5b56119bffbf">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>22755fc7-cb25-4c53-b19a-4c9aba85cb3a</refId>
+          </destination>
+          <source>
+            <refId>244d6b61-791d-4755-9b77-f2e0bff5c3de</refId>
+          </source>
+          <positions>
+            <point>
+              <x>260.0</x>
+              <y>94.0</y>
+            </point>
+            <point>
+              <x>260.0</x>
+              <y>304.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>3b04a429-c50f-4fe9-81b9-480024dad71d</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="31e75f7b-fe56-483b-baca-57851a6a3f8f">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>vAppTemaplateVMID</contextKey>
+          <expression id="0f1b0594-93f6-4cf7-824c-230e83d7ec5f">
+            <annotation></annotation>
+            <name>Result: vAppTemplateVMID</name>
+            <fieldName>vAppTemplateVMID</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="22755fc7-cb25-4c53-b19a-4c9aba85cb3a">
+      <annotation></annotation>
+      <name>Error : failure</name>
+      <bounds>
+        <x>210.0</x>
+        <y>270.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="372fabae-8f49-4f03-9be7-0263c7c170dd">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>22755fc7-cb25-4c53-b19a-4c9aba85cb3a</refId>
+          </destination>
+          <source>
+            <refId>22755fc7-cb25-4c53-b19a-4c9aba85cb3a</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>ERROR</returnStepType>
+      <assignments/>
+    </returnStep>
   </steps>
   <startSteps>fbdeae4a-448b-42be-a143-3dc89a8b60e2</startSteps>
 </flow>

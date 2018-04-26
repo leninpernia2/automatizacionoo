@@ -408,18 +408,18 @@ Content-Type: application/vnd.vmware.vcloud.networkConnectionSection+xml</value>
     ovf:required=&quot;false&quot;
     type=&quot;application/vnd.vmware.vcloud.networkConnectionSection+xml&quot;&gt;
     &lt;ovf:Info&gt;Specifies the available VM network connections&lt;/ovf:Info&gt;
-	&lt;vcloud:PrimaryNetworkConnectionIndex&gt;1&lt;/vcloud:PrimaryNetworkConnectionIndex&gt;
-    &lt;vcloud:NetworkConnection needsCustomization=&quot;true&quot; network=&quot;${GestionNetworkName}&quot;&gt;
-        &lt;vcloud:NetworkConnectionIndex&gt;0&lt;/vcloud:NetworkConnectionIndex&gt;
-		&lt;vcloud:IsConnected&gt;true&lt;/vcloud:IsConnected&gt;
-		&lt;vcloud:MACAddress&gt;${MAC_Adapter0}&lt;/vcloud:MACAddress&gt;
-		&lt;vcloud:IpAddressAllocationMode&gt;POOL&lt;/vcloud:IpAddressAllocationMode&gt;
-    &lt;/vcloud:NetworkConnection&gt;
-    &lt;vcloud:NetworkConnection needsCustomization=&quot;true&quot; network=&quot;${InternalNetworkName}&quot;&gt;
-	&lt;vcloud:NetworkConnectionIndex&gt;1&lt;/vcloud:NetworkConnectionIndex&gt;
-	&lt;vcloud:IsConnected&gt;true&lt;/vcloud:IsConnected&gt;
-	&lt;vcloud:MACAddress&gt;${MAC_Adapter1}&lt;/vcloud:MACAddress&gt;
+	&lt;vcloud:PrimaryNetworkConnectionIndex&gt;0&lt;/vcloud:PrimaryNetworkConnectionIndex&gt;
+	&lt;vcloud:NetworkConnection needsCustomization=&quot;true&quot; network=&quot;${InternalNetworkName}&quot;&gt;
+	    &lt;vcloud:NetworkConnectionIndex&gt;0&lt;/vcloud:NetworkConnectionIndex&gt;
+	    &lt;vcloud:IsConnected&gt;true&lt;/vcloud:IsConnected&gt;
+	    &lt;vcloud:MACAddress&gt;${MAC_Adapter0}&lt;/vcloud:MACAddress&gt;
         &lt;vcloud:IpAddressAllocationMode&gt;POOL&lt;/vcloud:IpAddressAllocationMode&gt;
+    &lt;/vcloud:NetworkConnection&gt;
+    &lt;vcloud:NetworkConnection needsCustomization=&quot;true&quot; network=&quot;${GestionNetworkName}&quot;&gt;
+        &lt;vcloud:NetworkConnectionIndex&gt;1&lt;/vcloud:NetworkConnectionIndex&gt;
+		&lt;vcloud:IsConnected&gt;true&lt;/vcloud:IsConnected&gt;
+		&lt;vcloud:MACAddress&gt;${MAC_Adapter1}&lt;/vcloud:MACAddress&gt;
+		&lt;vcloud:IpAddressAllocationMode&gt;POOL&lt;/vcloud:IpAddressAllocationMode&gt;
     &lt;/vcloud:NetworkConnection&gt;
 &lt;/vcloud:NetworkConnectionSection&gt;</value>
           <record>false</record>
@@ -587,12 +587,6 @@ Content-Type: application/vnd.vmware.vcloud.networkConnectionSection+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="861a88d6-817a-4204-9ad8-7fa352c405ad">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
