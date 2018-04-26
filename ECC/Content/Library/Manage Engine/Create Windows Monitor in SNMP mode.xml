@@ -62,7 +62,7 @@
       <value>M0n17ore0$A600</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="f8c27c9d-6719-4b89-b1c4-f3215e58dbcc">
+    <userInputBinding id="5bec111c-683f-459b-90cd-fad9b65758e5">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -72,14 +72,16 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>SO</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>Windows 2008</value>
       <record>false</record>
       <validationFormat>
         <refId>70348ff6-59cd-4bb4-8662-b4d995d9492e</refId>
         <refName>Windows_SO</refName>
       </validationFormat>
-    </staticBinding>
-    <staticBinding id="a885cc52-dba3-40c9-a38b-59ee1ca2f105">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="653b960f-6d15-4d6a-a9c2-cc50c5017ba9">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -89,10 +91,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>NameMonitor</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>TEST</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="1acb379a-a75f-42a7-b62e-96b2c1199874">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="3edbeaca-808f-42fa-8daf-4b7136b97b28">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -102,10 +106,12 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>NameVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>VMS00009331</value>
       <record>false</record>
-    </staticBinding>
-    <staticBinding id="c83e5b3c-3bbe-443a-a2be-3ed25d7d2331">
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="d5264e68-6f03-4b61-be19-b57f5e736a0e">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -115,9 +121,11 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>ipVM</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>198.18.84.20</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
     <staticBinding id="dbc6e9aa-969e-4831-93ca-601cbea79354">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
@@ -131,7 +139,7 @@
       <value>20</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="871e4682-caf8-4f35-82f2-a10bcdbcbe24">
+    <userInputBinding id="b170badf-2f16-4ad7-90d9-18cddcd02c19">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -141,9 +149,11 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>idGroupMonitor</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>10617336</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="970458f2-b510-41a2-bb49-363b3b119179">
@@ -352,6 +362,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="f4edc92a-2524-40d3-a8c7-05d3bc8ae26b">
+        <baseIcon>return_failure.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
