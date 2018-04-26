@@ -238,6 +238,13 @@
     </opResponse>
   </possibleResponses>
   <availableResultExpressions>
+    <expression id="13f0a884-0d35-4e6f-bca3-93cbdde85d10">
+      <annotation></annotation>
+      <name>message</name>
+      <fieldName>DetailsMessage</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
     <expression id="76f85711-2151-43bb-81f8-cbe7ecfde1ab">
       <annotation></annotation>
       <name>vmID</name>
@@ -1258,7 +1265,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>DetailsMessage</contextKey>
           <expression id="cea124a3-6c69-44c1-b2ed-b2bb719377e6">
             <annotation></annotation>
@@ -2921,8 +2928,9 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="b477904b-9152-4452-bf49-c15287ea08b7">
+        <userInputBinding id="315e7f18-47c4-40c4-950c-fcf065223a14">
           <annotation></annotation>
+          <fromContextKey>diskSize</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
@@ -3283,8 +3291,9 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="437e1ab2-086d-4384-b727-50ccd8eeaa57">
+        <userInputBinding id="d6cc15ee-68a2-4771-8413-5930773aad77">
           <annotation></annotation>
+          <fromContextKey>memAllocation</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>

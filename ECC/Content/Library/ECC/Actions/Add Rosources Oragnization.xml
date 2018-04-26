@@ -210,7 +210,7 @@
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>External_network</inputSymbol>
+      <inputSymbol>externalNetworkName</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <value>External-1173</value>
       <record>false</record>
@@ -221,24 +221,11 @@
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>Gestion_network</inputSymbol>
+      <inputSymbol>gestionNetworkName</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <value>Gestion-1541</value>
-      <record>false</record>
-    </staticBinding>
-    <staticBinding id="e0cc8e92-5197-45c9-8d0e-fa7e0836d059">
-      <annotation></annotation>
-      <assignFromContext>true</assignFromContext>
-      <assignToContext>false</assignToContext>
-      <inputType>STRING</inputType>
-      <isList>false</isList>
-      <required>false</required>
-      <isPersisted>true</isPersisted>
-      <inputSymbol>Backup_network</inputSymbol>
-      <listDelimiter>,</listDelimiter>
-      <value>Backup-1741</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="b97e543c-9ef3-4b70-9e42-71775ec8324a">
@@ -249,7 +236,7 @@
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>ipGateway</inputSymbol>
+      <inputSymbol>external_ipGateway</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <value>198.18.105.25</value>
       <record>false</record>
@@ -262,7 +249,7 @@
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>maskGateway</inputSymbol>
+      <inputSymbol>external_maskGateway</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <value>255.255.255.248</value>
       <record>false</record>
@@ -275,7 +262,7 @@
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>StartAddress</inputSymbol>
+      <inputSymbol>external_StartAddress</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <value>198.18.105.29</value>
       <record>false</record>
@@ -288,7 +275,7 @@
       <isList>false</isList>
       <required>true</required>
       <isPersisted>true</isPersisted>
-      <inputSymbol>EndAddress</inputSymbol>
+      <inputSymbol>external_EndAddress</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <value>198.18.105.30</value>
       <record>false</record>
@@ -384,6 +371,19 @@
       <value>Internal-2212</value>
       <record>false</record>
     </staticBinding>
+    <staticBinding id="dcff5daa-e1d9-41ee-a60e-9f0f23672176">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>ProviderVdcStorageProfile</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>Gold-Level</value>
+      <record>false</record>
+    </staticBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="f16712da-ca81-4c6c-8ee2-b0d70ea42fdc">
@@ -404,13 +404,6 @@
     </opResponse>
   </possibleResponses>
   <availableResultExpressions>
-    <expression id="a225f31e-6737-425c-98c2-60cfe007abcd">
-      <annotation></annotation>
-      <name>BackupNetworkID</name>
-      <fieldName>BackupNetworkID</fieldName>
-      <sourceType>RAWRESULT</sourceType>
-      <filters/>
-    </expression>
     <expression id="66289b46-08dd-4d0b-92ec-0604beeb14cf">
       <annotation></annotation>
       <name>GestionNetworkID</name>
@@ -418,17 +411,17 @@
       <sourceType>RAWRESULT</sourceType>
       <filters/>
     </expression>
-    <expression id="c90f85cf-0e87-4bb7-98fe-8fa912c9c0b3">
-      <annotation></annotation>
-      <name>idVdc</name>
-      <fieldName>idVdc</fieldName>
-      <sourceType>RAWRESULT</sourceType>
-      <filters/>
-    </expression>
     <expression id="b1967f60-1a08-467f-9120-26a70df39ac0">
       <annotation></annotation>
       <name>InternalNetworkID</name>
       <fieldName>InternalNetworkID</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+    <expression id="c90f85cf-0e87-4bb7-98fe-8fa912c9c0b3">
+      <annotation></annotation>
+      <name>vdcID</name>
+      <fieldName>idVdc</fieldName>
       <sourceType>RAWRESULT</sourceType>
       <filters/>
     </expression>
@@ -949,9 +942,9 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="a8519937-12f8-462b-9247-f1e00266d0a3">
+        <userInputBinding id="f3de3eca-1567-4d1c-be57-5d028b300ca4">
           <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
+          <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
@@ -959,9 +952,11 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>hrefProviderVdcStorageProfile</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>https://vcloud.enterprisecomputing.mx/api/admin/pvdcStorageProfile/4bf33944-b18f-4f0d-b2af-fdd73147fece</value>
           <record>false</record>
-        </staticBinding>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
         <userInputBinding id="0dcd755b-1172-4d72-8f3f-01cfd7073a89">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
@@ -1390,8 +1385,9 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="3cd2f080-0036-40c2-ba72-b12ee94bcfb3">
+        <userInputBinding id="5ee9fb44-8510-4d57-9cfd-a657d2bd7a67">
           <annotation></annotation>
+          <fromContextKey>external_ipGateway</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
@@ -1405,8 +1401,9 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="fb386eb8-5801-4547-8993-ab6c25967e22">
+        <userInputBinding id="4db8c627-e175-433c-bfc7-09d6637053d4">
           <annotation></annotation>
+          <fromContextKey>external_maskGateway</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
@@ -1420,8 +1417,9 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="0748deb1-7b1e-4483-bf0b-3dd922a7230c">
+        <userInputBinding id="401efe5e-792b-4153-a767-4f20b7159993">
           <annotation></annotation>
+          <fromContextKey>external_StartAddress</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
@@ -1435,8 +1433,9 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="aef395ea-c265-48cf-b02e-2461fd54358a">
+        <userInputBinding id="1f6b559f-14fe-465e-a14b-cb1d6877056e">
           <annotation></annotation>
+          <fromContextKey>external_EndAddress</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
@@ -1723,47 +1722,96 @@
         <refId>8ee12743-a12d-434c-88fd-eb7711a0070c</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="e3c05e83-b9c6-49e2-90da-a616365b5afc">
+        <flowVariableAssignment id="a75e0f10-ae9b-4a3a-b5a9-f10d1117cee9">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
-          <contextKey>hrefBackupNetwork</contextKey>
-          <expression id="e4460986-5a36-4ee6-8b8c-e19fd769d008">
+          <contextKey>hrefGatewayNetwork</contextKey>
+          <expression id="d191338f-62f1-4694-9867-401db664dfc4">
             <annotation></annotation>
             <name>Result: provider_vdc_info</name>
             <fieldName>provider_vdc_info</fieldName>
             <sourceType>AVAILABLE_RESULT</sourceType>
             <filters>
-              <regexFilter id="9596fd3d-58c3-4944-a07d-27c1bb2fff52">
+              <xmlGetElementsFilter id="42de6b1b-ac30-468c-84af-b065dd2e4884">
                 <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>.*${Backup_network}</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <regexFilter id="5ffefd04-947d-4e52-bf93-5411b5408606">
+                <name>XML Get Element</name>
+                <attributeNamed>name</attributeNamed>
+                <attributeValue>${externalNetworkName}</attributeValue>
+                <elementPath>//*[name()=&quot;Network&quot;]</elementPath>
+              </xmlGetElementsFilter>
+              <xmlGetAttributeFilter id="569c61c4-f0e5-437a-8652-32596d30fdc6">
                 <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>http.*\&quot;\s</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <stripWhitespaceFilter id="4729d187-1fdd-4e51-a706-5e1eca6c816a">
+                <name>XML Get Attribute</name>
+                <attributeName>href</attributeName>
+                <elementPath>//*[name()=&quot;Network&quot;]</elementPath>
+                <includeSubElements>false</includeSubElements>
+                <resultAsFirstResult>true</resultAsFirstResult>
+                <resultAsTable>false</resultAsTable>
+              </xmlGetAttributeFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="5918e182-9dc1-4378-b55f-8b2c9b747528">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>hrefGestionNetwork</contextKey>
+          <expression id="a14ebaee-f79b-4ca3-ab05-433f9ad89869">
+            <annotation></annotation>
+            <name>Result: provider_vdc_info</name>
+            <fieldName>provider_vdc_info</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters>
+              <xmlGetElementsFilter id="6d974903-7429-4da3-a737-3fa3fb14531f">
                 <annotation></annotation>
-                <name>Strip Whitespace</name>
-              </stripWhitespaceFilter>
-              <replaceAllFilter id="e9e585c2-01f4-45da-89a1-75a6d62f7736">
+                <name>XML Get Element</name>
+                <attributeNamed>name</attributeNamed>
+                <attributeValue>${gestionNetworkName}</attributeValue>
+                <elementPath>//*[name()=&quot;Network&quot;]</elementPath>
+              </xmlGetElementsFilter>
+              <xmlGetAttributeFilter id="0559bb4d-6874-428e-9219-1afbff61c0ad">
                 <annotation></annotation>
-                <name>Replace</name>
-                <ignoreCase>true</ignoreCase>
-                <searchString>&quot;</searchString>
-                <replaceType>ALL</replaceType>
-              </replaceAllFilter>
+                <name>XML Get Attribute</name>
+                <attributeName>href</attributeName>
+                <elementPath>//*[name()=&quot;Network&quot;]</elementPath>
+                <includeSubElements>false</includeSubElements>
+                <resultAsFirstResult>true</resultAsFirstResult>
+                <resultAsTable>false</resultAsTable>
+              </xmlGetAttributeFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="d938c6d4-56b2-4013-b6fa-e05f4ab23ad9">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>hrefProviderVdcStorageProfile</contextKey>
+          <expression id="2cfce5e6-8852-4127-b9e5-a4a91d7cb74a">
+            <annotation></annotation>
+            <name>Result: provider_vdc_info</name>
+            <fieldName>provider_vdc_info</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters>
+              <xmlGetElementsFilter id="01431cd5-ff59-40fe-bf06-4abb8628f1ee">
+                <annotation></annotation>
+                <name>XML Get Element</name>
+                <attributeNamed>name</attributeNamed>
+                <attributeValue>${ProviderVdcStorageProfile}</attributeValue>
+                <elementPath>//*[name()=&quot;ProviderVdcStorageProfile&quot;]</elementPath>
+              </xmlGetElementsFilter>
+              <xmlGetAttributeFilter id="9548a8f0-3e44-4ddd-ac1f-328d6ea15a16">
+                <annotation></annotation>
+                <name>XML Get Attribute</name>
+                <attributeName>href</attributeName>
+                <elementPath>//*[name()=&quot;ProviderVdcStorageProfile&quot;]</elementPath>
+                <includeSubElements>false</includeSubElements>
+                <resultAsFirstResult>true</resultAsFirstResult>
+                <resultAsTable>false</resultAsTable>
+              </xmlGetAttributeFilter>
             </filters>
           </expression>
         </flowVariableAssignment>
@@ -1771,187 +1819,35 @@
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
-          <contextKey>hrefGatewayNetwork</contextKey>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>GestionNetworkID</contextKey>
           <expression id="415e6af8-d009-48bf-9014-fc664b147d5f">
             <annotation></annotation>
             <name>Result: provider_vdc_info</name>
             <fieldName>provider_vdc_info</fieldName>
             <sourceType>AVAILABLE_RESULT</sourceType>
             <filters>
-              <regexFilter id="f3ddb72a-5f23-40f7-be0b-dcb7b4d6739b">
+              <xmlGetElementsFilter id="0aac04e6-e48f-45a5-97f5-ad8e24bdc618">
                 <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>.*${External_network}</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <regexFilter id="421d144a-7cd6-4eb0-bf63-155702eadc75">
+                <name>XML Get Element</name>
+                <attributeNamed>name</attributeNamed>
+                <attributeValue>${gestionNetworkName}</attributeValue>
+                <elementPath>//*[name()=&quot;Network&quot;]</elementPath>
+              </xmlGetElementsFilter>
+              <xmlGetAttributeFilter id="bea170bc-7cc5-4842-91a7-70e1ffe85d27">
                 <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>http.*\&quot;\s</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <stripWhitespaceFilter id="13ca5eed-e2d2-4f12-aab8-b003bbb2ae33">
-                <annotation></annotation>
-                <name>Strip Whitespace</name>
-              </stripWhitespaceFilter>
-              <replaceAllFilter id="82ad6af2-98c6-4d73-a5d9-f8c6ed02af81">
-                <annotation></annotation>
-                <name>Replace</name>
-                <ignoreCase>true</ignoreCase>
-                <searchString>&quot;</searchString>
-                <replaceType>ALL</replaceType>
-              </replaceAllFilter>
-            </filters>
-          </expression>
-        </flowVariableAssignment>
-        <flowVariableAssignment id="dc324621-5be3-417a-aa4b-cb091f7c1286">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
-          <contextKey>hrefGestionNetwork</contextKey>
-          <expression id="441a9514-fdff-41a6-b063-40f24504ba8d">
-            <annotation></annotation>
-            <name>Result: provider_vdc_info</name>
-            <fieldName>provider_vdc_info</fieldName>
-            <sourceType>AVAILABLE_RESULT</sourceType>
-            <filters>
-              <regexFilter id="17b372d7-a7e4-4449-8df1-61ecfb66a473">
-                <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>.*${Gestion_network}</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <regexFilter id="f26b8907-35af-44ce-9c82-2ed4515f51d3">
-                <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>http.*\&quot;\s</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <stripWhitespaceFilter id="88c29670-2329-448d-9931-cd9f491ace97">
-                <annotation></annotation>
-                <name>Strip Whitespace</name>
-              </stripWhitespaceFilter>
-              <replaceAllFilter id="894249e2-7cde-462c-8e82-3572c2c9201d">
-                <annotation></annotation>
-                <name>Replace</name>
-                <ignoreCase>true</ignoreCase>
-                <searchString>&quot;</searchString>
-                <replaceType>ALL</replaceType>
-              </replaceAllFilter>
-            </filters>
-          </expression>
-        </flowVariableAssignment>
-        <flowVariableAssignment id="3d3e2665-a3a3-419e-a413-226a9e0dada1">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
-          <contextKey>BackupNetworkID</contextKey>
-          <expression id="0b852e9d-8c44-4b5a-a642-8b9cddae41ce">
-            <annotation></annotation>
-            <name>Result: provider_vdc_info</name>
-            <fieldName>provider_vdc_info</fieldName>
-            <sourceType>AVAILABLE_RESULT</sourceType>
-            <filters>
-              <regexFilter id="8ca3e601-1357-4910-b077-46cd2bd15d1f">
-                <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>.*${Backup_network}</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <regexFilter id="86f2c2a1-7ac9-4d96-9c70-0c51b4ecd18d">
-                <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>http.*\&quot;\s</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <stripWhitespaceFilter id="a0d39366-9c89-449f-9f07-3dee339e1308">
-                <annotation></annotation>
-                <name>Strip Whitespace</name>
-              </stripWhitespaceFilter>
-              <replaceAllFilter id="6da8110e-07d8-432a-806a-522961799c46">
-                <annotation></annotation>
-                <name>Replace</name>
-                <ignoreCase>true</ignoreCase>
-                <searchString>&quot;</searchString>
-                <replaceType>ALL</replaceType>
-              </replaceAllFilter>
-              <replaceAllFilter id="da661dd6-4c2f-4f1f-b4cf-1882796448f4">
+                <name>XML Get Attribute</name>
+                <attributeName>href</attributeName>
+                <elementPath>//*[name()=&quot;Network&quot;]</elementPath>
+                <includeSubElements>false</includeSubElements>
+                <resultAsFirstResult>true</resultAsFirstResult>
+                <resultAsTable>false</resultAsTable>
+              </xmlGetAttributeFilter>
+              <replaceAllFilter id="8bc7e1af-aa01-43b3-96ab-01032f48ac12">
                 <annotation></annotation>
                 <name>Replace</name>
                 <ignoreCase>false</ignoreCase>
-                <searchString>https://vcloud.enterprisecomputing.mx/api/admin/network/</searchString>
-                <replaceType>ALL</replaceType>
-              </replaceAllFilter>
-            </filters>
-          </expression>
-        </flowVariableAssignment>
-        <flowVariableAssignment id="916388d2-c4c1-479a-a5a9-e57ad84cad8e">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
-          <contextKey>GestionNetworkID</contextKey>
-          <expression id="902fcd05-f029-41f6-8a1b-75ecbb21389d">
-            <annotation></annotation>
-            <name>Result: provider_vdc_info</name>
-            <fieldName>provider_vdc_info</fieldName>
-            <sourceType>AVAILABLE_RESULT</sourceType>
-            <filters>
-              <regexFilter id="b3f0f758-afd1-4aab-8377-e2810456835e">
-                <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>.*${Gestion_network}</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <regexFilter id="55d43648-4af2-4c5f-89b9-2b291feea2d2">
-                <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>http.*\&quot;\s</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <stripWhitespaceFilter id="494cc618-9b5e-41f8-9aa0-3765cdb09558">
-                <annotation></annotation>
-                <name>Strip Whitespace</name>
-              </stripWhitespaceFilter>
-              <replaceAllFilter id="0bfffdb9-d197-438f-a285-8eb99e6916af">
-                <annotation></annotation>
-                <name>Replace</name>
-                <ignoreCase>true</ignoreCase>
-                <searchString>&quot;</searchString>
-                <replaceType>ALL</replaceType>
-              </replaceAllFilter>
-              <replaceAllFilter id="7a3e2bd1-c6cc-44dd-8764-806a5cbe4d5b">
-                <annotation></annotation>
-                <name>Replace</name>
-                <ignoreCase>false</ignoreCase>
-                <searchString>https://vcloud.enterprisecomputing.mx/api/admin/network/</searchString>
+                <searchString>https://${hostname}/api/admin/network/</searchString>
                 <replaceType>ALL</replaceType>
               </replaceAllFilter>
             </filters>
@@ -2386,9 +2282,9 @@
           <value>true</value>
           <record>false</record>
         </staticBinding>
-        <userInputBinding id="34818729-75ab-407f-a7d7-f4eeb4283abb">
+        <userInputBinding id="411e1834-8bce-41bd-962a-52203bb23450">
           <annotation></annotation>
-          <fromContextKey>Gestion_network</fromContextKey>
+          <fromContextKey>gestionNetworkName</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>

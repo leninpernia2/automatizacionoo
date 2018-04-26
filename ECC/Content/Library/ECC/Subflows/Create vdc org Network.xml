@@ -143,7 +143,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <staticBinding id="7ec8498a-4076-4b78-aa7e-3267f3151fb0">
+    <staticBinding id="91cf46d9-697d-47dc-9117-2180ccb6ec0d">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -186,19 +186,21 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <staticBinding id="49523917-f2a0-46d0-9179-9bd7a6c4e86b">
+    <userInputBinding id="dd11c109-466f-413e-a62a-27b976e9890c">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>hrefEdgeGateway</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>https://vcloud.enterprisecomputing.mx/api/admin/edgeGateway/9c8ec1ab-d1a3-43f1-87a8-c2da6823160d</value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
     <staticBinding id="3757054c-bc8e-4ea5-8100-ddc3338c7da0">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
