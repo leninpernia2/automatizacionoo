@@ -272,10 +272,10 @@ Content-Type: application/vnd.vmware.vcloud.org+xml</value>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>orgXML</contextKey>
-          <expression id="110d4d42-7a8c-4e32-9b0c-cabbdda28f6f">
+          <expression id="947ba7e7-045a-4d80-8649-0795ea77d656">
             <annotation></annotation>
-            <name>Result Field: exception</name>
-            <fieldName>exception</fieldName>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
             <sourceType>RAWRESULT</sourceType>
             <filters/>
           </expression>
@@ -491,12 +491,6 @@ Content-Type: application/vnd.vmware.vcloud.org+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="0ff363c3-5e77-4c20-9c8d-0e26114e3e8e">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
