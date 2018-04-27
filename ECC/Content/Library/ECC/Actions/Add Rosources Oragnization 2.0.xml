@@ -843,9 +843,9 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="b9c2d35c-6376-4eb5-896b-620d8e09a02b">
+        <staticBinding id="5564ca9e-227d-4719-8b3a-ce9607a213cd">
           <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
+          <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
@@ -853,11 +853,9 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>orgVDCName</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value>VDC-${orgVDCName}</value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
+        </staticBinding>
         <userInputBinding id="2779d010-2ffb-4b12-bc2f-cc92a74eb835">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>

@@ -273,6 +273,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="0b3c9d8c-7cd1-4d73-9bd9-572443ec5d6d">
+        <baseIcon>earth.png</baseIcon>
+        <basePath>/Networking/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -338,7 +344,7 @@ Content-Type: application/vnd.vmware.admin.edgeGateway+xml</value>
           <listDelimiter>,</listDelimiter>
           <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;EdgeGateway
-    name=&quot;${orgVDCName}-edge-gw&quot;
+    name=&quot;NSX-${orgVDCName}&quot;
     xmlns=&quot;http://www.vmware.com/vcloud/v1.5&quot;&gt;
     &lt;Description&gt;${orgVDCDescription}&lt;/Description&gt;
     &lt;Configuration&gt;
@@ -1036,6 +1042,12 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="9d794549-8905-438d-aff1-705c1312ce98">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1166,6 +1178,12 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="c80eb6e5-f207-4dba-9734-7b005d8fa08e">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
