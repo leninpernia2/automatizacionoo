@@ -71,6 +71,13 @@
     </opResponse>
   </possibleResponses>
   <availableResultExpressions>
+    <expression id="416aa6f8-d74f-4c6d-a670-de0f21c59e58">
+      <annotation></annotation>
+      <name>orgXML</name>
+      <fieldName>orgXML</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
     <expression id="e87bcd5c-4e70-4d32-bda9-9f5362f2aa88">
       <annotation></annotation>
       <name>userHref</name>
@@ -259,6 +266,20 @@ Content-Type: application/vnd.vmware.vcloud.org+xml</value>
         <refId>ab413782-7e23-41a7-85a7-79f543cf8858</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="7040fe38-65e8-45b2-a124-523396d1e8cf">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>orgXML</contextKey>
+          <expression id="110d4d42-7a8c-4e32-9b0c-cabbdda28f6f">
+            <annotation></annotation>
+            <name>Result Field: exception</name>
+            <fieldName>exception</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="85c5ab06-ae00-487b-a736-c598cc57d171">
           <annotation></annotation>
           <name>assignment</name>
@@ -470,6 +491,12 @@ Content-Type: application/vnd.vmware.vcloud.org+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="0ff363c3-5e77-4c20-9c8d-0e26114e3e8e">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -514,6 +541,12 @@ Content-Type: application/vnd.vmware.vcloud.org+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="cd7e3a94-8874-427f-b87c-a4955a51af83">
+        <baseIcon>flow.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
