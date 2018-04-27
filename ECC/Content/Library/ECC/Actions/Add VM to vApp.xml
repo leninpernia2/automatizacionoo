@@ -62,9 +62,9 @@
       <value>Pa$$w0rd</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="a669dd54-dbb9-4263-8fc3-f21aee4365cd">
+    <staticBinding id="f30dc94b-c5b1-4f8a-870a-80e403936ab8">
       <annotation></annotation>
-      <assignFromContext>false</assignFromContext>
+      <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
