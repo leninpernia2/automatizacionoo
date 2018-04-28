@@ -57,7 +57,7 @@
       <value>{OBFUSCATED}1AOPwR2NtGmidObUx+KDmw==</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="c3a3c32c-0f46-409d-8482-e4228964b821">
+    <staticBinding id="3c860ea1-4fb0-48b7-9bde-e6429147bc26">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -67,7 +67,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>findOrg</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>JCGR</value>
+      <value>JCGRTEST</value>
       <record>false</record>
     </staticBinding>
   </inputs>
@@ -794,7 +794,7 @@
                 <annotation></annotation>
                 <name>XML Get Element</name>
                 <attributeNamed>name</attributeNamed>
-                <attributeValue>JCGR</attributeValue>
+                <attributeValue>${findOrg}</attributeValue>
                 <elementPath>//*[name()=&quot;Org&quot;]</elementPath>
               </xmlGetElementsFilter>
               <xmlGetAttributeFilter id="f7d60fa9-12a7-4fd3-8ae4-bb5eb473d4b1">
