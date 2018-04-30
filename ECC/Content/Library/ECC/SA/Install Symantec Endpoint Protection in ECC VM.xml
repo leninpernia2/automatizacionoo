@@ -105,6 +105,21 @@ d26ef190-4171-4528-8d54-b3e4a40d524e.87a54cc6-4d14-484a-9a64-d9dfc6bbf413.prompt
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
+    <userInputBinding id="4181bcf9-0e97-4133-8c25-0dbba13da96e">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>targetOSClass</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="769d4d29-1d42-4c14-8218-bc6e8edb3e7d">

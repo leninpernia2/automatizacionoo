@@ -6,7 +6,6 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.666e2a60-8219-422f-95b2-a69e293db1d6.descri
 eba536e7-259e-4800-8bbe-81dc8926d3cc.78446cec-ce29-4f18-9ef3-7b520032d6fe.description=<pre>Checks if a number or word is equal to another number or word. Word comparison is case-sensitive in alphabetical order.\n\nInputs\:\nvalue1 - The first value.\nvalue2 - The second value.\n\nReturns\:\nvalue1 \=\= value2\n\nResponses\:\nsuccess - The boolean operation was evaluated to true.\nfailure - Something went wrong or the boolean operation returned false.\n</pre>
 eba536e7-259e-4800-8bbe-81dc8926d3cc.afd0cfb2-801c-458c-aaf6-976f1a2d1977.prompt=To Match\:
 eba536e7-259e-4800-8bbe-81dc8926d3cc.c6e0ee17-d917-48f3-abba-c1ef5feed931.description=<pre>\nThis operation waits for the number of seconds specified in the "seconds" input.\n\nInputs\:\n    seconds - The number of seconds to wait.\n\nResults\:\n    resultString \u2013 This is the primary output. It contains the "completed sleep" message if the operation completed successfully and an error message otherwise. \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
-eba536e7-259e-4800-8bbe-81dc8926d3cc.e0247ab0-c717-425b-b88d-effab384dccb.description=<pre>\nThis operation waits for the number of seconds specified in the "seconds" input.\n\nInputs\:\n    seconds - The number of seconds to wait.\n\nResults\:\n    resultString \u2013 This is the primary output. It contains the "completed sleep" message if the operation completed successfully and an error message otherwise. \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
 eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.description=<pre>\nAdds two numbers together\n\nInputs\:\nvalue1 - The first value.\nvalue2 - The second value.\n\nReturns\:\nThe sum of the two numbers.\n\nResponses\:\nsuccess - The operation completed successfully.\nfailure - Something went wrong.\n</pre>
 ]]></descriptionCdata>
   <annotation></annotation>
@@ -2454,35 +2453,6 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="9013e8ea-7e51-4fe0-8bfe-c380e44a2e61">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>e0247ab0-c717-425b-b88d-effab384dccb</refId>
-          </destination>
-          <source>
-            <refId>ac947898-b8bd-452a-9858-626160ec3d28</refId>
-          </source>
-          <positions>
-            <point>
-              <x>710.0</x>
-              <y>214.0</y>
-            </point>
-            <point>
-              <x>530.0</x>
-              <y>64.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
         <transition id="6f0530b7-71d8-4539-bac5-d4fc67d2c517">
           <annotation></annotation>
           <name>failure</name>
@@ -2505,6 +2475,35 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <point>
               <x>680.0</x>
               <y>664.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="accdd182-4565-490a-8533-b0acf915f108">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>cc347068-2e56-4ae5-9421-063ab2bea28e</refId>
+          </destination>
+          <source>
+            <refId>ac947898-b8bd-452a-9858-626160ec3d28</refId>
+          </source>
+          <positions>
+            <point>
+              <x>740.0</x>
+              <y>784.0</y>
+            </point>
+            <point>
+              <x>740.0</x>
+              <y>484.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -3437,109 +3436,6 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
-    <step id="e0247ab0-c717-425b-b88d-effab384dccb">
-      <annotation>eba536e7-259e-4800-8bbe-81dc8926d3cc.e0247ab0-c717-425b-b88d-effab384dccb.description</annotation>
-      <name>Sleep</name>
-      <bounds>
-        <x>690.0</x>
-        <y>600.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings>
-        <staticBinding id="8adfce94-c87c-42e6-9901-7f1b1aef66d0">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>seconds</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>600</value>
-          <record>false</record>
-        </staticBinding>
-      </bindings>
-      <transitions>
-        <transition id="e8e26d3e-5620-458c-87a5-746812b817d3">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>cc347068-2e56-4ae5-9421-063ab2bea28e</refId>
-          </destination>
-          <source>
-            <refId>e0247ab0-c717-425b-b88d-effab384dccb</refId>
-          </source>
-          <positions>
-            <point>
-              <x>530.0</x>
-              <y>64.0</y>
-            </point>
-            <point>
-              <x>710.0</x>
-              <y>64.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-        <transition id="f88768cc-e78f-4eb9-95da-da01be878a69">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>35eb869e-c46e-496a-927b-662bfc4c6736</refId>
-          </destination>
-          <source>
-            <refId>e0247ab0-c717-425b-b88d-effab384dccb</refId>
-          </source>
-          <positions>
-            <point>
-              <x>860.0</x>
-              <y>514.0</y>
-            </point>
-            <point>
-              <x>680.0</x>
-              <y>664.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-      </transitions>
-      <properties/>
-      <opRef>
-        <refId>d1bbf441-824a-450e-afae-2ddec0e0f35e</refId>
-      </opRef>
-      <assignments/>
-      <throttleSize>0</throttleSize>
-    </step>
     <step id="78446cec-ce29-4f18-9ef3-7b520032d6fe">
       <annotation>eba536e7-259e-4800-8bbe-81dc8926d3cc.78446cec-ce29-4f18-9ef3-7b520032d6fe.description</annotation>
       <name>Less Than or Equal</name>
