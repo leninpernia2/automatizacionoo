@@ -57,7 +57,7 @@
       <value>Pa$$w0rd</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="bb83aa31-c0fc-4282-82d7-6e43928852d4">
+    <staticBinding id="fa943974-b87c-4132-a7ab-faaed1032ed7">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -556,6 +556,20 @@
         <refId>e6790773-843f-47f9-8706-f839f7b41664</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="961ac912-d307-4de4-b659-8f553c9f181d">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>orgID</contextKey>
+          <expression id="0fb85c7a-2a0c-4d3f-ab38-57f53daa5c31">
+            <annotation></annotation>
+            <name>Result Field: orgID</name>
+            <fieldName>orgID</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="c9b9e496-9e24-473f-a1e2-5f753435381b">
           <annotation></annotation>
           <name>assignment</name>
@@ -596,6 +610,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="d8fec47e-2dda-40c5-8cf1-f4dd30214d12">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -964,9 +984,9 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="a8b213a1-e61c-429e-b53a-77c9a3e914b5">
+        <userInputBinding id="3f770d01-6c29-4838-bd5a-1930df0f6dc9">
           <annotation></annotation>
-          <fromContextKey>name</fromContextKey>
+          <fromContextKey>orgID</fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
