@@ -296,6 +296,37 @@ Content-Type: application/vnd.vmware.admin.organization+xml</value>
         <refId>f389fb81-422b-4a18-b6b9-70264bfda2cf</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="0c7508ca-1c03-4eea-ac6d-6126df426fbd">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>orgID</contextKey>
+          <expression id="0c56e5b7-b01f-4c63-9012-7ff29e05129b">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters>
+              <xmlGetAttributeFilter id="bee1368e-3e5b-49f0-9769-49a5869252df">
+                <annotation></annotation>
+                <name>XML Get Attribute</name>
+                <attributeName>id</attributeName>
+                <elementPath>//*[name()=&quot;AdminOrg&quot;]</elementPath>
+                <includeSubElements>false</includeSubElements>
+                <resultAsFirstResult>true</resultAsFirstResult>
+                <resultAsTable>false</resultAsTable>
+              </xmlGetAttributeFilter>
+              <replaceAllFilter id="460bfde2-c8ae-4bdc-99f5-946be321788f">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>false</ignoreCase>
+                <searchString>urn:vcloud:org:</searchString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="5dcce3ac-1b77-450b-a3f9-3de0893d296f">
           <annotation></annotation>
           <name>assignment</name>
@@ -332,7 +363,7 @@ Content-Type: application/vnd.vmware.admin.organization+xml</value>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>xml</contextKey>
-          <expression id="fd96865c-1742-4703-9d48-a91423ebcf7b">
+          <expression id="79673a5d-c553-420a-8d08-fbf958238482">
             <annotation></annotation>
             <name>Result Field: returnResult</name>
             <fieldName>returnResult</fieldName>
@@ -366,12 +397,6 @@ Content-Type: application/vnd.vmware.admin.organization+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="f6d48412-71f9-47b3-a7f5-103c20ecedb0">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
