@@ -204,7 +204,7 @@ Content-Type:  application/vnd.vmware.admin.vAppLeaseSettings+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="f5904233-c491-4202-89b7-be3121212bdd">
+        <transition id="c48127b8-4d9b-4a5b-bc75-00f4924129e4">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -213,7 +213,7 @@ Content-Type:  application/vnd.vmware.admin.vAppLeaseSettings+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>df344c96-c174-4178-ac26-dc39f30d673a</refId>
+            <refId>b5e6d313-4fff-4716-a9e5-bf3fe0f68ccd</refId>
           </destination>
           <source>
             <refId>4ecce95b-6bd8-4b69-9493-a0840cd30ccf</refId>
@@ -224,7 +224,7 @@ Content-Type:  application/vnd.vmware.admin.vAppLeaseSettings+xml</value>
               <y>124.0</y>
             </point>
             <point>
-              <x>500.0</x>
+              <x>290.0</x>
               <y>124.0</y>
             </point>
           </positions>
@@ -238,14 +238,43 @@ Content-Type:  application/vnd.vmware.admin.vAppLeaseSettings+xml</value>
       <opRef>
         <refId>bcdf0a82-9041-45be-be9b-fd915f4c473f</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="c673a395-2235-4a0f-821c-44b6277b4091">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>xml</contextKey>
+          <expression id="d5664dae-e55d-43a7-afaf-e5a25a8be919">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="ef718e29-262c-438d-9a69-51b2428af056">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>statusCode</contextKey>
+          <expression id="0ed5dbe8-15f2-4526-b27a-93db32413371">
+            <annotation></annotation>
+            <name>Result Field: statusCode</name>
+            <fieldName>statusCode</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <step id="df344c96-c174-4178-ac26-dc39f30d673a">
       <annotation>07d8a867-5bbc-4fcf-9bdf-f2b87a453db0.df344c96-c174-4178-ac26-dc39f30d673a.description</annotation>
       <name>Update vAppTemplateLeaseSettings</name>
       <bounds>
-        <x>270.0</x>
+        <x>390.0</x>
         <y>90.0</y>
       </bounds>
       <layer>-1</layer>
@@ -329,6 +358,19 @@ Content-Type: application/vnd.vmware.admin.vAppTemplateLeaseSettings+xml</value>
 &lt;/OrgVAppTemplateLeaseSettings&gt;</value>
           <record>false</record>
         </staticBinding>
+        <staticBinding id="f2d6d454-de32-4928-a57f-6018b72a9a72">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>ENCRYPTED</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>proxyPort</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>{OBFUSCATED}tFQ2pnWYKQCGLnn/5LPzoA==</value>
+          <record>false</record>
+        </staticBinding>
       </bindings>
       <transitions>
         <transition id="856d6bdd-58db-425c-8bd6-d4b1cf39742c">
@@ -360,7 +402,7 @@ Content-Type: application/vnd.vmware.admin.vAppTemplateLeaseSettings+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="447c566e-f4d0-4c24-aab1-7eb17d3c2851">
+        <transition id="f2087d39-c6fa-4767-b323-84944e707003">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -369,18 +411,18 @@ Content-Type: application/vnd.vmware.admin.vAppTemplateLeaseSettings+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>3647bbbb-d0fb-43d6-940f-1b59bdfe46c3</refId>
+            <refId>257f35a1-29c3-492b-b7cc-5ff3dc5eda43</refId>
           </destination>
           <source>
             <refId>df344c96-c174-4178-ac26-dc39f30d673a</refId>
           </source>
           <positions>
             <point>
-              <x>320.0</x>
+              <x>440.0</x>
               <y>124.0</y>
             </point>
             <point>
-              <x>500.0</x>
+              <x>560.0</x>
               <y>124.0</y>
             </point>
           </positions>
@@ -394,19 +436,48 @@ Content-Type: application/vnd.vmware.admin.vAppTemplateLeaseSettings+xml</value>
       <opRef>
         <refId>bcdf0a82-9041-45be-be9b-fd915f4c473f</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="75e2a1f0-a398-4670-894b-d66f080d3898">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>xml</contextKey>
+          <expression id="bb8ac120-1bd8-4caf-91ae-96ed00169c77">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="b44f9144-d054-418e-916f-628c18b54a05">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>statusCode</contextKey>
+          <expression id="499edf2a-813e-49f3-916d-e4642f261f02">
+            <annotation></annotation>
+            <name>Result Field: statusCode</name>
+            <fieldName>statusCode</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <returnStep id="b612009d-2991-4450-9bd7-4e6e2f418eac">
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>630.0</x>
+        <x>900.0</x>
         <y>90.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="db814248-51dd-430b-9548-62cbbdf39189">
+      <iconSpec id="2969180a-d60d-4a1a-a739-cc5848ba10a3">
         <baseIcon>return_success.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>true</readOnly>
@@ -451,8 +522,8 @@ Content-Type: application/vnd.vmware.admin.vAppTemplateLeaseSettings+xml</value>
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>90.0</x>
-        <y>270.0</y>
+        <x>420.0</x>
+        <y>330.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -495,7 +566,7 @@ Content-Type: application/vnd.vmware.admin.vAppTemplateLeaseSettings+xml</value>
       <annotation>07d8a867-5bbc-4fcf-9bdf-f2b87a453db0.3647bbbb-d0fb-43d6-940f-1b59bdfe46c3.description</annotation>
       <name>Update passwordPolicy</name>
       <bounds>
-        <x>450.0</x>
+        <x>660.0</x>
         <y>90.0</y>
       </bounds>
       <layer>-1</layer>
@@ -574,7 +645,7 @@ Content-Type: application/vnd.vmware.admin.organizationPasswordPolicySettings+xm
     xmlns=&quot;http://www.vmware.com/vcloud/v1.5&quot;
     type=&quot;application/vnd.vmware.admin.organizationPasswordPolicySettings+xml&quot;&gt;
     &lt;AccountLockoutEnabled&gt;true&lt;/AccountLockoutEnabled&gt;
-    &lt;InvalidLoginsBeforeLockout&gt;5&lt;/InvalidLoginsBeforeLockout&gt;
+    &lt;InvalidLoginsBeforeLockout&gt;3&lt;/InvalidLoginsBeforeLockout&gt;
     &lt;AccountLockoutIntervalMinutes&gt;10&lt;/AccountLockoutIntervalMinutes&gt;
 &lt;/OrgPasswordPolicySettings&gt;</value>
           <record>false</record>
@@ -610,7 +681,7 @@ Content-Type: application/vnd.vmware.admin.organizationPasswordPolicySettings+xm
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="c606358a-927a-4b2b-b6b4-2adb50f0e3c8">
+        <transition id="6d16db6f-a9e3-4c01-84be-d51efa811eea">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -619,18 +690,18 @@ Content-Type: application/vnd.vmware.admin.organizationPasswordPolicySettings+xm
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>b612009d-2991-4450-9bd7-4e6e2f418eac</refId>
+            <refId>a2354432-e154-47e5-9f66-2e23ec862281</refId>
           </destination>
           <source>
             <refId>3647bbbb-d0fb-43d6-940f-1b59bdfe46c3</refId>
           </source>
           <positions>
             <point>
-              <x>500.0</x>
+              <x>710.0</x>
               <y>124.0</y>
             </point>
             <point>
-              <x>680.0</x>
+              <x>830.0</x>
               <y>124.0</y>
             </point>
           </positions>
@@ -643,6 +714,395 @@ Content-Type: application/vnd.vmware.admin.organizationPasswordPolicySettings+xm
       <properties/>
       <opRef>
         <refId>bcdf0a82-9041-45be-be9b-fd915f4c473f</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="5cd38351-4dcb-4158-9b16-a4651a12cc9f">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>xml</contextKey>
+          <expression id="874cb9c0-ddbe-4187-b7e6-6c0fcb79af0a">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="86badff0-b216-48bb-84a7-195bf9c9551d">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>statusCode</contextKey>
+          <expression id="fcc99c8c-79d2-4131-b47e-1a6f3d1a3e26">
+            <annotation></annotation>
+            <name>Result Field: statusCode</name>
+            <fieldName>statusCode</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="b5e6d313-4fff-4716-a9e5-bf3fe0f68ccd">
+      <annotation></annotation>
+      <name>isOK</name>
+      <bounds>
+        <x>240.0</x>
+        <y>90.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="49d87521-97ff-45b7-a99b-95e2884a8a13">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>xml</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="968b077b-92bc-46cc-9507-6bdaeff24dc9">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>statusCode</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="97934b5c-46c8-4dc6-9035-371f81e03d21">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>df344c96-c174-4178-ac26-dc39f30d673a</refId>
+          </destination>
+          <source>
+            <refId>b5e6d313-4fff-4716-a9e5-bf3fe0f68ccd</refId>
+          </source>
+          <positions>
+            <point>
+              <x>290.0</x>
+              <y>124.0</y>
+            </point>
+            <point>
+              <x>440.0</x>
+              <y>124.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="36df8f84-13b2-40c5-9c8b-63d6a92e8685">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>666f6630-ed22-4264-a811-608dc8dde79c</refId>
+          </destination>
+          <source>
+            <refId>b5e6d313-4fff-4716-a9e5-bf3fe0f68ccd</refId>
+          </source>
+          <positions>
+            <point>
+              <x>290.0</x>
+              <y>124.0</y>
+            </point>
+            <point>
+              <x>140.0</x>
+              <y>304.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>7d7fe10e-080b-4de0-b498-9d0f2e6c02e2</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="257f35a1-29c3-492b-b7cc-5ff3dc5eda43">
+      <annotation></annotation>
+      <name>isOK</name>
+      <bounds>
+        <x>510.0</x>
+        <y>90.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="89bac25b-840b-44ea-9c04-e88d1215d5c8">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>xml</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="e9b642be-3c41-43fb-9675-69bf7c99f4ac">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>statusCode</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="78bedc35-dd19-4b68-9a86-f7def6294fba">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>3647bbbb-d0fb-43d6-940f-1b59bdfe46c3</refId>
+          </destination>
+          <source>
+            <refId>257f35a1-29c3-492b-b7cc-5ff3dc5eda43</refId>
+          </source>
+          <positions>
+            <point>
+              <x>560.0</x>
+              <y>124.0</y>
+            </point>
+            <point>
+              <x>710.0</x>
+              <y>124.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="e6cfa2c3-5986-48ae-ba72-dd869dac2533">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>666f6630-ed22-4264-a811-608dc8dde79c</refId>
+          </destination>
+          <source>
+            <refId>257f35a1-29c3-492b-b7cc-5ff3dc5eda43</refId>
+          </source>
+          <positions>
+            <point>
+              <x>560.0</x>
+              <y>124.0</y>
+            </point>
+            <point>
+              <x>410.0</x>
+              <y>334.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>7d7fe10e-080b-4de0-b498-9d0f2e6c02e2</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="a2354432-e154-47e5-9f66-2e23ec862281">
+      <annotation></annotation>
+      <name>isOK</name>
+      <bounds>
+        <x>780.0</x>
+        <y>90.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="edb82d52-9c44-4de1-8495-b80a37f43d08">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>xml</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="cdcfd701-82c0-43ff-ba42-cd28b0356d38">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>statusCode</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="2674aa6c-9cf5-4abb-a4d6-704f229cd6b0">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>666f6630-ed22-4264-a811-608dc8dde79c</refId>
+          </destination>
+          <source>
+            <refId>a2354432-e154-47e5-9f66-2e23ec862281</refId>
+          </source>
+          <positions>
+            <point>
+              <x>830.0</x>
+              <y>124.0</y>
+            </point>
+            <point>
+              <x>410.0</x>
+              <y>334.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="54fa6445-300c-4b96-b39f-051b06877184">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>b612009d-2991-4450-9bd7-4e6e2f418eac</refId>
+          </destination>
+          <source>
+            <refId>a2354432-e154-47e5-9f66-2e23ec862281</refId>
+          </source>
+          <positions>
+            <point>
+              <x>830.0</x>
+              <y>124.0</y>
+            </point>
+            <point>
+              <x>950.0</x>
+              <y>124.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>7d7fe10e-080b-4de0-b498-9d0f2e6c02e2</refId>
       </opRef>
       <assignments/>
       <throttleSize>0</throttleSize>
