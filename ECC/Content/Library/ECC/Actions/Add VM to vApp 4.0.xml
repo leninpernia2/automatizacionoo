@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow id="eba536e7-259e-4800-8bbe-81dc8926d3cc">
-  <descriptionCdata><![CDATA[eba536e7-259e-4800-8bbe-81dc8926d3cc.1a813ba9-c275-4fef-9144-c9f7dbe3c382.description=<pre>\nThis operation adds a flow variable to the local context. The variable is available in the current flow and its child flows.\n\nInputs\:\n    keyName - The name of the flow variable to add.\n    myValue - The value to assign to the flow variable.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of "myValue" input field.\n\nResponses\:\n    success - The operation completed as stated in the description.\n\nNote\:\n   If a flow variable with the same name already exists, its value will be overwritten.\n</pre>
-eba536e7-259e-4800-8bbe-81dc8926d3cc.322d6600-b899-4814-adef-e5ca5cef5e66.description=<pre>This is a soft copy of "Http Client" customized for the POST method (the input "method"\='POST' should not be changed). Check the linked "Http Client" operation. The specific input to this operation is "formParams".\n\nInputs\n    url - The web address to make the request to. This must be a standard URL as specified in RFC 3986. This is a required input.\nFormat\: scheme\://domain\:port/path?query_string\#fragment_id\nExamples\: https\://[fe80\:\:1260\:4bff\:fe49\:42fc]\:8080/my/path?key1\=val1&key2\=val2\#my_fragment\n    authType - The type of authentication used by this operation when trying to execute the request on the target server. The authentication is not preemptive\: a plain request not including authentication info will be made and only when the server responds with a 'WWW-Authenticate' header the client will send required headers. If the server needs no authentication but you specify one in this input the request will work nevertheless. The client cannot choose the authentication method and there is no fallback so you have to know which one you need. If the web application and proxy use different authentication types, these must be specified like in the Example model. \nDefault value\: basic\nValid values\: basic, digest, ntlm, kerberos, any, anonymous, "" or a list of valid values separated by comma.\nExample\: basic,digest\n    username - The user name used for authentication. For NTLM authentication, the required format is 'domain\\user' and if you only specify the 'user' it will append a dot like '.\\user' so that a local user on the target machine can be used. In order for all authentication schemes to work (except Kerberos) username is required.\n    password - The password used for authentication.\n    preemptiveAuth - If this field is "true", authentication info will be sent in the first request. If this is "false" a request with no authentication info will be made and if the server responds with 401 and a header such as WWW-Authenticate\: Basic realm\="myRealm", only then will the authentication info be sent.\nDefault value\: true\nValid values\: true, false\n    proxyHost - The proxy server used to access the web site.\n    proxyPort - The proxy server port. Default value\: 8080. Valid values\: -1, and positive integer values. When the value is '-1' the default port of the scheme, specified in the 'proxyHost', will be used.\n    proxyUsername - The user name used when connecting to the proxy. The "authType" input will be used to choose authentication type. The "Basic" and "Digest" proxy auth type are supported.\n    proxyPassword - The proxy server password associated with the proxyUsername input value.\n    trustAllRoots - Specifies whether to enable weak security over SSL/TSL. A certificate is trusted even if no trusted certification authority issued it.\nDefault value\: false\nValid values\: true, false\n    x509HostnameVerifier - Specifies the way the server hostname must match a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate. The hostname verification system prevents communication with other hosts other than the ones you intended. This is done by checking that the hostname is in the subject alternative name extension of the certificate. This system is designed to ensure that, if an attacker (Man-In-The-Middle) redirects traffic to his machine, the client will not accept the connection. If you set this input to "allow_all", this verification is ignored and you become vulnerable to security attacks. For the value "browser_compatible" the hostname verifier works the same way as Curl and Firefox. The hostname must match either the first CN, or any of the subject-alts. A wildcard can occur in the CN, and in any of the subject-alts. The only difference between "browser_compatible" and "strict" is that a wildcard (such as "*.foo.com") with "browser_compatible" matches all subdomains, including "a.b.foo.com". From the security perspective, to provide protection against possible Man-In-The-Middle attacks, we strongly recommend to use "strict" option.\nDefault value\: strict\nValid values\: strict, browser_compatible, allow_all\n    trustKeystore - The pathname of the Java TrustStore file. This contains certificates from other parties that you expect to communicate with, or from Certificate Authorities that you trust to identify other parties.  If the protocol (specified by the URL) is not HTTPS or if trustAllRoots is "true" this input is ignored.\nDefault value\: <OO_Home>/java/lib/security/cacerts\nFormat\: Java KeyStore (JKS)\n    trustPassword - The password associated with the TrustStore file. If trustAllRoots is false and trustKeystore is empty, trustPassword default will be supplied.\nDefault value\: changeit\n    keystore - The pathname of the Java KeyStore file. You only need this if the server requires client authentication. If the protocol (specified by the URL) is not https or if trustAllRoots is 'true' this input is ignored.\nDefault value\: <OO_Home>/java/lib/security/cacerts\nFormat\: Java KeyStore (JKS)\n    keystorePassword - The password associated with the KeyStore file. If trustAllRoots is false and keystore is empty, keystorePassword default will be supplied.\nDefault value\: changeit\n    connectTimeout - The time to wait for a connection to be established, in seconds. A timeout value of 0 represents an infinite timeout.\nDefault value\: 0\nFormat\: an integer representing seconds\nExamples\: 10, 20\n    socketTimeout - The timeout for waiting for data (a maximum period inactivity between two consecutive data packets), in seconds. A socketTimeout value of 0 represents an infinite timeout.\nDefault value\: 0\nFormat\: an integer representing seconds\n    useCookies - Specifies whether to enable cookie tracking or not. Cookies are stored between consecutive calls in a serializable session object therefore they will be available on a branch level (same subflow, same lane). If you specify a non-boolean value, the default value is used.\nDefault value\: true\nValid values\: true, false\n    keepAlive - Specifies whether to create a shared connection that will be used in subsequent calls. If keepAlive is false, the already open connection will be used and after execution it will close it. The operation will use a connection pool stored in a GlobalSessionObject that will be available throughout the execution (the flow and subflows, between parallel split lanes).\nDefault value\: true\nValid values\: true, false\n    connectionsMaxPerRoute - The maximum limit of connections on a per route basis. The default will create no more than 2 concurrent connections per given route.\nDefault value\: 2\n    connectionsMaxTotal - The maximum limit of connections in total. The default will create no more than 20 concurrent connections in total.\nDefault value\: 20\n    headers - The list containing the headers to use for the request separated by new line (CRLF).The header name - value pair will be separated by "\:".\nFormat\: According to HTTP standard for headers (RFC 2616).\nExamples\: Accept\:text/plain\n    responseCharacterSet - The character encoding to be used for the HTTP response. If responseCharacterSet is empty, the charset from the 'Content-Type' HTTP response header will be used. If responseCharacterSet is empty and the charset from the HTTP response Content-Type header is empty, the default value will be used. You should not use this for method\=HEAD or OPTIONS.\nDefault value\: ISO-8859-1\n    destinationFile - The absolute path of a file on disk where to save the entity returned by the response. "returnResult" will no longer be populated with the entity if this is specified. You should not use this for method\=HEAD or OPTIONS.\tExample\: C\:\\temp\\destinationFile.txt\n    followRedirects - Specifies whether the HTTP client automatically follows redirects.  Redirects explicitly prohibited by the HTTP specification as requiring user intervention will not be followed (redirects on POST and PUT requests that are converted to GET requests). If you specify a non-boolean value, the default value is used.\nDefault value\: true\nValid values\: true, false\n    queryParams - The list containing query parameters to append to the URL. The names and the values must not be URL encoded unless you specify "queryParamsAreURLEncoded"\=true because if they are encoded and "queryParamsAreURLEncoded"\=false they will get double encoded. The separator between name-value pairs is "&". The query name will be separated from query value by "\=". Note that you need to URL encode at least "&" to "%26" and "\=" to "%3D" and set "queryParamsAreURLEncoded"\="true" if you leave the other special URL characters un-encoded they will be encoded by the HTTP Client.\nExamples\: parameterName1\=parameterValue1&parameterName2\=parameterValue2;\n    queryParamsAreURLEncoded - Specifies whether to encode  (according to the URL encoding standard) the queryParams. If you set "queryParamsAreURLEncoded"\=true and you have invalid characters in 'queryParams' they will get encoded anyway. If you specify a non-boolean value, the default value is used.\nDefault value\: false\nValid values\: true, false\n    formParams - This input needs to be given in form encoded format and will set the entity to be sent in the request. It will also set the content-type to application/x-www-form-urlencoded. This should only be used with method\=POST. Note that you need to URL encode at least "&" to "%26" and "\=" to "%3D" and set "queryParamsAreURLEncoded"\="true" if you leave the other special URL characters unencoded they will be encoded by the HTTP Client.\nExamples\: input1\=value1&input2\=value2\n (The client will send\: input1\=value1&in+put+2\=val+u%0A+e2)\n    formParamsAreURLEncoded - formParams will be encoding  (according to the url encoding standard) if this is 'true'.  If you set "formParamsAreURLEncoded"\=true and you have invalid characters in 'formParams' they will get encoded anyway. This should only be used with method\=POST.\nDefault value\: false\nValid values\: true, false\n    sourceFile - The absolute path of a file on disk from where to read the entity for the HTTP request. This will be read using "requestCharacterSet" or "contentType" input (see below). This should not be provided for method\=GET, HEAD, TRACE\nExamples\: C\:\\temp\\sourceFile.txt\n    body - The string to include in body for HTTP POST operation. If both sourceFile and body will be provided, the body input has priority over sourceFile. This should not be provided for method\=GET, HEAD, TRACE\n    requestCharacterSet - The character encoding to be used for the HTTP request body. If contentType is empty, the requestCharacterSet will use the default value. If contentType will include charset (ex.\: "application/json; charset\=UTF-8"), the requestCharacterSet value will overwrite the charset value from contentType input. This should not be provided for method\=GET, HEAD, TRACE\nDefault value\: ISO-8859-1\n    chunkedRequestEntity - Data is sent in a series of "chunks". It uses the Transfer-Encoding HTTP header in place of the Content-Length header. Generally it is recommended to let HttpClient choose the most appropriate transfer encoding based on the properties of the HTTP message being transferred. It is possible, however, to inform HttpClient that chunk coding is preferred by setting this input to "true". Please note that HttpClient will use this flag as a hint only. This value will be ignored when using HTTP protocol versions that do not support chunk coding, such as HTTP/1.0. This setting is ignored for multipart post entities.\nDefault value\: \nValid values\: true, false\n    method - The HTTP method used. This is a required input.\n\nOutputs\n    returnResult - This will contain the response entity (unless "destinationFile" is specified). In case of an error this output will contain the error message.\n    exception - In case of success response, this result is empty. In case of failure response, this result contains the java stack trace of the runtime exception.\n    statusCode - The HTTP status code.\nFormat\: 1xx (Informational - Request received, continuing process), 2xx (Success - The action was successfully received, understood, and accepted), 3xx (Redirection - Further action must be taken in order to complete the request), 4xx (Client Error - The request contains bad syntax or cannot be fulfilled), 5xx Server Error - The server failed to fulfil an apparently valid request)\nExamples\: 200, 404\n    finalLocation - The final location after redirects.\nFormat\: URL\n    responseHeaders - The list containing the headers of the response message, separated by newline.\nFormat\: According to HTTP standard for headers (RFC 2616).\n    protocolVersion - The HTTP protocol version.\nExamples\: HTTP/1.1\n    reasonPhrase - The reason phrase from the origin HTTP response. This depends on the status code and are according to RFC 1945 and RFC 2048\nExamples\: (HTTP 1.0)\: OK, Created, Accepted, No Content, Moved Permanently, Moved Temporarily, Not Modified, Bad Request, Unauthorized, Forbidden, Not Found, Internal Server Error, Not Implemented, Bad Gateway, Service Unavailable Values (HTTP 1.1)\: Continue, Temporary Redirect, Method Not Allowed, Conflict, Precondition Failed, Request Too Long, Request-URI Too Long, Unsupported Media Type, Multiple Choices, See Other, Use Proxy, Payment Required, Not Acceptable, Proxy Authentication Required, Request Timeout, Switching Protocols, Non Authoritative Information, Reset Content, Partial Content, Gateway Timeout, Http Version Not Supported, Gone, Length Required, Requested Range Not Satisfiable, Expectation Failed\n    returnCode - The returnCode of the operation\: 0 for success, -1 for failure.\n\nResponses\n    success - The operation completed without a runtime exception. So it will go to success for any http codes even those in the 400-599 range.\n    failure - A runtime exception occurred. This may be due to incorrectly formated inputs (authType, contentType, headers, method, proxy, queryParams, requestCharacterSet, responseCharacterSet, truststore, url), or failed ntlm or Kerberos authentication.\n\nNotes\nThe "formParams" input takes precedence, then the input "body" and lastly the input "sourceFile". All of these are the body entity of a HTTP post request. Only one of them is included in the actual http post request, as follows\: If formParams is used, then body and sourceFile are ignored, else if body is used, sourceFile is ignored, else sourceFile is used.\n</pre>\n
-eba536e7-259e-4800-8bbe-81dc8926d3cc.666e2a60-8219-422f-95b2-a69e293db1d6.description=<pre>This operation checks whether a string matches another string, using a specific matching rule. The "toMatch" input is the string that is checked for matching the "matchTo" expression. \n\nInputs\:\n    matchType - The type of match to perform.\nValid values\: Exact Match, Contains, Contains Once, Does Not Contain, Match All Words, Match No Words, Regex (The values are not case sensitive)\nDefault value\: Exact Match\n    toMatch - The string that is checked for matching.\n    matchTo - The string to match against.\nExample\: If "matchType" is \u201CRegEx\u201D, the "matchTo" input is a regular expression such as\: ^-?\\d+(([\\.,]\\d+)?)+$. \n    ignoreCase - Specifies whether to ignore case when matching or not.\nValid values\: False, True\nDefault value\: False\n\nResults\:\n    returnResult - This is the primary output. It contains the string "Matches" if the "toMatch" string matches the "matchTo" string. Otherwise, it contains the string "Does Not Match".  \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
-eba536e7-259e-4800-8bbe-81dc8926d3cc.78446cec-ce29-4f18-9ef3-7b520032d6fe.description=<pre>Checks if a number or word is equal to another number or word. Word comparison is case-sensitive in alphabetical order.\n\nInputs\:\nvalue1 - The first value.\nvalue2 - The second value.\n\nReturns\:\nvalue1 \=\= value2\n\nResponses\:\nsuccess - The boolean operation was evaluated to true.\nfailure - Something went wrong or the boolean operation returned false.\n</pre>
-eba536e7-259e-4800-8bbe-81dc8926d3cc.afd0cfb2-801c-458c-aaf6-976f1a2d1977.prompt=To Match\:
-eba536e7-259e-4800-8bbe-81dc8926d3cc.c6e0ee17-d917-48f3-abba-c1ef5feed931.description=<pre>\nThis operation waits for the number of seconds specified in the "seconds" input.\n\nInputs\:\n    seconds - The number of seconds to wait.\n\nResults\:\n    resultString \u2013 This is the primary output. It contains the "completed sleep" message if the operation completed successfully and an error message otherwise. \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
-eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.description=<pre>\nAdds two numbers together\n\nInputs\:\nvalue1 - The first value.\nvalue2 - The second value.\n\nReturns\:\nThe sum of the two numbers.\n\nResponses\:\nsuccess - The operation completed successfully.\nfailure - Something went wrong.\n</pre>
+<flow id="888514a0-a4b4-4b77-9c5a-be3752fb1206">
+  <descriptionCdata><![CDATA[888514a0-a4b4-4b77-9c5a-be3752fb1206.03c1c498-7755-4dc7-944f-a089ff1d592b.description=<pre>\nThis operation adds a flow variable to the local context. The variable is available in the current flow and its child flows.\n\nInputs\:\n    keyName - The name of the flow variable to add.\n    myValue - The value to assign to the flow variable.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of "myValue" input field.\n\nResponses\:\n    success - The operation completed as stated in the description.\n\nNote\:\n   If a flow variable with the same name already exists, its value will be overwritten.\n</pre>
+888514a0-a4b4-4b77-9c5a-be3752fb1206.198d6093-f6f2-4363-a228-cebd72b63b08.description=<pre>Checks if a number or word is equal to another number or word. Word comparison is case-sensitive in alphabetical order.\n\nInputs\:\nvalue1 - The first value.\nvalue2 - The second value.\n\nReturns\:\nvalue1 \=\= value2\n\nResponses\:\nsuccess - The boolean operation was evaluated to true.\nfailure - Something went wrong or the boolean operation returned false.\n</pre>
+888514a0-a4b4-4b77-9c5a-be3752fb1206.652b7afb-49fe-4aa8-ae1d-c0378686e15f.description=<pre>\nThis operation adds a flow variable to the local context. The variable is available in the current flow and its child flows.\n\nInputs\:\n    keyName - The name of the flow variable to add.\n    myValue - The value to assign to the flow variable.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of "myValue" input field.\n\nResponses\:\n    success - The operation completed as stated in the description.\n\nNote\:\n   If a flow variable with the same name already exists, its value will be overwritten.\n</pre>
+888514a0-a4b4-4b77-9c5a-be3752fb1206.df49d828-875a-42a0-a1cf-438194252a1f.description=<pre>This is a soft copy of "Http Client" customized for the POST method (the input "method"\='POST' should not be changed). Check the linked "Http Client" operation. The specific input to this operation is "formParams".\n\nInputs\n    url - The web address to make the request to. This must be a standard URL as specified in RFC 3986. This is a required input.\nFormat\: scheme\://domain\:port/path?query_string\#fragment_id\nExamples\: https\://[fe80\:\:1260\:4bff\:fe49\:42fc]\:8080/my/path?key1\=val1&key2\=val2\#my_fragment\n    authType - The type of authentication used by this operation when trying to execute the request on the target server. The authentication is not preemptive\: a plain request not including authentication info will be made and only when the server responds with a 'WWW-Authenticate' header the client will send required headers. If the server needs no authentication but you specify one in this input the request will work nevertheless. The client cannot choose the authentication method and there is no fallback so you have to know which one you need. If the web application and proxy use different authentication types, these must be specified like in the Example model. \nDefault value\: basic\nValid values\: basic, digest, ntlm, kerberos, any, anonymous, "" or a list of valid values separated by comma.\nExample\: basic,digest\n    username - The user name used for authentication. For NTLM authentication, the required format is 'domain\\user' and if you only specify the 'user' it will append a dot like '.\\user' so that a local user on the target machine can be used. In order for all authentication schemes to work (except Kerberos) username is required.\n    password - The password used for authentication.\n    preemptiveAuth - If this field is "true", authentication info will be sent in the first request. If this is "false" a request with no authentication info will be made and if the server responds with 401 and a header such as WWW-Authenticate\: Basic realm\="myRealm", only then will the authentication info be sent.\nDefault value\: true\nValid values\: true, false\n    proxyHost - The proxy server used to access the web site.\n    proxyPort - The proxy server port. Default value\: 8080. Valid values\: -1, and positive integer values. When the value is '-1' the default port of the scheme, specified in the 'proxyHost', will be used.\n    proxyUsername - The user name used when connecting to the proxy. The "authType" input will be used to choose authentication type. The "Basic" and "Digest" proxy auth type are supported.\n    proxyPassword - The proxy server password associated with the proxyUsername input value.\n    trustAllRoots - Specifies whether to enable weak security over SSL/TSL. A certificate is trusted even if no trusted certification authority issued it.\nDefault value\: false\nValid values\: true, false\n    x509HostnameVerifier - Specifies the way the server hostname must match a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate. The hostname verification system prevents communication with other hosts other than the ones you intended. This is done by checking that the hostname is in the subject alternative name extension of the certificate. This system is designed to ensure that, if an attacker (Man-In-The-Middle) redirects traffic to his machine, the client will not accept the connection. If you set this input to "allow_all", this verification is ignored and you become vulnerable to security attacks. For the value "browser_compatible" the hostname verifier works the same way as Curl and Firefox. The hostname must match either the first CN, or any of the subject-alts. A wildcard can occur in the CN, and in any of the subject-alts. The only difference between "browser_compatible" and "strict" is that a wildcard (such as "*.foo.com") with "browser_compatible" matches all subdomains, including "a.b.foo.com". From the security perspective, to provide protection against possible Man-In-The-Middle attacks, we strongly recommend to use "strict" option.\nDefault value\: strict\nValid values\: strict, browser_compatible, allow_all\n    trustKeystore - The pathname of the Java TrustStore file. This contains certificates from other parties that you expect to communicate with, or from Certificate Authorities that you trust to identify other parties.  If the protocol (specified by the URL) is not HTTPS or if trustAllRoots is "true" this input is ignored.\nDefault value\: <OO_Home>/java/lib/security/cacerts\nFormat\: Java KeyStore (JKS)\n    trustPassword - The password associated with the TrustStore file. If trustAllRoots is false and trustKeystore is empty, trustPassword default will be supplied.\nDefault value\: changeit\n    keystore - The pathname of the Java KeyStore file. You only need this if the server requires client authentication. If the protocol (specified by the URL) is not https or if trustAllRoots is 'true' this input is ignored.\nDefault value\: <OO_Home>/java/lib/security/cacerts\nFormat\: Java KeyStore (JKS)\n    keystorePassword - The password associated with the KeyStore file. If trustAllRoots is false and keystore is empty, keystorePassword default will be supplied.\nDefault value\: changeit\n    connectTimeout - The time to wait for a connection to be established, in seconds. A timeout value of 0 represents an infinite timeout.\nDefault value\: 0\nFormat\: an integer representing seconds\nExamples\: 10, 20\n    socketTimeout - The timeout for waiting for data (a maximum period inactivity between two consecutive data packets), in seconds. A socketTimeout value of 0 represents an infinite timeout.\nDefault value\: 0\nFormat\: an integer representing seconds\n    useCookies - Specifies whether to enable cookie tracking or not. Cookies are stored between consecutive calls in a serializable session object therefore they will be available on a branch level (same subflow, same lane). If you specify a non-boolean value, the default value is used.\nDefault value\: true\nValid values\: true, false\n    keepAlive - Specifies whether to create a shared connection that will be used in subsequent calls. If keepAlive is false, the already open connection will be used and after execution it will close it. The operation will use a connection pool stored in a GlobalSessionObject that will be available throughout the execution (the flow and subflows, between parallel split lanes).\nDefault value\: true\nValid values\: true, false\n    connectionsMaxPerRoute - The maximum limit of connections on a per route basis. The default will create no more than 2 concurrent connections per given route.\nDefault value\: 2\n    connectionsMaxTotal - The maximum limit of connections in total. The default will create no more than 20 concurrent connections in total.\nDefault value\: 20\n    headers - The list containing the headers to use for the request separated by new line (CRLF).The header name - value pair will be separated by "\:".\nFormat\: According to HTTP standard for headers (RFC 2616).\nExamples\: Accept\:text/plain\n    responseCharacterSet - The character encoding to be used for the HTTP response. If responseCharacterSet is empty, the charset from the 'Content-Type' HTTP response header will be used. If responseCharacterSet is empty and the charset from the HTTP response Content-Type header is empty, the default value will be used. You should not use this for method\=HEAD or OPTIONS.\nDefault value\: ISO-8859-1\n    destinationFile - The absolute path of a file on disk where to save the entity returned by the response. "returnResult" will no longer be populated with the entity if this is specified. You should not use this for method\=HEAD or OPTIONS.\tExample\: C\:\\temp\\destinationFile.txt\n    followRedirects - Specifies whether the HTTP client automatically follows redirects.  Redirects explicitly prohibited by the HTTP specification as requiring user intervention will not be followed (redirects on POST and PUT requests that are converted to GET requests). If you specify a non-boolean value, the default value is used.\nDefault value\: true\nValid values\: true, false\n    queryParams - The list containing query parameters to append to the URL. The names and the values must not be URL encoded unless you specify "queryParamsAreURLEncoded"\=true because if they are encoded and "queryParamsAreURLEncoded"\=false they will get double encoded. The separator between name-value pairs is "&". The query name will be separated from query value by "\=". Note that you need to URL encode at least "&" to "%26" and "\=" to "%3D" and set "queryParamsAreURLEncoded"\="true" if you leave the other special URL characters un-encoded they will be encoded by the HTTP Client.\nExamples\: parameterName1\=parameterValue1&parameterName2\=parameterValue2;\n    queryParamsAreURLEncoded - Specifies whether to encode  (according to the URL encoding standard) the queryParams. If you set "queryParamsAreURLEncoded"\=true and you have invalid characters in 'queryParams' they will get encoded anyway. If you specify a non-boolean value, the default value is used.\nDefault value\: false\nValid values\: true, false\n    formParams - This input needs to be given in form encoded format and will set the entity to be sent in the request. It will also set the content-type to application/x-www-form-urlencoded. This should only be used with method\=POST. Note that you need to URL encode at least "&" to "%26" and "\=" to "%3D" and set "queryParamsAreURLEncoded"\="true" if you leave the other special URL characters unencoded they will be encoded by the HTTP Client.\nExamples\: input1\=value1&input2\=value2\n (The client will send\: input1\=value1&in+put+2\=val+u%0A+e2)\n    formParamsAreURLEncoded - formParams will be encoding  (according to the url encoding standard) if this is 'true'.  If you set "formParamsAreURLEncoded"\=true and you have invalid characters in 'formParams' they will get encoded anyway. This should only be used with method\=POST.\nDefault value\: false\nValid values\: true, false\n    sourceFile - The absolute path of a file on disk from where to read the entity for the HTTP request. This will be read using "requestCharacterSet" or "contentType" input (see below). This should not be provided for method\=GET, HEAD, TRACE\nExamples\: C\:\\temp\\sourceFile.txt\n    body - The string to include in body for HTTP POST operation. If both sourceFile and body will be provided, the body input has priority over sourceFile. This should not be provided for method\=GET, HEAD, TRACE\n    requestCharacterSet - The character encoding to be used for the HTTP request body. If contentType is empty, the requestCharacterSet will use the default value. If contentType will include charset (ex.\: "application/json; charset\=UTF-8"), the requestCharacterSet value will overwrite the charset value from contentType input. This should not be provided for method\=GET, HEAD, TRACE\nDefault value\: ISO-8859-1\n    chunkedRequestEntity - Data is sent in a series of "chunks". It uses the Transfer-Encoding HTTP header in place of the Content-Length header. Generally it is recommended to let HttpClient choose the most appropriate transfer encoding based on the properties of the HTTP message being transferred. It is possible, however, to inform HttpClient that chunk coding is preferred by setting this input to "true". Please note that HttpClient will use this flag as a hint only. This value will be ignored when using HTTP protocol versions that do not support chunk coding, such as HTTP/1.0. This setting is ignored for multipart post entities.\nDefault value\: \nValid values\: true, false\n    method - The HTTP method used. This is a required input.\n\nOutputs\n    returnResult - This will contain the response entity (unless "destinationFile" is specified). In case of an error this output will contain the error message.\n    exception - In case of success response, this result is empty. In case of failure response, this result contains the java stack trace of the runtime exception.\n    statusCode - The HTTP status code.\nFormat\: 1xx (Informational - Request received, continuing process), 2xx (Success - The action was successfully received, understood, and accepted), 3xx (Redirection - Further action must be taken in order to complete the request), 4xx (Client Error - The request contains bad syntax or cannot be fulfilled), 5xx Server Error - The server failed to fulfil an apparently valid request)\nExamples\: 200, 404\n    finalLocation - The final location after redirects.\nFormat\: URL\n    responseHeaders - The list containing the headers of the response message, separated by newline.\nFormat\: According to HTTP standard for headers (RFC 2616).\n    protocolVersion - The HTTP protocol version.\nExamples\: HTTP/1.1\n    reasonPhrase - The reason phrase from the origin HTTP response. This depends on the status code and are according to RFC 1945 and RFC 2048\nExamples\: (HTTP 1.0)\: OK, Created, Accepted, No Content, Moved Permanently, Moved Temporarily, Not Modified, Bad Request, Unauthorized, Forbidden, Not Found, Internal Server Error, Not Implemented, Bad Gateway, Service Unavailable Values (HTTP 1.1)\: Continue, Temporary Redirect, Method Not Allowed, Conflict, Precondition Failed, Request Too Long, Request-URI Too Long, Unsupported Media Type, Multiple Choices, See Other, Use Proxy, Payment Required, Not Acceptable, Proxy Authentication Required, Request Timeout, Switching Protocols, Non Authoritative Information, Reset Content, Partial Content, Gateway Timeout, Http Version Not Supported, Gone, Length Required, Requested Range Not Satisfiable, Expectation Failed\n    returnCode - The returnCode of the operation\: 0 for success, -1 for failure.\n\nResponses\n    success - The operation completed without a runtime exception. So it will go to success for any http codes even those in the 400-599 range.\n    failure - A runtime exception occurred. This may be due to incorrectly formated inputs (authType, contentType, headers, method, proxy, queryParams, requestCharacterSet, responseCharacterSet, truststore, url), or failed ntlm or Kerberos authentication.\n\nNotes\nThe "formParams" input takes precedence, then the input "body" and lastly the input "sourceFile". All of these are the body entity of a HTTP post request. Only one of them is included in the actual http post request, as follows\: If formParams is used, then body and sourceFile are ignored, else if body is used, sourceFile is ignored, else sourceFile is used.\n</pre>\n
+888514a0-a4b4-4b77-9c5a-be3752fb1206.e34452dd-ab2b-4be5-a6bf-8a83fb500f87.description=<pre>\nThis operation waits for the number of seconds specified in the "seconds" input.\n\nInputs\:\n    seconds - The number of seconds to wait.\n\nResults\:\n    resultString \u2013 This is the primary output. It contains the "completed sleep" message if the operation completed successfully and an error message otherwise. \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
 ]]></descriptionCdata>
   <annotation></annotation>
-  <name>Add VM to vApp 2.0</name>
+  <name>Add VM to vApp 4.0</name>
   <categories/>
   <inputs>
-    <staticBinding id="4c01fd54-d173-4032-9bc5-384a8cff8b41">
+    <staticBinding id="68a09924-7560-41aa-9a7c-63fe98572a11">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -25,7 +23,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>vcloud.enterprisecomputing.mx</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="f2926d75-d965-42dc-beee-0759210b89da">
+    <staticBinding id="d720a234-00b7-4e63-910a-e7a4b0a36746">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -38,7 +36,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>system</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="5f015258-a94e-4a61-af94-78a38b94511c">
+    <staticBinding id="faf8c1cb-0911-4df0-ab80-220f7acab336">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -51,7 +49,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>adminvcd</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="747ca4d5-431a-4b2c-9834-3fc1ab775881">
+    <staticBinding id="6c9b98e1-85ae-4c02-9ae4-c1ec7e402281">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -64,7 +62,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>Pa$$w0rd</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="5154f5c7-b19f-472d-8c5c-6f4da7967e52">
+    <staticBinding id="4b0296bb-71b8-44b9-86e5-3f321a7cee3e">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -77,7 +75,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>ae9cf7aa-3114-4537-b633-8bcac904baa7</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="a20df41e-1042-4540-b088-95b3a97bf3e7">
+    <staticBinding id="901483c1-07d1-4c02-bcc9-0b3c29a671fe">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -90,7 +88,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>vapp-8a853b32-d137-4b47-940a-579a014a56ac</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="29ade3bd-7aa7-4541-ad25-7df4b467691f">
+    <staticBinding id="474fc6b4-5078-447e-bd94-d11f1e67d6dc">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -103,7 +101,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>VAPP-jcgr-vApp</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="713bc2c6-1e7e-4cf9-90f3-3ebfc76d2f72">
+    <staticBinding id="71601ffb-cc78-4596-b6dc-dd1717e1f6b8">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -116,7 +114,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>Esto es una prueba</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="529fcc81-2838-478b-8954-bee0a000558e">
+    <staticBinding id="99fd46d4-ec6c-42a2-aa77-c2d84bba8291">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -129,7 +127,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>0e7a68f3-51a1-48d4-9b34-6c8e4e23e336</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="4c7bfba0-ef09-4d44-9641-05e587b93829">
+    <staticBinding id="5d7c4a92-3f7a-488c-ab23-0f16bb1c71d0">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -142,7 +140,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>Internal-2212</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="a60591cd-cdd8-4e03-8d3f-74e467ec2199">
+    <staticBinding id="06a2349e-b3af-4427-97b8-3dd79ad14389">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -155,7 +153,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>Gestion-1541</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="33fe0ab1-4cae-4e94-a21e-c37fe95ecdc8">
+    <staticBinding id="315fa16a-c85d-4681-9ee6-c143f5aa417a">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -168,7 +166,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>vmtestlenin009</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="e50e3258-160a-4933-81f0-63a7272ba26d">
+    <staticBinding id="49128fe2-826a-45e3-be3a-cc92c3ac9ec0">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -181,7 +179,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>jcgrtest09</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="c596ebe5-1b59-4961-8a56-8b75d1a9e7bb">
+    <staticBinding id="1c7a06fc-746c-4369-8d93-9a70c3fa2eb4">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -194,7 +192,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>100</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="e5c31b20-95d9-45b4-9fe7-9f31a92c22cc">
+    <staticBinding id="3af0491c-9e92-4259-9889-3386b6446fda">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -207,7 +205,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <value>4</value>
       <record>false</record>
     </staticBinding>
-    <staticBinding id="0f0c199b-54fa-4bb4-8ae8-3267db345110">
+    <staticBinding id="4db559ea-94af-40ce-a34b-e60a717fdbb8">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -222,7 +220,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
     </staticBinding>
   </inputs>
   <possibleResponses>
-    <opResponse id="9e5b7d0b-9f1a-4432-a3db-7e70ac691504">
+    <opResponse id="0db3bde9-2b2b-4c56-b801-f3586e6dcef9">
       <annotation></annotation>
       <name>failure</name>
       <isDefault>false</isDefault>
@@ -230,7 +228,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <type>ERROR</type>
       <matchRules/>
     </opResponse>
-    <opResponse id="941fb8b2-3f99-4f63-8983-1a5fcfbd1551">
+    <opResponse id="a36dcafa-4ede-449e-87cf-afa3a3abedc4">
       <annotation></annotation>
       <name>success</name>
       <isDefault>true</isDefault>
@@ -240,14 +238,14 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
     </opResponse>
   </possibleResponses>
   <availableResultExpressions>
-    <expression id="b09e75e4-c59a-4be3-83c5-4214b6f7cef1">
+    <expression id="48872c1f-8112-41bc-823a-694eeeb21346">
       <annotation></annotation>
       <name>message</name>
       <fieldName>DetailsMessage</fieldName>
       <sourceType>RAWRESULT</sourceType>
       <filters/>
     </expression>
-    <expression id="f6b93401-c912-4f39-a96f-812ebf6eb7d0">
+    <expression id="78982271-1dc1-45d1-ae10-20af98ca4150">
       <annotation></annotation>
       <name>vmID</name>
       <fieldName>vmID</fieldName>
@@ -255,14 +253,14 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <filters/>
     </expression>
   </availableResultExpressions>
-  <resultExpression id="efc7a9f8-3f8b-4f27-84bb-dbb87af30ad4">
+  <resultExpression id="0626dbb6-dc70-4a3e-b993-08843a71a60e">
     <annotation></annotation>
     <name>FailureMessage</name>
     <fieldName>FailureMessage</fieldName>
     <sourceType>RAWRESULT</sourceType>
     <filters/>
   </resultExpression>
-  <iconSpec id="14ba79a8-bab5-4104-afec-6dd6f471a97a">
+  <iconSpec id="953cd3e8-89e8-437e-babe-45372831a17d">
     <baseIcon>flow.png</baseIcon>
     <basePath>System</basePath>
     <readOnly>false</readOnly>
@@ -273,8 +271,8 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
   <compatibleRuntimeContext>false</compatibleRuntimeContext>
   <historyCheckPointFlow>true</historyCheckPointFlow>
   <steps>
-    <step id="1a813ba9-c275-4fef-9144-c9f7dbe3c382">
-      <annotation>eba536e7-259e-4800-8bbe-81dc8926d3cc.1a813ba9-c275-4fef-9144-c9f7dbe3c382.description</annotation>
+    <step id="652b7afb-49fe-4aa8-ae1d-c0378686e15f">
+      <annotation>888514a0-a4b4-4b77-9c5a-be3752fb1206.652b7afb-49fe-4aa8-ae1d-c0378686e15f.description</annotation>
       <name>Set Flow Variable</name>
       <bounds>
         <x>180.0</x>
@@ -295,7 +293,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="920b47e1-7e59-4179-bf4e-ca8c847d878a">
+        <staticBinding id="9cefc941-6482-4a69-bb2b-454809901c81">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -308,7 +306,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
           <value>counter</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="05935008-aa88-4de5-889b-accac5785c89">
+        <staticBinding id="26439c59-7762-41b7-8247-55c092d7fbb8">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -323,7 +321,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="dc43c462-41a8-4f49-8ee4-d85b9ea93787">
+        <transition id="128deefc-ed47-4b7d-a268-893cb15ce6e4">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -332,10 +330,10 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>9db05e95-4934-4460-91de-04a6ca29d9a1</refId>
+            <refId>617514c0-d97c-4a18-b05f-013bec07751c</refId>
           </destination>
           <source>
-            <refId>1a813ba9-c275-4fef-9144-c9f7dbe3c382</refId>
+            <refId>652b7afb-49fe-4aa8-ae1d-c0378686e15f</refId>
           </source>
           <positions>
             <point>
@@ -360,7 +358,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="9db05e95-4934-4460-91de-04a6ca29d9a1">
+    <step id="617514c0-d97c-4a18-b05f-013bec07751c">
       <annotation></annotation>
       <name>Get Token</name>
       <bounds>
@@ -369,7 +367,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="36153f57-fe9e-4fd4-80bd-2a9e0a02f783">
+      <iconSpec id="5cf344f6-b32c-4f54-8b81-ebb01809933e">
         <baseIcon>flow.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>false</readOnly>
@@ -388,7 +386,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="ad8bfa4b-e28a-4fb9-994f-9fba875e043a">
+        <userInputBinding id="b075a2e4-ef6e-4088-81f5-7e3bd21b161f">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -403,7 +401,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="828bf344-ecdf-496c-9b63-466f8dc1a245">
+        <userInputBinding id="85eba287-6d56-4fba-98b8-d1e107c085f3">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -418,7 +416,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="636d1a56-20e6-4043-a8b2-f8a0f901d501">
+        <userInputBinding id="200eeaaf-d1bc-4b30-a0b0-0739aed76d07">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -433,7 +431,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="bf7dab34-b2aa-42f2-8a34-a4a54ebebf9f">
+        <userInputBinding id="38bdadc7-cdb3-4e59-9063-3abdcee2a03f">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -450,7 +448,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="01e2d36b-d282-43a6-a97e-3ab61f2ac88c">
+        <transition id="781f55c1-6f60-40e7-9a97-a7112918add4">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -459,10 +457,10 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>addfefad-7e0c-4c3d-b542-95a28f1aeee4</refId>
+            <refId>ddb44e2a-ad56-45c0-8ed6-b3282d8a6614</refId>
           </destination>
           <source>
-            <refId>9db05e95-4934-4460-91de-04a6ca29d9a1</refId>
+            <refId>617514c0-d97c-4a18-b05f-013bec07751c</refId>
           </source>
           <positions>
             <point>
@@ -479,7 +477,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="d40aeedd-6862-4bb6-ae10-9f500922299d">
+        <transition id="34a88c7e-0f05-405c-80eb-e3b178885754">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -488,10 +486,10 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>52f8957c-19c9-4e62-b911-4a7f34fc0112</refId>
+            <refId>40a6f253-1031-4605-9c50-62a9637e1374</refId>
           </destination>
           <source>
-            <refId>9db05e95-4934-4460-91de-04a6ca29d9a1</refId>
+            <refId>617514c0-d97c-4a18-b05f-013bec07751c</refId>
           </source>
           <positions>
             <point>
@@ -514,13 +512,13 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
         <refId>4162689e-3582-4632-b557-7e1874bcfc49</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="a9356d33-4754-495f-bb1c-6c65a4496332">
+        <flowVariableAssignment id="f822ba60-52ce-4515-931a-2b575da85753">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>token</contextKey>
-          <expression id="f9bdb3c6-7739-469a-9886-2dbb89e5497b">
+          <expression id="f3723bb9-8cd6-4cad-a8e4-47ba16450fbb">
             <annotation></annotation>
             <name>Result Field: token</name>
             <fieldName>token</fieldName>
@@ -531,8 +529,8 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="322d6600-b899-4814-adef-e5ca5cef5e66">
-      <annotation>eba536e7-259e-4800-8bbe-81dc8926d3cc.322d6600-b899-4814-adef-e5ca5cef5e66.description</annotation>
+    <step id="df49d828-875a-42a0-a1cf-438194252a1f">
+      <annotation>888514a0-a4b4-4b77-9c5a-be3752fb1206.df49d828-875a-42a0-a1cf-438194252a1f.description</annotation>
       <name>RecomposevApp</name>
       <bounds>
         <x>330.0</x>
@@ -540,7 +538,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="691923a6-4226-465c-8e5c-33db890ae2cc">
+      <iconSpec id="f641bf5e-b5ae-4ffe-8c09-9700f6bc1f84">
         <baseIcon>earth.png</baseIcon>
         <basePath>/Networking/</basePath>
         <readOnly>false</readOnly>
@@ -559,7 +557,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="61237cd9-6ce9-4820-86df-dc4b0cf1c910">
+        <staticBinding id="980b77ca-2d11-41f7-b50c-d31cd27c09bc">
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
@@ -571,7 +569,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
           <value>https://${hostname}/api/vApp/${vAppID}/action/recomposeVApp</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="2c7ff398-6de2-4152-902d-e6862924b267">
+        <staticBinding id="5af5fc93-0d5a-4e1e-91fb-5707da91e0fb">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -584,7 +582,7 @@ eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.descri
           <value>POST</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="c8fac452-035b-4008-9f13-41da9a146443">
+        <staticBinding id="9469d13b-36a0-48d1-a568-bb767eeb9c95">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -599,7 +597,7 @@ Accept: application/*;version=9.0
 Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="c1f63475-00e2-422f-9fd9-1934181f6534">
+        <staticBinding id="3a011189-7caa-4c1c-b6b6-73113a350a7f">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -666,7 +664,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="58a230d9-7a6b-43a9-aa45-e9f5a6db8e8b">
+        <transition id="d6f364b6-8d73-4695-813a-6ce5f35896d9">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -675,10 +673,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>addfefad-7e0c-4c3d-b542-95a28f1aeee4</refId>
+            <refId>ddb44e2a-ad56-45c0-8ed6-b3282d8a6614</refId>
           </destination>
           <source>
-            <refId>322d6600-b899-4814-adef-e5ca5cef5e66</refId>
+            <refId>df49d828-875a-42a0-a1cf-438194252a1f</refId>
           </source>
           <positions>
             <point>
@@ -695,7 +693,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="8bd7884c-9a04-4382-9ef5-e6ee2932cd78">
+        <transition id="7d21cb4f-22f4-4d37-aa5e-7e4f3ae7db71">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -704,10 +702,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>dbe848c2-2f23-4145-8cf2-81e83fd4a6a5</refId>
+            <refId>271ed4ae-73a0-4062-bf4c-c9caa7c0e99d</refId>
           </destination>
           <source>
-            <refId>322d6600-b899-4814-adef-e5ca5cef5e66</refId>
+            <refId>df49d828-875a-42a0-a1cf-438194252a1f</refId>
           </source>
           <positions>
             <point>
@@ -730,13 +728,13 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         <refId>f389fb81-422b-4a18-b6b9-70264bfda2cf</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="ea0d9007-707c-416e-85eb-54a10650f51e">
+        <flowVariableAssignment id="9f5a4619-41ee-4350-b613-ad9988d45e1c">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>statusCode</contextKey>
-          <expression id="a8973dbe-6df4-4390-9280-f0b3b20ba6c2">
+          <expression id="a07b659d-aa45-461c-86c0-ea65e713d647">
             <annotation></annotation>
             <name>Result Field: statusCode</name>
             <fieldName>statusCode</fieldName>
@@ -744,19 +742,19 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="0ced51dc-4b7a-4e8a-8b75-9e321bfadf30">
+        <flowVariableAssignment id="fd2572ce-b10f-4735-b605-545affbf69f4">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>taskID</contextKey>
-          <expression id="ae8330b9-a63d-4a98-8666-bf3250879f9a">
+          <expression id="65c226f5-8555-418b-8793-c97792264172">
             <annotation></annotation>
             <name>Result Field: returnResult</name>
             <fieldName>returnResult</fieldName>
             <sourceType>RAWRESULT</sourceType>
             <filters>
-              <xmlGetAttributeFilter id="1a8fcde8-1eef-4907-ab32-ef14d72554ce">
+              <xmlGetAttributeFilter id="ec368434-bb2a-49e1-9957-c358cc688528">
                 <annotation></annotation>
                 <name>XML Get Attribute</name>
                 <attributeName>id</attributeName>
@@ -765,7 +763,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
                 <resultAsFirstResult>true</resultAsFirstResult>
                 <resultAsTable>false</resultAsTable>
               </xmlGetAttributeFilter>
-              <replaceAllFilter id="7889b8d8-839c-4d7a-b8d0-9d155360b6d8">
+              <replaceAllFilter id="18c31304-17f2-466f-843f-b9f48c31ae6b">
                 <annotation></annotation>
                 <name>Replace</name>
                 <ignoreCase>false</ignoreCase>
@@ -775,13 +773,13 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             </filters>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="ed8bc7d1-ef89-4e52-8b26-56064aa02070">
+        <flowVariableAssignment id="48fede5c-a139-4735-b272-94fed356c307">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>xml</contextKey>
-          <expression id="cdf18bca-4956-4546-9ed3-051a478ab4ce">
+          <expression id="ab785482-740a-448f-9c81-f675b75ba48e">
             <annotation></annotation>
             <name>Result Field: returnResult</name>
             <fieldName>returnResult</fieldName>
@@ -792,7 +790,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <returnStep id="addfefad-7e0c-4c3d-b542-95a28f1aeee4">
+    <returnStep id="ddb44e2a-ad56-45c0-8ed6-b3282d8a6614">
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
@@ -815,7 +813,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <userPrompt></userPrompt>
       <bindings/>
       <transitions>
-        <transition id="e9ea8be0-af64-4da6-a97d-dd39e3dcce9e">
+        <transition id="0629251c-4bfa-473e-b778-1689efbc9f70">
           <annotation></annotation>
           <name>return</name>
           <command>NEXT</command>
@@ -824,10 +822,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>addfefad-7e0c-4c3d-b542-95a28f1aeee4</refId>
+            <refId>ddb44e2a-ad56-45c0-8ed6-b3282d8a6614</refId>
           </destination>
           <source>
-            <refId>addfefad-7e0c-4c3d-b542-95a28f1aeee4</refId>
+            <refId>ddb44e2a-ad56-45c0-8ed6-b3282d8a6614</refId>
           </source>
           <positions/>
         </transition>
@@ -836,12 +834,12 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
-    <returnStep id="5bf7df8f-4b54-478d-99c4-83e4fa22da9d">
+    <returnStep id="281d378c-2222-493f-a146-16965c1c3377">
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>690.0</x>
-        <y>450.0</y>
+        <x>660.0</x>
+        <y>480.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -859,7 +857,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <userPrompt></userPrompt>
       <bindings/>
       <transitions>
-        <transition id="c14dccd8-b98f-4c56-9ff7-682fcffeb237">
+        <transition id="2945a930-6fa1-4605-96ef-840ac10003be">
           <annotation></annotation>
           <name>return</name>
           <command>NEXT</command>
@@ -868,10 +866,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>5bf7df8f-4b54-478d-99c4-83e4fa22da9d</refId>
+            <refId>281d378c-2222-493f-a146-16965c1c3377</refId>
           </destination>
           <source>
-            <refId>5bf7df8f-4b54-478d-99c4-83e4fa22da9d</refId>
+            <refId>281d378c-2222-493f-a146-16965c1c3377</refId>
           </source>
           <positions/>
         </transition>
@@ -880,16 +878,16 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <returnStepType>RESOLVED</returnStepType>
       <assignments/>
     </returnStep>
-    <step id="dbe848c2-2f23-4145-8cf2-81e83fd4a6a5">
+    <step id="271ed4ae-73a0-4062-bf4c-c9caa7c0e99d">
       <annotation></annotation>
       <name>isOK</name>
       <bounds>
-        <x>510.0</x>
+        <x>330.0</x>
         <y>180.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="d7ed8b29-67f0-47ec-a5ba-136f15a27301">
+      <iconSpec id="0226bc6d-7d7e-40ab-a15a-d5ac686dc58f">
         <baseIcon>flow.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>false</readOnly>
@@ -908,7 +906,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="d74892d0-704a-430d-885f-7840a548db4e">
+        <userInputBinding id="a14eb0e4-34b6-4e22-9f51-33b116aae876">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -923,7 +921,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="2241a7b7-6ab5-4009-be16-fa26a26b5b07">
+        <userInputBinding id="bf2e2bd8-594a-466a-ac55-6324b6963742">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -940,7 +938,36 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="11be013e-9a3b-4f65-a892-4ff13ad8dbf8">
+        <transition id="7ae7d906-2425-4cac-ba8b-7636ddefdddc">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>ddb44e2a-ad56-45c0-8ed6-b3282d8a6614</refId>
+          </destination>
+          <source>
+            <refId>271ed4ae-73a0-4062-bf4c-c9caa7c0e99d</refId>
+          </source>
+          <positions>
+            <point>
+              <x>350.0</x>
+              <y>274.0</y>
+            </point>
+            <point>
+              <x>105.0</x>
+              <y>299.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="f341d8e3-7f6a-4eed-b00e-7a8b6cb33045">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -949,10 +976,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>4bace817-0073-4c87-994f-d0e8344430ad</refId>
+            <refId>b1a26b4f-6396-4ca1-9371-98bd2c3ace5b</refId>
           </destination>
           <source>
-            <refId>dbe848c2-2f23-4145-8cf2-81e83fd4a6a5</refId>
+            <refId>271ed4ae-73a0-4062-bf4c-c9caa7c0e99d</refId>
           </source>
           <positions>
             <point>
@@ -969,68 +996,24 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="c38515e5-607b-4fc9-b881-937f9583bc36">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>666e2a60-8219-422f-95b2-a69e293db1d6</refId>
-          </destination>
-          <source>
-            <refId>dbe848c2-2f23-4145-8cf2-81e83fd4a6a5</refId>
-          </source>
-          <positions>
-            <point>
-              <x>380.0</x>
-              <y>214.0</y>
-            </point>
-            <point>
-              <x>380.0</x>
-              <y>364.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
       </transitions>
       <properties/>
       <opRef>
         <refId>7d7fe10e-080b-4de0-b498-9d0f2e6c02e2</refId>
       </opRef>
-      <assignments>
-        <flowVariableAssignment id="f88f5f87-1608-42c7-ba57-9baba4f94bf5">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
-          <contextKey>message</contextKey>
-          <expression id="826035c8-ba85-4c88-955e-32aca6f93fc2">
-            <annotation></annotation>
-            <name>Result: message</name>
-            <fieldName>message</fieldName>
-            <sourceType>AVAILABLE_RESULT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
-      </assignments>
+      <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="4bace817-0073-4c87-994f-d0e8344430ad">
+    <step id="b1a26b4f-6396-4ca1-9371-98bd2c3ace5b">
       <annotation></annotation>
       <name>Task Status</name>
       <bounds>
-        <x>510.0</x>
-        <y>300.0</y>
+        <x>330.0</x>
+        <y>330.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="33fb7cd4-000a-453e-b9ac-a5cfe6307de2">
+      <iconSpec id="8fb94c6c-9394-49f8-a14e-3310088ef952">
         <baseIcon>flow.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>false</readOnly>
@@ -1049,7 +1032,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="a01305f8-d6cd-41bb-9089-c9be29175724">
+        <staticBinding id="28e18382-abd5-4121-9bff-41b2be87d97e">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1062,7 +1045,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <value></value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="f1b3054b-0b2a-475a-8af5-a6fed6781697">
+        <staticBinding id="8d180c65-4025-4ba1-9a29-984e8289d00c">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1075,7 +1058,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <value></value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="d477435b-f42a-4492-b211-bf85cea4caeb">
+        <staticBinding id="7085580e-b809-4ca1-b5aa-81faedb748b0">
           <annotation></annotation>
           <fromContextKey>taskID</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -1091,7 +1074,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="6e9dd996-dde4-4a21-87c6-5ac1aba12294">
+        <transition id="ec637244-8c21-400e-bab0-889db2ae2683">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -1100,10 +1083,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>c58ee550-85e3-4f39-bc37-61d7f30d8336</refId>
+            <refId>466129dd-a6c6-4656-8d50-fe3984ea3af8</refId>
           </destination>
           <source>
-            <refId>4bace817-0073-4c87-994f-d0e8344430ad</refId>
+            <refId>b1a26b4f-6396-4ca1-9371-98bd2c3ace5b</refId>
           </source>
           <positions>
             <point>
@@ -1120,7 +1103,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="950e5077-34f5-4b46-b5d2-d74e07fc689b">
+        <transition id="13283a08-530f-4ef9-8030-175a58369f78">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -1129,19 +1112,19 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>78446cec-ce29-4f18-9ef3-7b520032d6fe</refId>
+            <refId>ddb44e2a-ad56-45c0-8ed6-b3282d8a6614</refId>
           </destination>
           <source>
-            <refId>4bace817-0073-4c87-994f-d0e8344430ad</refId>
+            <refId>b1a26b4f-6396-4ca1-9371-98bd2c3ace5b</refId>
           </source>
           <positions>
             <point>
-              <x>530.0</x>
-              <y>214.0</y>
+              <x>380.0</x>
+              <y>364.0</y>
             </point>
             <point>
-              <x>860.0</x>
-              <y>64.0</y>
+              <x>230.0</x>
+              <y>214.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -1155,19 +1138,19 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         <refId>6e974e0d-19fb-4c23-83f8-121f1d8c3e89</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="30e700c4-fbc4-422e-817b-eca06456827d">
+        <flowVariableAssignment id="683cf114-0cf9-46ec-990d-0840953d4e10">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>vAppTemName</contextKey>
-          <expression id="8f32ddb1-2079-4a75-8daf-9965fcf96c14">
+          <expression id="3d8b5708-b1ed-4cb4-aa1b-840c73380be5">
             <annotation></annotation>
             <name>Result Field: outputTask</name>
             <fieldName>outputTask</fieldName>
             <sourceType>RAWRESULT</sourceType>
             <filters>
-              <regexFilter id="bde30862-621b-46c1-9aef-d50965d7de2c">
+              <regexFilter id="1bdff29e-c28f-4812-9087-b86b7cd8fbd6">
                 <annotation></annotation>
                 <name>Regular Expression</name>
                 <expression>&lt;VAppScopedLocalId&gt;.*&lt;/VAppScopedLocalId&gt;</expression>
@@ -1176,7 +1159,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
                 <entireString>false</entireString>
                 <multiLine>true</multiLine>
               </regexFilter>
-              <selectLineFilter id="659fd444-34dd-41a7-9daf-4aed94953142">
+              <selectLineFilter id="3ebe4811-e420-4b61-a8fd-bf0d54307c48">
                 <annotation></annotation>
                 <name>Select Line</name>
                 <text>0</text>
@@ -1185,7 +1168,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
                 <windowsLineEnding>false</windowsLineEnding>
                 <unixLineEnding>true</unixLineEnding>
               </selectLineFilter>
-              <regexFilter id="ac5415b1-015f-44d7-96be-1e9a121d860b">
+              <regexFilter id="69977252-ed18-41de-bb7e-a94923c33155">
                 <annotation></annotation>
                 <name>Regular Expression</name>
                 <expression>&gt;.*&lt;/</expression>
@@ -1194,7 +1177,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
                 <entireString>false</entireString>
                 <multiLine>true</multiLine>
               </regexFilter>
-              <replaceAllFilter id="27581de7-7969-4fd5-afb9-4b4cb9915e24">
+              <replaceAllFilter id="fdda4b2e-3dc1-42fb-ae57-4ccdb8ccc72c">
                 <annotation></annotation>
                 <name>Replace</name>
                 <ignoreCase>false</ignoreCase>
@@ -1202,7 +1185,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
                 <replaceString></replaceString>
                 <replaceType>ALL</replaceType>
               </replaceAllFilter>
-              <replaceAllFilter id="00ba54a9-6596-4ff5-9db0-7ef51cdaee3e">
+              <replaceAllFilter id="1a5acf99-92ff-41f0-86d4-57cc9fd75f4a">
                 <annotation></annotation>
                 <name>Replace</name>
                 <ignoreCase>false</ignoreCase>
@@ -1213,19 +1196,19 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             </filters>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="f72da2a6-7420-4f4b-bfea-3439fff3a6ab">
+        <flowVariableAssignment id="35ee6940-4fe8-451b-882b-2ab8c475e8c1">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>idVM</contextKey>
-          <expression id="438cb71b-6a45-4d8c-8e32-451f0162ebcf">
+          <expression id="3de308fc-ef17-49ac-9d55-1faa383d9b91">
             <annotation></annotation>
             <name>Result Field: outputTask</name>
             <fieldName>outputTask</fieldName>
             <sourceType>RAWRESULT</sourceType>
             <filters>
-              <regexFilter id="cd8bac06-a077-4d21-8da1-dbbeef2a1d98">
+              <regexFilter id="296138a4-ac6d-40ee-8ea3-823365d37440">
                 <annotation></annotation>
                 <name>Regular Expression</name>
                 <expression>vm\-\w+\-\w+\-\w+\-\w+\-\w+</expression>
@@ -1234,11 +1217,11 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
                 <entireString>false</entireString>
                 <multiLine>true</multiLine>
               </regexFilter>
-              <stripWhitespaceFilter id="295d3c9c-41bf-4580-9190-3679d3829df8">
+              <stripWhitespaceFilter id="b703b830-3823-4aa2-bd10-fb9f62381254">
                 <annotation></annotation>
                 <name>Strip Whitespace</name>
               </stripWhitespaceFilter>
-              <selectLineFilter id="4378cf45-f736-4aed-83fa-c433755f3e8e">
+              <selectLineFilter id="0c9a5dfb-7a94-465c-aa55-d8472a1aec25">
                 <annotation></annotation>
                 <name>Select Line</name>
                 <text>0</text>
@@ -1250,19 +1233,19 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             </filters>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="b5326642-60cb-4b50-9f36-9c8b5eb50bc6">
+        <flowVariableAssignment id="9ca0fc16-3a67-414d-a1fc-97cbec5f4651">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>idVM</contextKey>
-          <expression id="b5313451-23a3-4765-8650-66de9ec70269">
+          <expression id="e7c3735c-6802-4083-82ab-bcea99093e72">
             <annotation></annotation>
             <name>Result Field: outputTask</name>
             <fieldName>outputTask</fieldName>
             <sourceType>RAWRESULT</sourceType>
             <filters>
-              <regexFilter id="ee96343a-4d4d-452b-aa69-349bf0dd7c6a">
+              <regexFilter id="ef0d8f78-b3e3-49f8-951b-f3161b406302">
                 <annotation></annotation>
                 <name>Regular Expression</name>
                 <expression>vm\-\w+\-\w+\-\w+\-\w+\-\w+</expression>
@@ -1271,20 +1254,20 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
                 <entireString>false</entireString>
                 <multiLine>true</multiLine>
               </regexFilter>
-              <stripWhitespaceFilter id="d181d3a5-c0dd-41f2-8f56-968057c5f4b2">
+              <stripWhitespaceFilter id="81a45569-03bc-4b3f-9e62-5076495988d5">
                 <annotation></annotation>
                 <name>Strip Whitespace</name>
               </stripWhitespaceFilter>
             </filters>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="adea6d23-0153-45db-81c6-2ce17d6df212">
+        <flowVariableAssignment id="cc03f41c-2b91-4374-8fb4-1f0113233d66">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>DetailsMessage</contextKey>
-          <expression id="31e5ca66-07a1-45cc-b5b2-215d244cce66">
+          <expression id="c0c8a160-31bc-4ce3-84b8-ba9342f63135">
             <annotation></annotation>
             <name>Result Field: DetailsMessage</name>
             <fieldName>DetailsMessage</fieldName>
@@ -1295,12 +1278,12 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <returnStep id="b122c60a-a0a6-4285-9048-fc84e81c5fe6">
+    <returnStep id="1eff7378-1c44-4186-926b-3d862f436fd1">
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>690.0</x>
-        <y>30.0</y>
+        <x>630.0</x>
+        <y>330.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -1318,7 +1301,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <userPrompt></userPrompt>
       <bindings/>
       <transitions>
-        <transition id="f3381720-36f0-4628-be10-fabe86af622e">
+        <transition id="b32400cf-8faf-4edc-972b-0f87c8eb4ecb">
           <annotation></annotation>
           <name>return</name>
           <command>NEXT</command>
@@ -1327,10 +1310,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>b122c60a-a0a6-4285-9048-fc84e81c5fe6</refId>
+            <refId>1eff7378-1c44-4186-926b-3d862f436fd1</refId>
           </destination>
           <source>
-            <refId>b122c60a-a0a6-4285-9048-fc84e81c5fe6</refId>
+            <refId>1eff7378-1c44-4186-926b-3d862f436fd1</refId>
           </source>
           <positions/>
         </transition>
@@ -1339,7 +1322,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
-    <step id="4ed782f2-c1f5-488d-b54c-ca63f54fbb3b">
+    <step id="bdec34d3-2fbe-4ab0-875a-d193e7c30940">
       <annotation></annotation>
       <name>Get Gestion Network ID</name>
       <bounds>
@@ -1348,7 +1331,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="56938c20-1df0-4330-aeba-cd4bcc5fff78">
+      <iconSpec id="6dbed5c6-8711-4f00-8ad6-5477c646dded">
         <baseIcon>flow.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>false</readOnly>
@@ -1367,7 +1350,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="889f9773-1efa-4114-b267-d577a715a087">
+        <userInputBinding id="cb0dfc9c-91b7-4be2-9214-1dd3d92ac8f7">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1382,7 +1365,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="6bbeba5e-e841-4426-9dfe-f52f2bfbf11a">
+        <userInputBinding id="d34e6090-7554-44d1-b9ca-5af79c134761">
           <annotation></annotation>
           <fromContextKey>GestionNetworkName</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -1398,7 +1381,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="4073b99d-e24c-42e7-bb1c-bb247c01ddef">
+        <userInputBinding id="5b844c8e-e86d-4091-b483-425731ebf866">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1413,7 +1396,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="db837e82-2932-4af7-8a59-cf39e159a422">
+        <userInputBinding id="4399fd5a-4745-4c6c-a126-355ce3bb97fe">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1430,7 +1413,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="0fcb5196-e304-4840-b2b6-e1dd104a4462">
+        <transition id="462b6fcb-4f19-4d65-bd7d-59df96b98556">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -1439,10 +1422,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>addfefad-7e0c-4c3d-b542-95a28f1aeee4</refId>
+            <refId>ddb44e2a-ad56-45c0-8ed6-b3282d8a6614</refId>
           </destination>
           <source>
-            <refId>4ed782f2-c1f5-488d-b54c-ca63f54fbb3b</refId>
+            <refId>bdec34d3-2fbe-4ab0-875a-d193e7c30940</refId>
           </source>
           <positions>
             <point>
@@ -1459,7 +1442,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="b15bce69-5fa6-4972-ac6f-da2cb9aff5cc">
+        <transition id="4c8d4c1d-f33a-46bd-b6b7-a145f072ac09">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -1468,10 +1451,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>388e0ca7-f58c-4487-b64c-267d753b8ed1</refId>
+            <refId>aaa29ba9-76a9-4996-831b-9bdb0286bfaf</refId>
           </destination>
           <source>
-            <refId>4ed782f2-c1f5-488d-b54c-ca63f54fbb3b</refId>
+            <refId>bdec34d3-2fbe-4ab0-875a-d193e7c30940</refId>
           </source>
           <positions>
             <point>
@@ -1494,13 +1477,13 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         <refId>0b2aa6f8-25c3-4246-bc11-b0d28a1adbf7</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="f325c748-8438-42be-817d-85590a2dbb65">
+        <flowVariableAssignment id="641d068b-00fa-4ec4-aa76-7a30dc30ec4d">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>GestionNetworkID</contextKey>
-          <expression id="c9551f28-e31c-40b3-b0a6-39dea79de4dd">
+          <expression id="ef81c9ec-77d8-43ff-bef2-85704c76a889">
             <annotation></annotation>
             <name>Result: NetworkID</name>
             <fieldName>NetworkID</fieldName>
@@ -1511,7 +1494,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="52f8957c-19c9-4e62-b911-4a7f34fc0112">
+    <step id="40a6f253-1031-4605-9c50-62a9637e1374">
       <annotation></annotation>
       <name>Get Internal Network ID</name>
       <bounds>
@@ -1520,7 +1503,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="dd290b88-e01f-4552-99a3-7bda8d7ecd8b">
+      <iconSpec id="7ff145c4-ec24-47fb-a671-ff5ab3536539">
         <baseIcon>flow.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>false</readOnly>
@@ -1539,7 +1522,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="7590fa08-2bc5-4b82-b989-c5e8efce1975">
+        <userInputBinding id="aecd95fe-30cd-4f4c-bd48-f17ac9a58bf5">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1554,7 +1537,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="de13c994-3d43-4a83-a5ad-21f5cc8af75d">
+        <userInputBinding id="fc8ce910-c8b1-4323-a2f8-a64b71c3c843">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1569,7 +1552,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="0404db8d-4c14-4746-8762-56941630fda2">
+        <userInputBinding id="23d6e5be-a32f-43c1-a647-f4cac5231d7e">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1584,7 +1567,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="c51b5253-3e7b-4b06-9c8d-f3901c5ad02f">
+        <userInputBinding id="ec52e44e-8b0d-460e-b2bf-7fe0b771980c">
           <annotation></annotation>
           <fromContextKey>InternalNetworkName</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -1602,7 +1585,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="cf8eaebf-6925-492b-9419-0af0c645556c">
+        <transition id="1ab2c474-749d-438d-af0b-9664b8eaeefc">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -1611,10 +1594,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>4ed782f2-c1f5-488d-b54c-ca63f54fbb3b</refId>
+            <refId>bdec34d3-2fbe-4ab0-875a-d193e7c30940</refId>
           </destination>
           <source>
-            <refId>52f8957c-19c9-4e62-b911-4a7f34fc0112</refId>
+            <refId>40a6f253-1031-4605-9c50-62a9637e1374</refId>
           </source>
           <positions>
             <point>
@@ -1631,7 +1614,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="69e02fbf-99cf-4d21-96a6-d4e07c9eb7e1">
+        <transition id="81d4d346-033b-4b0d-a05a-0706af116dc8">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -1640,10 +1623,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>addfefad-7e0c-4c3d-b542-95a28f1aeee4</refId>
+            <refId>ddb44e2a-ad56-45c0-8ed6-b3282d8a6614</refId>
           </destination>
           <source>
-            <refId>52f8957c-19c9-4e62-b911-4a7f34fc0112</refId>
+            <refId>40a6f253-1031-4605-9c50-62a9637e1374</refId>
           </source>
           <positions>
             <point>
@@ -1666,13 +1649,13 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         <refId>0b2aa6f8-25c3-4246-bc11-b0d28a1adbf7</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="b075ecd4-4715-46f9-8966-a2b1938b0a5f">
+        <flowVariableAssignment id="d6e8598a-9a42-45d8-a6c6-914c8dc52228">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>InternalNetworkID</contextKey>
-          <expression id="54f95204-d234-4988-a594-ee911d24e182">
+          <expression id="8dd868cc-82df-4d65-b4ca-e9a8922b82d8">
             <annotation></annotation>
             <name>Result: NetworkID</name>
             <fieldName>NetworkID</fieldName>
@@ -1683,7 +1666,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="0a99e661-d7d0-472a-a5e6-4f623b0af324">
+    <step id="8179fdf1-3ef7-49ba-912d-ab8390668bd5">
       <annotation></annotation>
       <name>Get VM Details From vAppTemplate</name>
       <bounds>
@@ -1705,7 +1688,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="35a8faa5-6ab3-4a30-9a53-fd12564acbaa">
+        <userInputBinding id="3076fa85-dba5-48c0-b484-6165bc70a7e3">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1720,7 +1703,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="53285312-4f05-4dd4-b4a1-b518ee5598c4">
+        <userInputBinding id="dac3b56f-b0fe-4a7b-ad57-1af0e1fee6ac">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1735,7 +1718,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="613c7737-f5ab-4e4e-a6cb-ccb780742d81">
+        <userInputBinding id="fcff9375-cddc-4a9c-a873-24eb30d5cb14">
           <annotation></annotation>
           <fromContextKey>vAppTemplateHRef</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -1753,7 +1736,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="edd13361-8570-4442-ac80-aa2dfe943fd2">
+        <transition id="b607862c-fd84-4fb9-83d7-5b13422f5cd2">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -1762,10 +1745,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>addfefad-7e0c-4c3d-b542-95a28f1aeee4</refId>
+            <refId>ddb44e2a-ad56-45c0-8ed6-b3282d8a6614</refId>
           </destination>
           <source>
-            <refId>0a99e661-d7d0-472a-a5e6-4f623b0af324</refId>
+            <refId>8179fdf1-3ef7-49ba-912d-ab8390668bd5</refId>
           </source>
           <positions>
             <point>
@@ -1782,7 +1765,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="679821f6-3b20-4a5c-94b0-e8108e94da06">
+        <transition id="f921e8ed-463d-4a8e-996d-8ef419cbcfa4">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -1791,10 +1774,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>322d6600-b899-4814-adef-e5ca5cef5e66</refId>
+            <refId>df49d828-875a-42a0-a1cf-438194252a1f</refId>
           </destination>
           <source>
-            <refId>0a99e661-d7d0-472a-a5e6-4f623b0af324</refId>
+            <refId>8179fdf1-3ef7-49ba-912d-ab8390668bd5</refId>
           </source>
           <positions>
             <point>
@@ -1817,13 +1800,13 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         <refId>3b04a429-c50f-4fe9-81b9-480024dad71d</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="dc34f148-0d66-41ba-ba77-4b420b9d8041">
+        <flowVariableAssignment id="0701df67-5df4-4f4b-b58a-502ae24f4f90">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>vAppTemaplateVMID</contextKey>
-          <expression id="d65549aa-60ea-45a7-af0c-17c54d399800">
+          <expression id="69582c88-6ce3-4240-be7c-4c36b722b251">
             <annotation></annotation>
             <name>Result: vAppTemplateVMID</name>
             <fieldName>vAppTemplateVMID</fieldName>
@@ -1834,7 +1817,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="388e0ca7-f58c-4487-b64c-267d753b8ed1">
+    <step id="aaa29ba9-76a9-4996-831b-9bdb0286bfaf">
       <annotation></annotation>
       <name>Get Catalog Item</name>
       <bounds>
@@ -1843,7 +1826,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="55d4c973-38ce-4e5f-8c89-2056e13597ee">
+      <iconSpec id="9146b281-5653-4d34-ade8-aa3ba1fdbd29">
         <baseIcon>flow.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>false</readOnly>
@@ -1862,7 +1845,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="6c5f701c-1845-43ae-990a-876fc91fed19">
+        <userInputBinding id="5b17863e-7617-4341-bff4-d7eb9fb1d06f">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1877,7 +1860,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="b1427152-a310-4c6a-9cc7-8c11c4442628">
+        <userInputBinding id="da78316f-2a5f-4bea-8bea-66f9920ccd5f">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1892,7 +1875,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="45ecacc3-7870-4136-a0a9-9bca08b6ecf4">
+        <userInputBinding id="85ed98d7-a2fc-4353-b7f0-d6db5567c014">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -1909,7 +1892,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="491913e6-ac4e-4db8-959c-c91671de7dc5">
+        <transition id="5eebc5a7-66d4-4937-bdd1-2f2467b03500">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -1918,10 +1901,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>addfefad-7e0c-4c3d-b542-95a28f1aeee4</refId>
+            <refId>ddb44e2a-ad56-45c0-8ed6-b3282d8a6614</refId>
           </destination>
           <source>
-            <refId>388e0ca7-f58c-4487-b64c-267d753b8ed1</refId>
+            <refId>aaa29ba9-76a9-4996-831b-9bdb0286bfaf</refId>
           </source>
           <positions>
             <point>
@@ -1938,7 +1921,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="9b565081-f6d0-4c39-bf60-3dd53520f661">
+        <transition id="efb05140-6c1e-4628-82fa-8557d7d07f72">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -1947,10 +1930,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>0a99e661-d7d0-472a-a5e6-4f623b0af324</refId>
+            <refId>8179fdf1-3ef7-49ba-912d-ab8390668bd5</refId>
           </destination>
           <source>
-            <refId>388e0ca7-f58c-4487-b64c-267d753b8ed1</refId>
+            <refId>aaa29ba9-76a9-4996-831b-9bdb0286bfaf</refId>
           </source>
           <positions>
             <point>
@@ -1973,13 +1956,13 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         <refId>6323be6d-27e4-4aa5-81e0-e04890f74f23</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="4e0bab76-f3b5-49cf-a0a5-e753b119d9c6">
+        <flowVariableAssignment id="0e6f69ff-5757-4f35-afdf-ae7d9be352f3">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>vAppTemplateName</contextKey>
-          <expression id="ea00d6da-d891-47a8-9d5b-25f795aef470">
+          <expression id="fafab938-a6ca-480b-9b24-c034bfc302fe">
             <annotation></annotation>
             <name>Result: vAppTemplateName</name>
             <fieldName>vAppTemplateName</fieldName>
@@ -1987,13 +1970,13 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <filters/>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="e6b497c2-6b56-488f-ab89-090ceb1a4937">
+        <flowVariableAssignment id="9e6788fc-b03b-49b8-85b3-7fcba0267170">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>vAppTemplateHRef</contextKey>
-          <expression id="f6a602de-05dc-42b0-9ba7-1bb1a041088e">
+          <expression id="d110c10f-2be3-4aac-af0f-cb41e152f1be">
             <annotation></annotation>
             <name>Result: vAppTemplateHRef</name>
             <fieldName>vAppTemplateHRef</fieldName>
@@ -2004,12 +1987,12 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="c58ee550-85e3-4f39-bc37-61d7f30d8336">
+    <step id="466129dd-a6c6-4656-8d50-fe3984ea3af8">
       <annotation></annotation>
       <name>Get vApp</name>
       <bounds>
-        <x>330.0</x>
-        <y>450.0</y>
+        <x>480.0</x>
+        <y>330.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -2026,7 +2009,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="ddd8b0a2-926f-4f39-847a-5e8704fd623f">
+        <userInputBinding id="ca15881a-a48e-4714-bc21-fd15cc9daedb">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2041,7 +2024,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="92e939b8-5d24-4e1c-abca-c3b0662109dc">
+        <userInputBinding id="f40ba717-e6ee-45ed-bb3c-c5d8d878813b">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2056,7 +2039,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="3d1fc596-95a1-4795-a019-d084b9dc58eb">
+        <userInputBinding id="65b5389e-c747-43c5-aed1-eabf340708e1">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2073,7 +2056,36 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="9554457a-5499-413d-8dd0-8318b56e2985">
+        <transition id="b3668f6d-2ab8-422b-9e9e-f1e921b89827">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>1eff7378-1c44-4186-926b-3d862f436fd1</refId>
+          </destination>
+          <source>
+            <refId>466129dd-a6c6-4656-8d50-fe3984ea3af8</refId>
+          </source>
+          <positions>
+            <point>
+              <x>530.0</x>
+              <y>364.0</y>
+            </point>
+            <point>
+              <x>530.0</x>
+              <y>214.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="0da022e0-6155-4c5e-8882-f9716c236e3e">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -2082,10 +2094,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>a114b5cd-ab70-4a6a-a73f-310e54b5a1ac</refId>
+            <refId>097dc150-da08-47c1-ac78-9f69bdc52ab9</refId>
           </destination>
           <source>
-            <refId>c58ee550-85e3-4f39-bc37-61d7f30d8336</refId>
+            <refId>466129dd-a6c6-4656-8d50-fe3984ea3af8</refId>
           </source>
           <positions>
             <point>
@@ -2102,61 +2114,32 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="612bf101-7845-4320-b7f6-4729cd51b6e7">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>35eb869e-c46e-496a-927b-662bfc4c6736</refId>
-          </destination>
-          <source>
-            <refId>c58ee550-85e3-4f39-bc37-61d7f30d8336</refId>
-          </source>
-          <positions>
-            <point>
-              <x>380.0</x>
-              <y>484.0</y>
-            </point>
-            <point>
-              <x>560.0</x>
-              <y>784.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
       </transitions>
       <properties/>
       <opRef>
         <refId>6d35cdef-6ad5-425c-8e85-82a50b31b1fa</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="4ff88152-b3f8-4c9d-ba30-ad404c282a2e">
+        <flowVariableAssignment id="ff4529ba-834d-42b1-9d11-eaf811b7e2d9">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>vmID</contextKey>
-          <expression id="e9e64e37-da43-4d12-b816-c3675ee13245">
+          <expression id="e25d3f34-88df-49bf-9129-041f32576fdd">
             <annotation></annotation>
             <name>Result: vappxml</name>
             <fieldName>vappxml</fieldName>
             <sourceType>AVAILABLE_RESULT</sourceType>
             <filters>
-              <xmlGetElementsFilter id="9053d2ad-d3a0-4a44-8513-61286387e696">
+              <xmlGetElementsFilter id="4a0034fc-2adf-4e3e-96ac-b6242c7ad69f">
                 <annotation></annotation>
                 <name>XML Get Element</name>
                 <attributeNamed>name</attributeNamed>
                 <attributeValue>${vmName}</attributeValue>
                 <elementPath>//*[name()=&quot;Vm&quot;]</elementPath>
               </xmlGetElementsFilter>
-              <xmlGetAttributeFilter id="7bd0478f-4749-4b11-9df3-28ce4e73657a">
+              <xmlGetAttributeFilter id="1ee0f784-9e71-4eae-9681-e14871e9c062">
                 <annotation></annotation>
                 <name>XML Get Attribute</name>
                 <attributeName>id</attributeName>
@@ -2165,14 +2148,14 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
                 <resultAsFirstResult>true</resultAsFirstResult>
                 <resultAsTable>false</resultAsTable>
               </xmlGetAttributeFilter>
-              <replaceAllFilter id="54160900-71b6-4faa-b86c-c59f03ea6f01">
+              <replaceAllFilter id="5702a3a1-3bb1-4b72-be5a-ce1a0a88bc9d">
                 <annotation></annotation>
                 <name>Replace</name>
                 <ignoreCase>false</ignoreCase>
                 <searchString>urn:vcloud:</searchString>
                 <replaceType>ALL</replaceType>
               </replaceAllFilter>
-              <replaceAllFilter id="80b4d3d0-16b5-4c78-9575-817b00005199">
+              <replaceAllFilter id="73d3a403-97ec-4a67-8809-53c17ea3e6f8">
                 <annotation></annotation>
                 <name>Replace</name>
                 <ignoreCase>false</ignoreCase>
@@ -2183,26 +2166,26 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             </filters>
           </expression>
         </flowVariableAssignment>
-        <flowVariableAssignment id="049576a7-77dd-42ab-b5d6-a47625449b39">
+        <flowVariableAssignment id="949c9405-f10f-454e-a805-e124154e1bf3">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
           <contextKey>vmID</contextKey>
-          <expression id="03f667a7-d259-4824-9749-79df9015edf0">
+          <expression id="f7b78466-d306-476e-92b1-bf5fc72d97c4">
             <annotation></annotation>
             <name>Result: vappxml</name>
             <fieldName>vappxml</fieldName>
             <sourceType>AVAILABLE_RESULT</sourceType>
             <filters>
-              <xmlGetElementsFilter id="b4a0dc45-ce60-419c-931b-e88798a0b516">
+              <xmlGetElementsFilter id="6f98ad41-c6b0-43fe-8035-8c3893eb6169">
                 <annotation></annotation>
                 <name>XML Get Element</name>
                 <attributeNamed>name</attributeNamed>
                 <attributeValue>${vmName}</attributeValue>
                 <elementPath>//*[name()=&quot;Vm&quot;]</elementPath>
               </xmlGetElementsFilter>
-              <xmlGetAttributeFilter id="5560dcbd-a2fb-4476-b897-d69bdffe08a8">
+              <xmlGetAttributeFilter id="f0401a28-e82f-4919-ae3f-0d93ae9c3718">
                 <annotation></annotation>
                 <name>XML Get Attribute</name>
                 <attributeName>id</attributeName>
@@ -2211,14 +2194,14 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
                 <resultAsFirstResult>true</resultAsFirstResult>
                 <resultAsTable>false</resultAsTable>
               </xmlGetAttributeFilter>
-              <replaceAllFilter id="38375d52-0bfa-4cd0-b657-e0f7080bcd00">
+              <replaceAllFilter id="f2eb3f7c-10a8-44bf-a465-e214c1c548e7">
                 <annotation></annotation>
                 <name>Replace</name>
                 <ignoreCase>false</ignoreCase>
                 <searchString>urn:vcloud:</searchString>
                 <replaceType>ALL</replaceType>
               </replaceAllFilter>
-              <replaceAllFilter id="a9d58d02-b0d0-4f3d-80b1-a2bcec77e11c">
+              <replaceAllFilter id="da0c4853-c7f9-48f8-b975-34edc49df990">
                 <annotation></annotation>
                 <name>Replace</name>
                 <ignoreCase>false</ignoreCase>
@@ -2232,12 +2215,12 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="a114b5cd-ab70-4a6a-a73f-310e54b5a1ac">
+    <step id="097dc150-da08-47c1-ac78-9f69bdc52ab9">
       <annotation></annotation>
       <name>Update Computer Name on VM</name>
       <bounds>
-        <x>330.0</x>
-        <y>600.0</y>
+        <x>480.0</x>
+        <y>480.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -2254,7 +2237,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="cff11c5f-94ff-4eb5-98bf-dbd59a19e06d">
+        <userInputBinding id="2f7f58a1-af58-47b5-b0e2-d6d8eef1f56b">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2269,7 +2252,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="67e72387-c9e1-4a9d-999f-bbdc90d87c60">
+        <userInputBinding id="befbdd01-5ed7-46e6-adf2-e35b9d2c9018">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2284,7 +2267,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="d5dbcf42-004e-401e-8c4e-89b7d9c4aa96">
+        <userInputBinding id="5d772304-7712-435d-9838-4f5fda993f3e">
           <annotation></annotation>
           <fromContextKey>vmID</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -2300,7 +2283,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="922737ab-df31-42a7-be0b-764de98b2db9">
+        <userInputBinding id="2c46dbab-fcb9-44c6-a975-a70abdeee006">
           <annotation></annotation>
           <fromContextKey>vmHostname</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -2318,7 +2301,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="89307e69-932b-4753-9db7-a5778e915dbf">
+        <transition id="1289f292-b7c1-4fe0-9e84-f6e4c0e79976">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -2327,10 +2310,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>35eb869e-c46e-496a-927b-662bfc4c6736</refId>
+            <refId>eec4b407-df10-42ff-8eac-5b539200cf7e</refId>
           </destination>
           <source>
-            <refId>a114b5cd-ab70-4a6a-a73f-310e54b5a1ac</refId>
+            <refId>097dc150-da08-47c1-ac78-9f69bdc52ab9</refId>
           </source>
           <positions>
             <point>
@@ -2347,7 +2330,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="c51f919d-2a22-4f8e-84d9-9a0438b2b9da">
+        <transition id="8f172c2f-c26a-4929-96cc-3119a8e9b7b4">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -2356,10 +2339,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>add5a31a-a356-49f3-97d2-51320ece400b</refId>
+            <refId>33393ae0-baf3-428e-a6fb-e54a8d767af0</refId>
           </destination>
           <source>
-            <refId>a114b5cd-ab70-4a6a-a73f-310e54b5a1ac</refId>
+            <refId>097dc150-da08-47c1-ac78-9f69bdc52ab9</refId>
           </source>
           <positions>
             <point>
@@ -2384,12 +2367,12 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="ac947898-b8bd-452a-9858-626160ec3d28">
+    <step id="884bfd11-cb8e-4ffc-a914-0a570d11243f">
       <annotation></annotation>
       <name>Get VM Details</name>
       <bounds>
-        <x>690.0</x>
-        <y>750.0</y>
+        <x>810.0</x>
+        <y>630.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -2406,7 +2389,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="9fb0e7bf-15cb-4fbd-998a-10cbf4c11403">
+        <userInputBinding id="105ac891-9173-4bb3-a924-f8a430969ce8">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2421,7 +2404,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="598cdae7-f5f8-4ba5-975a-eb2208ca32dc">
+        <userInputBinding id="1507f31d-57de-45df-94aa-53db667a5390">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2436,7 +2419,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="12f9cc5a-7b08-48ce-bcf8-be16bbc5871f">
+        <userInputBinding id="afb4b1c2-f1e5-4af9-a805-00b1da0261fc">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2453,7 +2436,36 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="6f0530b7-71d8-4539-bac5-d4fc67d2c517">
+        <transition id="ac50961e-5a4a-48a6-abd5-fc030e39e955">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>e34452dd-ab2b-4be5-a6bf-8a83fb500f87</refId>
+          </destination>
+          <source>
+            <refId>884bfd11-cb8e-4ffc-a914-0a570d11243f</refId>
+          </source>
+          <positions>
+            <point>
+              <x>710.0</x>
+              <y>214.0</y>
+            </point>
+            <point>
+              <x>530.0</x>
+              <y>64.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="a31bd503-c3b2-4634-b069-c18ecf62b5bc">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -2462,10 +2474,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>35eb869e-c46e-496a-927b-662bfc4c6736</refId>
+            <refId>eec4b407-df10-42ff-8eac-5b539200cf7e</refId>
           </destination>
           <source>
-            <refId>ac947898-b8bd-452a-9858-626160ec3d28</refId>
+            <refId>884bfd11-cb8e-4ffc-a914-0a570d11243f</refId>
           </source>
           <positions>
             <point>
@@ -2482,54 +2494,25 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="d0e09112-e622-4e5c-981a-2324ab91ff15">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>5bf7df8f-4b54-478d-99c4-83e4fa22da9d</refId>
-          </destination>
-          <source>
-            <refId>ac947898-b8bd-452a-9858-626160ec3d28</refId>
-          </source>
-          <positions>
-            <point>
-              <x>740.0</x>
-              <y>784.0</y>
-            </point>
-            <point>
-              <x>890.0</x>
-              <y>484.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
       </transitions>
       <properties/>
       <opRef>
         <refId>22271a13-33ce-4eff-a185-328b0a4ddaed</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="9c602da4-9c98-42d7-a308-9514da8a477b">
+        <flowVariableAssignment id="e856077b-7419-4066-b2bc-2f86e1cf1404">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>GestionIpAddress</contextKey>
-          <expression id="81d76e01-615e-4e2c-b30a-b4e75b986efc">
+          <expression id="8d6d0064-3898-457a-b71c-5fe988610e15">
             <annotation></annotation>
             <name>Result Field: xml</name>
             <fieldName>xml</fieldName>
             <sourceType>RAWRESULT</sourceType>
             <filters>
-              <xmlGetElementsFilter id="97d468bc-f73a-4be0-b006-78070976629f">
+              <xmlGetElementsFilter id="42f5bd04-2aae-4cc6-aeb0-b392bf2ab121">
                 <annotation></annotation>
                 <name>XML Get Element</name>
                 <attributeNamed>network</attributeNamed>
@@ -2537,7 +2520,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
                 <childNamed></childNamed>
                 <elementPath>//*[name()=&quot;NetworkConnection&quot;]</elementPath>
               </xmlGetElementsFilter>
-              <xmlGetElementValueFilter id="9b928995-5f46-478a-bf31-3f0161f6f4c8">
+              <xmlGetElementValueFilter id="c4c08b56-1560-4bdc-b38c-c2ebccb8c3c8">
                 <annotation></annotation>
                 <name>XML Get Element Value</name>
                 <elementPath>//*[name()=&quot;IpAddress&quot;]</elementPath>
@@ -2548,12 +2531,12 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="1b24656d-a304-4df0-aaba-971b29e68f71">
+    <step id="c7784ee4-d3dc-492b-a1cf-13492172d93b">
       <annotation></annotation>
       <name>PowerOn VM</name>
       <bounds>
-        <x>690.0</x>
-        <y>900.0</y>
+        <x>810.0</x>
+        <y>780.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -2570,7 +2553,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="174b0543-49f1-46ed-8157-f83a453e9c86">
+        <userInputBinding id="1e43f580-5749-4b27-aca7-5e54fcaed826">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2585,7 +2568,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="874a73f8-654c-433b-ab7d-a839d5a3b675">
+        <userInputBinding id="b3f9f602-bb11-4474-b75d-59d044ef81b4">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2600,7 +2583,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="7f1f941b-ebc8-4a66-ad7f-cddfb6e9035e">
+        <userInputBinding id="5f5bd70b-d324-48b2-a0ad-26003e188c2d">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2615,7 +2598,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="d610d0ca-ed31-44ca-9a2a-d3950190544f">
+        <userInputBinding id="e793c731-5bd9-4785-9600-2f4294187050">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2630,7 +2613,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="f74445f8-f459-4017-a43e-66176c2c82bf">
+        <userInputBinding id="bde7b59b-2400-4503-b8f6-feed7d8eb56c">
           <annotation></annotation>
           <fromContextKey>vmID</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -2646,7 +2629,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="e3759cf5-3087-4d7f-b644-b6fe84ef02d2">
+        <staticBinding id="da073c64-6dbe-4e9f-96aa-e74644f7ed25">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2665,7 +2648,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="578f688b-84d3-4bb6-9a34-7143c0674eff">
+        <transition id="a67e33ec-a545-4097-a9bb-1e3064bfca97">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -2674,10 +2657,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>ac947898-b8bd-452a-9858-626160ec3d28</refId>
+            <refId>884bfd11-cb8e-4ffc-a914-0a570d11243f</refId>
           </destination>
           <source>
-            <refId>1b24656d-a304-4df0-aaba-971b29e68f71</refId>
+            <refId>c7784ee4-d3dc-492b-a1cf-13492172d93b</refId>
           </source>
           <positions>
             <point>
@@ -2694,7 +2677,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="8e59619d-eab7-4ce1-b900-bc433c05d113">
+        <transition id="d8849617-9a4c-4d9b-a87a-79969369fd39">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -2703,10 +2686,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>35eb869e-c46e-496a-927b-662bfc4c6736</refId>
+            <refId>eec4b407-df10-42ff-8eac-5b539200cf7e</refId>
           </destination>
           <source>
-            <refId>1b24656d-a304-4df0-aaba-971b29e68f71</refId>
+            <refId>c7784ee4-d3dc-492b-a1cf-13492172d93b</refId>
           </source>
           <positions>
             <point>
@@ -2731,12 +2714,12 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="add5a31a-a356-49f3-97d2-51320ece400b">
+    <step id="8bd407e5-4955-408e-8ce0-b934d4feeccb">
       <annotation></annotation>
-      <name>Update Disk</name>
+      <name>Local Ping to VM</name>
       <bounds>
-        <x>330.0</x>
-        <y>750.0</y>
+        <x>810.0</x>
+        <y>330.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -2753,7 +2736,123 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="5e72daf2-2b32-4982-b734-56c1d942c37e">
+        <staticBinding id="cd15ad2f-8d81-48e5-8c3b-a15b0ca6e12b">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>overrideJRAS</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>QRO</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="54aad1a3-1721-4923-869e-83716258b747">
+          <annotation></annotation>
+          <fromContextKey>GestionIpAddress</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>IpAddress</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="f2a770b3-30ac-4fbd-987a-2a3fa7b4b89e">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>281d378c-2222-493f-a146-16965c1c3377</refId>
+          </destination>
+          <source>
+            <refId>8bd407e5-4955-408e-8ce0-b934d4feeccb</refId>
+          </source>
+          <positions>
+            <point>
+              <x>710.0</x>
+              <y>64.0</y>
+            </point>
+            <point>
+              <x>860.0</x>
+              <y>64.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="cb872bd2-7c3b-4d54-8ce8-b4e75abb8952">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>198d6093-f6f2-4363-a228-cebd72b63b08</refId>
+          </destination>
+          <source>
+            <refId>8bd407e5-4955-408e-8ce0-b934d4feeccb</refId>
+          </source>
+          <positions>
+            <point>
+              <x>860.0</x>
+              <y>364.0</y>
+            </point>
+            <point>
+              <x>860.0</x>
+              <y>64.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>0c380c45-bd78-429c-935c-c2b5081b5146</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="33393ae0-baf3-428e-a6fb-e54a8d767af0">
+      <annotation></annotation>
+      <name>Update Disk</name>
+      <bounds>
+        <x>480.0</x>
+        <y>630.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="8ebc3a89-5e66-442e-80d4-4cb55a8af0c0">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2768,7 +2867,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="bceb699d-82c9-42c7-9a1b-30fe9ff56668">
+        <userInputBinding id="9243aaca-5d79-4953-8d1a-aab7a8e95210">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2783,7 +2882,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="9b888222-51d5-4522-aaa5-f8b233c4c9e9">
+        <userInputBinding id="8fc1b72c-d3dd-4f52-bf4b-6dfb5c3eebe0">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2798,7 +2897,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="4b73839b-87fc-4107-bcd2-e734fd4c5fa2">
+        <userInputBinding id="bd811de8-9689-411c-9173-e64af36253ba">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2813,7 +2912,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="d34258b8-73d5-4436-ac0f-3309d3e1029e">
+        <userInputBinding id="b531c9b2-5c56-41f9-a2aa-a59477cb380e">
           <annotation></annotation>
           <fromContextKey>vmID</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -2829,7 +2928,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="569a2921-b488-43de-a88b-788533c21317">
+        <userInputBinding id="26ad4046-e7fd-4552-b44c-54ab69110001">
           <annotation></annotation>
           <fromContextKey>diskSize</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -2847,7 +2946,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="15fe866b-96b2-4d97-81a7-715bae2bc360">
+        <transition id="d7a0ecb8-17a8-4391-a7d8-efa16e46a563">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -2856,10 +2955,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>35eb869e-c46e-496a-927b-662bfc4c6736</refId>
+            <refId>eec4b407-df10-42ff-8eac-5b539200cf7e</refId>
           </destination>
           <source>
-            <refId>add5a31a-a356-49f3-97d2-51320ece400b</refId>
+            <refId>33393ae0-baf3-428e-a6fb-e54a8d767af0</refId>
           </source>
           <positions>
             <point>
@@ -2876,7 +2975,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="2fdc03f0-7e84-46e3-b89c-d354fedab640">
+        <transition id="b6a8e508-dc32-4871-984d-872e662d7813">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -2885,10 +2984,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>c43bdcd3-6b07-46ea-a043-95f6e37f61a2</refId>
+            <refId>5eab16c3-2341-49f2-b6c4-0bc2f28544c8</refId>
           </destination>
           <source>
-            <refId>add5a31a-a356-49f3-97d2-51320ece400b</refId>
+            <refId>33393ae0-baf3-428e-a6fb-e54a8d767af0</refId>
           </source>
           <positions>
             <point>
@@ -2913,12 +3012,12 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="fd359a5b-351a-4625-a429-99f45a731e15">
+    <step id="8dd80f06-cf7c-4c77-b006-c0148fc5f899">
       <annotation></annotation>
       <name>Update CPU VM</name>
       <bounds>
-        <x>510.0</x>
-        <y>900.0</y>
+        <x>630.0</x>
+        <y>780.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -2935,7 +3034,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="f7474850-93c2-4dbe-a69a-8865954d8938">
+        <userInputBinding id="2690a0ef-962c-454d-b8b8-9370c2e70e8d">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2950,7 +3049,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="b37afe9b-b3d7-4ecc-bb23-348f856aaaf0">
+        <userInputBinding id="6c60a87c-2deb-4110-82e3-f2841eed1cf6">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2965,7 +3064,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="1fe94286-f9a0-4c69-80e9-a7ea8e3d1fc8">
+        <userInputBinding id="f4f0f8f1-a47a-4771-b207-56c15d1da13c">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2980,7 +3079,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="8f05c4d2-c288-4a97-a14c-f542e56ffc5d">
+        <userInputBinding id="3f44158f-1834-4d62-8d58-98e9c6f85dd0">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -2995,7 +3094,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="3ffaae7c-bec9-46f9-a727-148c8e221b6d">
+        <userInputBinding id="2fe13f8c-8870-40e6-a7d6-ef6e9b502060">
           <annotation></annotation>
           <fromContextKey>vmID</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -3011,7 +3110,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="32fd66a8-cfe4-4e5a-b290-2f455548ffca">
+        <userInputBinding id="ba241e8e-7081-4ec9-9b1a-fd1440af5601">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3028,7 +3127,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="e38bcf6d-a7f0-4f21-be05-94bfa4a34389">
+        <transition id="6949b2ed-4025-4bff-b977-717f665c1216">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -3037,10 +3136,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>35eb869e-c46e-496a-927b-662bfc4c6736</refId>
+            <refId>eec4b407-df10-42ff-8eac-5b539200cf7e</refId>
           </destination>
           <source>
-            <refId>fd359a5b-351a-4625-a429-99f45a731e15</refId>
+            <refId>8dd80f06-cf7c-4c77-b006-c0148fc5f899</refId>
           </source>
           <positions>
             <point>
@@ -3057,7 +3156,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="68334ae3-5880-4cc7-8605-b808f3bb9cdd">
+        <transition id="7315d0d3-062c-4c8b-b415-08e7ad286fbe">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -3066,10 +3165,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>1b24656d-a304-4df0-aaba-971b29e68f71</refId>
+            <refId>c7784ee4-d3dc-492b-a1cf-13492172d93b</refId>
           </destination>
           <source>
-            <refId>fd359a5b-351a-4625-a429-99f45a731e15</refId>
+            <refId>8dd80f06-cf7c-4c77-b006-c0148fc5f899</refId>
           </source>
           <positions>
             <point>
@@ -3094,12 +3193,12 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="c43bdcd3-6b07-46ea-a043-95f6e37f61a2">
+    <step id="5eab16c3-2341-49f2-b6c4-0bc2f28544c8">
       <annotation></annotation>
       <name>Update RAM VM</name>
       <bounds>
-        <x>330.0</x>
-        <y>900.0</y>
+        <x>480.0</x>
+        <y>780.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -3116,7 +3215,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="053532bf-0662-4d8f-870b-e4fd543a5374">
+        <userInputBinding id="5e344557-72f8-4af4-9896-208a2b056be6">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3131,7 +3230,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="8de72f8a-a7e1-4f90-9ec7-a4cda4806f4f">
+        <userInputBinding id="2e515f81-007c-408c-985b-d8d688d3af29">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3146,7 +3245,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="d1e4d456-fabe-4915-9954-982c5689430b">
+        <userInputBinding id="414cd5c4-43e2-47fe-b2e3-49c5b341082e">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3161,7 +3260,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="3309adf6-71fe-43d6-bcf1-547e190fb146">
+        <userInputBinding id="ed38ad25-b3b9-43a5-bc6f-faf33289f6dc">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3176,7 +3275,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="3643623c-eaf1-4d6f-bbab-c0ef50185437">
+        <userInputBinding id="ea238b3e-d71a-4a4e-8b92-237396d7e0be">
           <annotation></annotation>
           <fromContextKey>vmID</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -3192,7 +3291,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="3fe62a72-65d8-4c58-9b59-b48a22425adb">
+        <userInputBinding id="3f871eea-0cb4-4684-b081-b6067c8667be">
           <annotation></annotation>
           <fromContextKey>memAllocation</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -3210,7 +3309,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="5cc71eb9-c7fe-410b-8009-8dbb7176382a">
+        <transition id="6f56d1e5-f90d-4fca-b227-5654c09b6e40">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -3219,10 +3318,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>fd359a5b-351a-4625-a429-99f45a731e15</refId>
+            <refId>8dd80f06-cf7c-4c77-b006-c0148fc5f899</refId>
           </destination>
           <source>
-            <refId>c43bdcd3-6b07-46ea-a043-95f6e37f61a2</refId>
+            <refId>5eab16c3-2341-49f2-b6c4-0bc2f28544c8</refId>
           </source>
           <positions>
             <point>
@@ -3239,7 +3338,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="2c79fa69-fe12-4320-8c0c-420811c0b913">
+        <transition id="157088e6-455e-4f14-b719-b788b02aca19">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -3248,10 +3347,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>35eb869e-c46e-496a-927b-662bfc4c6736</refId>
+            <refId>eec4b407-df10-42ff-8eac-5b539200cf7e</refId>
           </destination>
           <source>
-            <refId>c43bdcd3-6b07-46ea-a043-95f6e37f61a2</refId>
+            <refId>5eab16c3-2341-49f2-b6c4-0bc2f28544c8</refId>
           </source>
           <positions>
             <point>
@@ -3276,12 +3375,12 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <returnStep id="35eb869e-c46e-496a-927b-662bfc4c6736">
+    <returnStep id="eec4b407-df10-42ff-8eac-5b539200cf7e">
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>510.0</x>
-        <y>750.0</y>
+        <x>630.0</x>
+        <y>630.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -3299,7 +3398,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <userPrompt></userPrompt>
       <bindings/>
       <transitions>
-        <transition id="40f8d321-0b16-43a1-8f57-d3c097743ce3">
+        <transition id="c2ab400d-6d8d-47f4-9e75-6b9e88d1d7e7">
           <annotation></annotation>
           <name>return</name>
           <command>NEXT</command>
@@ -3308,10 +3407,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>35eb869e-c46e-496a-927b-662bfc4c6736</refId>
+            <refId>eec4b407-df10-42ff-8eac-5b539200cf7e</refId>
           </destination>
           <source>
-            <refId>35eb869e-c46e-496a-927b-662bfc4c6736</refId>
+            <refId>eec4b407-df10-42ff-8eac-5b539200cf7e</refId>
           </source>
           <positions/>
         </transition>
@@ -3320,12 +3419,12 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
-    <step id="78446cec-ce29-4f18-9ef3-7b520032d6fe">
-      <annotation>eba536e7-259e-4800-8bbe-81dc8926d3cc.78446cec-ce29-4f18-9ef3-7b520032d6fe.description</annotation>
-      <name>Less Than or Equal</name>
+    <step id="e34452dd-ab2b-4be5-a6bf-8a83fb500f87">
+      <annotation>888514a0-a4b4-4b77-9c5a-be3752fb1206.e34452dd-ab2b-4be5-a6bf-8a83fb500f87.description</annotation>
+      <name>Sleep</name>
       <bounds>
-        <x>510.0</x>
-        <y>450.0</y>
+        <x>810.0</x>
+        <y>480.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -3342,7 +3441,110 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="d1409e02-fb05-404b-8c3b-e9ba99133822">
+        <staticBinding id="2efa5d23-859f-4688-b5fd-21e1802e72e9">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>seconds</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>600</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="6fb35658-465b-4d5d-86c2-4e1f4429221f">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>8bd407e5-4955-408e-8ce0-b934d4feeccb</refId>
+          </destination>
+          <source>
+            <refId>e34452dd-ab2b-4be5-a6bf-8a83fb500f87</refId>
+          </source>
+          <positions>
+            <point>
+              <x>530.0</x>
+              <y>64.0</y>
+            </point>
+            <point>
+              <x>710.0</x>
+              <y>64.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="4151598c-8484-4925-abb4-63264caded1d">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>eec4b407-df10-42ff-8eac-5b539200cf7e</refId>
+          </destination>
+          <source>
+            <refId>e34452dd-ab2b-4be5-a6bf-8a83fb500f87</refId>
+          </source>
+          <positions>
+            <point>
+              <x>860.0</x>
+              <y>514.0</y>
+            </point>
+            <point>
+              <x>680.0</x>
+              <y>664.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>d1bbf441-824a-450e-afae-2ddec0e0f35e</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="198d6093-f6f2-4363-a228-cebd72b63b08">
+      <annotation>888514a0-a4b4-4b77-9c5a-be3752fb1206.198d6093-f6f2-4363-a228-cebd72b63b08.description</annotation>
+      <name>Equal</name>
+      <bounds>
+        <x>810.0</x>
+        <y>30.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="2ab25978-6b49-4a67-9af5-89eeb05c4e30">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3355,7 +3557,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <value>${counter}</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="4fb738d6-3ec1-4205-9d1e-a3593676d626">
+        <staticBinding id="f40c4f39-ff88-4291-87d6-1eaeea19212c">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3365,10 +3567,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>value2</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>3</value>
+          <value>0</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="a66db796-0883-450c-bf94-8ab8671fc7ea">
+        <staticBinding id="66d8caa4-f1bc-4770-a0ae-4d65fb8b7a29">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -3381,12 +3583,41 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>operation</inputSymbol>
           <listDelimiter></listDelimiter>
-          <value>&lt;=</value>
+          <value>==</value>
           <record>false</record>
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="6a990b18-d2fc-4a07-bed3-ad7173a2a471">
+        <transition id="b9fd2b1c-51a0-40e3-b0f4-2e4adf840df9">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>1eff7378-1c44-4186-926b-3d862f436fd1</refId>
+          </destination>
+          <source>
+            <refId>198d6093-f6f2-4363-a228-cebd72b63b08</refId>
+          </source>
+          <positions>
+            <point>
+              <x>710.0</x>
+              <y>64.0</y>
+            </point>
+            <point>
+              <x>680.0</x>
+              <y>364.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="c56310c3-093a-41c4-8913-005b584c79ee">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -3395,10 +3626,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>7001f4e0-ff4a-4cda-b2be-5220eb92c7d8</refId>
+            <refId>a8c4cf72-d6df-4fd3-9fbc-27770db2e8de</refId>
           </destination>
           <source>
-            <refId>78446cec-ce29-4f18-9ef3-7b520032d6fe</refId>
+            <refId>198d6093-f6f2-4363-a228-cebd72b63b08</refId>
           </source>
           <positions>
             <point>
@@ -3415,35 +3646,6 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="6367ac0a-e7e0-4e1c-bd16-187eb57279db">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>35eb869e-c46e-496a-927b-662bfc4c6736</refId>
-          </destination>
-          <source>
-            <refId>78446cec-ce29-4f18-9ef3-7b520032d6fe</refId>
-          </source>
-          <positions>
-            <point>
-              <x>530.0</x>
-              <y>364.0</y>
-            </point>
-            <point>
-              <x>560.0</x>
-              <y>664.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
       </transitions>
       <properties/>
       <opRef>
@@ -3452,12 +3654,12 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="7001f4e0-ff4a-4cda-b2be-5220eb92c7d8">
-      <annotation></annotation>
-      <name>Delete VM</name>
+    <step id="03c1c498-7755-4dc7-944f-a089ff1d592b">
+      <annotation>888514a0-a4b4-4b77-9c5a-be3752fb1206.03c1c498-7755-4dc7-944f-a089ff1d592b.description</annotation>
+      <name>Set Flow Variable</name>
       <bounds>
-        <x>690.0</x>
-        <y>180.0</y>
+        <x>480.0</x>
+        <y>30.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -3474,7 +3676,94 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="1bf5c2ac-2620-4c5d-8a05-d497b66862a7">
+        <staticBinding id="88a2318c-f75e-4ccb-ad0c-321897971c12">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>keyName</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>counter</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="47aa6abc-492c-4524-93c4-9878dc020b03">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>myValue</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>1</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="d006bd93-f56c-4ba3-bc5a-9a275bcf8e38">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>df49d828-875a-42a0-a1cf-438194252a1f</refId>
+          </destination>
+          <source>
+            <refId>03c1c498-7755-4dc7-944f-a089ff1d592b</refId>
+          </source>
+          <positions>
+            <point>
+              <x>530.0</x>
+              <y>64.0</y>
+            </point>
+            <point>
+              <x>380.0</x>
+              <y>64.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>f3112e9d-ed88-47bf-be86-2f99e8541a33</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="a8c4cf72-d6df-4fd3-9fbc-27770db2e8de">
+      <annotation></annotation>
+      <name>Delete VM</name>
+      <bounds>
+        <x>630.0</x>
+        <y>30.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="34c0f4f8-35e7-4e14-88a8-47868fbf3c86">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3489,7 +3778,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="5a6d57b5-c1de-44df-a79e-ebbec550c99a">
+        <userInputBinding id="46ee281c-1730-4f61-a698-c591d586c4e8">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3504,7 +3793,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="82c063fc-106d-4cbb-a0ec-2bc8b85d2825">
+        <userInputBinding id="f7cd5ea3-ca64-4a0e-abe1-8c4fb2688001">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -3521,7 +3810,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="a5634305-5264-4d90-a8a4-1c8d63b41619">
+        <transition id="113beb19-5722-4531-8695-814e38779c40">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -3530,10 +3819,10 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>b122c60a-a0a6-4285-9048-fc84e81c5fe6</refId>
+            <refId>1eff7378-1c44-4186-926b-3d862f436fd1</refId>
           </destination>
           <source>
-            <refId>7001f4e0-ff4a-4cda-b2be-5220eb92c7d8</refId>
+            <refId>a8c4cf72-d6df-4fd3-9fbc-27770db2e8de</refId>
           </source>
           <positions>
             <point>
@@ -3550,7 +3839,7 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="b11137e8-e871-4bb8-bb83-45906e32ff7b">
+        <transition id="dd1e3ec1-bfd6-4b0f-aad3-9a42e3d5c7cc">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -3559,15 +3848,15 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>f1c4a2ec-736d-4bd1-9493-ceeac165721a</refId>
+            <refId>03c1c498-7755-4dc7-944f-a089ff1d592b</refId>
           </destination>
           <source>
-            <refId>7001f4e0-ff4a-4cda-b2be-5220eb92c7d8</refId>
+            <refId>a8c4cf72-d6df-4fd3-9fbc-27770db2e8de</refId>
           </source>
           <positions>
             <point>
-              <x>770.0</x>
-              <y>184.0</y>
+              <x>860.0</x>
+              <y>214.0</y>
             </point>
             <point>
               <x>530.0</x>
@@ -3587,409 +3876,6 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="f1c4a2ec-736d-4bd1-9493-ceeac165721a">
-      <annotation>eba536e7-259e-4800-8bbe-81dc8926d3cc.f1c4a2ec-736d-4bd1-9493-ceeac165721a.description</annotation>
-      <name>Addition</name>
-      <bounds>
-        <x>510.0</x>
-        <y>30.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings>
-        <staticBinding id="333ea124-ea25-4166-b6ee-252ccbdab184">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>value1</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>${counter}</value>
-          <record>false</record>
-          <validationFormat>
-            <refId>69c5e11d-2f62-488c-b02b-9c507dcb9088</refId>
-            <refName>numeric</refName>
-          </validationFormat>
-        </staticBinding>
-        <staticBinding id="e689bf30-8d7a-48ec-852f-9964b6a67af6">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>value2</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>1</value>
-          <record>false</record>
-          <validationFormat>
-            <refId>69c5e11d-2f62-488c-b02b-9c507dcb9088</refId>
-            <refName>numeric</refName>
-          </validationFormat>
-        </staticBinding>
-        <staticBinding id="b6bb9162-1cf8-4ce1-a229-cbab060a2890">
-          <annotation></annotation>
-          <toContextKey></toContextKey>
-          <fromContextKey></fromContextKey>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <recordKey></recordKey>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>operation</inputSymbol>
-          <listDelimiter></listDelimiter>
-          <value>+</value>
-          <record>false</record>
-        </staticBinding>
-      </bindings>
-      <transitions>
-        <transition id="97067f25-2d41-41e7-9847-154a409eb110">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>322d6600-b899-4814-adef-e5ca5cef5e66</refId>
-          </destination>
-          <source>
-            <refId>f1c4a2ec-736d-4bd1-9493-ceeac165721a</refId>
-          </source>
-          <positions>
-            <point>
-              <x>530.0</x>
-              <y>64.0</y>
-            </point>
-            <point>
-              <x>380.0</x>
-              <y>64.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-        <transition id="8fe3c0e6-e117-4b15-a68d-4d9d0daa1f5b">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>b122c60a-a0a6-4285-9048-fc84e81c5fe6</refId>
-          </destination>
-          <source>
-            <refId>f1c4a2ec-736d-4bd1-9493-ceeac165721a</refId>
-          </source>
-          <positions>
-            <point>
-              <x>530.0</x>
-              <y>64.0</y>
-            </point>
-            <point>
-              <x>740.0</x>
-              <y>214.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-      </transitions>
-      <properties/>
-      <opRef>
-        <refId>37fbd782-48f2-4f66-b1b9-7f32c2b707bd</refId>
-      </opRef>
-      <assignments>
-        <flowVariableAssignment id="1a177555-6b72-4821-9518-b14d5540fbda">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
-          <contextKey>counter</contextKey>
-          <expression id="3a67de9d-0b21-4a97-b55c-9f6d1dc9dde3">
-            <annotation></annotation>
-            <name>Result Field: result</name>
-            <fieldName>result</fieldName>
-            <sourceType>RAWRESULT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
-      </assignments>
-      <throttleSize>0</throttleSize>
-    </step>
-    <step id="666e2a60-8219-422f-95b2-a69e293db1d6">
-      <annotation>eba536e7-259e-4800-8bbe-81dc8926d3cc.666e2a60-8219-422f-95b2-a69e293db1d6.description</annotation>
-      <name>String Comparator</name>
-      <bounds>
-        <x>330.0</x>
-        <y>330.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings>
-        <staticBinding id="2778f73b-a8c9-4819-8f29-d1fdac79e19b">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>matchType</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>Contains</value>
-          <record>false</record>
-        </staticBinding>
-        <userInputBinding id="afd0cfb2-801c-458c-aaf6-976f1a2d1977">
-          <annotation></annotation>
-          <fromContextKey>message</fromContextKey>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>toMatch</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt>eba536e7-259e-4800-8bbe-81dc8926d3cc.afd0cfb2-801c-458c-aaf6-976f1a2d1977.prompt</prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <staticBinding id="8a5d7ce0-441c-41ac-8b6a-22506b44a650">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>matchTo</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>The entity null is busy completing an operation.</value>
-          <record>false</record>
-        </staticBinding>
-        <staticBinding id="c7776e16-847d-42cc-8bfb-a0ef3bc9dc83">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>ignoreCase</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>False</value>
-          <record>false</record>
-        </staticBinding>
-      </bindings>
-      <transitions>
-        <transition id="ba459ad7-1f11-4515-bef9-8b351b56f6e7">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>addfefad-7e0c-4c3d-b542-95a28f1aeee4</refId>
-          </destination>
-          <source>
-            <refId>666e2a60-8219-422f-95b2-a69e293db1d6</refId>
-          </source>
-          <positions>
-            <point>
-              <x>380.0</x>
-              <y>364.0</y>
-            </point>
-            <point>
-              <x>230.0</x>
-              <y>214.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-        <transition id="3b8b641b-5cb8-471c-ab1a-fba0947a997f">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>c6e0ee17-d917-48f3-abba-c1ef5feed931</refId>
-          </destination>
-          <source>
-            <refId>666e2a60-8219-422f-95b2-a69e293db1d6</refId>
-          </source>
-          <positions>
-            <point>
-              <x>380.0</x>
-              <y>364.0</y>
-            </point>
-            <point>
-              <x>380.0</x>
-              <y>214.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-      </transitions>
-      <properties/>
-      <opRef>
-        <refId>f1dafb35-6463-4a1b-8f87-8aa748497bed</refId>
-      </opRef>
-      <assignments/>
-      <throttleSize>0</throttleSize>
-    </step>
-    <step id="c6e0ee17-d917-48f3-abba-c1ef5feed931">
-      <annotation>eba536e7-259e-4800-8bbe-81dc8926d3cc.c6e0ee17-d917-48f3-abba-c1ef5feed931.description</annotation>
-      <name>Sleep</name>
-      <bounds>
-        <x>330.0</x>
-        <y>180.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings>
-        <staticBinding id="dcbc09c0-ba26-439b-a610-548f779d7a32">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>seconds</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>300</value>
-          <record>false</record>
-        </staticBinding>
-      </bindings>
-      <transitions>
-        <transition id="25b8184a-be9a-4ef5-a41a-f567b0785a68">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>addfefad-7e0c-4c3d-b542-95a28f1aeee4</refId>
-          </destination>
-          <source>
-            <refId>c6e0ee17-d917-48f3-abba-c1ef5feed931</refId>
-          </source>
-          <positions>
-            <point>
-              <x>380.0</x>
-              <y>214.0</y>
-            </point>
-            <point>
-              <x>230.0</x>
-              <y>214.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-        <transition id="1fa054df-bb91-4b2b-ab30-f2ef6a029566">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>322d6600-b899-4814-adef-e5ca5cef5e66</refId>
-          </destination>
-          <source>
-            <refId>c6e0ee17-d917-48f3-abba-c1ef5feed931</refId>
-          </source>
-          <positions>
-            <point>
-              <x>380.0</x>
-              <y>214.0</y>
-            </point>
-            <point>
-              <x>380.0</x>
-              <y>64.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-      </transitions>
-      <properties/>
-      <opRef>
-        <refId>d1bbf441-824a-450e-afae-2ddec0e0f35e</refId>
-      </opRef>
-      <assignments/>
-      <throttleSize>0</throttleSize>
-    </step>
   </steps>
-  <startSteps>1a813ba9-c275-4fef-9144-c9f7dbe3c382</startSteps>
+  <startSteps>652b7afb-49fe-4aa8-ae1d-c0378686e15f</startSteps>
 </flow>

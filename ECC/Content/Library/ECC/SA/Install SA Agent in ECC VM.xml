@@ -74,7 +74,7 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>serverIPAddress</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>198.18.84.45</value>
+      <value>198.18.84.44</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="3b7bfe65-9a72-412d-8631-5f693f9c8da4">
@@ -89,7 +89,7 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>username</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>administrator</value>
+      <value>Administrator</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="0d38f7b7-b39d-44d6-8c40-55078ac4cece">
@@ -130,7 +130,7 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>targetOSClass</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>windows</value>
+      <value>Windows 2012</value>
       <record>false</record>
     </staticBinding>
   </inputs>
@@ -483,7 +483,7 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
           <fromContextKey></fromContextKey>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
-          <inputType>ENCRYPTED</inputType>
+          <inputType>STRING</inputType>
           <isList>false</isList>
           <required>true</required>
           <isPersisted>true</isPersisted>
@@ -494,7 +494,7 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="41158c0a-ac5d-4c90-8852-662fb48c5087">
+        <identityBinding id="b5dcd864-5732-43ed-a0a1-7f9ba1d176f0">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -507,10 +507,12 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
           <inputSymbol>password</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
+          <link>
+            <refId>757fda9a-b8f1-43c3-b207-f4aa143897d8</refId>
+            <refName>windows_default_user_template</refName>
+          </link>
+          <identityAttribute>PASSWORD</identityAttribute>
+        </identityBinding>
         <staticBinding id="00c171d6-508d-4e0d-8e2b-856b3520260d">
           <annotation></annotation>
           <toContextKey></toContextKey>

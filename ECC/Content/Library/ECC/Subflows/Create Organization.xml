@@ -100,7 +100,15 @@
       <matchRules/>
     </opResponse>
   </possibleResponses>
-  <availableResultExpressions/>
+  <availableResultExpressions>
+    <expression id="83dd7d50-5190-402c-9ff1-ba1d70f704ba">
+      <annotation></annotation>
+      <name>orgID</name>
+      <fieldName>orgID</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+  </availableResultExpressions>
   <resultExpression id="d9567fcd-7949-4047-8225-96ff751a7c70">
     <annotation></annotation>
     <name>FailureMessage</name>
