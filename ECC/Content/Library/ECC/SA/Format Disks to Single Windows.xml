@@ -991,7 +991,7 @@ Where-Object Number -Eq &quot;1&quot; |
 Initialize-Disk -PartitionStyle MBR
 
 New-Partition -DiskNumber 1 -AssignDriveLetter -UseMaximumSize |
-Format-Volume</value>
+Format-Volume -Confirm:$false</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="817a7c21-9807-4209-a04a-214b5cc8b65e">
@@ -1939,7 +1939,7 @@ Where-Object Number -Eq &quot;2&quot; |
 Initialize-Disk -PartitionStyle MBR
 
 New-Partition -DiskNumber 2 -AssignDriveLetter -UseMaximumSize |
-Format-Volume</value>
+Format-Volume -Confirm:$false</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="3bd8b83a-bb61-478c-ab69-1dc4aad4d615">
@@ -2617,7 +2617,7 @@ Where-Object Number -Eq &quot;3&quot; |
 Initialize-Disk -PartitionStyle MBR
 
 New-Partition -DiskNumber 3 -AssignDriveLetter -UseMaximumSize |
-Format-Volume</value>
+Format-Volume -Confirm:$false</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="372618f1-5304-4816-99cb-b20d6cb8b4dd">
@@ -3017,7 +3017,7 @@ Where-Object Number -Eq &quot;4&quot; |
 Initialize-Disk -PartitionStyle MBR
 
 New-Partition -DiskNumber 4 -AssignDriveLetter -UseMaximumSize |
-Format-Volume</value>
+Format-Volume -Confirm:$false</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="401eb883-4dbd-48d9-b092-97ec8d5b68cc">
