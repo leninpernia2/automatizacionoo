@@ -547,7 +547,7 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
           </link>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="fe76ced6-cc27-4cda-aa5a-e4bed6a357d7">
+        <staticBinding id="39e28028-df89-4b38-b19a-82769f7d9066">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -557,11 +557,9 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>realmName</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
+        </staticBinding>
         <staticBinding id="6e6c2071-2f48-4f82-87e4-1842336d79e2">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
@@ -584,6 +582,19 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
           <required>false</required>
           <isPersisted>true</isPersisted>
           <inputSymbol>forceSoftwareRegistration</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>true</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="6013b516-6e28-4aa2-b1e4-477e089344aa">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>forceNewDevice</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <value>true</value>
           <record>false</record>
@@ -724,6 +735,12 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="0d59c994-5deb-4f0f-9776-9e30e3fe8f01">
+        <baseIcon>return_failure.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -968,6 +985,19 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="749ef7db-f564-4875-990b-a603332f08be">
+        <baseIcon>change.png</baseIcon>
+        <basePath>/Integrations/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="4f9c2461-2362-4cd1-b5d4-5c80c1997137">
+            <baseIcon>hourglass.png</baseIcon>
+            <basePath>/Utilities/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1135,6 +1165,12 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="26f74500-ec6c-4ae6-8064-75080a22952b">
+        <baseIcon>compare.png</baseIcon>
+        <basePath>Utilities/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1328,7 +1364,7 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="60833fa0-e2d5-4019-a38c-d0419ad57a31">
+        <staticBinding id="d083a87e-3057-45bf-a8a8-683c046274a3">
           <annotation></annotation>
           <fromContextKey>serverIPAddress</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -1339,11 +1375,9 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>ipAddress</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
+        </staticBinding>
       </bindings>
       <transitions>
         <transition id="f2ca8a8c-7b24-4642-8169-7f2d18c31446">
