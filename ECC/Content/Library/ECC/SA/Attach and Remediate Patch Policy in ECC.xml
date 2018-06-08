@@ -1273,7 +1273,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>seconds</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>60</value>
+          <value>300</value>
           <record>false</record>
         </staticBinding>
       </bindings>
@@ -1465,12 +1465,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="0e893492-7936-4e60-bdba-b95b9f88e50a">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
