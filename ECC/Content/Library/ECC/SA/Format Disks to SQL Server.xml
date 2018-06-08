@@ -540,12 +540,10 @@ b8357d35-38eb-4b33-8c19-1e3d78476324.fbf930a9-0e64-47dd-994f-040189e21339.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>sourceCode</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>Get-Disk |
-Where-Object Number -Eq &quot;1&quot; |
-Initialize-Disk -PartitionStyle MBR
+          <value>Get-Disk |Where-Object Number -Eq &quot;1&quot; |Initialize-Disk -PartitionStyle MBR
 
-New-Partition -DiskNumber 1 -AssignDriveLetter -UseMaximumSize |
-Format-Volume</value>
+New-Partition -DiskNumber 1 -AssignDriveLetter -UseMaximumSize |Format-Volume -Confirm:$false
+</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="27ef1a18-0ecc-41cd-9fa3-e7beedefdfc0">
@@ -1069,12 +1067,6 @@ Format-Volume</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="4ac5d1f9-38cb-4ab5-9647-d9a32bd02018">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -1416,12 +1408,10 @@ Format-Volume</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>sourceCode</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>Get-Disk |
-Where-Object Number -Eq &quot;2&quot; |
-Initialize-Disk -PartitionStyle MBR
+          <value>Get-Disk |Where-Object Number -Eq &quot;2&quot; |Initialize-Disk -PartitionStyle MBR
 
-New-Partition -DiskNumber 2 -AssignDriveLetter -UseMaximumSize |
-Format-Volume</value>
+New-Partition -DiskNumber 2 -AssignDriveLetter -UseMaximumSize |Format-Volume -Confirm:$false
+</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="91925718-e586-4d7b-ab0e-2ba468c59870">
@@ -2050,12 +2040,10 @@ Format-Volume</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>sourceCode</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>Get-Disk |
-Where-Object Number -Eq &quot;3&quot; |
-Initialize-Disk -PartitionStyle MBR
+          <value>Get-Disk |Where-Object Number -Eq &quot;3&quot; |Initialize-Disk -PartitionStyle MBR
 
-New-Partition -DiskNumber 3 -AssignDriveLetter -UseMaximumSize |
-Format-Volume</value>
+New-Partition -DiskNumber 3 -AssignDriveLetter -UseMaximumSize |Format-Volume -Confirm:$false
+</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="4e80c158-c375-4ba4-8207-c3a0d39eda48">
@@ -2658,12 +2646,10 @@ Format-Volume</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>sourceCode</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>Get-Disk |
-Where-Object Number -Eq &quot;4&quot; |
-Initialize-Disk -PartitionStyle MBR
+          <value>Get-Disk |Where-Object Number -Eq &quot;4&quot; |Initialize-Disk -PartitionStyle MBR
 
-New-Partition -DiskNumber 4 -AssignDriveLetter -UseMaximumSize |
-Format-Volume</value>
+New-Partition -DiskNumber 4 -AssignDriveLetter -UseMaximumSize |Format-Volume -Confirm:$false
+</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="ad93e47a-52fe-4bbe-8a5a-b55863982b32">
