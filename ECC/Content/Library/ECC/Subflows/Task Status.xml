@@ -308,12 +308,6 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="5dda9c73-0831-4739-95a2-a07f359c6f2c">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -358,12 +352,6 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="e73e4f2d-2548-46a4-bded-1fa40fabda49">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -573,7 +561,7 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>seconds</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>10</value>
+          <value>30</value>
           <record>false</record>
         </staticBinding>
       </bindings>
