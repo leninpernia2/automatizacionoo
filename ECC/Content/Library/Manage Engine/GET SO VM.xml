@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow id="a0b61adc-2251-4379-b8f9-0540e78b73cf">
-  <descriptionCdata><![CDATA[a0b61adc-2251-4379-b8f9-0540e78b73cf.352863b5-82fb-4600-928d-cebf1a3ce649.description=<pre>\nThis operation adds a flow variable to the local context. The variable is available in the current flow and its child flows.\n\nInputs\:\n    keyName - The name of the flow variable to add.\n    myValue - The value to assign to the flow variable.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of "myValue" input field.\n\nResponses\:\n    success - The operation completed as stated in the description.\n\nNote\:\n   If a flow variable with the same name already exists, its value will be overwritten.\n</pre>
-a0b61adc-2251-4379-b8f9-0540e78b73cf.6c24ea1a-ac12-4201-81e9-f8dff177cfba.prompt=To Match\:
-a0b61adc-2251-4379-b8f9-0540e78b73cf.ca47ff55-11e2-4e39-8e48-483af82e21e2.description=<pre>\nThis operation adds a flow variable to the local context. The variable is available in the current flow and its child flows.\n\nInputs\:\n    keyName - The name of the flow variable to add.\n    myValue - The value to assign to the flow variable.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of "myValue" input field.\n\nResponses\:\n    success - The operation completed as stated in the description.\n\nNote\:\n   If a flow variable with the same name already exists, its value will be overwritten.\n</pre>
-a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.description=<pre>This operation checks whether a string matches another string, using a specific matching rule. The "toMatch" input is the string that is checked for matching the "matchTo" expression. \n\nInputs\:\n    matchType - The type of match to perform.\nValid values\: Exact Match, Contains, Contains Once, Does Not Contain, Match All Words, Match No Words, Regex (The values are not case sensitive)\nDefault value\: Exact Match\n    toMatch - The string that is checked for matching.\n    matchTo - The string to match against.\nExample\: If "matchType" is \u201CRegEx\u201D, the "matchTo" input is a regular expression such as\: ^-?\\d+(([\\.,]\\d+)?)+$. \n    ignoreCase - Specifies whether to ignore case when matching or not.\nValid values\: False, True\nDefault value\: False\n\nResults\:\n    returnResult - This is the primary output. It contains the string "Matches" if the "toMatch" string matches the "matchTo" string. Otherwise, it contains the string "Does Not Match".  \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
-]]></descriptionCdata>
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
   <annotation></annotation>
   <name>GET SO VM</name>
   <categories/>
@@ -71,7 +67,7 @@ a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>vmID</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vm-a7d6aa00-68ba-42cd-aa28-f4880b8afb36</value>
+      <value>vm-0049ff7c-9534-4849-954d-e583a32ff481</value>
       <record>false</record>
     </staticBinding>
   </inputs>
@@ -124,7 +120,7 @@ a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.descri
       <annotation></annotation>
       <name>Get Token</name>
       <bounds>
-        <x>221.0</x>
+        <x>180.0</x>
         <y>0.0</y>
       </bounds>
       <layer>-1</layer>
@@ -295,8 +291,8 @@ a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.descri
       <annotation></annotation>
       <name>Get VM Details</name>
       <bounds>
-        <x>221.0</x>
-        <y>149.0</y>
+        <x>180.0</x>
+        <y>150.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -395,7 +391,7 @@ a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.descri
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="bce38f42-eec6-4b76-8dd3-51f4ca4903d1">
+        <transition id="3be9e5d0-4338-4efe-a86c-2f7123d60584">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -404,19 +400,19 @@ a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.descri
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>dfa07330-b379-4c42-8ea5-9c651525435e</refId>
+            <refId>f469f23e-6340-4a6c-a903-8e54f1c20c74</refId>
           </destination>
           <source>
             <refId>34e6f0e8-0dc1-4df2-af8d-3a3c073681ed</refId>
           </source>
           <positions>
             <point>
-              <x>124.0</x>
-              <y>84.0</y>
+              <x>271.0</x>
+              <y>183.0</y>
             </point>
             <point>
-              <x>290.0</x>
-              <y>214.0</y>
+              <x>463.0</x>
+              <y>495.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -442,47 +438,15 @@ a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.descri
             <fieldName>xml</fieldName>
             <sourceType>RAWRESULT</sourceType>
             <filters>
-              <regexFilter id="81c39718-9597-4144-8b71-354ede800006">
+              <xmlGetElementValueFilter id="3ddd4072-2414-4444-92a0-489e4a113bc0">
                 <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>&lt;ovf:Description&gt;.*&lt;/ovf:Description&gt;</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <replaceAllFilter id="50e0c3cb-4313-4657-9752-e12ca6f8e0d9">
+                <name>XML Get Element Value</name>
+                <elementPath>//*[name()=&quot;ovf:Description&quot;]</elementPath>
+              </xmlGetElementValueFilter>
+              <numberFilter id="fad2c87c-f9e2-4b26-98dc-1088bd97dd8a">
                 <annotation></annotation>
-                <name>Replace</name>
-                <ignoreCase>true</ignoreCase>
-                <searchString>&lt;ovf:Description&gt;</searchString>
-                <replaceType>ALL</replaceType>
-              </replaceAllFilter>
-              <replaceAllFilter id="43d24185-e748-42a6-a73a-2ea07b45674b">
-                <annotation></annotation>
-                <name>Replace</name>
-                <ignoreCase>true</ignoreCase>
-                <searchString>&lt;/ovf:Description&gt;</searchString>
-                <replaceType>ALL</replaceType>
-              </replaceAllFilter>
-              <regexFilter id="85503333-e6c6-454a-8927-6535970a8fe6">
-                <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>Centos|RedHat|Ubuntu|Windows.*</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <regexFilter id="e80dba21-780c-4b55-a2a4-adae98724c9c">
-                <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>\s2000|\s2003|\s2008|\s2012|\s7|\s8|\sXP|\sVista</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
+                <name>Extract Number</name>
+              </numberFilter>
             </filters>
           </expression>
         </flowVariableAssignment>
@@ -490,46 +454,19 @@ a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.descri
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
-          <contextKey>SO</contextKey>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>SO_VM</contextKey>
           <expression id="2da7c592-4153-4ba5-b48d-de44c7fc5089">
             <annotation></annotation>
             <name>Result Field: xml</name>
             <fieldName>xml</fieldName>
             <sourceType>RAWRESULT</sourceType>
             <filters>
-              <regexFilter id="ef76e609-7487-446c-86db-01d22ef6c29c">
+              <xmlGetElementValueFilter id="e60e3096-c05a-427a-8efe-fb1bf6412df0">
                 <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>&lt;ovf:Description&gt;.*&lt;/ovf:Description&gt;</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <replaceAllFilter id="ceb17486-f99e-4586-8cad-588ed22e2cf7">
-                <annotation></annotation>
-                <name>Replace</name>
-                <ignoreCase>true</ignoreCase>
-                <searchString>&lt;ovf:Description&gt;</searchString>
-                <replaceType>ALL</replaceType>
-              </replaceAllFilter>
-              <replaceAllFilter id="34a37642-2ea8-44cf-b7be-5ced9428cec5">
-                <annotation></annotation>
-                <name>Replace</name>
-                <ignoreCase>true</ignoreCase>
-                <searchString>&lt;/ovf:Description&gt;</searchString>
-                <replaceType>ALL</replaceType>
-              </replaceAllFilter>
-              <regexFilter id="b11cf864-a4a0-4291-976c-b75672449f35">
-                <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>Centos|RedHat|Ubuntu|Windows</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
+                <name>XML Get Element Value</name>
+                <elementPath>//*[name()=&quot;ovf:Description&quot;]</elementPath>
+              </xmlGetElementValueFilter>
             </filters>
           </expression>
         </flowVariableAssignment>
@@ -540,8 +477,8 @@ a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.descri
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>413.0</x>
-        <y>461.0</y>
+        <x>180.0</x>
+        <y>300.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -624,394 +561,6 @@ a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.descri
       <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
-    <step id="dfa07330-b379-4c42-8ea5-9c651525435e">
-      <annotation>a0b61adc-2251-4379-b8f9-0540e78b73cf.dfa07330-b379-4c42-8ea5-9c651525435e.description</annotation>
-      <name>String Comparator</name>
-      <bounds>
-        <x>221.0</x>
-        <y>316.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <iconSpec id="4301c7d4-8695-48e2-8988-105f3b31abe3">
-        <baseIcon>compare.png</baseIcon>
-        <basePath>Utilities</basePath>
-        <readOnly>false</readOnly>
-        <layers/>
-      </iconSpec>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings>
-        <staticBinding id="f9069031-4cb4-42be-b7ec-a8d55e0f3154">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>matchType</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>Contains</value>
-          <record>false</record>
-        </staticBinding>
-        <userInputBinding id="6c24ea1a-ac12-4201-81e9-f8dff177cfba">
-          <annotation></annotation>
-          <fromContextKey>SO</fromContextKey>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>toMatch</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt>a0b61adc-2251-4379-b8f9-0540e78b73cf.6c24ea1a-ac12-4201-81e9-f8dff177cfba.prompt</prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <staticBinding id="5968fd7b-2d5f-4646-ae34-b1992450d5d0">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>matchTo</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>Windows</value>
-          <record>false</record>
-        </staticBinding>
-        <staticBinding id="c132d75a-d8d4-4720-b5b4-7f35ac04f2ca">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>ignoreCase</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>true</value>
-          <record>false</record>
-        </staticBinding>
-      </bindings>
-      <transitions>
-        <transition id="2aa07b70-4155-405a-8f9f-aa0503abb657">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>352863b5-82fb-4600-928d-cebf1a3ce649</refId>
-          </destination>
-          <source>
-            <refId>dfa07330-b379-4c42-8ea5-9c651525435e</refId>
-          </source>
-          <positions>
-            <point>
-              <x>271.0</x>
-              <y>350.0</y>
-            </point>
-            <point>
-              <x>463.0</x>
-              <y>350.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-        <transition id="5ad733f6-f128-47fa-a959-bb5063e1bc0f">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>ca47ff55-11e2-4e39-8e48-483af82e21e2</refId>
-          </destination>
-          <source>
-            <refId>dfa07330-b379-4c42-8ea5-9c651525435e</refId>
-          </source>
-          <positions>
-            <point>
-              <x>271.0</x>
-              <y>350.0</y>
-            </point>
-            <point>
-              <x>271.0</x>
-              <y>495.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-      </transitions>
-      <properties/>
-      <opRef>
-        <refId>f1dafb35-6463-4a1b-8f87-8aa748497bed</refId>
-      </opRef>
-      <assignments/>
-      <throttleSize>0</throttleSize>
-    </step>
-    <step id="352863b5-82fb-4600-928d-cebf1a3ce649">
-      <annotation>a0b61adc-2251-4379-b8f9-0540e78b73cf.352863b5-82fb-4600-928d-cebf1a3ce649.description</annotation>
-      <name>Set Flow Variable</name>
-      <bounds>
-        <x>413.0</x>
-        <y>316.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings>
-        <staticBinding id="56049ae9-d169-4426-a866-46be33ca7246">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>keyName</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>SO_VM_TEST</value>
-          <record>false</record>
-        </staticBinding>
-        <staticBinding id="a8c302fe-17c1-4f8e-8acc-10ed170231fc">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>myValue</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>${SO}${WIN_VERSION}</value>
-          <record>false</record>
-        </staticBinding>
-      </bindings>
-      <transitions>
-        <transition id="67d494a6-b793-43a3-9587-e2e762ca3177">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>f469f23e-6340-4a6c-a903-8e54f1c20c74</refId>
-          </destination>
-          <source>
-            <refId>352863b5-82fb-4600-928d-cebf1a3ce649</refId>
-          </source>
-          <positions>
-            <point>
-              <x>463.0</x>
-              <y>350.0</y>
-            </point>
-            <point>
-              <x>463.0</x>
-              <y>504.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-      </transitions>
-      <properties/>
-      <opRef>
-        <refId>f3112e9d-ed88-47bf-be86-2f99e8541a33</refId>
-      </opRef>
-      <assignments>
-        <flowVariableAssignment id="95121cb1-0665-46d0-8452-2c2420954fcc">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
-          <contextKey>SO_VM</contextKey>
-          <expression id="93ee55bf-307d-4d92-b93a-f31b1c661098">
-            <annotation></annotation>
-            <name>Result Field: returnResult</name>
-            <fieldName>returnResult</fieldName>
-            <sourceType>RAWRESULT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
-      </assignments>
-      <throttleSize>0</throttleSize>
-    </step>
-    <step id="ca47ff55-11e2-4e39-8e48-483af82e21e2">
-      <annotation>a0b61adc-2251-4379-b8f9-0540e78b73cf.ca47ff55-11e2-4e39-8e48-483af82e21e2.description</annotation>
-      <name>Set Flow Variable</name>
-      <bounds>
-        <x>221.0</x>
-        <y>461.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings>
-        <staticBinding id="788ff14a-7eb3-49c3-b967-e1b4097055aa">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>keyName</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>SO_VM_TEST</value>
-          <record>false</record>
-        </staticBinding>
-        <staticBinding id="454a8312-b094-49a4-8e44-7a0e5f028685">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>myValue</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>${SO}</value>
-          <record>false</record>
-        </staticBinding>
-      </bindings>
-      <transitions>
-        <transition id="7de2d723-ab7e-434f-a6b5-e186340faccd">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>f469f23e-6340-4a6c-a903-8e54f1c20c74</refId>
-          </destination>
-          <source>
-            <refId>ca47ff55-11e2-4e39-8e48-483af82e21e2</refId>
-          </source>
-          <positions>
-            <point>
-              <x>271.0</x>
-              <y>495.0</y>
-            </point>
-            <point>
-              <x>463.0</x>
-              <y>504.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-      </transitions>
-      <properties/>
-      <opRef>
-        <refId>f3112e9d-ed88-47bf-be86-2f99e8541a33</refId>
-      </opRef>
-      <assignments>
-        <flowVariableAssignment id="0da0b4d8-0baf-4e8c-b266-3918b6b07ea2">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
-          <contextKey>SO_VM</contextKey>
-          <expression id="7e00ba72-8f7b-41a1-afbd-87d5aa2a055f">
-            <annotation></annotation>
-            <name>Result Field: returnResult</name>
-            <fieldName>returnResult</fieldName>
-            <sourceType>RAWRESULT</sourceType>
-            <filters>
-              <regexFilter id="0c515280-4d7d-4669-8412-714b27d4bc88">
-                <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>&lt;ovf:Description&gt;.*&lt;/ovf:Description&gt;</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-              <replaceAllFilter id="6f8fe7cc-6f25-4821-a9ec-a87bbca9f8e8">
-                <annotation></annotation>
-                <name>Replace</name>
-                <ignoreCase>true</ignoreCase>
-                <searchString>&lt;ovf:Description&gt;</searchString>
-                <replaceType>ALL</replaceType>
-              </replaceAllFilter>
-              <replaceAllFilter id="ebf4a97f-f06f-4bb2-86ad-b8be9c807e95">
-                <annotation></annotation>
-                <name>Replace</name>
-                <ignoreCase>true</ignoreCase>
-                <searchString>&lt;/ovf:Description&gt;</searchString>
-                <replaceType>ALL</replaceType>
-              </replaceAllFilter>
-              <regexFilter id="02f1d1b4-cf93-43d4-babc-d8af63897e1d">
-                <annotation></annotation>
-                <name>Regular Expression</name>
-                <expression>Centos|RedHat|Ubuntu|Windows</expression>
-                <ignoreCase>true</ignoreCase>
-                <regType>JAVA</regType>
-                <entireString>false</entireString>
-                <multiLine>true</multiLine>
-              </regexFilter>
-            </filters>
-          </expression>
-        </flowVariableAssignment>
-      </assignments>
-      <throttleSize>0</throttleSize>
-    </step>
   </steps>
   <startSteps>9152be48-c62f-4420-95d3-c7e19970c34b</startSteps>
 </flow>

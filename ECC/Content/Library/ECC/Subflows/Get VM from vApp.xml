@@ -23,7 +23,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>vAppID</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>vapp-b867499a-3a95-4ed3-a224-69009b189674</value>
+      <value>vapp-0221c8a4-9730-4faf-a3b2-083ad2d3b70f</value>
       <record>false</record>
     </staticBinding>
     <staticBinding id="dc6ae190-9a97-45db-971a-121ec345b1b8">
@@ -49,7 +49,7 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>token</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value>fc427ffa84c44170b1174f198f36eb8f</value>
+      <value>28cadac3a7804b55981f772881430f6c</value>
       <record>false</record>
     </staticBinding>
   </inputs>
@@ -265,12 +265,6 @@ Content-Type: application/vnd.vmware.vcloud.vm+xml</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="73c6f179-e523-496c-882e-3bfc0d547c19">
-        <baseIcon>return_success.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

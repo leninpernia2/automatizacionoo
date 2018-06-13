@@ -561,7 +561,7 @@ Content-Type: application/vnd.vmware.vcloud.task+xml</value>
           <isPersisted>true</isPersisted>
           <inputSymbol>seconds</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>30</value>
+          <value>60</value>
           <record>false</record>
         </staticBinding>
       </bindings>
