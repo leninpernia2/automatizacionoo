@@ -92,10 +92,6 @@
       <inputSymbol>SO_VM</inputSymbol>
       <listDelimiter>,</listDelimiter>
       <record>false</record>
-      <validationFormat>
-        <refId>f52bde14-18c6-4bd7-9e5d-5e6fbeb4525c</refId>
-        <refName>SOList_VM</refName>
-      </validationFormat>
       <prompt></prompt>
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
@@ -172,8 +168,8 @@
       <annotation></annotation>
       <name>List Monitor Group</name>
       <bounds>
-        <x>168.0</x>
-        <y>126.0</y>
+        <x>90.0</x>
+        <y>90.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -363,8 +359,8 @@
       <annotation>3fb06412-1387-4d49-9649-9288f3e8394a.55bb980c-0a0c-4edf-acc9-9e2679e42eff.description</annotation>
       <name>String Comparator</name>
       <bounds>
-        <x>437.0</x>
-        <y>322.0</y>
+        <x>330.0</x>
+        <y>240.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -508,8 +504,8 @@
       <annotation>3fb06412-1387-4d49-9649-9288f3e8394a.d859feab-e6a5-4562-8ed1-b275b1e980b2.description</annotation>
       <name>Check Null</name>
       <bounds>
-        <x>168.0</x>
-        <y>322.0</y>
+        <x>90.0</x>
+        <y>240.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -625,8 +621,8 @@
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>437.0</x>
-        <y>126.0</y>
+        <x>540.0</x>
+        <y>90.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -669,8 +665,8 @@
       <annotation></annotation>
       <name>Create New Monitor Group</name>
       <bounds>
-        <x>168.0</x>
-        <y>473.0</y>
+        <x>90.0</x>
+        <y>390.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -782,35 +778,6 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="c165ec05-1e70-4276-9006-76d2a5f115d4">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>d0f5323c-ce1b-45ba-a79f-d9cc7ff748f7</refId>
-          </destination>
-          <source>
-            <refId>e5ed32b7-f45e-44eb-a672-7a37ee5d93eb</refId>
-          </source>
-          <positions>
-            <point>
-              <x>134.0</x>
-              <y>426.0</y>
-            </point>
-            <point>
-              <x>403.0</x>
-              <y>79.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
         <transition id="ece9bdf2-00d6-47cd-8f6a-bf373a08ae07">
           <annotation></annotation>
           <name>success</name>
@@ -833,6 +800,35 @@
             <point>
               <x>403.0</x>
               <y>275.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="ff3ffed2-703b-48f3-8bee-93cd7b0a72e4">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>d7714a23-d88b-433d-9060-f227b83f7b96</refId>
+          </destination>
+          <source>
+            <refId>e5ed32b7-f45e-44eb-a672-7a37ee5d93eb</refId>
+          </source>
+          <positions>
+            <point>
+              <x>140.0</x>
+              <y>424.0</y>
+            </point>
+            <point>
+              <x>140.0</x>
+              <y>544.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -867,8 +863,8 @@
       <annotation></annotation>
       <name>Create Windows Monitor in SNMP mode</name>
       <bounds>
-        <x>630.0</x>
-        <y>227.0</y>
+        <x>540.0</x>
+        <y>240.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -950,10 +946,6 @@
           <listDelimiter>,</listDelimiter>
           <value></value>
           <record>false</record>
-          <validationFormat>
-            <refId>70348ff6-59cd-4bb4-8662-b4d995d9492e</refId>
-            <refName>Windows_SO</refName>
-          </validationFormat>
         </staticBinding>
         <staticBinding id="63f909f0-5b29-4810-80c6-6c7498ea1cd2">
           <annotation></annotation>
@@ -1095,8 +1087,8 @@
       <annotation></annotation>
       <name>Create Linux Monitor in SSH mode</name>
       <bounds>
-        <x>630.0</x>
-        <y>391.0</y>
+        <x>330.0</x>
+        <y>390.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -1266,35 +1258,6 @@
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="0eb3578f-0144-488a-adfb-a799dfd42266">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>d0f5323c-ce1b-45ba-a79f-d9cc7ff748f7</refId>
-          </destination>
-          <source>
-            <refId>9d9cc8e9-512a-467d-8144-0b8bab52e5d0</refId>
-          </source>
-          <positions>
-            <point>
-              <x>596.0</x>
-              <y>344.0</y>
-            </point>
-            <point>
-              <x>403.0</x>
-              <y>79.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
         <transition id="496fb7bf-2d45-42ba-82f0-5c4fdcce5345">
           <annotation></annotation>
           <name>success</name>
@@ -1324,6 +1287,35 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
+        <transition id="bcc52a86-d5ef-43c8-a188-10111540d973">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>d7714a23-d88b-433d-9060-f227b83f7b96</refId>
+          </destination>
+          <source>
+            <refId>9d9cc8e9-512a-467d-8144-0b8bab52e5d0</refId>
+          </source>
+          <positions>
+            <point>
+              <x>650.0</x>
+              <y>394.0</y>
+            </point>
+            <point>
+              <x>140.0</x>
+              <y>574.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
       </transitions>
       <properties/>
       <opRef>
@@ -1336,8 +1328,8 @@
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>857.0</x>
-        <y>126.0</y>
+        <x>540.0</x>
+        <y>390.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -1374,6 +1366,50 @@
       </transitions>
       <properties/>
       <returnStepType>RESOLVED</returnStepType>
+      <assignments/>
+    </returnStep>
+    <returnStep id="d7714a23-d88b-433d-9060-f227b83f7b96">
+      <annotation></annotation>
+      <name>Error : failure</name>
+      <bounds>
+        <x>90.0</x>
+        <y>540.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="3d8e6a9e-7217-4f51-be4b-a556d911133d">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>d7714a23-d88b-433d-9060-f227b83f7b96</refId>
+          </destination>
+          <source>
+            <refId>d7714a23-d88b-433d-9060-f227b83f7b96</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
   </steps>
