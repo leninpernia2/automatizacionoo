@@ -4,7 +4,7 @@
 bb3caec5-3915-404e-a682-05602d5bccaa.af545476-0a76-4ea2-b5d2-41f8dde07d52.description=Waits for the job to reach a specific state. If no state is specified, then this will wait for the job to reach an end state.\n\nInputs\:\ncoreHost - The DNS name or IP Address of your SAS core.\ncorePort - The port to Connect to your SAS core on.\ncoreProtocol - The protocol to connect to your SAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for host.\ncorePassword - The password for host.\ncoreVersion - The version of SAS to use.\njobID - The id of the job.\nstatus - The status to wait for the job to reach. If none is specified this will wait until the job is no longer running.\ntimeout - The maximum number of milliseconds to wait for the job. If not specified, 1 hour is used.\nfrequency - The frequency, in milliseconds, with which the operation will check if the job has reached the specified state (or an end state). The default value is 5000 ms.\n\nResponses\:\nfailure - Something went wrong.\nsuccess - The operation completed successfully.
 ]]></descriptionCdata>
   <annotation></annotation>
-  <name>Delete SQL Installer</name>
+  <name>Delete SQL Installer 2.0</name>
   <categories/>
   <inputs>
     <userInputBinding id="43810a60-59b5-47ef-829b-8771976bec05">
@@ -117,8 +117,8 @@ bb3caec5-3915-404e-a682-05602d5bccaa.af545476-0a76-4ea2-b5d2-41f8dde07d52.descri
       <annotation>bb3caec5-3915-404e-a682-05602d5bccaa.4722423a-85b9-4c38-9a6d-89c2efe5a230.description</annotation>
       <name>Start Adhoc Server Script</name>
       <bounds>
-        <x>90.0</x>
-        <y>120.0</y>
+        <x>182.0</x>
+        <y>129.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -378,8 +378,8 @@ bb3caec5-3915-404e-a682-05602d5bccaa.af545476-0a76-4ea2-b5d2-41f8dde07d52.descri
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>450.0</x>
-        <y>120.0</y>
+        <x>531.0</x>
+        <y>136.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -428,8 +428,8 @@ bb3caec5-3915-404e-a682-05602d5bccaa.af545476-0a76-4ea2-b5d2-41f8dde07d52.descri
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
-        <x>270.0</x>
-        <y>270.0</y>
+        <x>360.0</x>
+        <y>285.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -472,8 +472,8 @@ bb3caec5-3915-404e-a682-05602d5bccaa.af545476-0a76-4ea2-b5d2-41f8dde07d52.descri
       <annotation>bb3caec5-3915-404e-a682-05602d5bccaa.af545476-0a76-4ea2-b5d2-41f8dde07d52.description</annotation>
       <name>Wait for Job</name>
       <bounds>
-        <x>270.0</x>
-        <y>30.0</y>
+        <x>348.0</x>
+        <y>38.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
