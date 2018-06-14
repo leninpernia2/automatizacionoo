@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow id="40660db4-e94d-4d25-a3b3-ffe35ad6efb7">
-  <descriptionCdata><![CDATA[40660db4-e94d-4d25-a3b3-ffe35ad6efb7.12b13b61-0873-4cbe-936d-d0be0a21f565.description=<pre>\nCompares two strings, returning a true response if and only if they contain the same sequence of characters. A null string is considered to be equal to an empty string.\n\nInputs\:\n    string1 - The first string. \nDefault value\: "" (empty)\n    string2 - The second string.\nDefault value\: "" (empty)\n    ignoreCase - If set to 'true', then the comparison ignores case considerations. The two strings are considered equal ignoring case if they are of the same length and corresponding characters in the two strings are equal ignoring case. If set to any value other than 'true', then the strings must match exactly to be considered equal.\n\nResponses\:\n    true - If the two strings are equal.\n    false - If the two strings are not equal.\n\n</pre>
-40660db4-e94d-4d25-a3b3-ffe35ad6efb7.3f76792f-6931-42b4-ae0e-e4ebe39ee509.description=Waits for the job to reach a specific state. If no state is specified, then this will wait for the job to reach an end state.\n\nInputs\:\ncoreHost - The DNS name or IP Address of your SAS core.\ncorePort - The port to Connect to your SAS core on.\ncoreProtocol - The protocol to connect to your SAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for host.\ncorePassword - The password for host.\ncoreVersion - The version of SAS to use.\njobID - The id of the job.\nstatus - The status to wait for the job to reach. If none is specified this will wait until the job is no longer running.\ntimeout - The maximum number of milliseconds to wait for the job. If not specified, 1 hour is used.\nfrequency - The frequency, in milliseconds, with which the operation will check if the job has reached the specified state (or an end state). The default value is 5000 ms.\n\nResponses\:\nfailure - Something went wrong.\nsuccess - The operation completed successfully.
-40660db4-e94d-4d25-a3b3-ffe35ad6efb7.ecbf1aa9-b897-487c-8870-c468af5aaabb.description=Starts the invocation of an unsaved script, being given its code, type, arguments and the details of the managed servers on which is should be run.\n\nInputs\:\ncoreHost - The DNS name or IP Address of your SAS core.\ncorePort - The port to connect to your SAS core on.\ncoreProtocol - The protocol to connect to your SAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for host.\ncorePassword - The password for host.\ncoreVersion - The version of SAS to use.\nsourceCode - The source code of the script to invoke.\nsourceCodeType - The type of the source code. It can have one of the following values\: SH (for unix scripts), BAT (for windows BAT scripts), VBS (for Windows Visual Basic scripts), PS1 (for Windows PowerShell scripts), PY2 (for Python scripts).\nscriptArguments - The arguments to be passed to the script.\nserverNames - The list of names of the managed server on which the script should be executed. The elements from the list should be separated by 'separator'.\nserverIds - The list of ids of the managed server on which the script should be executed. If this input is provided, then 'serverNames' is ignored. The ids should be used for unique server identification. The elements from the list should be separated by 'separator'.\nloginDomain - The Windows domain name for the managed server (if it is the case).\nusername - The username that should be used when executing the script on the associated servers.\npassword - The password that should be used when executing the script on the associated servers.\nscriptTimeout - The maximum number of milliseconds for the script to execute. If not specified, the value will be set by SA.\nseparator - The separator used for separating the inputs. The default value for the separator is a comma (,).\nnotificationFailureOwner - The email address of the owner of the job when the job failed.\nnotificationSuccessOwner - The email address of the owner of the job when the job succeeded.\nnotificationCancelOwner - The email address of the owner of the job when the job was canceled.\nnotificationFailureRecipients - The email addresses to notify when the job failed.\nnotificationSuccessRecipients - The email addresses to notify when the job succeeded.\nnotificationCancelRecipients - The email addresses to notify when the job was canceled.\nscheduleDateYear - The year to be used for setting the date when the job is scheduled to start. This input must be provided for setting a job schedule.\nscheduleDateMonth - The month to be used for setting the date when the job is scheduled to start. It should have the value between 1 and 12. This input must be provided for setting a job schedule.\nscheduleDateDayOfMonth - The day to be used for setting the date when the job is scheduled to start. It should have the value between 1 and 31. This input must be provided for setting a job schedule.\nscheduleDateHour - The hour to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 23. If not set, if will have the default value 0.\nscheduleDateMinute - The minute to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 59. If not set, if will have the default value 0.\nscheduleDateSecond - The second to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 59. If not set, if will have the default value 0.\nscheduleDateTimezone - The timezone used to express the job schedule date. If not set, it will have the default value GMT.\nticketId - The ticket Id to associate with this job.\n\nOutputs\:\njobId - The id of the job that was created.\n\nResponses\:\nsuccess - The operation has completed successfully.\nfailure - The operation has failed.
+<flow id="bb3caec5-3915-404e-a682-05602d5bccaa">
+  <descriptionCdata><![CDATA[bb3caec5-3915-404e-a682-05602d5bccaa.4722423a-85b9-4c38-9a6d-89c2efe5a230.description=Starts the invocation of an unsaved script, being given its code, type, arguments and the details of the managed servers on which is should be run.\n\nInputs\:\ncoreHost - The DNS name or IP Address of your SAS core.\ncorePort - The port to connect to your SAS core on.\ncoreProtocol - The protocol to connect to your SAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for host.\ncorePassword - The password for host.\ncoreVersion - The version of SAS to use.\nsourceCode - The source code of the script to invoke.\nsourceCodeType - The type of the source code. It can have one of the following values\: SH (for unix scripts), BAT (for windows BAT scripts), VBS (for Windows Visual Basic scripts), PS1 (for Windows PowerShell scripts), PY2 (for Python scripts).\nscriptArguments - The arguments to be passed to the script.\nserverNames - The list of names of the managed server on which the script should be executed. The elements from the list should be separated by 'separator'.\nserverIds - The list of ids of the managed server on which the script should be executed. If this input is provided, then 'serverNames' is ignored. The ids should be used for unique server identification. The elements from the list should be separated by 'separator'.\nloginDomain - The Windows domain name for the managed server (if it is the case).\nusername - The username that should be used when executing the script on the associated servers.\npassword - The password that should be used when executing the script on the associated servers.\nscriptTimeout - The maximum number of milliseconds for the script to execute. If not specified, the value will be set by SA.\nseparator - The separator used for separating the inputs. The default value for the separator is a comma (,).\nnotificationFailureOwner - The email address of the owner of the job when the job failed.\nnotificationSuccessOwner - The email address of the owner of the job when the job succeeded.\nnotificationCancelOwner - The email address of the owner of the job when the job was canceled.\nnotificationFailureRecipients - The email addresses to notify when the job failed.\nnotificationSuccessRecipients - The email addresses to notify when the job succeeded.\nnotificationCancelRecipients - The email addresses to notify when the job was canceled.\nscheduleDateYear - The year to be used for setting the date when the job is scheduled to start. This input must be provided for setting a job schedule.\nscheduleDateMonth - The month to be used for setting the date when the job is scheduled to start. It should have the value between 1 and 12. This input must be provided for setting a job schedule.\nscheduleDateDayOfMonth - The day to be used for setting the date when the job is scheduled to start. It should have the value between 1 and 31. This input must be provided for setting a job schedule.\nscheduleDateHour - The hour to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 23. If not set, if will have the default value 0.\nscheduleDateMinute - The minute to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 59. If not set, if will have the default value 0.\nscheduleDateSecond - The second to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 59. If not set, if will have the default value 0.\nscheduleDateTimezone - The timezone used to express the job schedule date. If not set, it will have the default value GMT.\nticketId - The ticket Id to associate with this job.\n\nOutputs\:\njobId - The id of the job that was created.\n\nResponses\:\nsuccess - The operation has completed successfully.\nfailure - The operation has failed.
+bb3caec5-3915-404e-a682-05602d5bccaa.af545476-0a76-4ea2-b5d2-41f8dde07d52.description=Waits for the job to reach a specific state. If no state is specified, then this will wait for the job to reach an end state.\n\nInputs\:\ncoreHost - The DNS name or IP Address of your SAS core.\ncorePort - The port to Connect to your SAS core on.\ncoreProtocol - The protocol to connect to your SAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for host.\ncorePassword - The password for host.\ncoreVersion - The version of SAS to use.\njobID - The id of the job.\nstatus - The status to wait for the job to reach. If none is specified this will wait until the job is no longer running.\ntimeout - The maximum number of milliseconds to wait for the job. If not specified, 1 hour is used.\nfrequency - The frequency, in milliseconds, with which the operation will check if the job has reached the specified state (or an end state). The default value is 5000 ms.\n\nResponses\:\nfailure - Something went wrong.\nsuccess - The operation completed successfully.
 ]]></descriptionCdata>
   <annotation></annotation>
   <name>Delete SQL Installer</name>
   <categories/>
   <inputs>
-    <userInputBinding id="dfb0b54c-a5ad-444e-8de1-a491e24f4fbf">
+    <userInputBinding id="43810a60-59b5-47ef-829b-8771976bec05">
       <annotation></annotation>
       <toContextKey></toContextKey>
       <fromContextKey></fromContextKey>
@@ -25,7 +24,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="b03f5ead-1e07-4fa4-92f0-f1c518686fc8">
+    <userInputBinding id="d80f1434-6ca0-4d06-9540-78b31771b207">
       <annotation></annotation>
       <toContextKey></toContextKey>
       <fromContextKey></fromContextKey>
@@ -42,7 +41,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="c52b614a-7cf7-41b0-b5b0-42e3dbed6efa">
+    <userInputBinding id="0c4e1c7f-5ff8-4c14-a7e5-f63b40dc9ef1">
       <annotation></annotation>
       <toContextKey></toContextKey>
       <fromContextKey></fromContextKey>
@@ -59,7 +58,7 @@
       <isMultiSelect>false</isMultiSelect>
       <sourceDelimiter>|</sourceDelimiter>
     </userInputBinding>
-    <userInputBinding id="d26ace9d-de49-4b38-b9bc-587072902f91">
+    <userInputBinding id="47646fc7-5c68-4e66-a5ac-515180afa6be">
       <annotation></annotation>
       <toContextKey></toContextKey>
       <fromContextKey></fromContextKey>
@@ -78,15 +77,7 @@
     </userInputBinding>
   </inputs>
   <possibleResponses>
-    <opResponse id="a2771d01-3646-40dd-9cb7-a22e9da42203">
-      <annotation></annotation>
-      <name>failure</name>
-      <isDefault>false</isDefault>
-      <onFailure>true</onFailure>
-      <type>ERROR</type>
-      <matchRules/>
-    </opResponse>
-    <opResponse id="8526d6ab-8a7f-4344-b71b-5a84e75cfd03">
+    <opResponse id="68b20ac5-3335-45b5-9add-091768eea567">
       <annotation></annotation>
       <name>success</name>
       <isDefault>true</isDefault>
@@ -94,16 +85,24 @@
       <type>RESOLVED</type>
       <matchRules/>
     </opResponse>
+    <opResponse id="3ffd6b32-51eb-48fd-bad9-d68e029c311c">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>false</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules/>
+    </opResponse>
   </possibleResponses>
   <availableResultExpressions/>
-  <resultExpression id="100f76c1-c286-489e-a1f8-c6270f37d58e">
+  <resultExpression id="7fc1427d-e406-4533-8404-7f5fb533b9f6">
     <annotation></annotation>
     <name>FailureMessage</name>
     <fieldName>FailureMessage</fieldName>
     <sourceType>RAWRESULT</sourceType>
     <filters/>
   </resultExpression>
-  <iconSpec id="039953cd-ab48-4b17-9d7e-669d83f59e95">
+  <iconSpec id="16aeb10f-8a7f-450d-8ad0-fcf5c4bd73e6">
     <baseIcon>flow.png</baseIcon>
     <basePath>System</basePath>
     <readOnly>false</readOnly>
@@ -114,341 +113,21 @@
   <compatibleRuntimeContext>false</compatibleRuntimeContext>
   <historyCheckPointFlow>true</historyCheckPointFlow>
   <steps>
-    <step id="12b13b61-0873-4cbe-936d-d0be0a21f565">
-      <annotation>40660db4-e94d-4d25-a3b3-ffe35ad6efb7.12b13b61-0873-4cbe-936d-d0be0a21f565.description</annotation>
-      <name>String Equals</name>
-      <bounds>
-        <x>60.0</x>
-        <y>150.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings>
-        <staticBinding id="636c374e-0ab4-4557-bdf9-cd511a0750b6">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>string1</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>true</value>
-          <record>false</record>
-        </staticBinding>
-        <staticBinding id="5329da1f-d635-4d49-bab9-952da2b5934a">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>string2</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>false</value>
-          <record>false</record>
-        </staticBinding>
-        <staticBinding id="0e92dc1d-6349-428f-abbc-633af83b3aea">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>ignoreCase</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>true</value>
-          <record>false</record>
-        </staticBinding>
-      </bindings>
-      <transitions>
-        <transition id="c8ff1e50-c0f9-4f1f-ba65-e58eaf7a258c">
-          <annotation></annotation>
-          <name>false</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>false</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>ecbf1aa9-b897-487c-8870-c468af5aaabb</refId>
-          </destination>
-          <source>
-            <refId>12b13b61-0873-4cbe-936d-d0be0a21f565</refId>
-          </source>
-          <positions>
-            <point>
-              <x>110.0</x>
-              <y>184.0</y>
-            </point>
-            <point>
-              <x>290.0</x>
-              <y>184.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-        <transition id="7f744bb4-f820-43e8-b9d1-3dbdb8e81c8c">
-          <annotation></annotation>
-          <name>true</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>true</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>594d6833-615e-4d7c-8902-1e34532e0e3c</refId>
-          </destination>
-          <source>
-            <refId>12b13b61-0873-4cbe-936d-d0be0a21f565</refId>
-          </source>
-          <positions>
-            <point>
-              <x>110.0</x>
-              <y>184.0</y>
-            </point>
-            <point>
-              <x>290.0</x>
-              <y>34.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-      </transitions>
-      <properties/>
-      <opRef>
-        <refId>7c2f47aa-a4b3-4a7d-b3d4-007f285f7d29</refId>
-      </opRef>
-      <assignments/>
-      <throttleSize>0</throttleSize>
-    </step>
-    <step id="3f76792f-6931-42b4-ae0e-e4ebe39ee509">
-      <annotation>40660db4-e94d-4d25-a3b3-ffe35ad6efb7.3f76792f-6931-42b4-ae0e-e4ebe39ee509.description</annotation>
-      <name>Wait for Job</name>
-      <bounds>
-        <x>450.0</x>
-        <y>150.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <iconSpec id="d67916b9-558a-443d-aa65-4040ff2b90ab">
-        <baseIcon>change.png</baseIcon>
-        <basePath>/Integrations/</basePath>
-        <readOnly>false</readOnly>
-        <layers>
-          <iconSpec id="463b67c8-20a9-4371-a1a3-37ddb81f43a7">
-            <baseIcon>hourglass.png</baseIcon>
-            <basePath>/Utilities/</basePath>
-            <readOnly>false</readOnly>
-            <layers/>
-          </iconSpec>
-        </layers>
-      </iconSpec>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings>
-        <userInputBinding id="7a1b1123-b904-49e5-b0ae-e5866f965834">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>coreHost</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="c8066df8-2e0c-488d-9ace-7443f14c34de">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>coreUsername</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="f656c5e8-1d91-4c79-9b38-3e173061fe23">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>ENCRYPTED</inputType>
-          <recordKey></recordKey>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>false</isPersisted>
-          <inputSymbol>corePassword</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <staticBinding id="0660e528-a15f-4082-bcfd-593c56bf3c39">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>status</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>SUCCESS</value>
-          <record>false</record>
-        </staticBinding>
-        <userInputBinding id="38d39bea-dbfd-4fe5-8792-dc01c8ad0c31">
-          <annotation></annotation>
-          <fromContextKey>jobId</fromContextKey>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>jobID</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <staticBinding id="cc6e1ac6-dc97-4f18-8df8-889f7b9a1840">
-          <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>timeout</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>60000</value>
-          <record>false</record>
-        </staticBinding>
-      </bindings>
-      <transitions>
-        <transition id="62ee8111-ccb6-4e71-a790-3ca4f25e2c1c">
-          <annotation></annotation>
-          <name>failure</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>194aa145-40b7-4e0d-9563-84406b8c89e6</refId>
-          </destination>
-          <source>
-            <refId>3f76792f-6931-42b4-ae0e-e4ebe39ee509</refId>
-          </source>
-          <positions>
-            <point>
-              <x>410.0</x>
-              <y>94.0</y>
-            </point>
-            <point>
-              <x>140.0</x>
-              <y>274.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-        <transition id="47ae7c15-c825-4bca-9f7c-8869c65e12d5">
-          <annotation></annotation>
-          <name>success</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>success</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>594d6833-615e-4d7c-8902-1e34532e0e3c</refId>
-          </destination>
-          <source>
-            <refId>3f76792f-6931-42b4-ae0e-e4ebe39ee509</refId>
-          </source>
-          <positions>
-            <point>
-              <x>350.0</x>
-              <y>94.0</y>
-            </point>
-            <point>
-              <x>560.0</x>
-              <y>94.0</y>
-            </point>
-          </positions>
-          <labelPosition>
-            <x>333.0</x>
-            <y>0.0</y>
-          </labelPosition>
-        </transition>
-      </transitions>
-      <properties/>
-      <opRef>
-        <refId>4a5a9b9b-c259-40fb-9797-217a3b13491c</refId>
-      </opRef>
-      <assignments/>
-      <throttleSize>0</throttleSize>
-    </step>
-    <step id="ecbf1aa9-b897-487c-8870-c468af5aaabb">
-      <annotation>40660db4-e94d-4d25-a3b3-ffe35ad6efb7.ecbf1aa9-b897-487c-8870-c468af5aaabb.description</annotation>
+    <step id="4722423a-85b9-4c38-9a6d-89c2efe5a230">
+      <annotation>bb3caec5-3915-404e-a682-05602d5bccaa.4722423a-85b9-4c38-9a6d-89c2efe5a230.description</annotation>
       <name>Start Adhoc Server Script</name>
       <bounds>
-        <x>240.0</x>
-        <y>150.0</y>
+        <x>90.0</x>
+        <y>120.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="a6df8c43-49a6-4b8f-a80b-57756a804c6a">
+      <iconSpec id="f22d2285-a3dd-4fc9-9976-cb7c9697992b">
         <baseIcon>event_log.png</baseIcon>
         <basePath>/Operating System/</basePath>
         <readOnly>false</readOnly>
         <layers>
-          <iconSpec id="e55ebdfa-39ef-42b9-8082-ff86470ab03f">
+          <iconSpec id="07de9272-d3cc-4e27-8870-c30e1688ec9f">
             <baseIcon>start.png</baseIcon>
             <basePath>/Annotations/</basePath>
             <readOnly>false</readOnly>
@@ -469,7 +148,7 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="02ca8c6d-f0c0-4640-b294-8a31c2bacc7f">
+        <userInputBinding id="98aecec8-98a5-437e-b7cd-22feaeafaddd">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -486,7 +165,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="d8800c47-cadb-4e90-a02c-36b88fa7d62d">
+        <staticBinding id="c8c99284-dff2-40d3-93d8-2a973fb6147a">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -501,7 +180,7 @@
           <value>443</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="b17ac048-03ad-4da7-9345-22cf45435dde">
+        <staticBinding id="561755f5-8330-4d9e-b75c-6f125319f2ad">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -516,7 +195,7 @@
           <value>https</value>
           <record>false</record>
         </staticBinding>
-        <userInputBinding id="8f00b18c-eb51-4736-9dd4-ec52843e5998">
+        <userInputBinding id="6f79d753-4a59-49b2-9a26-d53955698599">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -533,7 +212,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="f2d058d1-906e-4416-9904-d57b530d53f1">
+        <userInputBinding id="090ab000-55ec-43ef-bec6-c420b45f0ccc">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -550,7 +229,7 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="0d0c2b4a-6cd4-4f2c-8805-7cf55bf08862">
+        <staticBinding id="e8b86161-5578-42d4-9a51-5f797d84f967">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -565,7 +244,7 @@
           <value>Remove-Item -path C:\SQLINSTALL -recurse</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="69033a5b-1077-4f87-bee0-6d75212ed465">
+        <staticBinding id="af9a44f2-dfa9-465b-a77d-32a9b0c64e2f">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -580,7 +259,7 @@
           <value>PS1</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="5baa4d96-aaea-46b5-b913-df01119476fc">
+        <staticBinding id="afadc8e5-6daf-4f63-8cc3-92bdaf6428d2">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -595,7 +274,7 @@
           <value></value>
           <record>false</record>
         </staticBinding>
-        <userInputBinding id="bd5b8ecf-0f49-47e9-ad2f-90457a916d53">
+        <userInputBinding id="7821845f-cafe-40fd-8c35-3c1c20d757ba">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -614,7 +293,7 @@
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="12329a7b-e4ee-4508-a9d1-91a0d4256afe">
+        <transition id="86293e45-2fd6-4cc8-a7aa-d6512cb0fcb6">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -623,19 +302,19 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>194aa145-40b7-4e0d-9563-84406b8c89e6</refId>
+            <refId>b8ede2fc-c750-4c82-8350-503099651a40</refId>
           </destination>
           <source>
-            <refId>ecbf1aa9-b897-487c-8870-c468af5aaabb</refId>
+            <refId>4722423a-85b9-4c38-9a6d-89c2efe5a230</refId>
           </source>
           <positions>
             <point>
-              <x>140.0</x>
-              <y>94.0</y>
+              <x>335.0</x>
+              <y>100.0</y>
             </point>
             <point>
-              <x>140.0</x>
-              <y>274.0</y>
+              <x>341.0</x>
+              <y>256.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -643,7 +322,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="4828c2d5-4ffe-47f0-a955-735857266136">
+        <transition id="56947671-5325-4ea1-9c83-8a409ab12848">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -652,19 +331,19 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>3f76792f-6931-42b4-ae0e-e4ebe39ee509</refId>
+            <refId>af545476-0a76-4ea2-b5d2-41f8dde07d52</refId>
           </destination>
           <source>
-            <refId>ecbf1aa9-b897-487c-8870-c468af5aaabb</refId>
+            <refId>4722423a-85b9-4c38-9a6d-89c2efe5a230</refId>
           </source>
           <positions>
             <point>
-              <x>140.0</x>
-              <y>94.0</y>
+              <x>232.0</x>
+              <y>163.0</y>
             </point>
             <point>
-              <x>350.0</x>
-              <y>94.0</y>
+              <x>399.0</x>
+              <y>103.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -678,13 +357,13 @@
         <refId>006298d0-cf5b-4f5a-87d6-c88727b795fb</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="c966b62f-168a-40a9-a19a-e41fdf2c6ccc">
+        <flowVariableAssignment id="62ebfb82-6611-4161-b27c-b0841cf00f7d">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>jobId</contextKey>
-          <expression id="565374a9-4f18-46b7-86bf-89ed10654ba1">
+          <expression id="a59e6d32-c455-4803-8604-0f347b884300">
             <annotation></annotation>
             <name>Result Field: jobId</name>
             <fieldName>jobId</fieldName>
@@ -695,59 +374,21 @@
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <returnStep id="194aa145-40b7-4e0d-9563-84406b8c89e6">
-      <annotation></annotation>
-      <name>Error : failure</name>
-      <bounds>
-        <x>450.0</x>
-        <y>330.0</y>
-      </bounds>
-      <layer>-1</layer>
-      <hideInbound>false</hideInbound>
-      <addResultToRunContext>false</addResultToRunContext>
-      <isCriticalStep>false</isCriticalStep>
-      <isNonBlocking>false</isNonBlocking>
-      <isParallelStep>false</isParallelStep>
-      <isSingleResponse>false</isSingleResponse>
-      <recordInHistory>false</recordInHistory>
-      <recordRawOutput>true</recordRawOutput>
-      <recordPrimaryOutput>true</recordPrimaryOutput>
-      <checkPointStep>true</checkPointStep>
-      <historyCheckPointStep>true</historyCheckPointStep>
-      <scriptResultStep>false</scriptResultStep>
-      <userPrompt></userPrompt>
-      <bindings/>
-      <transitions>
-        <transition id="05224da3-63fc-4a7e-ad3a-d465bdeae0b5">
-          <annotation></annotation>
-          <name>return</name>
-          <command>NEXT</command>
-          <linkMode>false</linkMode>
-          <responseSymbol>failure</responseSymbol>
-          <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
-          <destination>
-            <refId>194aa145-40b7-4e0d-9563-84406b8c89e6</refId>
-          </destination>
-          <source>
-            <refId>194aa145-40b7-4e0d-9563-84406b8c89e6</refId>
-          </source>
-          <positions/>
-        </transition>
-      </transitions>
-      <properties/>
-      <returnStepType>ERROR</returnStepType>
-      <assignments/>
-    </returnStep>
-    <returnStep id="594d6833-615e-4d7c-8902-1e34532e0e3c">
+    <returnStep id="c89d92ca-28f2-4a32-a4fe-6486de213ed4">
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>240.0</x>
-        <y>0.0</y>
+        <x>450.0</x>
+        <y>120.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="62220023-933d-47d8-a937-97dbd4aa5d3f">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -762,7 +403,7 @@
       <userPrompt></userPrompt>
       <bindings/>
       <transitions>
-        <transition id="0805051e-8d6e-4751-ac65-a4267788a086">
+        <transition id="025623bf-db6e-4707-92f8-1a8d4578812b">
           <annotation></annotation>
           <name>return</name>
           <command>NEXT</command>
@@ -771,10 +412,10 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>594d6833-615e-4d7c-8902-1e34532e0e3c</refId>
+            <refId>c89d92ca-28f2-4a32-a4fe-6486de213ed4</refId>
           </destination>
           <source>
-            <refId>594d6833-615e-4d7c-8902-1e34532e0e3c</refId>
+            <refId>c89d92ca-28f2-4a32-a4fe-6486de213ed4</refId>
           </source>
           <positions/>
         </transition>
@@ -783,6 +424,241 @@
       <returnStepType>RESOLVED</returnStepType>
       <assignments/>
     </returnStep>
+    <returnStep id="b8ede2fc-c750-4c82-8350-503099651a40">
+      <annotation></annotation>
+      <name>Error : failure</name>
+      <bounds>
+        <x>270.0</x>
+        <y>270.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="c2017fba-0c35-4985-91dd-277f2d43db34">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>b8ede2fc-c750-4c82-8350-503099651a40</refId>
+          </destination>
+          <source>
+            <refId>b8ede2fc-c750-4c82-8350-503099651a40</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>ERROR</returnStepType>
+      <assignments/>
+    </returnStep>
+    <step id="af545476-0a76-4ea2-b5d2-41f8dde07d52">
+      <annotation>bb3caec5-3915-404e-a682-05602d5bccaa.af545476-0a76-4ea2-b5d2-41f8dde07d52.description</annotation>
+      <name>Wait for Job</name>
+      <bounds>
+        <x>270.0</x>
+        <y>30.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="728771f8-c429-4cd6-8153-b928c653c13a">
+        <baseIcon>change.png</baseIcon>
+        <basePath>/Integrations/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="4f9c2461-2362-4cd1-b5d4-5c80c1997137">
+            <baseIcon>hourglass.png</baseIcon>
+            <basePath>/Utilities/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="06e82e15-bb9b-4015-85c0-4b19619de4f8">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>coreHost</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="d3c982be-33fc-464a-a1cb-e719a95cec45">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>coreUsername</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="898c9d21-7269-448f-951a-96df0f33477b">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>ENCRYPTED</inputType>
+          <recordKey></recordKey>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>false</isPersisted>
+          <inputSymbol>corePassword</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <staticBinding id="1d0d2c85-c747-4b81-b612-c5899a8b20f3">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>status</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>SUCCESS</value>
+          <record>false</record>
+        </staticBinding>
+        <userInputBinding id="a5b3c203-91c4-4772-8a07-e961ae97a476">
+          <annotation></annotation>
+          <fromContextKey>jobId</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>jobID</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <staticBinding id="9e654b41-81eb-45ec-b709-69c2be841f7b">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>timeout</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>60000</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="5df669c0-a597-4256-8266-4b8024e81e1c">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>b8ede2fc-c750-4c82-8350-503099651a40</refId>
+          </destination>
+          <source>
+            <refId>af545476-0a76-4ea2-b5d2-41f8dde07d52</refId>
+          </source>
+          <positions>
+            <point>
+              <x>399.0</x>
+              <y>103.0</y>
+            </point>
+            <point>
+              <x>410.0</x>
+              <y>319.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="fe834b31-932d-4805-901e-2406ee742ab6">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>c89d92ca-28f2-4a32-a4fe-6486de213ed4</refId>
+          </destination>
+          <source>
+            <refId>af545476-0a76-4ea2-b5d2-41f8dde07d52</refId>
+          </source>
+          <positions>
+            <point>
+              <x>399.0</x>
+              <y>103.0</y>
+            </point>
+            <point>
+              <x>581.0</x>
+              <y>170.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>4a5a9b9b-c259-40fb-9797-217a3b13491c</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
   </steps>
-  <startSteps>12b13b61-0873-4cbe-936d-d0be0a21f565</startSteps>
+  <startSteps>4722423a-85b9-4c38-9a6d-89c2efe5a230</startSteps>
 </flow>
