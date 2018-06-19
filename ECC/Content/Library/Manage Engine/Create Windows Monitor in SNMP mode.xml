@@ -218,7 +218,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>url</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>http://${hostname}:${port}/AppManager/xml/AddMonitor?apikey=${API_KEY}&amp;type=servers&amp;displayname=${NameMonitor}+(${NameVM})&amp;host=${ipVM}&amp;os=Windows+2012&amp;mode=SNMP&amp;snmptelnetport=161&amp;snmpCommunityString=${CommunityString}&amp;timeout=${timeout}</value>
+          <value>http://${hostname}:${port}/AppManager/xml/AddMonitor?apikey=${API_KEY}&amp;type=servers&amp;displayname=${NameMonitor}+(${NameVM})&amp;host=${ipVM}&amp;os=Windows+2012&amp;mode=SNMP&amp;snmptelnetport=161&amp;snmpCommunityString=${CommunityString}&amp;timeout=${timeout}&amp;forceadd=True</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="d2727816-bf79-4093-8b5b-ac053ce1bd67">
@@ -490,6 +490,12 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="cf80cf85-698c-4ca5-80b6-00737c055ee8">
+        <baseIcon>return_failure.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
