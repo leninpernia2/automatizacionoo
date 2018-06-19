@@ -2,6 +2,7 @@
 <flow id="a4404740-b98e-4259-bde6-41506a0da1c6">
   <descriptionCdata><![CDATA[a4404740-b98e-4259-bde6-41506a0da1c6.2cdceeb6-c6e4-4f88-bbeb-e48d0feeabde.description=<pre>\nThis operation adds a flow variable to the local context. The variable is available in the current flow and its child flows.\n\nInputs\:\n    keyName - The name of the flow variable to add.\n    myValue - The value to assign to the flow variable.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of "myValue" input field.\n\nResponses\:\n    success - The operation completed as stated in the description.\n\nNote\:\n   If a flow variable with the same name already exists, its value will be overwritten.\n</pre>
 a4404740-b98e-4259-bde6-41506a0da1c6.30cde546-0e64-4d15-8745-dc1408be60b5.description=<pre>\nCompares two strings, returning a true response if and only if they contain the same sequence of characters. A null string is considered to be equal to an empty string.\n\nInputs\:\n    string1 - The first string. \nDefault value\: "" (empty)\n    string2 - The second string.\nDefault value\: "" (empty)\n    ignoreCase - If set to 'true', then the comparison ignores case considerations. The two strings are considered equal ignoring case if they are of the same length and corresponding characters in the two strings are equal ignoring case. If set to any value other than 'true', then the strings must match exactly to be considered equal.\n\nResponses\:\n    true - If the two strings are equal.\n    false - If the two strings are not equal.\n\n</pre>
+a4404740-b98e-4259-bde6-41506a0da1c6.3545fff8-ec33-4a90-82d4-5ab2388647dc.description=Waits for the job to reach a specific state. If no state is specified, then this will wait for the job to reach an end state.\n\nInputs\:\ncoreHost - The DNS name or IP Address of your SAS core.\ncorePort - The port to Connect to your SAS core on.\ncoreProtocol - The protocol to connect to your SAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for host.\ncorePassword - The password for host.\ncoreVersion - The version of SAS to use.\njobID - The id of the job.\nstatus - The status to wait for the job to reach. If none is specified this will wait until the job is no longer running.\ntimeout - The maximum number of milliseconds to wait for the job. If not specified, 1 hour is used.\nfrequency - The frequency, in milliseconds, with which the operation will check if the job has reached the specified state (or an end state). The default value is 5000 ms.\n\nResponses\:\nfailure - Something went wrong.\nsuccess - The operation completed successfully.
 a4404740-b98e-4259-bde6-41506a0da1c6.37c7799e-2ebf-49a4-a3f2-6fbac1e2559e.description=<pre>\nThis operation adds a flow variable to the local context. The variable is available in the current flow and its child flows.\n\nInputs\:\n    keyName - The name of the flow variable to add.\n    myValue - The value to assign to the flow variable.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of "myValue" input field.\n\nResponses\:\n    success - The operation completed as stated in the description.\n\nNote\:\n   If a flow variable with the same name already exists, its value will be overwritten.\n</pre>
 a4404740-b98e-4259-bde6-41506a0da1c6.46a256b8-4698-4ae6-b8e9-0224f15aea9e.description=Starts deploying an agent on an unmanaged server. This operation is supported from SA version 10.1 (sas101).\n\nInputs\:\ncoreHost - The DNS name or IP Address of your SAS core.\ncorePort - The port to connect to your SAS core on.\ncoreProtocol - The protocol to connect to your SAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for host.\ncorePassword - The password for host.\ncoreVersion - The version of SAS to use.\nserverIPAddress - The IP address of the server on which the agent will be installed.\nprotocol - Set the protocol used to login to the server on which the agent will be installed. If set to 'Select automatically', the job will try every protocol possible and use the first which is available. Possible values are\: ssh, telnet, netbt, rlogin.\nprotocolPort - Set the port for the protocol specified above. If not set, the default port for the protocol will be used.\nusername - The username for the server on which the agent will be installed.\npassword - The password for the server on which the agent will be installed.\nrootPassword - Specify in case authentication is done as a non-root user, to become root (UNIX only).  Set the value 'sudo' if the user is in the sudoers group, otherwise set the root password.\nactionType - Select the action type\: 'check' for checking if prerequisite conditions are fulfilled, 'download' for checking if prerequisite conditions are fulfilled and staging(downloading) the Agent installer binary or 'install' for checking if the prerequisite conditions are fulfilled, staging(downloading) the Agent installer binary and running the Agent installer binary. Default is 'install'.\ntargetOSClass - Set the target OS class for the server on which the agent will be installed. Valid values are\: Windows, UNIX.\nrealmName - The name of the realm. If set, the gateway inputs will be ignored.\nrealmID - The ID of the realm. If set, the 'realmName' and the gateway inputs will be ignored.\ngatewayName - The name of the gateway. If set, the 'gatewayAddressInfo' must be specified.\ngatewayID - The ID of the gateway. If set, the 'gatewayAddressInfo' must be specified and the 'gatewayName' will be ignored.\ngatewayAddressInfo - The IP addresses and proxy ports of the gateways, in the format <ip_address>\:<port>, separated by 'separator'. The IP addresses can be either version 4 (e.g. 192.168.55.22\:100) or version 6, which must be enclosed in brackets (e.g. [ff\:\:]\:100). If set, the gateway name or ID must be specified.\nnoStartAgent - Do not start agent after installation. Default value is false.\nignorePrerequisiteCheckFailures - Specify whether the deployment process should ignore any prerequisites check failures and proceed with the Agent installation. Default value is false.\nsetTime - Set system time from HP Server Automation core. Default value is false.\ninstallMSI - Install Windows installer (MSI) if required (Windows only). Default value is false.\nreboot - Reboot at completion of successful install if warranted (Windows only). Default value is false.\ninstallRPM - Install Red Hat Package Manager (RPM) if required (AIX/Solaris only). Default value is false.\nresetConf - Reset agent configuration file to default settings. Default value is false.\nnoOpswareGateway - Indicate that no Opsware gateway is necessary. Default value is false.\noverwriteInstaller - Specify whether HP SA Agent installer binary should be overwritten in case already staged. Default value is false.\nlogLevel - The log level. Log levels are\: error, trace, warning, info. Default value is error.\nforceFullHardwareRegistration - Force full hardware registration. Default value is false.\nforceSoftwareRegistration - Force software registration. Default value is false.\nnoReachabilityCheck - Suppress agent reachability check. Default value is false.\nnoAnonymousSSL - Disable anonymous SSL. Applies to dormant agent only. Default value is false.\nforceNewDevice - Force creation of new device record if conflict found. Default value is false.\nfailOnHardwareRegistrationError - Fail if initial hardware registration fails (do not go dormant). Default value is false.\ndoNotOpenWindowsFirewall - Set 'true' to not open Windows firewall for core-agent communications. Default value is false.\nremediateSoftwarePolicy - Perform a remediate of Software Policies after install. Default value is false.\nsoftwarePolicyID - The ID of the software policy to attach.\nfingerprint - Fingerprint of the peer's certificate. Default value is false.\ninstallerOptions - Set the command line arguments for the HP SA Agent installer.\nuserTag - An user provided tag applicable to this job.\ntimeout - The maximum time, in seconds, within which this method should complete and the operation should return. The job will fail with a timeout error if the Install HP SA Agent operation does not complete in the given number of seconds. The default value is 0 (no timeout).\nseparator - The separator used for separating the inputs. The default value for the separator is a comma (,).\nnotificationFailureOwner - The email address of the owner of the job when the job failed.\nnotificationSuccessOwner - The email address of the owner of the job when the job succeeded.\nnotificationCancelOwner - The email address of the owner of the job when the job was canceled.\nnotificationFailureRecipients - The email addresses to notify when the job failed.\nnotificationSuccessRecipients - The email addresses to notify when the job succeeded.\nnotificationCancelRecipients - The email addresses to notify when the job was canceled.\nscheduleDateYear - The year to be used for setting the date when the job is scheduled to start. This input must be provided for setting a job schedule.\nscheduleDateMonth - The month to be used for setting the date when the job is scheduled to start. It should have the value between 1 and 12. This input must be provided for setting a job schedule.\nscheduleDateDayOfMonth - The day to be used for setting the date when the job is scheduled to start. It should have the value between 1 and 31. This input must be provided for setting a job schedule.\nscheduleDateHour - The hour to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 23. If not set, if will have the default value 0.\nscheduleDateMinute - The minute to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 59. If not set, if will have the default value 0.\nscheduleDateSecond - The second to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 59. If not set, if will have the default value 0.\nscheduleDateTimezone - The time zone used to express the job schedule date. If not set, it will have the default value GMT.\n\nOutputs\:\njobId - The ID of the job created for installing a HP SA Agent on a server.\n\nResponses\:\nsuccess - The operation has completed successfully.\nfailure - The operation has failed.
 a4404740-b98e-4259-bde6-41506a0da1c6.4933c4a1-d1a2-4793-8124-d2811788ab0d.description=Starts deploying an agent on an unmanaged server. This operation is supported from SA version 10.1 (sas101).\n\nInputs\:\ncoreHost - The DNS name or IP Address of your SAS core.\ncorePort - The port to connect to your SAS core on.\ncoreProtocol - The protocol to connect to your SAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for host.\ncorePassword - The password for host.\ncoreVersion - The version of SAS to use.\nserverIPAddress - The IP address of the server on which the agent will be installed.\nprotocol - Set the protocol used to login to the server on which the agent will be installed. If set to 'Select automatically', the job will try every protocol possible and use the first which is available. Possible values are\: ssh, telnet, netbt, rlogin.\nprotocolPort - Set the port for the protocol specified above. If not set, the default port for the protocol will be used.\nusername - The username for the server on which the agent will be installed.\npassword - The password for the server on which the agent will be installed.\nrootPassword - Specify in case authentication is done as a non-root user, to become root (UNIX only).  Set the value 'sudo' if the user is in the sudoers group, otherwise set the root password.\nactionType - Select the action type\: 'check' for checking if prerequisite conditions are fulfilled, 'download' for checking if prerequisite conditions are fulfilled and staging(downloading) the Agent installer binary or 'install' for checking if the prerequisite conditions are fulfilled, staging(downloading) the Agent installer binary and running the Agent installer binary. Default is 'install'.\ntargetOSClass - Set the target OS class for the server on which the agent will be installed. Valid values are\: Windows, UNIX.\nrealmName - The name of the realm. If set, the gateway inputs will be ignored.\nrealmID - The ID of the realm. If set, the 'realmName' and the gateway inputs will be ignored.\ngatewayName - The name of the gateway. If set, the 'gatewayAddressInfo' must be specified.\ngatewayID - The ID of the gateway. If set, the 'gatewayAddressInfo' must be specified and the 'gatewayName' will be ignored.\ngatewayAddressInfo - The IP addresses and proxy ports of the gateways, in the format <ip_address>\:<port>, separated by 'separator'. The IP addresses can be either version 4 (e.g. 192.168.55.22\:100) or version 6, which must be enclosed in brackets (e.g. [ff\:\:]\:100). If set, the gateway name or ID must be specified.\nnoStartAgent - Do not start agent after installation. Default value is false.\nignorePrerequisiteCheckFailures - Specify whether the deployment process should ignore any prerequisites check failures and proceed with the Agent installation. Default value is false.\nsetTime - Set system time from HP Server Automation core. Default value is false.\ninstallMSI - Install Windows installer (MSI) if required (Windows only). Default value is false.\nreboot - Reboot at completion of successful install if warranted (Windows only). Default value is false.\ninstallRPM - Install Red Hat Package Manager (RPM) if required (AIX/Solaris only). Default value is false.\nresetConf - Reset agent configuration file to default settings. Default value is false.\nnoOpswareGateway - Indicate that no Opsware gateway is necessary. Default value is false.\noverwriteInstaller - Specify whether HP SA Agent installer binary should be overwritten in case already staged. Default value is false.\nlogLevel - The log level. Log levels are\: error, trace, warning, info. Default value is error.\nforceFullHardwareRegistration - Force full hardware registration. Default value is false.\nforceSoftwareRegistration - Force software registration. Default value is false.\nnoReachabilityCheck - Suppress agent reachability check. Default value is false.\nnoAnonymousSSL - Disable anonymous SSL. Applies to dormant agent only. Default value is false.\nforceNewDevice - Force creation of new device record if conflict found. Default value is false.\nfailOnHardwareRegistrationError - Fail if initial hardware registration fails (do not go dormant). Default value is false.\ndoNotOpenWindowsFirewall - Set 'true' to not open Windows firewall for core-agent communications. Default value is false.\nremediateSoftwarePolicy - Perform a remediate of Software Policies after install. Default value is false.\nsoftwarePolicyID - The ID of the software policy to attach.\nfingerprint - Fingerprint of the peer's certificate. Default value is false.\ninstallerOptions - Set the command line arguments for the HP SA Agent installer.\nuserTag - An user provided tag applicable to this job.\ntimeout - The maximum time, in seconds, within which this method should complete and the operation should return. The job will fail with a timeout error if the Install HP SA Agent operation does not complete in the given number of seconds. The default value is 0 (no timeout).\nseparator - The separator used for separating the inputs. The default value for the separator is a comma (,).\nnotificationFailureOwner - The email address of the owner of the job when the job failed.\nnotificationSuccessOwner - The email address of the owner of the job when the job succeeded.\nnotificationCancelOwner - The email address of the owner of the job when the job was canceled.\nnotificationFailureRecipients - The email addresses to notify when the job failed.\nnotificationSuccessRecipients - The email addresses to notify when the job succeeded.\nnotificationCancelRecipients - The email addresses to notify when the job was canceled.\nscheduleDateYear - The year to be used for setting the date when the job is scheduled to start. This input must be provided for setting a job schedule.\nscheduleDateMonth - The month to be used for setting the date when the job is scheduled to start. It should have the value between 1 and 12. This input must be provided for setting a job schedule.\nscheduleDateDayOfMonth - The day to be used for setting the date when the job is scheduled to start. It should have the value between 1 and 31. This input must be provided for setting a job schedule.\nscheduleDateHour - The hour to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 23. If not set, if will have the default value 0.\nscheduleDateMinute - The minute to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 59. If not set, if will have the default value 0.\nscheduleDateSecond - The second to be used for setting the date when the job is scheduled to start. It should have the value between 0 and 59. If not set, if will have the default value 0.\nscheduleDateTimezone - The time zone used to express the job schedule date. If not set, it will have the default value GMT.\n\nOutputs\:\njobId - The ID of the job created for installing a HP SA Agent on a server.\n\nResponses\:\nsuccess - The operation has completed successfully.\nfailure - The operation has failed.
@@ -10,6 +11,7 @@ a4404740-b98e-4259-bde6-41506a0da1c6.809f39e5-3893-48fe-83c9-9c34fc279c1c.descri
 a4404740-b98e-4259-bde6-41506a0da1c6.8341758f-9297-4348-bb1a-e0b93f98fcc2.description=<pre>\nThis operation adds a flow variable to the local context. The variable is available in the current flow and its child flows.\n\nInputs\:\n    keyName - The name of the flow variable to add.\n    myValue - The value to assign to the flow variable.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of "myValue" input field.\n\nResponses\:\n    success - The operation completed as stated in the description.\n\nNote\:\n   If a flow variable with the same name already exists, its value will be overwritten.\n</pre>
 a4404740-b98e-4259-bde6-41506a0da1c6.8b932590-4b45-4c5d-8d98-fdde197f5330.description=<pre>\nThis operation adds a flow variable to the local context. The variable is available in the current flow and its child flows.\n\nInputs\:\n    keyName - The name of the flow variable to add.\n    myValue - The value to assign to the flow variable.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of "myValue" input field.\n\nResponses\:\n    success - The operation completed as stated in the description.\n\nNote\:\n   If a flow variable with the same name already exists, its value will be overwritten.\n</pre>
 a4404740-b98e-4259-bde6-41506a0da1c6.8fa72789-6e02-4fda-837e-8996dea12fb1.prompt=To Match\:
+a4404740-b98e-4259-bde6-41506a0da1c6.a2d03932-ccbb-4cf4-b430-8c43fa6332d9.description=<pre>\nCompares two strings, returning a true response if and only if they contain the same sequence of characters. A null string is considered to be equal to an empty string.\n\nInputs\:\n    string1 - The first string. \nDefault value\: "" (empty)\n    string2 - The second string.\nDefault value\: "" (empty)\n    ignoreCase - If set to 'true', then the comparison ignores case considerations. The two strings are considered equal ignoring case if they are of the same length and corresponding characters in the two strings are equal ignoring case. If set to any value other than 'true', then the strings must match exactly to be considered equal.\n\nResponses\:\n    true - If the two strings are equal.\n    false - If the two strings are not equal.\n\n</pre>
 a4404740-b98e-4259-bde6-41506a0da1c6.description=targetOSClass - Set the target OS class for the server on which the agent will be installed. Valid values are\: Windows, UNIX.
 a4404740-b98e-4259-bde6-41506a0da1c6.ee010721-5e36-4802-bc54-0d3bb227d293.description=<pre>This operation checks whether a string matches another string, using a specific matching rule. The "toMatch" input is the string that is checked for matching the "matchTo" expression. \n\nInputs\:\n    matchType - The type of match to perform.\nValid values\: Exact Match, Contains, Contains Once, Does Not Contain, Match All Words, Match No Words, Regex (The values are not case sensitive)\nDefault value\: Exact Match\n    toMatch - The string that is checked for matching.\n    matchTo - The string to match against.\nExample\: If "matchType" is \u201CRegEx\u201D, the "matchTo" input is a regular expression such as\: ^-?\\d+(([\\.,]\\d+)?)+$. \n    ignoreCase - Specifies whether to ignore case when matching or not.\nValid values\: False, True\nDefault value\: False\n\nResults\:\n    returnResult - This is the primary output. It contains the string "Matches" if the "toMatch" string matches the "matchTo" string. Otherwise, it contains the string "Does Not Match".  \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
 a4404740-b98e-4259-bde6-41506a0da1c6.ee9e3fed-df54-4a7c-b2e1-d1c7284e276a.description=<pre>\nThis operation adds a flow variable to the local context. The variable is available in the current flow and its child flows.\n\nInputs\:\n    keyName - The name of the flow variable to add.\n    myValue - The value to assign to the flow variable.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of "myValue" input field.\n\nResponses\:\n    success - The operation completed as stated in the description.\n\nNote\:\n   If a flow variable with the same name already exists, its value will be overwritten.\n</pre>
@@ -1669,8 +1671,8 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
       <annotation>a4404740-b98e-4259-bde6-41506a0da1c6.2cdceeb6-c6e4-4f88-bbeb-e48d0feeabde.description</annotation>
       <name>Set targetOSClass UNIX</name>
       <bounds>
-        <x>240.0</x>
-        <y>540.0</y>
+        <x>60.0</x>
+        <y>690.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -1969,7 +1971,7 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
       <annotation>a4404740-b98e-4259-bde6-41506a0da1c6.46a256b8-4698-4ae6-b8e9-0224f15aea9e.description</annotation>
       <name>Install HP SA Agent</name>
       <bounds>
-        <x>420.0</x>
+        <x>240.0</x>
         <y>540.0</y>
       </bounds>
       <layer>-1</layer>
@@ -2280,7 +2282,7 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="fdab5087-2405-4112-a7e7-0b160a3f0d16">
+        <transition id="cab6bb07-2193-49f1-9b4f-3350a18c78af">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -2289,19 +2291,19 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>f93a7f9d-3d5f-499b-b3a9-642fc82d46b9</refId>
+            <refId>3545fff8-ec33-4a90-82d4-5ab2388647dc</refId>
           </destination>
           <source>
             <refId>46a256b8-4698-4ae6-b8e9-0224f15aea9e</refId>
           </source>
           <positions>
             <point>
-              <x>470.0</x>
+              <x>290.0</x>
               <y>574.0</y>
             </point>
             <point>
-              <x>650.0</x>
-              <y>574.0</y>
+              <x>290.0</x>
+              <y>724.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -2337,7 +2339,7 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
       <name>Error : failure</name>
       <bounds>
         <x>420.0</x>
-        <y>690.0</y>
+        <y>540.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -2374,6 +2376,907 @@ a4404740-b98e-4259-bde6-41506a0da1c6.f93a7f9d-3d5f-499b-b3a9-642fc82d46b9.descri
       </transitions>
       <properties/>
       <returnStepType>ERROR</returnStepType>
+      <assignments/>
+    </returnStep>
+    <step id="3545fff8-ec33-4a90-82d4-5ab2388647dc">
+      <annotation>a4404740-b98e-4259-bde6-41506a0da1c6.3545fff8-ec33-4a90-82d4-5ab2388647dc.description</annotation>
+      <name>Wait for Job</name>
+      <bounds>
+        <x>240.0</x>
+        <y>690.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="c7711481-3d1d-42a4-80a6-173ccdc7af45">
+        <baseIcon>change.png</baseIcon>
+        <basePath>/Integrations/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="870d8445-c7bf-4661-a224-8f4f6b0ccdb9">
+            <baseIcon>hourglass.png</baseIcon>
+            <basePath>/Utilities/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="e0f19501-557f-4486-b70b-a28ebbdd5e44">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>coreHost</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="7678ae9d-b81a-467d-b0e7-2e34510239eb">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>coreUsername</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="d21749e9-49f9-4dcb-a35c-d6d5831027f8">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>ENCRYPTED</inputType>
+          <recordKey></recordKey>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>false</isPersisted>
+          <inputSymbol>corePassword</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="3912b602-9f80-426c-85d0-1fa0bd85563b">
+          <annotation></annotation>
+          <fromContextKey>jobId</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>jobID</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="30d3e92d-8f82-436d-bb45-b4a4099d13d2">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>4d03947a-acf4-4e11-ac28-bbc8dc399c3c</refId>
+          </destination>
+          <source>
+            <refId>3545fff8-ec33-4a90-82d4-5ab2388647dc</refId>
+          </source>
+          <positions>
+            <point>
+              <x>290.0</x>
+              <y>724.0</y>
+            </point>
+            <point>
+              <x>470.0</x>
+              <y>724.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="26e4b306-ddc0-462a-95a7-97fcd8d5cf56">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>a2d03932-ccbb-4cf4-b430-8c43fa6332d9</refId>
+          </destination>
+          <source>
+            <refId>3545fff8-ec33-4a90-82d4-5ab2388647dc</refId>
+          </source>
+          <positions>
+            <point>
+              <x>290.0</x>
+              <y>724.0</y>
+            </point>
+            <point>
+              <x>470.0</x>
+              <y>724.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>4a5a9b9b-c259-40fb-9797-217a3b13491c</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="e1b02b69-ef7b-4027-8146-0b81dbb8b60e">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>status</contextKey>
+          <expression id="ec02176b-02c9-4ddd-a135-3d7c80c63fe9">
+            <annotation></annotation>
+            <name>Result Field: status</name>
+            <fieldName>status</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="a2d03932-ccbb-4cf4-b430-8c43fa6332d9">
+      <annotation>a4404740-b98e-4259-bde6-41506a0da1c6.a2d03932-ccbb-4cf4-b430-8c43fa6332d9.description</annotation>
+      <name>String Equals</name>
+      <bounds>
+        <x>420.0</x>
+        <y>690.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="73f58ff9-a374-4c9c-b405-9babe9a6d5d1">
+        <baseIcon>compare.png</baseIcon>
+        <basePath>Utilities/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="66239f32-e4a4-4e0a-8302-5c72406e28c9">
+          <annotation></annotation>
+          <fromContextKey>status</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>string1</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="008f3cc2-e0bf-479a-a37c-f7bd563871d8">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>string2</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>SUCCESS</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="0769a4bf-6994-40a7-b3c9-3c36778d6498">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>ignoreCase</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>False</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="a9f982fe-3a4e-4c0b-9b7a-a57685304239">
+          <annotation></annotation>
+          <name>false</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>false</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>4d03947a-acf4-4e11-ac28-bbc8dc399c3c</refId>
+          </destination>
+          <source>
+            <refId>a2d03932-ccbb-4cf4-b430-8c43fa6332d9</refId>
+          </source>
+          <positions>
+            <point>
+              <x>470.0</x>
+              <y>724.0</y>
+            </point>
+            <point>
+              <x>470.0</x>
+              <y>574.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="d6d84109-e7e7-400d-b083-59cef0819d4d">
+          <annotation></annotation>
+          <name>true</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>true</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>9e185e9a-8cfa-4b00-9086-f8df0e0039d7</refId>
+          </destination>
+          <source>
+            <refId>a2d03932-ccbb-4cf4-b430-8c43fa6332d9</refId>
+          </source>
+          <positions>
+            <point>
+              <x>470.0</x>
+              <y>724.0</y>
+            </point>
+            <point>
+              <x>650.0</x>
+              <y>724.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>7c2f47aa-a4b3-4a7d-b3d4-007f285f7d29</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="9e185e9a-8cfa-4b00-9086-f8df0e0039d7">
+      <annotation></annotation>
+      <name>Get Server ID</name>
+      <bounds>
+        <x>600.0</x>
+        <y>690.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="1aa721d7-02df-4e6c-836d-f38aba8b4890">
+          <annotation></annotation>
+          <toContextKey></toContextKey>
+          <fromContextKey></fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>coreHost</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="13443e2d-3354-41e6-988f-473ef3aad2da">
+          <annotation></annotation>
+          <toContextKey></toContextKey>
+          <fromContextKey></fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>coreUsername</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="864d638e-b50a-4adb-be11-307ca6431880">
+          <annotation></annotation>
+          <toContextKey></toContextKey>
+          <fromContextKey></fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>ENCRYPTED</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>corePassword</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <staticBinding id="ce36c87e-7f09-4bcd-8130-503c1df04815">
+          <annotation></annotation>
+          <fromContextKey>serverIPAddress</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>ipAddress</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="1e43a160-025b-48bd-9714-0605ee69c384">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>4d03947a-acf4-4e11-ac28-bbc8dc399c3c</refId>
+          </destination>
+          <source>
+            <refId>9e185e9a-8cfa-4b00-9086-f8df0e0039d7</refId>
+          </source>
+          <positions>
+            <point>
+              <x>650.0</x>
+              <y>724.0</y>
+            </point>
+            <point>
+              <x>470.0</x>
+              <y>574.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="22d59ac9-5931-445f-9d15-60e22c45f1bc">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>e3b95771-28b6-4b3d-8ab6-8bb4abc3d44a</refId>
+          </destination>
+          <source>
+            <refId>9e185e9a-8cfa-4b00-9086-f8df0e0039d7</refId>
+          </source>
+          <positions>
+            <point>
+              <x>650.0</x>
+              <y>724.0</y>
+            </point>
+            <point>
+              <x>650.0</x>
+              <y>874.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>9f513ada-5833-426b-93f9-72667842e35e</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="204bf278-b85b-4005-88f3-4be31a8d43aa">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>serverID</contextKey>
+          <expression id="ef628d2b-5e06-42a3-939f-8df39c4a64c7">
+            <annotation></annotation>
+            <name>Result: serverID</name>
+            <fieldName>serverID</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="e3b95771-28b6-4b3d-8ab6-8bb4abc3d44a">
+      <annotation></annotation>
+      <name>Get OS - SA</name>
+      <bounds>
+        <x>600.0</x>
+        <y>840.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="27fbfae5-c6d1-44ee-a319-7b91d9761140">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>coreHost</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="30205352-8543-444d-92a4-26550708173e">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>coreUsername</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="7aa21b0d-d6b5-4107-b53c-0c9a8e242d99">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>ENCRYPTED</inputType>
+          <recordKey></recordKey>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>false</isPersisted>
+          <inputSymbol>corePassword</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="554cc6dd-8ed7-452b-b6f9-1906ccc53272">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>serverID</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="7ed70cfc-d35e-4488-8e7b-5e6990662435">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>b7bec5db-6203-4134-91e6-f809c95d675b</refId>
+          </destination>
+          <source>
+            <refId>e3b95771-28b6-4b3d-8ab6-8bb4abc3d44a</refId>
+          </source>
+          <positions>
+            <point>
+              <x>650.0</x>
+              <y>874.0</y>
+            </point>
+            <point>
+              <x>470.0</x>
+              <y>874.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="7b3e5544-e9c5-4a39-b8ed-654c24291930">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>5c1b8d29-4b8b-4cd4-91cb-e7f764c6fec4</refId>
+          </destination>
+          <source>
+            <refId>e3b95771-28b6-4b3d-8ab6-8bb4abc3d44a</refId>
+          </source>
+          <positions>
+            <point>
+              <x>650.0</x>
+              <y>874.0</y>
+            </point>
+            <point>
+              <x>650.0</x>
+              <y>1024.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>4b38c1b9-4383-4425-86a4-e06ae4437bec</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="26224021-efe0-43ca-8d49-06f290493efd">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>platformName</contextKey>
+          <expression id="205a49a7-9439-48c1-ba45-b16855050772">
+            <annotation></annotation>
+            <name>Result: platformName</name>
+            <fieldName>platformName</fieldName>
+            <sourceType>AVAILABLE_RESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="b7bec5db-6203-4134-91e6-f809c95d675b">
+      <annotation></annotation>
+      <name>Error : failure</name>
+      <bounds>
+        <x>420.0</x>
+        <y>840.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="a5a8603d-3e88-4c73-94c3-2daa4e250558">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>b7bec5db-6203-4134-91e6-f809c95d675b</refId>
+          </destination>
+          <source>
+            <refId>b7bec5db-6203-4134-91e6-f809c95d675b</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>ERROR</returnStepType>
+      <assignments/>
+    </returnStep>
+    <step id="5c1b8d29-4b8b-4cd4-91cb-e7f764c6fec4">
+      <annotation></annotation>
+      <name>Enable port Agent SA - Linux</name>
+      <bounds>
+        <x>600.0</x>
+        <y>990.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="72129676-e175-4019-b25d-41c1a1b23dc2">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>overrideJRAS</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>QRO</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="1f7bdc2e-5f25-488c-a281-f3c36600ae3d">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>platformName</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+        </staticBinding>
+        <userInputBinding id="48f31d63-8afc-497e-a033-57fb36ece147">
+          <annotation></annotation>
+          <toContextKey></toContextKey>
+          <fromContextKey></fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>serverIPAddress</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="09ee40e7-2fb9-475e-bcd5-f8e86173dde1">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>username</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <userInputBinding id="aaf03216-d5de-481a-a44a-24d89e8e37d4">
+          <annotation></annotation>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>password</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="2c636047-9166-4b2e-a70f-37fcfa81d637">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>b7bec5db-6203-4134-91e6-f809c95d675b</refId>
+          </destination>
+          <source>
+            <refId>5c1b8d29-4b8b-4cd4-91cb-e7f764c6fec4</refId>
+          </source>
+          <positions>
+            <point>
+              <x>650.0</x>
+              <y>1024.0</y>
+            </point>
+            <point>
+              <x>470.0</x>
+              <y>874.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="421e3581-8a03-44d0-b364-f4949b4e4bcb">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>a806c4d7-6a5a-47b5-94cf-e9780d774cfb</refId>
+          </destination>
+          <source>
+            <refId>5c1b8d29-4b8b-4cd4-91cb-e7f764c6fec4</refId>
+          </source>
+          <positions>
+            <point>
+              <x>650.0</x>
+              <y>1024.0</y>
+            </point>
+            <point>
+              <x>470.0</x>
+              <y>1024.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>d7f0a600-8ac8-45f4-b8da-431c0b7e688f</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="a806c4d7-6a5a-47b5-94cf-e9780d774cfb">
+      <annotation></annotation>
+      <name>Resolved : success</name>
+      <bounds>
+        <x>420.0</x>
+        <y>990.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="55afa6fc-c08a-414d-9386-83e9516a4c6e">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>a806c4d7-6a5a-47b5-94cf-e9780d774cfb</refId>
+          </destination>
+          <source>
+            <refId>a806c4d7-6a5a-47b5-94cf-e9780d774cfb</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>RESOLVED</returnStepType>
       <assignments/>
     </returnStep>
   </steps>
