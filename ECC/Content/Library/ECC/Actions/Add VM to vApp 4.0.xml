@@ -1009,11 +1009,11 @@ Content-Type: application/vnd.vmware.vcloud.recomposeVAppParams+xml</value>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
-          <contextKey>majorErrorCode</contextKey>
-          <expression id="7978ce93-6e06-4d4a-b2ec-6fc1d55059ef">
+          <contextKey>minorErrorCode</contextKey>
+          <expression id="2d3e8fd3-5f33-48a2-9911-084461e65d62">
             <annotation></annotation>
-            <name>Result: majorErrorCode</name>
-            <fieldName>majorErrorCode</fieldName>
+            <name>Result: minorErrorCode</name>
+            <fieldName>minorErrorCode</fieldName>
             <sourceType>AVAILABLE_RESULT</sourceType>
             <filters/>
           </expression>
