@@ -86,10 +86,6 @@
       <listDelimiter>,</listDelimiter>
       <value>Redhat</value>
       <record>false</record>
-      <validationFormat>
-        <refId>829a5ed4-0ab5-4ebd-912a-38c52809d804</refId>
-        <refName>Linux_SO</refName>
-      </validationFormat>
     </staticBinding>
     <staticBinding id="a21acf9f-3c63-4577-a5a2-4b240b9e81d8">
       <annotation></annotation>

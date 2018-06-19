@@ -1183,10 +1183,6 @@
           <listDelimiter>,</listDelimiter>
           <value></value>
           <record>false</record>
-          <validationFormat>
-            <refId>829a5ed4-0ab5-4ebd-912a-38c52809d804</refId>
-            <refName>Linux_SO</refName>
-          </validationFormat>
         </staticBinding>
         <staticBinding id="368e2c39-1efe-43c3-b22e-3c4603126217">
           <annotation></annotation>
